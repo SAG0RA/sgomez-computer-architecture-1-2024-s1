@@ -1,0 +1,69 @@
+from pydub import AudioSegment
+import numpy as np
+
+def obtener_muestras(audio_file):
+    # Cargar el archivo de audio
+    audio = AudioSegment.from_mp3(audio_file)
+
+    # Convertir el audio a datos de tipo numpy array
+    audio_array = np.array(audio.get_array_of_samples())
+
+    return audio_array
+
+def guardar_muestras_en_txt(muestras, output_file):
+    with open(output_file, 'w') as f:
+        for muestra in muestras:
+            f.write(str(muestra) + '\n')
+
+def reconstruir_audio_desde_txt(input_file):
+    # Obtener el muestreo del audio original
+    with open("song.mp3", "rb") as f:
+        audio = AudioSegment.from_mp3(f)
+        original_sample_rate = audio.frame_rate
+        original_sample_width = audio.sample_width
+        original_channels = audio.channels
+
+    # Leer las muestras del archivo de texto
+    with open(input_file, 'r') as f:
+        muestras_str = f.readlines()
+
+    # Convertir las muestras de texto a un array numpy de enteros
+    muestras = np.array([int(muestra.strip()) for muestra in muestras_str], dtype=np.int16)
+
+    # Crear un objeto AudioSegment a partir de las muestras y el muestreo original
+    audio_reconstruido = AudioSegment(
+        data=muestras.tobytes(),
+        sample_width=original_sample_width,
+        frame_rate=original_sample_rate,
+        channels=original_channels
+    )
+
+    return audio_reconstruido
+    
+if __name__ == "__main__":
+    # Ruta del archivo de audio MP3
+    archivo_mp3 = "song.mp3"
+
+    # Obtener las muestras del archivo de audio
+    muestras_audio = obtener_muestras(archivo_mp3)
+
+    # Ruta del archivo de texto de salida
+    archivo_txt = "muestras.txt"
+
+    # Guardar las muestras en un archivo de texto
+    guardar_muestras_en_txt(muestras_audio, archivo_txt)
+
+    print(f"Las muestras de audio se han guardado en '{archivo_txt}'")
+
+    # Reconstruir el audio desde el archivo de texto
+    audio_reconstruido = reconstruir_audio_desde_txt(archivo_txt)
+
+    # Ruta del archivo de audio MP3 de salida
+    archivo_mp3_reconstruido = "audio_reconstruido.mp3"
+
+    # Guardar el audio reconstruido como archivo MP3
+    audio_reconstruido.export(archivo_mp3_reconstruido, format="mp3")
+
+    print(f"El audio se ha reconstruido y guardado en '{archivo_mp3_reconstruido}'")
+
+

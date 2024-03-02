@@ -1,3 +1,5 @@
+import tkinter as tk
+from tkinter import filedialog
 from pydub import AudioSegment
 import numpy as np
 
@@ -16,12 +18,14 @@ def guardar_muestras_en_txt(muestras, output_file):
             f.write(str(muestra) + '\n')
 
 def reconstruir_audio_desde_txt(input_file):
-    # Obtener el muestreo del audio original
-    with open("song.mp3", "rb") as f:
-        audio = AudioSegment.from_mp3(f)
-        original_sample_rate = audio.frame_rate
-        original_sample_width = audio.sample_width
-        original_channels = audio.channels
+    # Obtener la ruta del archivo de audio original
+    original_audio_file = input_file.replace("muestras.txt", "song.mp3")
+
+    # Cargar el archivo de audio original
+    audio = AudioSegment.from_mp3(original_audio_file)
+    original_sample_rate = audio.frame_rate
+    original_sample_width = audio.sample_width
+    original_channels = audio.channels
 
     # Leer las muestras del archivo de texto
     with open(input_file, 'r') as f:
@@ -39,31 +43,27 @@ def reconstruir_audio_desde_txt(input_file):
     )
 
     return audio_reconstruido
-    
-if __name__ == "__main__":
-    # Ruta del archivo de audio MP3
-    archivo_mp3 = "song.mp3"
 
-    # Obtener las muestras del archivo de audio
-    muestras_audio = obtener_muestras(archivo_mp3)
+def procesar_archivo():
+    archivo_mp3 = filedialog.askopenfilename(filetypes=[("Archivos MP3", "*.mp3")])
+    if archivo_mp3:
+        muestras_audio = obtener_muestras(archivo_mp3)
+        archivo_txt = "muestras.txt"
+        guardar_muestras_en_txt(muestras_audio, archivo_txt)
+        print(f"Las muestras de audio se han guardado en '{archivo_txt}'")
 
-    # Ruta del archivo de texto de salida
-    archivo_txt = "muestras.txt"
 
-    # Guardar las muestras en un archivo de texto
-    guardar_muestras_en_txt(muestras_audio, archivo_txt)
+# Crear la ventana principal
+root = tk.Tk()
+root.title("Procesador de Audio")
 
-    print(f"Las muestras de audio se han guardado en '{archivo_txt}'")
+# Crear un botón para seleccionar el archivo
+boton_seleccionar = tk.Button(root, text="Seleccionar Archivo MP3", command=procesar_archivo)
+boton_seleccionar.pack(pady=20)
 
-    # Reconstruir el audio desde el archivo de texto
-    audio_reconstruido = reconstruir_audio_desde_txt(archivo_txt)
 
-    # Ruta del archivo de audio MP3 de salida
-    archivo_mp3_reconstruido = "audio_reconstruido.mp3"
 
-    # Guardar el audio reconstruido como archivo MP3
-    audio_reconstruido.export(archivo_mp3_reconstruido, format="mp3")
+root.mainloop()
 
-    print(f"El audio se ha reconstruido y guardado en '{archivo_mp3_reconstruido}'")
 
 

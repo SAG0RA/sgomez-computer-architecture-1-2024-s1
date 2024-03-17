@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pygame
 from tkinter import Tk, Button, Label, filedialog
 from pydub import AudioSegment

@@ -9,7 +9,8 @@ file_path:      .asciz "prueba.txt"
 buffer:         .space 2205      @ Tamaño del buffer para contener el contenido del archivo
 ejemploFloat:	.float 4.566
 constante:	.float 75.0
-buffer_end:	.word 0
+buffer_addr:	.word 0
+
 .align 1
 
 .section .text
@@ -56,24 +57,14 @@ loop:
 
 preCalculo:
 
-    mov r3, r2
-    ldr r4, =2205
-    b print_loop
-
-print_loop:
-    ldrb r5, [r3] 
-
+    @ Se obtiene la direccion del buffer
+    str r5, [r8]
     mov r0, #1
-    mov r1, r5
-    mov r2, #1
+    ldr r1, =buffer_addr
+    ldr r1, [r1]
+    mov r2, #10
     mov r7, #4
     swi 0
-
-    add r3, r3, #1
-    subs r4, r4, #1
-    bne print_loop
-    b exit
-
 
     @ Imprime el contenido del buffer en la consola
     @mov r0, #1        @ Descriptor de archivo stdout

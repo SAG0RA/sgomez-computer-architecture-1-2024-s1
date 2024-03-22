@@ -53,10 +53,8 @@ read_loop:
     @ Convertir el byte leído a un entero
     ldrb r3, [r8]    @ Cargar el byte en r3
     sub r3, r3, #'0' @ Convertir ASCII a entero (suponiendo que el byte representa un dígito)
-
-    @ En este punto, r3 contiene el valor entero del byte leído
-
-
+    cmp r3, #-38
+    beq read_loop
 
     @ Incrementar el contador de bytes leídos
     add r10, r10, #1

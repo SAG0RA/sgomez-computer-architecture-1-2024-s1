@@ -57,21 +57,12 @@ loop:
 
 preCalculo:
 
-    @ Se obtiene la direccion del buffer
-    str r5, [r8]
-    mov r0, #1
-    ldr r1, =buffer_addr
-    ldr r1, [r1]
-    mov r2, #10
-    mov r7, #4
-    swi 0
-
     @ Imprime el contenido del buffer en la consola
-    @mov r0, #1        @ Descriptor de archivo stdout
-    @mov r1, r8
-    @mov r2, r10
-    @mov r7, #4        @ Código de llamada al sistema para escribir en la consola
-    @swi 0
+    mov r0, #1        @ Descriptor de archivo stdout
+    mov r1, r8
+    mov r2, r10
+    mov r7, #4        @ Código de llamada al sistema para escribir en la consola
+    swi 0
 
 exit:
 

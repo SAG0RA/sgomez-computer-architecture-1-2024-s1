@@ -10,6 +10,7 @@ buffer:         .space 2205      @ Tamaño del búfer para contener el contenido
 ejemploFloat:	.float 4.566
 constante:	.float 75.0
 buffer_addr:	.word 0
+direccion: .word 0x100
 
 .align 1
 
@@ -29,13 +30,12 @@ _start:
     cmp r0, #-1
     beq error
 
-    @ Almacenar el descriptor del archivo en r9
-    mov r9, r0
+    
+    mov r9, r0 @ Almacenar el descriptor del archivo en r9
+    ldr r8, =buffer  @ Puntero al búfer
+    mov r10, #0 @ Contador de bytes leídos
 
-    @ Puntero al búfer
-    ldr r8, =buffer
-    @ Contador de bytes leídos
-    mov r10, #0
+    ldr r6, =direccion @inicializar direccion
 
 @ Bucle para leer valores del archivo y convertirlos a enteros
 read_loop:
@@ -52,13 +52,65 @@ read_loop:
 
     @ Convertir el byte leído a un entero
     ldrb r3, [r8]    @ Cargar el byte en r3
+    cmp r3, #'-'     @ Comprobar si el siguiente byte es un signo negativo
+    beq negative
+    
     sub r3, r3, #'0' @ Convertir ASCII a entero (suponiendo que el byte representa un dígito)
+
+    @Comparacion de SALTO DE LINEA
     cmp r3, #-38
-    beq read_loop
+    beq store_data
+
+    @OPERACION PARA NUMEROS DE 2 A 3 DIGITOS
+    ldr r11, =10
+    mul r4, r4, r11    @ Multipilica r4 x10 
+    add r4, r3       @ Dato r4 almacenado temporalmente de r3    
 
     @ Incrementar el contador de bytes leídos
     add r10, r10, #1
 
+    b read_loop
+
+negative:
+     @ Leer un byte del archivo
+    mov r0, r9
+    ldr r1, =buffer
+    mov r2, #1       @ Leer un byte a la vez
+    mov r7, #3       @ Código de llamada al sistema para leer desde el archivo
+    swi 0
+
+    @ Comprobar si se alcanzó el final del archivo
+    cmp r0, #0
+    beq pre_calculation
+
+    @ Convertir el byte leído a un entero
+    ldrb r3, [r8]    @ Cargar el byte en r3
+
+    @OPERACION PARA NUMEROS DE 2 A 3 DIGITOS
+    sub r3, r3, #'0' @ Convertir ASCII a entero (suponiendo que el byte representa un dígito)
+
+    @Comparacion de SALTO DE LINEA
+    cmp r3, #-38
+    beq store_data_neg
+
+    ldr r11, =10
+    mul r4, r4, r11      @ Multipilica r4 x10 
+    add r4, r3       @ Dato r4 almacenado temporalmente de r3
+
+    @ Incrementar el contador de bytes leídos
+    add r10, r10, #1
+
+    b negative
+
+store_data:
+    add r6, r6, #1 @CAMBIARLO A STRB!!
+    mov r4, #0 @DEBUG i r
+    b read_loop
+
+store_data_neg:
+    add r6, r6, #1 @CAMBIARLO A STRB!!
+    neg r4,r4 
+    mov r4, #0 @DEBUG i r
     b read_loop
 
 pre_calculation:

@@ -45,9 +45,11 @@ def seleccionar_archivo_texto():
     if archivo_texto:
         reconstruir_audio(archivo_texto)
 
+from pydub import AudioSegment
+
 def generar_archivo_texto(archivo_mp3):
-    # Cargar el archivo de audio MP3
-    audio = AudioSegment.from_mp3(archivo_mp3)
+    # Cargar el archivo de audio MP3 y convertirlo a 8 bits
+    audio = AudioSegment.from_mp3(archivo_mp3).set_sample_width(1)
 
     # Establecer la frecuencia de muestreo deseada
     frecuencia_muestreo_deseada = 44100
@@ -59,9 +61,12 @@ def generar_archivo_texto(archivo_mp3):
     muestras = audio_resampleado.get_array_of_samples()
 
     # Escribir las muestras en un archivo de texto
-    with open("muestras_audio.txt", "w") as file:
+    ruta_archivo = "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 1/ARM/muestras_audio.txt"
+    with open(ruta_archivo, "w") as file:
         for muestra in muestras:
             file.write(str(muestra) + "\n")
+
+
 
 def seleccionar_archivo_mp3():
     archivo_mp3 = filedialog.askopenfilename(filetypes=[("Archivos MP3", "*.mp3")])

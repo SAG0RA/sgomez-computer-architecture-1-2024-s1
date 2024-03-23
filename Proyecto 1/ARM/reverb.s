@@ -103,13 +103,13 @@ negative:
     b negative
 
 store_data:
-    add r6, r6, #1 @CAMBIARLO A STRB!!
+    STRB R4, [R6], #1
     mov r4, #0 @DEBUG i r
     b read_loop
 
-store_data_neg:
-    add r6, r6, #1 @CAMBIARLO A STRB!!
+store_data_neg:    
     neg r4,r4 
+    STRB R4, [R6], #1
     mov r4, #0 @DEBUG i r
     b read_loop
 

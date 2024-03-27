@@ -45,7 +45,6 @@ def seleccionar_archivo_texto():
     if archivo_texto:
         reconstruir_audio(archivo_texto)
 
-from pydub import AudioSegment
 
 def generar_archivo_texto(archivo_mp3):
     # Cargar el archivo de audio MP3 y convertirlo a 8 bits
@@ -60,12 +59,12 @@ def generar_archivo_texto(archivo_mp3):
     # Obtener las muestras de audio
     muestras = audio_resampleado.get_array_of_samples()
 
-    # Escribir las muestras en un archivo de texto
+    # Normalizar y escribir las muestras en un archivo de texto
     ruta_archivo = "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 1/ARM/muestras_audio.txt"
     with open(ruta_archivo, "w") as file:
         for muestra in muestras:
-            file.write(str(muestra) + "\n")
-
+            muestra_normalizada = str(muestra).zfill(4) if muestra >= 0 else '-' + str(abs(muestra)).zfill(3)
+            file.write(muestra_normalizada + "\n")
 
 
 def seleccionar_archivo_mp3():

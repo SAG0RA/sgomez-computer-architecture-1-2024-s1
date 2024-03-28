@@ -5,13 +5,16 @@
 
 .section .data
 
-file_path:      .asciz "prueba.txt"
+file_path:      .asciz "muestras_audio.txt"
 buffer:         .space 4423682      @ Tamaño del buffer para contener el contenido del archivo
 alpha:  	    .float 0.6
 uno:            .float 1.0
 constante:	.float 75.0
+
+contador:   .word 0
+maximo: .word 2205
 buffer_addr:	.word 0
-direccion: .word 0x100
+direccion: .byte 0x0
 
 .align 1
 
@@ -36,7 +39,7 @@ _start:
     mov r9, r0 @ Almacenar el descriptor del archivo en r9
     ldr r8, =buffer  @ Puntero al búfer
     mov r10, #0 @ Contador de bytes leídos
-    ldr r6, =direccion @inicializar direccion
+    ldr r6, =0x2390 @inicializar direccion
 @----------------------------------------------------------------------------------------------------
 
 @////////////////////// NUMEROS POSITIVOS (CONVERSION Y PARSEO) //////////////////////////
@@ -53,6 +56,7 @@ read_loop:
     cmp r0, #0
     beq exit
 
+    LDR R5, =2205
     @ Convertir el byte leido a un entero
     ldrb r3, [r8]    @ Cargar el byte en r3
     cmp r3, #'-'     @ Comprobar si el siguiente byte es un signo negativo
@@ -69,9 +73,6 @@ read_loop:
     ldr r11, =10
     mul r4, r4, r11    @ Multipilica r4 x10 
     add r4, r3       @ Dato r4 almacenado temporalmente de r3
-
-
-
 
 
     @ Incrementar el contador de bytes leídos
@@ -107,9 +108,6 @@ negative:
     mul r4, r4, r11      @ Multipilica r4 x10 
     add r4, r3       @ Dato r4 almacenado temporalmente de r3
 
-
-
-
     @ Incrementar el contador de bytes leidos
     add r10, r10, #1
     b negative
@@ -117,27 +115,100 @@ negative:
 
 @------------------- GUARDADO EN MEMORIA DATOS ORIGINALES --------------------
 store_data:
+    cmp R12,R5
+    bgt store_data_2
+
     STRB R4, [R6], #1
     LDR R11, =alpha
-    VMOV S5, R4
+    VMOV.F32 S5, R4
 
     VLDR.F32 S1, [R11] @Constante alpha
     LDR  R11, =uno
     VLDR.F32 S4, [R11]
   
-
     VSUB.F32 S2, S4, S1 @Resta (1-alpha)
     VMUL.F32 S3, S2, S5 @(1-a)*x(n)
 
-
     mov r4, #0 @DEBUG i r
+    ADD R12, R12, #1
+
     b read_loop
 
-store_data_neg:    
-    neg r4,r4 
-    STRB R4, [R6], #1 
-    mov r4, #0 @DEBUG i r
+store_data_2:
+    STRB R4, [R6]
+    LDR R11, =alpha @0.6
+    VMOV.F32 S5,R4 @Pasa a float el dato
+
+    VLDR.F32 S1, [R11] @Constante alpha para utilizar
+    LDR R11, =uno @Carga constante uno
+    VLDR.F32 S4, [R11] @Cargar uno flotante
+
+    VSUB.F32 S2,S4,S1 @(1-a)
+    VMUL.F32 S2,S2,S5 @(1-a) *x(n)
+
+
+    LDR R3,[R6, #-2205] @Carga el valor de antes
+    VMOV.F32 S3,R3
+    VMUL.F32 S3,S5,S3 @a*y(n-k)
+    VADD.F32 S2,S2,S3 @(1-a)*x(n) +a*y(n-k)
+    ADD R6,R6,#1
+
+    MOV R4,#0 @DEBUG i r
+    ADD R12,R12,#1
+
     b read_loop
+
+store_data_neg:
+    cmp R12,R5
+    bgt store_data_neg2
+
+    VMOV.F32 S5,R4 
+    NEG R4,R4
+    VNEG.F32 S5,S5
+
+    STRB R4, [R6], #1
+    LDR R11, =alpha
+    
+    VLDR.F32 S1, [R11] @Constante alpha
+    LDR  R11, =uno
+    VLDR.F32 S4, [R11]
+  
+    VSUB.F32 S2, S4, S1 @Resta (1-alpha)
+    VMUL.F32 S3, S2, S5 @(1-a)*x(n)
+
+    mov r4, #0 @DEBUG i r
+    ADD R12,R12,#1
+    b read_loop
+
+
+store_data_neg2:
+    VMOV.F32 S5,R4 
+    NEG R4,R4
+    VNEG.F32 S5,S5
+
+    STRB R4, [R6]
+    LDR R11, =alpha @0.6
+    VMOV.F32 S5,R4 @Pasa a float el dato
+
+    VLDR.F32 S1, [R11] @Constante alpha para utilizar
+    LDR R11, =uno @Carga constante uno
+    VLDR.F32 S4, [R11] @Cargar uno flotante
+
+    VSUB.F32 S2,S4,S1 @(1-a)
+    VMUL.F32 S2,S2,S5 @(1-a) *x(n)
+
+    LDR R3,[R6, #-2205] @Carga el valor de antes
+    VMOV.F32 S3,R3
+    VMUL.F32 S3,S5,S3 @a*y(n-k)
+    VADD.F32 S2,S2,S3 @(1-a)*x(n) +a*y(n-k)
+    ADD R6,R6,#1
+
+    MOV R4,#0 @DEBUG i r
+    ADD R12,R12,#1
+
+
+    b read_loop
+
 @-----------------------------------------------------------------------------
 
 

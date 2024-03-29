@@ -6,7 +6,7 @@
 .section .data
 
 file_path:      .asciz "muestras_audio.txt"
-buffer:         .space 4423682      @ Tamaño del buffer para contener el contenido del archivo
+buffer:         .space 4500000      @ Tamaño del buffer para contener el contenido del archivo
 alpha:  	    .float 0.6
 uno:            .float 1.0
 constante:	.float 75.0
@@ -14,7 +14,7 @@ constante:	.float 75.0
 contador:   .word 0
 maximo: .word 2205
 buffer_addr:	.word 0
-direccion: .byte 0x0
+direccion: .space 4500000
 
 .align 1
 
@@ -39,7 +39,7 @@ _start:
     mov r9, r0 @ Almacenar el descriptor del archivo en r9
     ldr r8, =buffer  @ Puntero al búfer
     mov r10, #0 @ Contador de bytes leídos
-    ldr r6, =0x2390 @inicializar direccion
+    ldr r6, =direccion @inicializar direccion
 @----------------------------------------------------------------------------------------------------
 
 @////////////////////// NUMEROS POSITIVOS (CONVERSION Y PARSEO) //////////////////////////
@@ -118,7 +118,6 @@ store_data:
     cmp R12,R5
     bgt store_data_2
 
-    STRB R4, [R6], #1
     LDR R11, =alpha
     VMOV.F32 S5, R4
 
@@ -129,13 +128,15 @@ store_data:
     VSUB.F32 S2, S4, S1 @Resta (1-alpha)
     VMUL.F32 S3, S2, S5 @(1-a)*x(n)
 
+    VSTR.F32 S3, [R6]
+    ADD R6, R6, #1
+
     mov r4, #0 @DEBUG i r
     ADD R12, R12, #1
 
     b read_loop
 
 store_data_2:
-    STRB R4, [R6]
     LDR R11, =alpha @0.6
     VMOV.F32 S5,R4 @Pasa a float el dato
 
@@ -149,9 +150,11 @@ store_data_2:
 
     LDR R3,[R6, #-2205] @Carga el valor de antes
     VMOV.F32 S3,R3
-    VMUL.F32 S3,S5,S3 @a*y(n-k)
+    VMUL.F32 S3,S1,S3 @a*y(n-k)
     VADD.F32 S2,S2,S3 @(1-a)*x(n) +a*y(n-k)
-    ADD R6,R6,#1
+    
+    VSTR.F32 S2, [R6]
+    ADD R6, R6, #1
 
     MOV R4,#0 @DEBUG i r
     ADD R12,R12,#1
@@ -166,7 +169,6 @@ store_data_neg:
     NEG R4,R4
     VNEG.F32 S5,S5
 
-    STRB R4, [R6], #1
     LDR R11, =alpha
     
     VLDR.F32 S1, [R11] @Constante alpha
@@ -175,6 +177,9 @@ store_data_neg:
   
     VSUB.F32 S2, S4, S1 @Resta (1-alpha)
     VMUL.F32 S3, S2, S5 @(1-a)*x(n)
+
+    VSTR.F32 S3, [R6]
+    ADD R6, R6, #1
 
     mov r4, #0 @DEBUG i r
     ADD R12,R12,#1
@@ -199,9 +204,12 @@ store_data_neg2:
 
     LDR R3,[R6, #-2205] @Carga el valor de antes
     VMOV.F32 S3,R3
-    VMUL.F32 S3,S5,S3 @a*y(n-k)
+    VMUL.F32 S3,S1,S3 @a*y(n-k)
     VADD.F32 S2,S2,S3 @(1-a)*x(n) +a*y(n-k)
     ADD R6,R6,#1
+
+    VSTR.F32 S3, [R6]
+    ADD R6, R6, #1
 
     MOV R4,#0 @DEBUG i r
     ADD R12,R12,#1

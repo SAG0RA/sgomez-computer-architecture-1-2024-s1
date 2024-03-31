@@ -149,7 +149,9 @@ store_data_2:
 
 
     LDR R3,[R6, #-2205] @Carga el valor de antes
-    VMOV.F32 S3,R3
+    
+    BL verify_neg @Comprobar si el valor de antes es negativo
+    
     VMUL.F32 S3,S1,S3 @a*y(n-k)
     VADD.F32 S2,S2,S3 @(1-a)*x(n) +a*y(n-k)
     
@@ -193,7 +195,6 @@ store_data_neg2:
 
     STRB R4, [R6]
     LDR R11, =alpha @0.6
-    VMOV.F32 S5,R4 @Pasa a float el dato
 
     VLDR.F32 S1, [R11] @Constante alpha para utilizar
     LDR R11, =uno @Carga constante uno
@@ -203,10 +204,12 @@ store_data_neg2:
     VMUL.F32 S2,S2,S5 @(1-a) *x(n)
 
     LDR R3,[R6, #-2205] @Carga el valor de antes
-    VMOV.F32 S3,R3
+
+    BL verify_neg @Comprobar si el valor de antes es negativo
+
     VMUL.F32 S3,S1,S3 @a*y(n-k)
     VADD.F32 S2,S2,S3 @(1-a)*x(n) +a*y(n-k)
-    ADD R6,R6,#1
+
 
     VSTR.F32 S3, [R6]
     ADD R6, R6, #1
@@ -219,6 +222,20 @@ store_data_neg2:
 
 @-----------------------------------------------------------------------------
 
+verify_neg:
+    cmp R3, #0
+    bge verify_pos
+
+    NEG R3, R3
+    VMOV.F32 S3,R3
+    VNEG.F32 S3,S3
+
+    mov pc, lr 
+
+verify_pos:
+    VMOV.F32 S3,R3
+
+    mov pc, lr 
 
 @------------------- SALIDA DEL PROGRAMA -------------------------------------
 exit:

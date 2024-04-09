@@ -1,3 +1,7 @@
+.arch armv7-a
+.fpu vfpv3
+.eabi_attribute 67, "2.09"	@ Version EABI
+
 .section .data
 direccion:	.space 62500
 

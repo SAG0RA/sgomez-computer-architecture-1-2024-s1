@@ -10,11 +10,11 @@ direccion:	.space 62500
 .globl _start
 
 _start:
-	mov r0, #0		@ Carga x0 en r0
+	mov r0, #1		@ Carga x0 en r0
 	mov r1, #0		@ Carga y0 en r1
 
-	mov r10, #0		@ Carga x1 en r2
-	mov r11, #9		@ Carga y1, en r3
+	mov r10, #7		@ Carga x1 en r2
+	mov r11, #0		@ Carga y1, en r3
 
 	sub r2, r10, r0		@ Obtiene el diferencial dx y lo guarda en r4
 	sub r3, r11, r1		@ Obtiene el diferencial dy y lo guarda en r5
@@ -41,7 +41,7 @@ assign_dx_p:
 
 assign_dx_n:
 	mov r4, #-1		@ asignar -1
-	b get_sign_dy
+	b get_absolute_dx
 
 assign_dy_0:
 	mov r5, #0		@ asignar 0
@@ -53,19 +53,28 @@ assign_dy_p:
 
 assign_dy_n:
 	mov r5, #-1		@ asignar -1
+	b get_absolute_dy
+
+get_absolute_dx:
+	neg r2, r2
+	b get_sign_dy
+
+get_absolute_dy:
+	neg r3, r3
 	b get_exchange
 
-get_error_and_counter:
+get_error:
 	lsl r6, r3, #1		@ Hacer la multiplicacion 2dy
 	sub r6, r6, r2		@ Restar dx a 2dy para obtener e
-	b loop
+
+	b save_values
 
 get_exchange:
 	cmp r3, r2		@ Compara dy con dx
 	bgt update_dx_dy	@ Si es mayor, dx = dy y dy = dx, ex_change = 1
 	mov r7, #0		@ Si no, ex_change = 0
 	ldr r9, =direccion	@ Se carga la direccion
-	b get_error_and_counter
+	b get_error
 
 update_dx_dy:
 	mov r8, r2		@ Usar r9 como temp de dx
@@ -74,14 +83,16 @@ update_dx_dy:
 	mov r7, #1		@ Ex_change = 1
 	mov r8, #0		@ Vaciar r9
 	ldr r9, =direccion	@ Cargar direccion
-	b get_error_and_counter
-	
-loop:
+	b get_error
+
+save_values:
 	str r0, [r9]		@ Guardar x en memoria
 	add r9, #4		@ Sumar 4 bytes a la direccion 
 	str r1, [r9]		@ Guardar y en memoria
 	add r9, #4		@ Sumar 4 bytes a la direccion
-
+	b loop
+	
+loop:
 	cmp r6, #0		@ Comparar e con 0
 	blt end_loop		@ Si es menor, salir
 	
@@ -123,12 +134,19 @@ update_y_after_loop:
 check_x_end:
 	cmp r0, r10
 	beq check_y_end
-	b loop
+	b save_values
 
 check_y_end:
 	cmp r1, r11
-	beq exit
-	b loop
+	beq last_save
+	b save_values
+
+last_save:
+	str r0, [r9]		@ Guardar x en memoria
+	add r9, #4		@ Sumar 4 bytes a la direccion 
+	str r1, [r9]		@ Guardar y en memoria
+	b exit
+
 exit:
 	bx lr
 

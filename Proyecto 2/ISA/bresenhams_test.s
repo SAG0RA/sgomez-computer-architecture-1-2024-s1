@@ -1,94 +1,153 @@
-.arch armv7-a
-.fpu vfpv3
-.eabi_attribute 67, "2.09"	@ Version EABI
-
 .section .data
+x0:		.word 4	@ coordenada x de inicio
+y0:		.word 0 @ coordenada y de inicio
+x1:		.word 8 @ coordenada x de final
+y1:		.word 9 @ coordenada y de final
+
 direccion:	.space 62500
 
 .section .text
-.global _start
+.globl _start
+
 _start:
-	LDR R9, =direccion
-	LDR R0, =4			@ x0
-	LDR R1, =0			@ y0
-	LDR R2, =8			@ x1
-	LDR R3, =9			@ y1
-	
-	SUB R2, R2, R0		@ dx = x1 - x0
-	SUB R3, R3, R1		@ dy = y1 - y0
-	
-signo_s1:
-	CMP R2, #0			@ Compara r2 con 0
-    MOVEQ R4, #0		@ Si es igual a 0, entonces r4 = 0
-    MOVGT R4, #1		@ Si es mayor que 0, entonces r4 = 1
-    MOVLT R4, #-1		@ Si es menor que 0, entonces r4 = -1
-	
-signo_s2:
-	CMP R3, #0			@ Compara r3 con 0
-    MOVEQ R5, #0		@ Si es igual a 0, entonces r5 = 0
-    MOVGT R5, #1		@ Si es mayor que 0, entonces r5 = 1
-    MOVLT R5, #-1		@ Si es menor que 0, entonces r5 = -1
-	
-ex_change:
-	CMP R3, R2
-	MOVGT R6, #1
-	MOVLT R6, #0
-	MOVGT R7, R2
-	MOVGT R2, R3
-	MOVGT R3, R7
-	
-	MOV R11, #2
-	MUl R7, R3, R11
-	SUB R7, R7, R2
-	
-	MOV R8, #1
-	
-guardar:
-	STRB R0, [R9], #1
-	STRB R1, [R9], #1
+	mov r0, #0		@ Carga x0 en r0
+	mov r1, #0		@ Carga y0 en r1
+
+	mov r10, #0		@ Carga x1 en r2
+	mov r11, #9		@ Carga y1, en r3
+
+	sub r2, r10, r0		@ Obtiene el diferencial dx y lo guarda en r4
+	sub r3, r11, r1		@ Obtiene el diferencial dy y lo guarda en r5
+
+get_sign_dx:
+	cmp r2, #0		@ Compara dx con 0
+	beq assign_dx_0		@ Si es igual a 0, asignar 0
+	bgt assign_dx_p		@ Si es mayor a 0, asignar 1
+	blt assign_dx_n		@ Si es menor a 0, asingar -1
+
+get_sign_dy:
+	cmp r3, #0		@ Compara dy con 0
+	beq assign_dy_0		@ Si es igual a 0, asignar 0
+	bgt assign_dy_p		@ Si es mayor a 0, asignar 1
+	blt assign_dy_n		@ Si es menor a 0, asingar -1
+
+assign_dx_0:
+	mov r4, #0		@ asignar 0
+	b get_sign_dy		
+
+assign_dx_p:
+	mov r4, #1		@ asignar 1
+	b get_sign_dy
+
+assign_dx_n:
+	mov r4, #-1		@ asignar -1
+	b get_sign_dy
+
+assign_dy_0:
+	mov r5, #0		@ asignar 0
+	b get_exchange
+
+assign_dy_p:
+	mov r5, #1		@ asignar 1
+	b get_exchange
+
+assign_dy_n:
+	mov r5, #-1		@ asignar -1
+	b get_exchange
+
+get_error_and_counter:
+	lsl r6, r3, #1		@ Hacer la multiplicacion 2dy
+	sub r6, r6, r2		@ Restar dx a 2dy para obtener e
+	b loop
+
+get_exchange:
+	cmp r3, r2		@ Compara dy con dx
+	bgt update_dx_dy	@ Si es mayor, dx = dy y dy = dx, ex_change = 1
+	mov r7, #0		@ Si no, ex_change = 0
+	ldr r9, =direccion	@ Se carga la direccion
+	b get_error_and_counter
+
+update_dx_dy:
+	mov r8, r2		@ Usar r9 como temp de dx
+	mov r2, r3		@ Guardar dy en r2
+	mov r3, r8		@ Guardar en r3, r9
+	mov r7, #1		@ Ex_change = 1
+	mov r8, #0		@ Vaciar r9
+	ldr r9, =direccion	@ Cargar direccion
+	b get_error_and_counter
 	
 loop:
-	CMP R7, #0
-	BLT reset_values
+	str r0, [r9]		@ Guardar x en memoria
+	add r9, #4		@ Sumar 4 bytes a la direccion 
+	str r1, [r9]		@ Guardar y en memoria
+	add r9, #4		@ Sumar 4 bytes a la direccion
+
+	cmp r6, #0		@ Comparar e con 0
+	blt end_loop		@ Si es menor, salir
 	
-	CMP R6, #1
-	BEQ update_x
-	
-	ADD R1, R1, R5
-	
-	MOV R10, #0
-	MUL R10, R2, R11
-	SUB R7, R7, R10
-	
-	B loop
-	
+	cmp r7, #1		@ Comparar ex_change con 1
+	beq update_x		@ Si es igual, actualizar x
+
+	add r1, r1, r5		@ Si no, actualizar y = y + S2
+		
+	b update_e_dx
+
+update_e_dx:
+	lsl r8, r2, #1		@ Multiplica dx*2 y guardar en r9
+	sub r6, r6, r8		@ Hacer la operacion e = e - 2dx
+	mov r8, #0		@ Reiniciar r9
+
+	b loop
+
 update_x:
-	ADD R0, R0, R4
-	BX LR
-	
-reset_values:
-	CMP R6, #1
-	BEQ update_y
-	
-	ADD R0, R0, R4
-	
-	MOV R10, #0
-	
-	MUL R10, R3, R11
-	
-	ADD R7, R7, R10
-	
-	ADD R8, R8, #1
-	
-	CMP R8, R0
-	BLE guardar
-	
-	B exit
-	
-update_y:
-	ADD R1, R1, R5
-	BX LR
-	
+	add r0, r0, r4		@ Actualizar x = x + s1
+	b update_e_dx
+
+end_loop:
+	cmp r7, #1		@ Comprar ex_change con 1
+	beq update_y_after_loop	@ Si es 1, actualizar y
+
+	add r0, r0, r4		@ Si no, actualizar x
+	b update_e_dy
+
+update_e_dy:
+	lsl r8, r3, #1
+	add r6, r6, r8
+	mov r8, #0
+	b check_x_end	
+
+update_y_after_loop:
+	add r1, r1, r5
+	b update_e_dy
+
+check_x_end:
+	cmp r0, r10
+	beq check_y_end
+	b loop
+
+check_y_end:
+	cmp r1, r11
+	beq exit
+	b loop
 exit:
-	BX LR
-	
+	bx lr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

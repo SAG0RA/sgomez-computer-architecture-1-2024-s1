@@ -1,0 +1,12 @@
+|Processor
+resultado[0] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[4] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[5] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[6] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[7] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[8] << Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+

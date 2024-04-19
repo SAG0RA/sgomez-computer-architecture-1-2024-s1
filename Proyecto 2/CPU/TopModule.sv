@@ -6,13 +6,13 @@ module TopModule(
 			  output logic h_sync, v_sync,
 			  output logic sync_b, blank_b,
 			  output logic [7:0] red, green, blue,
-			  output logic [31:0] memAddress, pixel,
-			  output logic [9:0] x, y
+			  //output logic [31:0] memAddress, pixel,
+			  //output logic [9:0] x, y
 );
 			  
 	//logic [9:0] x, y;
 	logic [31:0] WriteData, DataAdr, ReadData;
-	//logic [31:0] memAddress = 0;
+	logic [31:0] memAddress = 0;
 	logic MemWrite;
 	
 	logic enable;
@@ -28,7 +28,7 @@ module TopModule(
 	
 	microarchitecture micro_arch(.clk(clk), 
 					 .vga_clk(vga_clk),
-					 .reset(reset), 
+					 .reset(rst), 
 					 .enable(enable),
 					 .WriteData(WriteData), 
 					 .DataAdr(DataAdr), 

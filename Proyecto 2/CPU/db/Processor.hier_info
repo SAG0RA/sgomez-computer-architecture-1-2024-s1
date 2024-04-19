@@ -1,6 +1,6 @@
 |TopModule
 clk => clk.IN2
-rst => ~NO_FANOUT~
+rst => rst.IN1
 vga_clk << vga_clk.DB_MAX_OUTPUT_PORT_TYPE
 h_sync << vga_controller:vgaCont.port1
 v_sync << vga_controller:vgaCont.port2

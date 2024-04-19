@@ -1,21 +1,17 @@
 module TopModule(
 			  input logic clk,
 			  input logic rst,
-			  //input logic enable,
 			  output logic vga_clk,
 			  output logic h_sync, v_sync,
 			  output logic sync_b, blank_b,
-			  output logic [7:0] red, green, blue,
-			  //output logic [31:0] memAddress, pixel,
-			  //output logic [9:0] x, y
+			  output logic [7:0] red, green, blue
 );
 			  
-	//logic [9:0] x, y;
-	logic [31:0] WriteData, DataAdr, ReadData;
-	logic [31:0] memAddress = 0;
-	logic MemWrite;
+	logic [9:0] x, y;
+	logic [31:0] pixel;
+	logic reset = 1'b0;
 	
-	logic enable;
+	logic enable = 1'b1;
 	
 	assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
 	
@@ -28,14 +24,9 @@ module TopModule(
 	
 	microarchitecture micro_arch(.clk(clk), 
 					 .vga_clk(vga_clk),
-					 .reset(rst), 
+					 .reset(reset),
 					 .enable(enable),
-					 .WriteData(WriteData), 
-					 .DataAdr(DataAdr), 
-					 .ReadData(ReadData), 
-					 .MemWrite(MemWrite),
-					 .pixel(pixel),
-					 .x(memAddress)
+					 .pixel(pixel)
 	);	
 	
 	

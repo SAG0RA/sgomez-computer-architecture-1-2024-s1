@@ -1,16 +1,16 @@
-module microarchitecture(input logic clk, vga_clk, reset, enable,
-			  output logic [31:0] WriteData, DataAdr, ReadData,
-			  output logic MemWrite,
-			  output logic [31:0] pixel,
-			  //output logic [31:0] ins
-			  output logic [31:0] x
+module microarchitecture(input logic clk, vga_clk, reset, enable, 
+			  output logic [31:0] pixel
+			  
 );
 
-	logic [31:0] Instr, PC;
-	logic [31:0] memAddress = 0;
+	logic [31:0] memAddress = 32'b0;
+	logic	[31:0]  data;
+	logic	[15:0]  rdaddress;
+	logic	[15:0]  wraddress;
+	logic	  wren = 1'b0;
 		
 	
-	
+	/*
 	ROM rom(.address(PC[7:0]),
 			  .clock(clk),
 			  .q(Instr)
@@ -27,18 +27,15 @@ module microarchitecture(input logic clk, vga_clk, reset, enable,
 			  WriteData, 
 			  ReadData
 	);
+	*/
 	
 	
-	
-	RAM ram(.address_a(DataAdr[15:0]),
-			  .address_b(memAddress[15:0]),
-			  .clock(clk),
-			  .data_a(WriteData),
-			  .data_b(WriteData),
-			  .wren_a(MemWrite),
-			  .wren_b(MemWrite),
-			  .q_a(ReadData),
-			  .q_b(pixel)
+	RAM ram(.clock(clk),
+			  .data(WriteData),
+			  .rdaddress(memAddress),
+			  .wraddress(MemWrite),
+			  .wren(wren),
+			  .q(pixel)
 	);
 	
 	
@@ -55,7 +52,7 @@ module microarchitecture(input logic clk, vga_clk, reset, enable,
 	end
 	
 	
-	assign x = memAddress;
+	//assign x = memAddress;
 	
 	
 

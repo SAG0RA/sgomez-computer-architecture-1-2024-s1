@@ -6,6 +6,7 @@ module cpu(input logic clk, reset,
 			  input logic [31:0] ReadData
 );
 
+
 	logic [3:0] ALUFlags;
 	logic RegWrite, ALUSrc, MemtoReg, PCSrc;
 	logic [1:0] RegSrc, ImmSrc, ALUControl;

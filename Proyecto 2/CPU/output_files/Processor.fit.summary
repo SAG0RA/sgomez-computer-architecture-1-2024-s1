@@ -1,5 +1,5 @@
-Fitter Status : Successful - Sun Apr 14 12:00:57 2024
-Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Fitter Status : Successful - Tue Apr 16 22:07:04 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Processor
 Top-level Entity Name : Processor
 Family : MAX 10
@@ -9,7 +9,7 @@ Total logic elements : 1 / 8,064 ( < 1 % )
     Total combinational functions : 1 / 8,064 ( < 1 % )
     Dedicated logic registers : 0 / 8,064 ( 0 % )
 Total registers : 0
-Total pins : 9 / 250 ( 4 % )
+Total pins : 99 / 250 ( 40 % )
 Total virtual pins : 0
 Total memory bits : 0 / 387,072 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 48 ( 0 % )

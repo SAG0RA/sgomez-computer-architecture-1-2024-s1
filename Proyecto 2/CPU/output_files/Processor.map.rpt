@@ -1,23 +1,47 @@
-Analysis & Elaboration report for Processor
-Sun Apr 14 13:58:28 2024
-Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Analysis & Synthesis report for Processor
+Tue Apr 16 22:06:33 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg1
+ 12. Parameter Settings for User Entity Instance: cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg0
+ 13. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:pcmux
+ 14. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|flopr:pcreg
+ 15. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|adder:pcadd1
+ 16. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|adder:pcadd2
+ 17. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:ra1mux
+ 18. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:ra2mux
+ 19. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:resmux
+ 20. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:srcbmux
+ 21. Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|alu:alu
+ 22. Port Connectivity Checks: "cpu:cpu|datapath:dp|mux2:ra1mux"
+ 23. Port Connectivity Checks: "cpu:cpu|datapath:dp|adder:pcadd2"
+ 24. Port Connectivity Checks: "cpu:cpu|datapath:dp|adder:pcadd1"
+ 25. Port Connectivity Checks: "cpu:cpu"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2023  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -34,46 +58,30 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                      ;
-+------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sun Apr 14 13:58:28 2024          ;
-; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
-; Revision Name                      ; Processor                                      ;
-; Top-level Entity Name              ; Processor                                      ;
-; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
-+------------------------------------+------------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Apr 16 22:06:33 2024       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; Processor                                   ;
+; Top-level Entity Name              ; Processor                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 99                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -158,25 +166,960 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
+; Processor.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv  ;         ;
+; adder.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv      ;         ;
+; cpu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/cpu.sv        ;         ;
+; condlogic.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv  ;         ;
+; controller.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controller.sv ;         ;
+; datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv   ;         ;
+; decoder.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoder.sv    ;         ;
+; extend.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/extend.sv     ;         ;
+; flopenr.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/flopenr.sv    ;         ;
+; flopr.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/flopr.sv      ;         ;
+; mux2.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux2.sv       ;         ;
+; regfile.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv    ;         ;
+; alu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/alu.sv        ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 99    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 99    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |Processor                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 99   ; 0            ; 0          ; |Processor          ; Processor   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++-----------------------------------------------------------+----------------------------------------+
+; Register name                                             ; Reason for Removal                     ;
++-----------------------------------------------------------+----------------------------------------+
+; cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg0|q[0,1] ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg1|q[0,1] ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|flopr:pcreg|q[0..31]                  ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~32                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~33                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~34                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~35                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~36                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~37                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~38                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~39                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~40                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~41                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~42                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~43                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~44                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~45                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~46                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~47                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~48                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~49                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~50                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~51                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~52                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~53                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~54                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~55                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~56                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~57                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~58                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~59                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~60                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~61                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~62                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~63                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~64                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~65                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~66                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~67                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~68                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~69                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~70                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~71                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~72                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~73                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~74                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~75                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~76                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~77                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~78                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~79                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~80                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~81                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~82                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~83                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~84                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~85                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~86                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~87                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~88                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~89                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~90                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~91                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~92                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~93                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~94                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~95                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~96                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~97                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~98                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~99                      ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~100                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~101                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~102                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~103                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~104                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~105                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~106                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~107                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~108                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~109                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~110                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~111                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~112                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~113                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~114                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~115                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~116                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~117                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~118                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~119                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~120                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~121                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~122                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~123                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~124                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~125                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~126                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~127                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~128                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~129                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~130                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~131                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~132                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~133                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~134                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~135                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~136                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~137                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~138                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~139                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~140                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~141                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~142                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~143                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~144                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~145                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~146                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~147                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~148                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~149                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~150                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~151                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~152                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~153                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~154                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~155                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~156                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~157                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~158                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~159                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~160                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~161                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~162                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~163                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~164                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~165                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~166                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~167                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~168                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~169                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~170                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~171                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~172                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~173                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~174                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~175                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~176                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~177                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~178                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~179                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~180                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~181                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~182                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~183                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~184                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~185                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~186                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~187                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~188                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~189                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~190                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~191                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~192                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~193                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~194                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~195                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~196                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~197                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~198                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~199                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~200                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~201                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~202                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~203                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~204                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~205                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~206                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~207                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~208                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~209                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~210                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~211                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~212                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~213                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~214                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~215                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~216                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~217                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~218                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~219                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~220                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~221                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~222                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~223                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~224                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~225                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~226                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~227                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~228                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~229                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~230                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~231                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~232                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~233                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~234                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~235                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~236                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~237                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~238                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~239                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~240                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~241                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~242                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~243                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~244                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~245                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~246                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~247                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~248                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~249                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~250                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~251                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~252                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~253                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~254                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~255                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~256                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~257                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~258                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~259                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~260                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~261                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~262                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~263                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~264                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~265                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~266                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~267                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~268                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~269                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~270                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~271                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~272                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~273                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~274                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~275                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~276                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~277                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~278                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~279                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~280                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~281                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~282                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~283                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~284                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~285                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~286                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~287                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~288                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~289                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~290                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~291                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~292                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~293                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~294                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~295                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~296                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~297                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~298                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~299                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~300                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~301                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~302                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~303                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~304                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~305                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~306                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~307                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~308                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~309                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~310                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~311                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~312                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~313                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~314                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~315                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~316                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~317                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~318                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~319                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~320                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~321                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~322                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~323                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~324                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~325                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~326                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~327                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~328                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~329                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~330                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~331                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~332                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~333                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~334                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~335                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~336                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~337                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~338                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~339                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~340                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~341                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~342                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~343                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~344                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~345                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~346                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~347                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~348                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~349                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~350                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~351                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~352                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~353                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~354                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~355                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~356                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~357                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~358                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~359                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~360                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~361                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~362                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~363                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~364                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~365                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~366                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~367                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~368                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~369                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~370                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~371                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~372                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~373                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~374                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~375                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~376                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~377                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~378                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~379                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~380                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~381                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~382                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~383                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~384                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~385                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~386                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~387                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~388                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~389                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~390                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~391                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~392                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~393                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~394                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~395                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~396                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~397                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~398                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~399                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~400                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~401                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~402                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~403                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~404                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~405                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~406                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~407                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~408                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~409                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~410                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~411                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~412                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~413                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~414                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~415                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~416                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~417                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~418                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~419                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~420                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~421                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~422                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~423                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~424                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~425                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~426                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~427                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~428                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~429                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~430                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~431                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~432                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~433                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~434                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~435                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~436                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~437                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~438                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~439                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~440                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~441                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~442                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~443                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~444                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~445                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~446                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~447                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~448                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~449                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~450                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~451                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~452                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~453                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~454                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~455                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~456                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~457                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~458                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~459                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~460                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~461                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~462                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~463                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~464                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~465                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~466                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~467                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~468                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~469                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~470                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~471                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~472                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~473                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~474                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~475                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~476                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~477                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~478                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~479                     ; Lost fanout                            ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~0                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~1                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~2                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~3                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~4                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~5                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~6                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~7                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~8                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~9                       ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~10                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~11                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~12                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~13                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~14                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~15                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~16                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~17                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~18                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~19                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~20                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~21                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~22                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~23                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~24                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~25                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~26                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~27                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~28                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~29                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~30                      ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|datapath:dp|regfile:rf|rf~31                      ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 516                   ;                                        ;
++-----------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++---------------------------------------------------------+---------------------------+----------------------------------------+
+; Register name                                           ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------------------------------------+---------------------------+----------------------------------------+
+; cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg1|q[0] ; Stuck at GND              ; cpu:cpu|datapath:dp|flopr:pcreg|q[30]  ;
+;                                                         ; due to stuck port data_in ;                                        ;
++---------------------------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg1 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg0 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:pcmux ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|flopr:pcreg ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|adder:pcadd1 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|adder:pcadd2 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:ra1mux ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:ra2mux ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:resmux ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|mux2:srcbmux ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|datapath:dp|alu:alu ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N_bits         ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|datapath:dp|mux2:ra1mux" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; d1   ; Input ; Info     ; Stuck at VCC                      ;
++------+-------+----------+-----------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|datapath:dp|adder:pcadd2" ;
++----------+-------+----------+--------------------------------+
+; Port     ; Type  ; Severity ; Details                        ;
++----------+-------+----------+--------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                   ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                   ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                   ;
++----------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|datapath:dp|adder:pcadd1" ;
++----------+-------+----------+--------------------------------+
+; Port     ; Type  ; Severity ; Details                        ;
++----------+-------+----------+--------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                   ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                   ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                   ;
++----------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; PC   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 99                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Apr 14 13:58:10 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor --analysis_and_elaboration
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Apr 16 22:06:10 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file Processor.sv
-    Info (12023): Found entity 1: Processor File: /home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/proyecto_2/CPU/Processor.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file TestBenches/Processor_tb.sv
-    Info (12023): Found entity 1: Processor_tb File: /home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/proyecto_2/CPU/TestBenches/Processor_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file processor.sv
+    Info (12023): Found entity 1: Processor File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/processor_tb.sv
+    Info (12023): Found entity 1: Processor_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TestBenches/Processor_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder.sv
+    Info (12023): Found entity 1: adder File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.sv
+    Info (12023): Found entity 1: cpu File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/cpu.sv Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file condlogic.sv
+    Info (12023): Found entity 1: condlogic File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv Line: 1
+    Info (12023): Found entity 2: condcheck File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file controller.sv
+    Info (12023): Found entity 1: controller File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+    Info (12023): Found entity 1: datapath File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder.sv
+    Info (12023): Found entity 1: decoder File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extend.sv
+    Info (12023): Found entity 1: extend File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/extend.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flopenr.sv
+    Info (12023): Found entity 1: flopenr File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/flopenr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flopr.sv
+    Info (12023): Found entity 1: flopr File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/flopr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
+    Info (12023): Found entity 1: mux2 File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: regfile File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/alu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/generate_graphic.sv
+    Info (12023): Found entity 1: generate_graphic File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/generate_rectangle.sv
+    Info (12023): Found entity 1: generate_rectangle File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/pll.sv
+    Info (12023): Found entity 1: pll File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/vga_controller.sv
+    Info (12023): Found entity 1: vga_controller File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/vga_module.sv
+    Info (12023): Found entity 1: vga_module File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_module.sv Line: 1
 Info (12127): Elaborating entity "Processor" for the top level hierarchy
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 656 megabytes
-    Info: Processing ended: Sun Apr 14 13:58:28 2024
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:28
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 16
+Info (12128): Elaborating entity "controller" for hierarchy "cpu:cpu|controller:c" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/cpu.sv Line: 25
+Info (12128): Elaborating entity "decoder" for hierarchy "cpu:cpu|controller:c|decoder:dec" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controller.sv Line: 30
+Info (12128): Elaborating entity "condlogic" for hierarchy "cpu:cpu|controller:c|condlogic:cl" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controller.sv Line: 43
+Info (12128): Elaborating entity "flopenr" for hierarchy "cpu:cpu|controller:c|condlogic:cl|flopenr:flagreg1" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv Line: 19
+Info (12128): Elaborating entity "condcheck" for hierarchy "cpu:cpu|controller:c|condlogic:cl|condcheck:cc" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv Line: 25
+Info (12128): Elaborating entity "datapath" for hierarchy "cpu:cpu|datapath:dp" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/cpu.sv Line: 42
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu|datapath:dp|mux2:pcmux" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 23
+Info (12128): Elaborating entity "flopr" for hierarchy "cpu:cpu|datapath:dp|flopr:pcreg" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 25
+Info (12128): Elaborating entity "adder" for hierarchy "cpu:cpu|datapath:dp|adder:pcadd1" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 27
+Info (12128): Elaborating entity "mux2" for hierarchy "cpu:cpu|datapath:dp|mux2:ra1mux" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 32
+Info (12128): Elaborating entity "regfile" for hierarchy "cpu:cpu|datapath:dp|regfile:rf" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 36
+Info (12128): Elaborating entity "extend" for hierarchy "cpu:cpu|datapath:dp|extend:ext" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 40
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu|datapath:dp|alu:alu" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 45
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (15) in the Memory Initialization File "C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/Processor.ram0_regfile_4c9f4da2.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "cpu:cpu|datapath:dp|regfile:rf|rf" is uninferred due to inappropriate RAM size File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv Line: 8
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "WriteData[0]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[1]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[2]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[3]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[4]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[5]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[6]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[7]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[8]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[9]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[10]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[11]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[12]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[13]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[14]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[15]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[16]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[17]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[18]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[19]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[20]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[21]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[22]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[23]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[24]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[25]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[26]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[27]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[28]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[29]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[30]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "WriteData[31]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[0]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[1]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[2]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[3]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[4]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[5]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[6]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[7]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[8]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[9]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[10]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[11]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[12]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[13]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[14]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[15]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[16]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[17]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[18]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[19]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[20]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[21]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[22]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[23]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[24]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[25]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[26]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[27]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[28]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[29]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[30]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "DataAdr[31]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[0]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[1]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[2]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[3]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[4]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[5]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[6]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[7]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[8]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[9]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[10]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[11]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[12]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[13]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[14]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[15]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[16]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[17]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[18]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[19]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[20]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[21]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[22]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[23]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[24]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[25]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[26]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[27]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[28]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[29]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[30]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "ReadData[31]" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 2
+    Warning (13410): Pin "MemWrite" is stuck at GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 4
+Info (17049): 480 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/output_files/Processor.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 1
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Processor.sv Line: 1
+Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 97 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 103 warnings
+    Info: Peak virtual memory: 4731 megabytes
+    Info: Processing ended: Tue Apr 16 22:06:33 2024
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:34
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/output_files/Processor.map.smsg.
 
 

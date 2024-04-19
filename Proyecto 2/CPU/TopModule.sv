@@ -21,7 +21,7 @@ module TopModule(
 	
 	pll vga_pll(.clk(clk), .vga_clk(vga_clk));
 	
-	vga_controller_2 vgaCont(vga_clk, h_sync, v_sync, sync_b, blank_b, x, y);
+	vga_controller vgaCont(vga_clk, h_sync, v_sync, sync_b, blank_b, x, y);
 	
 	generate_graphic gen_grid(x, y, pixel[7:0], red, green, blue);
 	

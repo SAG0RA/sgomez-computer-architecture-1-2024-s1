@@ -13,19 +13,16 @@ module controller(input logic clk,
 );
 
 	logic [1:0] FlagW;
-	logic PCS, RegW, MemW;
+	logic [1:0] PCS, ImmS, Src, ALUC;
 	
 	decoder dec(
 					.Instr(Instr),
 					.FlagW(FlagW),
-					.PC(PCS),
-					.RegW(RegW),
-					.MemW(MemW),
-					.MemtoReg(MemtoReg),
-					.ALUSrc(ALUSrc),
-					.ImmSrc(ImmSrc),
+					.PCSrc(PCS),
+					.ImmSrc(ImmS),
 					.RegSrc(RegSrc),
-					.ALUControl(ALUControl)
+					.ALUSrc(ALUSrc),
+					.ALUControl(ALUC)
     );
 	
 	condlogic cl(
@@ -35,8 +32,8 @@ module controller(input logic clk,
 					.ALUFlags(ALUFlags),
 					.FlagW(FlagW), 
 					.PCS(PCS), 
-					.RegW(RegW), 
-					.MemW(MemW),
+					.RegW(RegWrite), 
+					.MemW(MemWrite),
 					.PCSrc(PCSrc), 
 					.RegWrite(RegWrite), 
 					.MemWrite(MemWrite)

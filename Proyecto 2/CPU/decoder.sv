@@ -1,9 +1,9 @@
 module decoder(
     input logic [15:0] Instr,
     output logic [1:0] FlagW,
-    output logic PCS, 
-    output logic RegW, 
-    output logic MemW,
+    output logic PCSrc, 
+    output logic RegWrite, 
+    output logic MemWrite,
     output logic MemtoReg, 
     output logic ALUSrc,
     output logic [1:0] ImmSrc, 
@@ -21,6 +21,7 @@ module decoder(
     assign {OpCode, Rd, Rs1, Rs2, Imma} = {Instr[15:12], Instr[11:8], Instr[7:4], Instr[3:0], Instr[11:4]};
     // Main Decoder
     always_comb begin
+		  ALUControl = 2'b00; 
         case(OpCode)
             // Tipo R
             // ADD
@@ -64,7 +65,7 @@ module decoder(
     end
 
     // Assign control signals
-    assign {RegSrc, ImmSrc, ALUSrc, MemtoReg, RegW, MemW, PCS} = controls[9:3];
+    assign {RegSrc, ImmSrc, ALUSrc, MemtoReg, RegWrite, MemWrite, PCSrc} = controls[9:3];
     assign FlagW = controls[2:1];
 
 endmodule

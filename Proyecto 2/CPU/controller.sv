@@ -1,6 +1,6 @@
 module controller(input logic clk, 
 						input logic reset,
-						input logic [15:0] Instr,
+						input logic [15:0] IF_ID_Instr,
 						input logic [3:0] ALUFlags,
 						output logic [1:0] RegSrc,
 						output logic RegWrite,
@@ -16,7 +16,7 @@ module controller(input logic clk,
 	logic [1:0] PCS, ImmS, Src, ALUC;
 	
 	decoder dec(
-					.Instr(Instr),
+					.Instr(IF_ID_Instr),
 					.FlagW(FlagW),
 					.PCSrc(PCS),
 					.ImmSrc(ImmS),
@@ -28,7 +28,7 @@ module controller(input logic clk,
 	condlogic cl(
 					.clk(clk), 
 					.reset(reset), 
-					.Cond(Instr[15:12]), 
+					.Cond(IF_ID_Instr[15:12]), 
 					.ALUFlags(ALUFlags),
 					.FlagW(FlagW), 
 					.PCS(PCS), 

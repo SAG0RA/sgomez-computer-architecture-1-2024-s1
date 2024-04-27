@@ -14,24 +14,28 @@ def open_file_dialog():
             print("Archivo cargado con éxito.")
             machine_code = ""
             for instruction in instructions:
+                binary_instruction = ""
                 result = parse_instruction(instruction)
                 if result:
                     opcode, operands = result
                     print(f"Opcode: {opcode}, Operands: {operands}")
-                    machine_code += get_opcode(opcode)
+                    binary_instruction += get_opcode(opcode)
                     if len(operands) == 3:
                         for operand in operands:
-                            machine_code += get_operand(operand, '04b')
+                            binary_instruction += get_operand(operand, '04b')
 
                     if len(operands) == 2:
                         for operand in operands:
-                            machine_code += get_operand(operand, '08b')
+                            binary_instruction += get_operand(operand, '08b')
 
                     if len(operands) == 1:
                         for operand in operands:
-                            machine_code += get_operand(operand, '012b')
+                            binary_instruction += get_operand(operand, '012b')
                     
-                    machine_code += '\n'
+                    if len(binary_instruction) < 16:
+                        binary_instruction = binary_instruction.ljust(16, '0')
+                    binary_instruction += '\n'
+                    machine_code += binary_instruction
                     
                 else:
                     print("Formato de instrucción no válido:", instruction)
@@ -41,26 +45,30 @@ def open_file_dialog():
                 out.write(machine_code)
 
 def get_opcode(opcode):
-    if opcode == "ADD":
-        return "0000"
     if opcode == "SUB":
+        return "0000"
+    if opcode == "ADD":
         return "0001"
-    if opcode == "BEQ":
-        return "0010"
-    if opcode == "BGT":
-        return "0011"
-    if opcode == "BLT":
-        return "0100"
-    if opcode == "B":
-        return "0101"
-    if opcode == "MOV":
-        return "0110"
-    if opcode == "LDR":
-        return "0111"
     if opcode == "LSL":
+        return "0010"
+    if opcode == "NEG":
+        return "0011"
+    if opcode == "BEQ":
+        return "0100"
+    if opcode == "BGT":
+        return "0101"
+    if opcode == "BLT":
+        return "0110"
+    if opcode == "B":
+        return "0111"
+    if opcode == "MOV":
         return "1000"
-    if opcode == "STR":
+    if opcode == "LDR":
         return "1001"
+    if opcode == "STR":
+        return "1010"
+    if opcode == "CMP":
+        return "1011"
     else:
         return "1111"
 
@@ -90,20 +98,20 @@ def get_operand(opcode, filling):
 
 def parse_instruction(instruction):
     # Expresión regular para instrucciones en formato general (ADD, SUB, MOV, LDR, STR)
-    instruction_regex = r'(\b(?:ADD|SUB|MOV|LDR|STR|LSL)\b)\s+(R\d+),\s*(R\d+),\s*(.*)'
+    arithmetic_regex = r'(\b(?:ADD|SUB|LSL)\b)\s+(R\d+),\s*(R\d+),\s*(.*)'
 
     # Expresión regular para instrucciones de salto (BEQ, BGT, BLT, B)
     branch_regex = r'(\b(?:BEQ|BGT|BLT|B)\b)\s+(0x[0-9A-Fa-f]+)'
 
+    #Expresión regular para las operaciones lógicas
+    logic_regex  = r'\b(CMP|NEG)\s+(R\d+|\#\d+),\s+(R\d+|\#\d+)\b'
+
     # Expresion para datos
     data_regex = r'(\b(?:MOV|STR|LDR)\b)\s+(R\d+|\#?\w+),\s*(R\d+|\#?\w+)'
-    #data_regex = r'(\b(?:MOV|STR|LDR)\b)\s+(R(?:1[0-5]|[0-9])|\#[0-9]+),\s*(R(?:1[0-5]|[0-9])|\#[0-9]+)'
-
-    # Expresión regular para instrucciones de desplazamiento lógico (LSL)
-    #lsl_regex = r'(\bLSL\b)\s+(R\d+),\s*(R\d+),\s*\#(\d+)'
+    #data_regex = r'(\b(?:MOV|STR|LDR)\b)\s+(R(?:1[0-5]|[0-9])|\#[0-250]+),\s*(R(?:1[0-5]|[0-9])|\#[0-9]+)'
 
     # Verificar si la instrucción coincide con alguno de los patrones
-    match = re.match(instruction_regex, instruction)
+    match = re.match(arithmetic_regex, instruction)
     if match:
         opcode = match.group(1)
         operands = match.groups()[1:]
@@ -115,16 +123,17 @@ def parse_instruction(instruction):
         operands = (match.group(2),)
         return opcode, operands
 
+    match = re.match(logic_regex, instruction)
+    if match:
+        opcode = match.group(1)
+        operands = match.groups()[1:]
+        return opcode, operands
+
     match = re.match(data_regex, instruction)
     if match:
         opcode = match.group(1)
         operands = match.groups()[1:]
         return opcode, operands
-    """match = re.match(lsl_regex, instruction)
-    if match:
-        opcode = match.group(1)
-        operands = match.groups()[1:]
-        return opcode, operands"""
 
     return False
 

@@ -14,6 +14,9 @@ module TopModule;
     logic [7:0] Immediate = 8'b10000000;
     logic [15:0] SignExtImmediate;
     logic [15:0] ZeroExtImmediate;
+	 
+	 logic [15:0] out;
+	 logic [1:0] select = 1;
     
     // Instanciar el módulo regfile
     regfile regfile_instance (
@@ -46,6 +49,22 @@ module TopModule;
     zeroExtend zeroExtend_instance (
         .Immediate(Immediate),
         .ZeroExtImmediate(ZeroExtImmediate)
+    );
+	 
+	 mux_2 mux_2_instance (
+        .data0(SignExtImmediate),
+        .data1(ZeroExtImmediate),
+        .select(select), 
+        .out(out) 
+    );
+	 
+	 mux_4 mux_4_instance (
+        .data0(a),
+        .data1(b),
+        .data2(y),
+        .data3(out),
+        .select(select),
+        .out(out)
     );
     
 endmodule

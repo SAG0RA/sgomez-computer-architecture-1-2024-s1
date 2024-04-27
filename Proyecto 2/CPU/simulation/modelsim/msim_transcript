@@ -10,94 +10,114 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/regfile.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:22 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/regfile.sv 
+# Start time: 15:28:11 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 22:59:23 on Apr 26,2024, Elapsed time: 0:00:01
+# End time: 15:28:11 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:23 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv 
+# Start time: 15:28:11 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv 
 # -- Compiling module TopModule
 # 
 # Top level modules:
 # 	TopModule
-# End time: 22:59:23 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 15:28:11 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/adder.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:23 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/adder.sv 
+# Start time: 15:28:12 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 22:59:23 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 15:28:12 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/subtractor.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:23 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/subtractor.sv 
+# Start time: 15:28:12 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv 
 # -- Compiling module subtractor
 # 
 # Top level modules:
 # 	subtractor
-# End time: 22:59:23 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 15:28:12 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/ALU.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:23 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/ALU.sv 
+# Start time: 15:28:12 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv 
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
-# End time: 22:59:24 on Apr 26,2024, Elapsed time: 0:00:01
+# End time: 15:28:12 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/signExtend.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:24 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/signExtend.sv 
+# Start time: 15:28:12 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv 
 # -- Compiling module signExtend
 # 
 # Top level modules:
 # 	signExtend
-# End time: 22:59:24 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 15:28:12 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/zeroExtend.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:24 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/zeroExtend.sv 
+# Start time: 15:28:12 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv 
 # -- Compiling module zeroExtend
 # 
 # Top level modules:
 # 	zeroExtend
-# End time: 22:59:24 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 15:28:13 on Apr 27,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/zeroExtend_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:59:24 on Apr 26,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches" C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/zeroExtend_tb.sv 
-# -- Compiling module zeroExtend_tb
+# Start time: 15:28:13 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv 
+# -- Compiling module mux_2
 # 
 # Top level modules:
-# 	zeroExtend_tb
-# End time: 22:59:24 on Apr 26,2024, Elapsed time: 0:00:00
+# 	mux_2
+# End time: 15:28:13 on Apr 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:28:13 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv 
+# -- Compiling module mux_4
+# 
+# Top level modules:
+# 	mux_4
+# End time: 15:28:13 on Apr 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  zeroExtend_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" zeroExtend_tb 
-# Start time: 22:59:24 on Apr 26,2024
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/mux_4_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:28:13 on Apr 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/mux_4_tb.sv 
+# -- Compiling module mux_4_tb
+# 
+# Top level modules:
+# 	mux_4_tb
+# End time: 15:28:13 on Apr 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  mux_4_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" mux_4_tb 
+# Start time: 15:28:13 on Apr 27,2024
 # Loading sv_std.std
-# Loading work.zeroExtend_tb
-# Loading work.zeroExtend
+# Loading work.mux_4_tb
+# Loading work.mux_4
 # 
 # add wave *
 # view structure
@@ -105,15 +125,37 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Immediate = 00001011
-# Test case 1: ZeroExtImmediate = 0000000000001011
-# Immediate = 10010100
-# Test case 2: ZeroExtImmediate = 0000000010010100
-# Immediate = 11111111
-# Test case 3: ZeroExtImmediate = 0000000011111111
-# ** Note: $finish    : C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/zeroExtend_tb.sv(36)
-#    Time: 40 ps  Iteration: 0  Instance: /zeroExtend_tb
+# Dato 0 = aaaa
+# Dato 1 = bbbb
+# Dato 2 = cccc
+# Dato 3 = dddd
+# Select 0: out = aaaa
+# 
+# 
+# Dato 0 = aaaa
+# Dato 1 = bbbb
+# Dato 2 = cccc
+# Dato 3 = dddd
+# Select 1: out = bbbb
+# 
+# 
+# Dato 0 = aaaa
+# Dato 1 = bbbb
+# Dato 2 = cccc
+# Dato 3 = dddd
+# Select 2: out = cccc
+# 
+# 
+# Dato 0 = aaaa
+# Dato 1 = bbbb
+# Dato 2 = cccc
+# Dato 3 = dddd
+# Select 3: out = dddd
+# 
+# 
+# ** Note: $finish    : C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/mux_4_tb.sv(62)
+#    Time: 80 ps  Iteration: 0  Instance: /mux_4_tb
 # 1
-# Break in Module zeroExtend_tb at C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/zeroExtend_tb.sv line 36
-# End time: 23:00:09 on Apr 26,2024, Elapsed time: 0:00:45
+# Break in Module mux_4_tb at C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/mux_4_tb.sv line 62
+# End time: 15:28:38 on Apr 27,2024, Elapsed time: 0:00:25
 # Errors: 0, Warnings: 0

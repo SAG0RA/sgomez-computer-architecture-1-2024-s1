@@ -1,30 +1,33 @@
-module alu #(parameter N_bits = 32) 
-(
-  input logic [N_bits-1:0] SrcA,
-  input logic [N_bits-1:0] SrcB,
-  input logic [1:0] ALUControl,
-  output logic [N_bits-1:0] ALUResult,
-  output [3:0] ALUFlags
+module ALU (
+    input logic [1:0] ALUop, // Entrada de control para la operación ALU
+    input logic [15:0] srcA, // Primer operando
+    input logic [15:0] srcB, // Segundo operando
+    output logic [15:0] ALUresult // Resultado de la operación
 );
-  
-  always_comb begin
-    case (ALUControl)
-      2'b00: // Suma
-        ALUResult = SrcA + SrcB;
-      2'b01: // Resta
-         ALUResult = SrcA - SrcB;
-      2'b10: // AND
-        ALUResult = SrcA & SrcB;
-      2'b11: // OR
-        ALUResult = SrcA | SrcB;
-      default: // Opción no válida
-        // Configura señales de salida en caso de opcode no válido
-        ALUResult = {N_bits{1'b0}};
-    endcase
-	end
-    
-	 assign ALUFlags = 4'b0000;
-	 
-  
+
+    // Variables para almacenar los resultados de las operaciones
+    logic [15:0] add_result, sub_result;
+
+    // Instanciar los módulos adder y subtractor
+    adder u_adder (
+        .a(srcA),
+        .b(srcB),
+        .y(add_result)
+    );
+
+    subtractor u_subtractor (
+        .a(srcA),
+        .b(srcB),
+        .y(sub_result)
+    );
+
+    // Selección de la operación basada en ALUop
+    always_comb begin
+        case (ALUop)
+            2'b00: ALUresult = sub_result; // Resta
+            2'b01: ALUresult = add_result; // Suma
+            default: ALUresult = 16'hXXXX; // Manejo de caso inválido
+        endcase
+    end
 
 endmodule

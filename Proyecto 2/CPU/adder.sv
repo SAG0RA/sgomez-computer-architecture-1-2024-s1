@@ -1,6 +1,5 @@
-module adder #(parameter WIDTH = 8)
-				  (input logic [WIDTH-1:0] a, b,
-				   output logic [WIDTH-1:0] y
+module adder (input logic [15:0] a, b,
+				  output logic [15:0] y
 );
 
 	assign y = a + b;

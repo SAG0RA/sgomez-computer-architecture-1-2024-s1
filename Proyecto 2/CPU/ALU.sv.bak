@@ -1,0 +1,33 @@
+module ALU (
+    input logic [1:0] ALUop, // Entrada de control para la operación ALU
+    input logic [15:0] operand_A, // Primer operando
+    input logic [15:0] operand_B, // Segundo operando
+    output logic [15:0] result // Resultado de la operación
+);
+
+    // Variables para almacenar los resultados de las operaciones
+    logic [15:0] add_result, sub_result;
+
+    // Instanciar los módulos adder y subtractor
+    adder u_adder (
+        .a(operand_A),
+        .b(operand_B),
+        .y(add_result)
+    );
+
+    subtractor u_subtractor (
+        .a(operand_A),
+        .b(operand_B),
+        .y(sub_result)
+    );
+
+    // Selección de la operación basada en ALUop
+    always_comb begin
+        case (ALUop)
+            2'b00: result = sub_result; // Resta
+            2'b01: result = add_result; // Suma
+            default: result = 16'hXXXX; // Manejo de caso inválido
+        endcase
+    end
+
+endmodule

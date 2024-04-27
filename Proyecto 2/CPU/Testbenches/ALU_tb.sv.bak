@@ -1,0 +1,38 @@
+module ALU_tb;
+
+    // Inputs
+    logic [1:0] ALUop;
+    logic [15:0] operand_A, operand_B;
+
+    // Outputs
+    logic [15:0] result;
+
+    // Instantiate ALU module
+    ALU u_ALU (
+        .ALUop(ALUop),
+        .operand_A(operand_A),
+        .operand_B(operand_B),
+        .result(result)
+    );
+
+    // Test cases
+    initial begin
+        // Test case 1: Resta
+        ALUop = 2'b00;
+        operand_A = 5;
+        operand_B = 2;
+        #10; // Esperar algunos ciclos
+        $display("Test case 1: Resultado de la resta: %d", result);
+
+        // Test case 2: Suma
+        ALUop = 2'b01;
+        operand_A = 8;
+        operand_B = 3;
+        #10; // Esperar algunos ciclos
+        $display("Test case 2: Resultado de la suma: %d", result);
+
+        // Finalizar la simulación
+        #10 $finish;
+    end
+
+endmodule

@@ -1,5 +1,5 @@
-Analysis & Synthesis report for Processor
-Fri Apr 19 01:33:56 2024
+Analysis & Elaboration report for Processor
+Fri Apr 26 22:41:07 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -7,27 +7,14 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated
- 13. Parameter Settings for User Entity Instance: vga_controller:vgaCont
- 14. Parameter Settings for User Entity Instance: microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Port Connectivity Checks: "microarchitecture:micro_arch|RAM:ram"
- 17. Port Connectivity Checks: "microarchitecture:micro_arch"
- 18. Port Connectivity Checks: "generate_graphic:gen_grid|generate_rectangle:rectImage"
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
- 22. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "zeroExtend:zeroExtend_instance"
+  6. Port Connectivity Checks: "signExtend:signExtend_instance"
+  7. Port Connectivity Checks: "ALU:ALU_instance"
+  8. Port Connectivity Checks: "regfile:regfile_instance"
+  9. Analysis & Elaboration Messages
 
 
 
@@ -51,35 +38,46 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 19 01:33:56 2024       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; Processor                                   ;
-; Top-level Entity Name           ; TopModule                                   ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 56                                          ;
-; Total pins                      ; 31                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 524,288                                     ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Fri Apr 26 22:41:07 2024       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; Processor                                   ;
+; Top-level Entity Name         ; TopModule                                   ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
 ; Top-level entity name                                                           ; TopModule          ; Processor          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -161,642 +159,101 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                       ;
-+----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                                               ; Library ;
-+----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-; VGA/generate_graphic.sv          ; yes             ; User SystemVerilog HDL File      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv   ;         ;
-; VGA/generate_rectangle.sv        ; yes             ; User SystemVerilog HDL File      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv ;         ;
-; VGA/pll.sv                       ; yes             ; User SystemVerilog HDL File      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv                ;         ;
-; VGA/vga_controller.sv            ; yes             ; User SystemVerilog HDL File      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv     ;         ;
-; TopModule.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv              ;         ;
-; microarchitecture.sv             ; yes             ; User SystemVerilog HDL File      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv      ;         ;
-; RAM/RAM.mif                      ; yes             ; User Memory Initialization File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/RAM/RAM.mif               ;         ;
-; RAM/RAM.v                        ; yes             ; User Wizard-Generated File       ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/RAM/RAM.v                 ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                      ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                               ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                         ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                      ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                      ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                       ;         ;
-; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                          ;         ;
-; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                          ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                        ;         ;
-; db/altsyncram_tv02.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf    ;         ;
-; db/decode_dla.tdf                ; yes             ; Auto-Generated Megafunction      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/decode_dla.tdf         ;         ;
-; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/decode_61a.tdf         ;         ;
-; db/mux_ahb.tdf                   ; yes             ; Auto-Generated Megafunction      ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/mux_ahb.tdf            ;         ;
-+----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 62        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 101       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 21        ;
-;     -- 5 input functions                    ; 15        ;
-;     -- 4 input functions                    ; 2         ;
-;     -- <=3 input functions                  ; 63        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 56        ;
-;                                             ;           ;
-; I/O pins                                    ; 31        ;
-; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 524288    ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 68        ;
-; Total fan-out                               ; 1627      ;
-; Average fan-out                             ; 5.75      ;
-+---------------------------------------------+-----------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Entity Name       ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; |TopModule                                   ; 101 (1)             ; 56 (0)                    ; 524288            ; 0          ; 31   ; 0            ; |TopModule                                                                                                                              ; TopModule         ; work         ;
-;    |generate_graphic:gen_grid|               ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|generate_graphic:gen_grid                                                                                                    ; generate_graphic  ; work         ;
-;    |microarchitecture:micro_arch|            ; 45 (37)             ; 35 (32)                   ; 524288            ; 0          ; 0    ; 0            ; |TopModule|microarchitecture:micro_arch                                                                                                 ; microarchitecture ; work         ;
-;       |RAM:ram|                              ; 8 (0)               ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |TopModule|microarchitecture:micro_arch|RAM:ram                                                                                         ; RAM               ; work         ;
-;          |altsyncram:altsyncram_component|   ; 8 (0)               ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |TopModule|microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component                                                         ; altsyncram        ; work         ;
-;             |altsyncram_tv02:auto_generated| ; 8 (0)               ; 3 (3)                     ; 524288            ; 0          ; 0    ; 0            ; |TopModule|microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated                          ; altsyncram_tv02   ; work         ;
-;                |decode_61a:rden_decode_b|    ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|decode_61a:rden_decode_b ; decode_61a        ; work         ;
-;    |pll:vga_pll|                             ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|pll:vga_pll                                                                                                                  ; pll               ; work         ;
-;    |vga_controller:vgaCont|                  ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |TopModule|vga_controller:vgaCont                                                                                                       ; vga_controller    ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                               ;
-+----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+---------------+
-; Name                                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF           ;
-+----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+---------------+
-; microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 65536        ; 32           ; 65536        ; 32           ; 2097152 ; ./RAM/RAM.mif ;
-+----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+---------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                             ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                 ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------------+-----------------+
-; Altera ; RAM: 2-PORT  ; 20.1    ; N/A          ; N/A          ; |TopModule|microarchitecture:micro_arch|RAM:ram ; RAM/RAM.v       ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------------+-----------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 56    ;
-; Number of registers using Synchronous Clear  ; 52    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 42    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TopModule|microarchitecture:micro_arch|memAddress[22] ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |TopModule|generate_graphic:gen_grid|red[1]            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "zeroExtend:zeroExtend_instance"                                                                 ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Immediate[6..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Immediate[7]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; ZeroExtImmediate ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                           ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------+
+; Port Connectivity Checks: "signExtend:signExtend_instance"                                                                 ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Immediate[6..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Immediate[7]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SignExtImmediate ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vga_controller:vgaCont ;
-+----------------+------------+---------------------------------------+
-; Parameter Name ; Value      ; Type                                  ;
-+----------------+------------+---------------------------------------+
-; HACTIVE        ; 0100000000 ; Unsigned Binary                       ;
-; HFP            ; 0011000000 ; Unsigned Binary                       ;
-; HSYN           ; 0000110000 ; Unsigned Binary                       ;
-; HBP            ; 0011000000 ; Unsigned Binary                       ;
-; HMAX           ; 1010110000 ; Unsigned Binary                       ;
-; VBP            ; 0001110000 ; Unsigned Binary                       ;
-; VACTIVE        ; 0100000000 ; Unsigned Binary                       ;
-; VFP            ; 0001110000 ; Unsigned Binary                       ;
-; VSYN           ; 0000000010 ; Unsigned Binary                       ;
-; VMAX           ; 0111100010 ; Unsigned Binary                       ;
-+----------------+------------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU_instance"                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; ALUop[1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ALUop[0]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; srcA      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; srcB      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ALUresult ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-------------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                  ;
-+------------------------------------+----------------------+-------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                               ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                            ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                          ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                          ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                        ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                               ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                               ;
-; WIDTH_A                            ; 32                   ; Signed Integer                                        ;
-; WIDTHAD_A                          ; 16                   ; Signed Integer                                        ;
-; NUMWORDS_A                         ; 65536                ; Signed Integer                                        ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                               ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                               ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                               ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                               ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                               ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                               ;
-; WIDTH_B                            ; 32                   ; Signed Integer                                        ;
-; WIDTHAD_B                          ; 16                   ; Signed Integer                                        ;
-; NUMWORDS_B                         ; 65536                ; Signed Integer                                        ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                               ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                               ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                               ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                               ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                               ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                               ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                               ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                               ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                               ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                               ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                               ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                               ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                        ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                               ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                               ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                               ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                               ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                               ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                               ;
-; INIT_FILE                          ; ./RAM/RAM.mif        ; Untyped                                               ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                               ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                               ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                               ;
-; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                               ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                               ;
-; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                               ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                               ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                               ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                               ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                               ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                               ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                               ;
-; CBXI_PARAMETER                     ; altsyncram_tv02      ; Untyped                                               ;
-+------------------------------------+----------------------+-------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regfile:regfile_instance"                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rd1  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd2  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd3  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                                 ;
-+-------------------------------------------+----------------------------------------------------------------------+
-; Name                                      ; Value                                                                ;
-+-------------------------------------------+----------------------------------------------------------------------+
-; Number of entity instances                ; 1                                                                    ;
-; Entity Instance                           ; microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                                            ;
-;     -- WIDTH_A                            ; 32                                                                   ;
-;     -- NUMWORDS_A                         ; 65536                                                                ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
-;     -- WIDTH_B                            ; 32                                                                   ;
-;     -- NUMWORDS_B                         ; 65536                                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                                               ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                            ;
-+-------------------------------------------+----------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------+
-; Port Connectivity Checks: "microarchitecture:micro_arch|RAM:ram" ;
-+-----------+-------+----------+-----------------------------------+
-; Port      ; Type  ; Severity ; Details                           ;
-+-----------+-------+----------+-----------------------------------+
-; data      ; Input ; Info     ; Stuck at GND                      ;
-; wraddress ; Input ; Info     ; Stuck at GND                      ;
-; wren      ; Input ; Info     ; Stuck at GND                      ;
-+-----------+-------+----------+-----------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "microarchitecture:micro_arch"                                                               ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; reset        ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pixel[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "generate_graphic:gen_grid|generate_rectangle:rectImage"                                                                                                                                    ;
-+--------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+--------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; left         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; left[9..0]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; top          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; top[9..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; right[7..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; right[9]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; right[8]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; bottom[7..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bottom[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; bottom[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-+--------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 56                          ;
-;     ENA SCLR          ; 42                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 4                           ;
-; arriav_lcell_comb     ; 103                         ;
-;     arith             ; 52                          ;
-;         1 data inputs ; 52                          ;
-;     normal            ; 51                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 15                          ;
-;         6 data inputs ; 21                          ;
-; boundary_port         ; 31                          ;
-; stratixv_ram_block    ; 64                          ;
-;                       ;                             ;
-; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.55                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Apr 19 01:33:27 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
+    Info: Processing started: Fri Apr 26 22:40:46 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file adder.sv
-    Info (12023): Found entity 1: adder File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file cpu.sv
-    Info (12023): Found entity 1: cpu File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/cpu.sv Line: 1
-Info (12021): Found 2 design units, including 2 entities, in source file condlogic.sv
-    Info (12023): Found entity 1: condlogic File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv Line: 1
-    Info (12023): Found entity 2: condcheck File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/condlogic.sv Line: 36
-Info (12021): Found 1 design units, including 1 entities, in source file controller.sv
-    Info (12023): Found entity 1: controller File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controller.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
-    Info (12023): Found entity 1: datapath File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/datapath.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file decoder.sv
-    Info (12023): Found entity 1: decoder File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoder.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file extend.sv
-    Info (12023): Found entity 1: extend File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/extend.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file flopenr.sv
-    Info (12023): Found entity 1: flopenr File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/flopenr.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file flopr.sv
-    Info (12023): Found entity 1: flopr File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/flopr.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
-    Info (12023): Found entity 1: mux2 File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux2.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
-    Info (12023): Found entity 1: regfile File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/alu.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga/generate_graphic.sv
-    Info (12023): Found entity 1: generate_graphic File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga/generate_rectangle.sv
-    Info (12023): Found entity 1: generate_rectangle File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga/pll.sv
-    Info (12023): Found entity 1: pll File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga/vga_controller.sv
-    Info (12023): Found entity 1: vga_controller File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga/vga_module.sv
-    Info (12023): Found entity 1: vga_module File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_module.sv Line: 1
+    Info (12023): Found entity 1: regfile File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/regfile.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/regfile_tb.sv
+    Info (12023): Found entity 1: regfile_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/regfile_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file topmodule.sv
-    Info (12023): Found entity 1: TopModule File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file microarchitecture.sv
-    Info (12023): Found entity 1: microarchitecture File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ram/ram.v
-    Info (12023): Found entity 1: RAM File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/RAM/RAM.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file rom/rom.v
-    Info (12023): Found entity 1: ROM File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ROM/ROM.v Line: 40
-Warning (10236): Verilog HDL Implicit Net warning at microarchitecture.sv(34): created implicit net for "WriteData" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv Line: 34
-Warning (10236): Verilog HDL Implicit Net warning at microarchitecture.sv(36): created implicit net for "MemWrite" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv Line: 36
+    Info (12023): Found entity 1: TopModule File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder.sv
+    Info (12023): Found entity 1: adder File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/adder.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file subtractor.sv
+    Info (12023): Found entity 1: subtractor File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/subtractor.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/adder_tb.sv
+    Info (12023): Found entity 1: adder_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/adder_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/subtractor_tb.sv
+    Info (12023): Found entity 1: subtractor_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/subtractor_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: ALU File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/alu_tb.sv
+    Info (12023): Found entity 1: ALU_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/ALU_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file signextend.sv
+    Info (12023): Found entity 1: signExtend File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/signExtend.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file zeroextend.sv
+    Info (12023): Found entity 1: zeroExtend File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/zeroExtend.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/signextend_tb.sv
+    Info (12023): Found entity 1: signExtend_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/signExtend_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/zeroextend_tb.sv
+    Info (12023): Found entity 1: zeroExtend_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/Testbenches/zeroExtend_tb.sv Line: 1
 Info (12127): Elaborating entity "TopModule" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vga_pll" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 18
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vgaCont" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 20
-Info (12128): Elaborating entity "generate_graphic" for hierarchy "generate_graphic:gen_grid" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 22
-Info (12128): Elaborating entity "generate_rectangle" for hierarchy "generate_graphic:gen_grid|generate_rectangle:rectImage" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv Line: 12
-Info (12128): Elaborating entity "microarchitecture" for hierarchy "microarchitecture:micro_arch" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 30
-Warning (10030): Net "WriteData" at microarchitecture.sv(34) has no driver or initial value, using a default initial value '0' File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv Line: 34
-Warning (10030): Net "MemWrite" at microarchitecture.sv(36) has no driver or initial value, using a default initial value '0' File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv Line: 36
-Info (12128): Elaborating entity "RAM" for hierarchy "microarchitecture:micro_arch|RAM:ram" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/microarchitecture.sv Line: 39
-Info (12128): Elaborating entity "altsyncram" for hierarchy "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/RAM/RAM.v Line: 89
-Info (12130): Elaborated megafunction instantiation "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/RAM/RAM.v Line: 89
-Info (12133): Instantiated megafunction "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/RAM/RAM.v Line: 89
-    Info (12134): Parameter "address_aclr_b" = "NONE"
-    Info (12134): Parameter "address_reg_b" = "CLOCK0"
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./RAM/RAM.mif"
-    Info (12134): Parameter "intended_device_family" = "Cyclone V"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "65536"
-    Info (12134): Parameter "numwords_b" = "65536"
-    Info (12134): Parameter "operation_mode" = "DUAL_PORT"
-    Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
-    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
-    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
-    Info (12134): Parameter "widthad_a" = "16"
-    Info (12134): Parameter "widthad_b" = "16"
-    Info (12134): Parameter "width_a" = "32"
-    Info (12134): Parameter "width_b" = "32"
-    Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_tv02.tdf
-    Info (12023): Found entity 1: altsyncram_tv02 File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 34
-Info (12128): Elaborating entity "altsyncram_tv02" for hierarchy "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
-    Info (12023): Found entity 1: decode_dla File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/decode_dla.tdf Line: 23
-Info (12128): Elaborating entity "decode_dla" for hierarchy "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|decode_dla:decode2" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 45
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
-    Info (12023): Found entity 1: decode_61a File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/decode_61a.tdf Line: 23
-Info (12128): Elaborating entity "decode_61a" for hierarchy "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|decode_61a:rden_decode_b" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 46
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
-    Info (12023): Found entity 1: mux_ahb File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/mux_ahb.tdf Line: 23
-Info (12128): Elaborating entity "mux_ahb" for hierarchy "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|mux_ahb:mux3" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 48
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a8" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 313
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a9" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 346
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a10" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 379
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a11" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 412
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a12" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 445
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a13" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 478
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a14" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 511
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a15" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 544
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a16" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 577
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a17" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 610
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a18" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 643
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a19" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 676
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a20" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 709
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a21" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 742
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a22" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 775
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a23" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 808
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a24" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 841
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a25" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 874
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a26" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 907
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a27" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 940
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a28" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 973
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a29" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1006
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a30" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1039
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a31" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1072
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a40" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1369
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a41" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1402
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a42" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1435
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a43" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1468
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a44" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1501
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a45" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1534
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a46" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1567
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a47" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1600
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a48" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1633
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a49" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1666
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a50" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1699
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a51" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1732
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a52" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1765
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a53" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1798
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a54" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1831
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a55" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1864
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a56" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1897
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a57" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1930
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a58" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1963
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a59" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 1996
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a60" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2029
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a61" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2062
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a62" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2095
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a63" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2128
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a72" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2425
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a73" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2458
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a74" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2491
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a75" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2524
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a76" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2557
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a77" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2590
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a78" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2623
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a79" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2656
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a80" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2689
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a81" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2722
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a82" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2755
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a83" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2788
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a84" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2821
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a85" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2854
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a86" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2887
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a87" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2920
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a88" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2953
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a89" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 2986
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a90" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3019
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a91" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3052
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a92" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3085
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a93" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3118
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a94" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3151
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a95" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3184
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a104" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3481
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a105" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3514
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a106" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3547
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a107" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3580
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a108" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3613
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a109" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3646
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a110" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3679
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a111" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3712
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a112" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3745
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a113" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3778
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a114" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3811
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a115" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3844
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a116" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3877
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a117" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3910
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a118" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3943
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a119" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 3976
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a120" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4009
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a121" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4042
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a122" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4075
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a123" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4108
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a124" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4141
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a125" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4174
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a126" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4207
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a127" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4240
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a136" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4537
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a137" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4570
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a138" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4603
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a139" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4636
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a140" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4669
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a141" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4702
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a142" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4735
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a143" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4768
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a144" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4801
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a145" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4834
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a146" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4867
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a147" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4900
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a148" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4933
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a149" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4966
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a150" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 4999
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a151" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5032
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a152" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5065
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a153" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5098
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a154" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5131
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a155" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5164
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a156" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5197
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a157" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5230
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a158" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5263
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a159" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5296
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a168" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5593
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a169" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5626
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a170" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5659
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a171" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5692
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a172" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5725
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a173" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5758
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a174" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5791
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a175" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5824
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a176" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5857
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a177" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5890
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a178" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5923
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a179" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5956
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a180" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 5989
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a181" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6022
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a182" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6055
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a183" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6088
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a184" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6121
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a185" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6154
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a186" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6187
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a187" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6220
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a188" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6253
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a189" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6286
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a190" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6319
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a191" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6352
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a200" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6649
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a201" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6682
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a202" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6715
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a203" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6748
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a204" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6781
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a205" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6814
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a206" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6847
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a207" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6880
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a208" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6913
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a209" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6946
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a210" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 6979
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a211" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7012
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a212" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7045
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a213" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7078
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a214" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7111
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a215" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7144
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a216" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7177
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a217" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7210
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a218" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7243
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a219" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7276
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a220" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7309
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a221" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7342
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a222" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7375
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a223" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7408
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a232" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7705
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a233" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7738
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a234" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7771
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a235" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7804
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a236" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7837
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a237" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7870
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a238" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7903
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a239" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7936
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a240" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 7969
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a241" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8002
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a242" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8035
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a243" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8068
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a244" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8101
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a245" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8134
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a246" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8167
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a247" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8200
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a248" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8233
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a249" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8266
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a250" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8299
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a251" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8332
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a252" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8365
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a253" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8398
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a254" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8431
-        Warning (14320): Synthesized away node "microarchitecture:micro_arch|RAM:ram|altsyncram:altsyncram_component|altsyncram_tv02:auto_generated|ram_block1a255" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_tv02.tdf Line: 8464
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/output_files/Processor.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 3
-Info (21057): Implemented 219 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 124 logic cells
-    Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 202 warnings
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Fri Apr 19 01:33:56 2024
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:39
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/output_files/Processor.map.smsg.
+Warning (10030): Net "a" at TopModule.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 10
+Warning (10030): Net "b" at TopModule.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 10
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:regfile_instance" File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 29
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_instance" File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 37
+Info (12128): Elaborating entity "adder" for hierarchy "ALU:ALU_instance|adder:u_adder" File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/ALU.sv Line: 16
+Info (12128): Elaborating entity "subtractor" for hierarchy "ALU:ALU_instance|subtractor:u_subtractor" File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/ALU.sv Line: 22
+Info (12128): Elaborating entity "signExtend" for hierarchy "signExtend:signExtend_instance" File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 43
+Info (12128): Elaborating entity "zeroExtend" for hierarchy "zeroExtend:zeroExtend_instance" File: C:/Users/Manuel/Documents/TEC/Arqui 1/CPU/TopModule.sv Line: 49
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4760 megabytes
+    Info: Processing ended: Fri Apr 26 22:41:07 2024
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:33
 
 

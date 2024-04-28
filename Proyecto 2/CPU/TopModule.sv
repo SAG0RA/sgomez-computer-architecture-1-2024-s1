@@ -17,6 +17,10 @@ module TopModule;
 	 
 	 logic [15:0] out;
 	 logic [1:0] select = 1;
+	 
+	 logic reset = 0;
+    logic [15:0] address_in = 16'b1100110011001100;
+    logic [15:0] address_out;
     
     // Instanciar el módulo regfile
     regfile regfile_instance (
@@ -65,6 +69,18 @@ module TopModule;
         .data3(out),
         .select(select),
         .out(out)
+    );
+	 
+	 PCadder PCadder_instance (
+        .address(y), 
+        .PC(a) 
+    );
+	
+    PCregister PCregister_instance (
+        .clk(clk),
+        .reset(reset),
+        .address_in(address_in),
+        .address_out(address_out)
     );
     
 endmodule

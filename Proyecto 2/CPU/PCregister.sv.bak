@@ -1,0 +1,18 @@
+module PCregister (
+    input logic clk, 
+    input logic [15:0] address_in,
+    output logic [15:0] address_out
+);
+
+    // Registro de almacenamiento de 16 bits
+    logic [15:0] reg;
+
+    // Proceso de escritura en el registro
+    always_ff @(posedge clk) begin
+        reg <= address_in;
+    end
+
+    // Salida del registro
+    assign address_out = reg;
+
+endmodule

@@ -1,0 +1,56 @@
+module PCregister_tb;
+
+    // Parámetros de simulación
+    time clk_period = 10; // Periodo del reloj en unidades de tiempo
+
+    // Definición de señales
+    logic clk = 0;         // Señal de reloj inicializada en bajo
+    logic reset = 0;       // Señal de reset inicializada en bajo
+    logic [15:0] address_in;    // Entrada del registro
+    logic [15:0] address_out;   // Salida del registro
+
+    // Instanciar el módulo PCregister
+    PCregister PCregister_instance (
+        .clk(clk),
+        .reset(reset),
+        .address_in(address_in),
+        .address_out(address_out)
+    );
+
+    // Generar el clock
+    always #clk_period clk = ~clk;
+
+    // Simular reset activo
+    initial begin
+        // Esperar un poco antes de activar el reset
+        #20;
+
+        // Activar el reset
+        reset = 1;
+
+        // Inyectar una dirección en el registro (opcional)
+        address_in = 16'h1234;
+        
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        // Desactivar el reset
+        reset = 0;
+
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        // Inyectar otra dirección en el registro (opcional)
+        address_in = 16'hABCD;
+        
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        // Mostrar las direcciones registradas
+        $display("Dirección registrada después del reset: %h", address_out);
+
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule

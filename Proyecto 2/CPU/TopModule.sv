@@ -21,6 +21,11 @@ module TopModule;
 	 logic reset = 0;
     logic [15:0] address_in = 16'b1100110011001100;
     logic [15:0] address_out;
+	 
+	 logic [15:0] data_in;          // Entrada de datos
+    logic [15:0] data_out_0;       // Salida de datos 0
+    logic [15:0] data_out_1;       // Salida de datos 1
+
     
     // Instanciar el módulo regfile
     regfile regfile_instance (
@@ -81,6 +86,13 @@ module TopModule;
         .reset(reset),
         .address_in(address_in),
         .address_out(address_out)
+    );
+	 
+	 decoderMemory decoder_instance (
+        .data_in(data_in),
+        .select(select),
+        .data_out_0(data_out_0),
+        .data_out_1(data_out_1)
     );
     
 endmodule

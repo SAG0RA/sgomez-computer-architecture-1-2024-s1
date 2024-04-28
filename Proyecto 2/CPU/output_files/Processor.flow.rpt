@@ -1,5 +1,5 @@
 Flow report for Processor
-Sat Apr 27 21:28:34 2024
+Sat Apr 27 21:59:04 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Sat Apr 27 21:28:34 2024       ;
+; Flow Status                 ; Successful - Sat Apr 27 21:59:04 2024       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; Processor                                   ;
 ; Top-level Entity Name       ; TopModule                                   ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/27/2024 21:28:14 ;
+; Start date & time ; 04/27/2024 21:58:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Processor           ;
 +-------------------+---------------------+
@@ -74,7 +74,8 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 260148119377217.171427489408568        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 260148119377217.171427672309264        ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ALU_tb                            ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; regfile_tb                        ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; mux_2_tb                          ;
@@ -89,10 +90,11 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; PCregister_tb                          ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; decoderMemory_tb                       ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; Testbenches/decoderMemory_tb.sv        ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/ALU_tb.sv                  ; --            ; --          ; ALU_tb                            ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/regfile_tb.sv              ; --            ; --          ; regfile_tb                        ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/mux_2_tb.sv                ; --            ; --          ; mux_2_tb                          ;
@@ -103,6 +105,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/subtractor_tb.sv           ; --            ; --          ; subtractor_tb                     ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/signExtend_tb.sv           ; --            ; --          ; signExtend_tb                     ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/PCadder_tb.sv              ; --            ; --          ; PCadder_tb                        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; decoderMemory_tb                       ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ALU_tb                                 ; --            ; --          ; ALU_tb                            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; regfile_tb                             ; --            ; --          ; regfile_tb                        ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; mux_2_tb                               ; --            ; --          ; mux_2_tb                          ;
@@ -123,6 +126,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_NAME                  ; mux_4_tb                               ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; PCadder_tb                             ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; PCregister_tb                          ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; decoderMemory_tb                       ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
@@ -141,8 +145,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:21     ; 1.0                     ; 4762 MB             ; 00:00:33                           ;
-; Total                  ; 00:00:21     ; --                      ; --                  ; 00:00:33                           ;
+; Analysis & Elaboration ; 00:00:21     ; 1.0                     ; 4760 MB             ; 00:00:34                           ;
+; Total                  ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,0 +1,57 @@
+module FetchDecode_register_tb;
+
+    // Parámetros de simulación
+    time clk_period = 10; // Periodo del reloj en unidades de tiempo
+
+    // Definición de señales
+    logic clk = 0;                     // Señal de reloj inicializada en bajo
+    logic [15:0] instruction_in = 0;   // Entrada del registro
+    logic [15:0] instruction_out;      // Salida del registro
+
+    // Instanciar el módulo FetchDecode_register
+    FetchDecode_register FetchDecode_register_instance (
+        .clk(clk),
+        .instruction_in(instruction_in),
+        .instruction_out(instruction_out)
+    );
+
+    // Generar el reloj
+    always #clk_period clk = ~clk;
+
+    // Simular cambios en la entrada del registro
+    initial begin
+        // Asignar un valor a la entrada del registro
+        instruction_in = 16'h1234;
+
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        $display("Entrada del registro: %h", instruction_in);
+        $display("Salida del registro: %h", instruction_out);
+		  $display("\n --------------------------------------------------------");
+
+        // Asignar otro valor a la entrada del registro
+        instruction_in = 16'hABCD;
+
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        $display("Entrada del registro: %h", instruction_in);
+        $display("Salida del registro: %h", instruction_out);
+		  $display("\n --------------------------------------------------------");
+		  
+		  // Asignar otro valor a la entrada del registro
+        instruction_in = 16'h3241;
+
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        $display("Entrada del registro: %h", instruction_in);
+        $display("Salida del registro: %h", instruction_out);
+		  $display("\n --------------------------------------------------------");
+
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule

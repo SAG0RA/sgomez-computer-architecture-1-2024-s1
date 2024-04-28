@@ -1,0 +1,57 @@
+module MemoryWriteback_register_tb;
+
+    // Definición de señales
+    logic clk = 0;                 // Señal de reloj inicializada en bajo
+    logic wbs_in = 0;              // Entrada wbs_in
+    logic [15:0] memData_in = 16'h0000;  // Entrada memData_in
+    logic [15:0] ALUresult_in = 16'hFFFF; // Entrada ALUresult_in
+
+    logic wbs_out;                 // Salida wbs_out
+    logic [15:0] memData_out;      // Salida memData_out
+    logic [15:0] ALUresult_out;    // Salida ALUresult_out
+
+    // Instanciar el módulo MemoryWriteback_register
+    MemoryWriteback_register MemoryWriteback_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .memData_in(memData_in),
+        .ALUresult_in(ALUresult_in),
+        .wbs_out(wbs_out),
+        .memData_out(memData_out),
+        .ALUresult_out(ALUresult_out)
+    );
+
+    // Generar el reloj
+    always #5 clk = ~clk;  // Periodo de 10 unidades de tiempo
+
+    // Simular cambios en las entradas del registro
+    initial begin
+        // Ciclo 1: Asignar valores a las entradas del registro
+        wbs_in = 1;
+        memData_in = 16'h1234;
+        ALUresult_in = 16'hABCD;
+
+        #10; // Esperar un tiempo
+        
+        // Ciclo 1: Mostrar las salidas del registro
+        $display("Ciclo 1:");
+        $display("Salidas: wbs_out=%b, memData_out=%h, ALUresult_out=%h", wbs_out, memData_out, ALUresult_out);
+        $display("---------------------------------------------");
+
+        // Ciclo 2: Asignar nuevos valores a las entradas del registro
+        wbs_in = 0;
+        memData_in = 16'h5678;
+        ALUresult_in = 16'h9876;
+
+        #10; // Esperar un tiempo
+        
+        // Ciclo 2: Mostrar las salidas del registro
+        $display("Ciclo 2:");
+        $display("Salidas: wbs_out=%b, memData_out=%h, ALUresult_out=%h", wbs_out, memData_out, ALUresult_out);
+        $display("---------------------------------------------");
+
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule

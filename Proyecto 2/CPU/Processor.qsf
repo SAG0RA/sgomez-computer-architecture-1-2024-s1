@@ -59,7 +59,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/regfile_tb.sv
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH decoderMemory_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH MemoryWriteback_register_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME regfile_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id regfile_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME regfile_tb -section_id regfile_tb
@@ -114,6 +114,30 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id PCregister_t
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME PCregister_tb -section_id PCregister_tb
 set_global_assignment -name SYSTEMVERILOG_FILE decoderMemory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/decoderMemory_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME decoderMemory_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id decoderMemory_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME decoderMemory_tb -section_id decoderMemory_tb
+set_global_assignment -name SYSTEMVERILOG_FILE FetchDecode_register.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME FetchDecode_register_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id FetchDecode_register_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME FetchDecode_register_tb -section_id FetchDecode_register_tb
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/FetchDecode_register_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE DecodeExecute_register.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/DecodeExecute_register_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME DecodeExecute_register_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id DecodeExecute_register_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME DecodeExecute_register_tb -section_id DecodeExecute_register_tb
+set_global_assignment -name SYSTEMVERILOG_FILE ExecuteMemory_register.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/ExecuteMemory_register_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME ExecuteMemory_register_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ExecuteMemory_register_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ExecuteMemory_register_tb -section_id ExecuteMemory_register_tb
+set_global_assignment -name SYSTEMVERILOG_FILE MemoryWriteback_register.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/MemoryWriteback_register_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME MemoryWriteback_register_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MemoryWriteback_register_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MemoryWriteback_register_tb -section_id MemoryWriteback_register_tb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/regfile_tb.sv -section_id regfile_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/adder_tb.sv -section_id adder_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/subtractor_tb.sv -section_id subtractor_tb
@@ -124,8 +148,8 @@ set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/mux_2_tb.sv -section
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/mux_4_tb.sv -section_id mux_4_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/PCadder_tb.sv -section_id PCadder_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/PCregister_tb.sv -section_id PCregister_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME decoderMemory_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id decoderMemory_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME decoderMemory_tb -section_id decoderMemory_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/decoderMemory_tb.sv -section_id decoderMemory_tb
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/FetchDecode_register_tb.sv -section_id FetchDecode_register_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/DecodeExecute_register_tb.sv -section_id DecodeExecute_register_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/ExecuteMemory_register_tb.sv -section_id ExecuteMemory_register_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/MemoryWriteback_register_tb.sv -section_id MemoryWriteback_register_tb

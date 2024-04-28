@@ -1,0 +1,42 @@
+module ExecuteMemory_register (
+    input logic clk,
+    input logic wbs_in,
+    input logic wme_in,
+    input logic mm_in,
+    input logic [1:0] ALUop_in,
+    input logic [1:0] ri_in,
+    input logic wre_in,
+    output logic wbs_out,
+    output logic wme_out,
+    output logic mm_out,
+    output logic [1:0] ALUop_out,
+    output logic [1:0] ri_out,
+    output logic wre_out
+);
+
+    logic wbs;
+    logic wme;
+    logic mm;
+    logic [1:0] ALUop;
+    logic [1:0] ri;
+    logic wre;
+
+    // Proceso de escritura en el registro
+    always_ff @(posedge clk) begin
+        wbs <= wbs_in;
+        wme <= wme_in;
+        mm <= mm_in;
+        ALUop <= ALUop_in;
+        ri <= ri_in;
+        wre <= wre_in;
+    end
+
+    // Salidas del registro
+    assign wbs_out = wbs;
+    assign wme_out = wme;
+    assign mm_out = mm;
+    assign ALUop_out = ALUop;
+    assign ri_out = ri;
+    assign wre_out = wre;
+
+endmodule

@@ -25,6 +25,19 @@ module TopModule;
 	 logic [15:0] data_in;          // Entrada de datos
     logic [15:0] data_out_0;       // Salida de datos 0
     logic [15:0] data_out_1;       // Salida de datos 1
+	 
+	 logic [15:0] instruction_in;          
+    logic [15:0] instruction_out;
+	 
+	 logic wbs_in, wme_in, mm_in;
+    logic [1:0] ALUop_in;
+    logic wbs_out, wme_out, mm_out;
+    logic [1:0] ALUop_out;
+	 
+    logic [15:0] ALUresult_in;
+    logic [15:0] memData_in;
+    logic [15:0] ALUresult_out;
+    logic [15:0] memData_out;
 
     
     // Instanciar el módulo regfile
@@ -93,6 +106,48 @@ module TopModule;
         .select(select),
         .data_out_0(data_out_0),
         .data_out_1(data_out_1)
+    );
+	 
+	 FetchDecode_register FetchDecode_register_instance (
+        .clk(clk),
+        .instruction_in(instruction_in),
+        .instruction_out(instruction_out)
+    );
+	 
+	 DecodeExecute_register DecodeExecute_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .wme_in(wme_in),
+        .mm_in(mm_in),
+        .ALUop_in(ALUop_in),
+        .wbs_out(wbs_out),
+        .wme_out(wme_out),
+        .mm_out(mm_out),
+        .ALUop_out(ALUop_out)
+    );
+	 
+	 ExecuteMemory_register ExecuteMemory_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .wme_in(wme_in),
+        .mm_in(mm_in),
+        .ALUresult_in(ALUresult_in),
+        .memData_in(memData_in),
+        .wbs_out(wbs_out),
+        .wme_out(wme_out),
+        .mm_out(mm_out),
+        .ALUresult_out(ALUresult_out),
+        .memData_out(memData_out)
+    );
+	 
+	 MemoryWriteback_register MemoryWriteback_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .memData_in(memData_in),
+        .ALUresult_in(ALUresult_in),
+        .wbs_out(wbs_out),
+        .memData_out(memData_out),
+        .ALUresult_out(ALUresult_out)
     );
     
 endmodule

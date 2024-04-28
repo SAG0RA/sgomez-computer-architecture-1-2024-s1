@@ -1,0 +1,57 @@
+module ExecuteMemory_register_tb;
+
+    // Definición de señales
+    logic clk = 0;                 // Señal de reloj inicializada en bajo
+    logic wbs_in = 0;              // Entrada wbs_in
+    logic wme_in = 0;              // Entrada wme_in
+    logic mm_in = 0;               // Entrada mm_in
+    logic [15:0] ALUresult_in = 0; // Entrada ALUresult_in
+    logic [15:0] memData_in = 0;   // Entrada memData_in
+
+    logic wbs_out;                 // Salida wbs_out
+    logic wme_out;                 // Salida wme_out
+    logic mm_out;                  // Salida mm_out
+    logic [15:0] ALUresult_out;    // Salida ALUresult_out
+    logic [15:0] memData_out;      // Salida memData_out
+
+    // Instanciar el módulo ExecuteMemory_register
+    ExecuteMemory_register ExecuteMemory_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .wme_in(wme_in),
+        .mm_in(mm_in),
+        .ALUresult_in(ALUresult_in),
+        .memData_in(memData_in),
+        .wbs_out(wbs_out),
+        .wme_out(wme_out),
+        .mm_out(mm_out),
+        .ALUresult_out(ALUresult_out),
+        .memData_out(memData_out)
+    );
+
+    // Generar el reloj
+    always #10 clk = ~clk;
+
+    // Simular cambios en las entradas del registro
+    initial begin
+        // Ciclo 1: Asignar valores a las entradas del registro
+        wbs_in = 1;
+        wme_in = 0;
+        mm_in = 1;
+        ALUresult_in = 16'h1234;
+        memData_in = 16'hABCD;
+
+        $display("Entradas: wbs_in=%b, wme_in=%b, mm_in=%b, ALUresult_in=%h, memData_in=%h",
+                 wbs_in, wme_in, mm_in, ALUresult_in, memData_in);
+        // Esperar un ciclo de reloj
+        #20;
+
+        // Ciclo 1: Mostrar las salidas del registro
+        $display("Salidas (1 Ciclo despues): wbs_out=%b, wme_out=%b, mm_out=%b, ALUresult_out=%h, memData_out=%h",
+                 wbs_out, wme_out, mm_out, ALUresult_out, memData_out);
+
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule

@@ -1,0 +1,78 @@
+module DecodeExecute_register_tb;
+
+    // Parámetros de simulación
+    time clk_period = 10; // Periodo del reloj en unidades de tiempo
+
+    // Definición de señales
+    logic clk = 0;         // Señal de reloj inicializada en bajo
+    logic wbs_in = 0;      // Entrada wbs_in
+    logic wme_in = 0;      // Entrada wme_in
+    logic mm_in = 0;       // Entrada mm_in
+    logic [1:0] ALUop_in = 2'b00;  // Entrada ALUop_in
+    logic [1:0] ri_in = 2'b00;     // Entrada ri_in
+    logic wre_in = 0;      // Entrada wre_in
+
+    logic wbs_out;         // Salida wbs_out
+    logic wme_out;         // Salida wme_out
+    logic mm_out;          // Salida mm_out
+    logic [1:0] ALUop_out; // Salida ALUop_out
+    logic [1:0] ri_out;    // Salida ri_out
+    logic wre_out;         // Salida wre_out
+
+    // Instanciar el módulo DecodeExecute_register
+    DecodeExecute_register DecodeExecute_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .wme_in(wme_in),
+        .mm_in(mm_in),
+        .ALUop_in(ALUop_in),
+        .ri_in(ri_in),
+        .wre_in(wre_in),
+        .wbs_out(wbs_out),
+        .wme_out(wme_out),
+        .mm_out(mm_out),
+        .ALUop_out(ALUop_out),
+        .ri_out(ri_out),
+        .wre_out(wre_out)
+    );
+
+    // Generar el clock
+    always #clk_period clk = ~clk;
+
+    // Simular cambios en las entradas del registro
+    initial begin
+        // Ciclo 1: Asignar valores a las entradas del registro
+        wbs_in = 1;
+        wme_in = 0;
+        mm_in = 1;
+        ALUop_in = 2'b01;
+        ri_in = 2'b10;
+        wre_in = 0;
+
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        // Ciclo 1: Mostrar las salidas del registro
+        $display("Salidas (Ciclo 1): wbs_out=%b, wme_out=%b, mm_out=%b, ALUop_out=%b, ri_out=%b, wre_out=%b",
+                 wbs_out, wme_out, mm_out, ALUop_out, ri_out, wre_out);
+
+        // Ciclo 2: Asignar nuevos valores a las entradas del registro
+        wbs_in = 0;
+        wme_in = 1;
+        mm_in = 0;
+        ALUop_in = 2'b10;
+        ri_in = 2'b01;
+        wre_in = 1;
+
+        // Esperar un ciclo de reloj
+        #clk_period;
+
+        // Ciclo 2: Mostrar las salidas del registro
+        $display("Salidas (Ciclo 2): wbs_out=%b, wme_out=%b, mm_out=%b, ALUop_out=%b, ri_out=%b, wre_out=%b",
+                 wbs_out, wme_out, mm_out, ALUop_out, ri_out, wre_out);
+
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule

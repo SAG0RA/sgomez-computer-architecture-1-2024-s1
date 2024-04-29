@@ -153,3 +153,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/FetchDecode_register
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/DecodeExecute_register_tb.sv -section_id DecodeExecute_register_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/ExecuteMemory_register_tb.sv -section_id ExecuteMemory_register_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/MemoryWriteback_register_tb.sv -section_id MemoryWriteback_register_tb
+set_global_assignment -name SYSTEMVERILOG_FILE controlUnit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE LogicalShiftLeft.sv
+set_global_assignment -name SYSTEMVERILOG_FILE negation.sv

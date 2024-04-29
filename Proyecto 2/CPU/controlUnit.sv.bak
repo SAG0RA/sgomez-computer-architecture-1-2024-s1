@@ -1,0 +1,5 @@
+module controlUnit (
+			input logic [3:0] opCode
+
+);
+

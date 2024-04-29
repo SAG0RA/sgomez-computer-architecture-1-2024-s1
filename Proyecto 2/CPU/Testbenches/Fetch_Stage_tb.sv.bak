@@ -1,0 +1,28 @@
+module Fetch_Stage_tb;
+
+
+	FetchDecode_register FetchDecode_register_instance (
+        .clk(clk),
+        .instruction_in(instruction_in),
+        .instruction_out(instruction_out)
+    );
+	 
+	 DecodeExecute_register DecodeExecute_register_instance (
+        .clk(clk),
+        .wbs_in(wbs_in),
+        .wme_in(wme_in),
+        .mm_in(mm_in),
+        .ALUop_in(ALUop_in),
+		  .wm_in(wm_in),
+		  .am_in(am_in),
+		  .ni_in(ni_in),
+        .wbs_out(wbs_out),
+        .wme_out(wme_out),
+        .mm_out(mm_out),
+        .ALUop_out(ALUop_out),
+		  .wm_out(wm_out),
+		  .am_out(am_out),
+		  .ni_out(ni_out)
+    );
+
+endmodule

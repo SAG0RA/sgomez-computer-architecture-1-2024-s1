@@ -9,7 +9,7 @@ module TopModule;
 	 
     logic [15:0] a, b, y;
 	 
-    logic [1:0] ALUop = 1;
+    logic [2:0] ALUop = 1;
 	 
     logic [7:0] Immediate = 8'b10000000;
     logic [15:0] SignExtImmediate;
@@ -30,9 +30,9 @@ module TopModule;
     logic [15:0] instruction_out;
 	 
 	 logic wbs_in, wme_in, mm_in;
-    logic [1:0] ALUop_in;
+    logic [2:0] ALUop_in;
     logic wbs_out, wme_out, mm_out;
-    logic [1:0] ALUop_out;
+    logic [2:0] ALUop_out;
 	 
     logic [15:0] ALUresult_in;
     logic [15:0] memData_in;
@@ -71,7 +71,6 @@ module TopModule;
         .rd3(rd3)
     );
     
-    // Instanciar el módulo ALU
     ALU ALU_instance (
         .ALUop(ALUop), 
         .srcA(a),
@@ -81,13 +80,11 @@ module TopModule;
 		  .flagZ(flagZ)
     );
     
-    // Instanciar el módulo signExtend
     signExtend signExtend_instance (
         .Immediate(Immediate),
         .SignExtImmediate(SignExtImmediate)
     );
 
-    // Instanciar el módulo zeroExtend
     zeroExtend zeroExtend_instance (
         .Immediate(Immediate),
         .ZeroExtImmediate(ZeroExtImmediate)

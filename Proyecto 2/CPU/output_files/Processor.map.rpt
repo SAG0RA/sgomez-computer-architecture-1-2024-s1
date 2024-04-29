@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Processor
-Mon Apr 29 02:12:45 2024
+Mon Apr 29 02:22:08 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Mon Apr 29 02:12:45 2024       ;
+; Analysis & Elaboration Status ; Successful - Mon Apr 29 02:22:08 2024       ;
 ; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                 ; Processor                                   ;
 ; Top-level Entity Name         ; TopModule                                   ;
@@ -364,7 +364,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Apr 29 02:12:24 2024
+    Info: Processing started: Mon Apr 29 02:21:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -481,9 +481,9 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "clk" is missing source, defaulting to GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 4
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4754 megabytes
-    Info: Processing ended: Mon Apr 29 02:12:45 2024
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Mon Apr 29 02:22:08 2024
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:35
 
 

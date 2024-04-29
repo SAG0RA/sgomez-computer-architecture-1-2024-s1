@@ -39,8 +39,26 @@ module TopModule;
     logic [15:0] ALUresult_out;
     logic [15:0] memData_out;
 
+	 logic wm_in = 0;
+	 logic am_in = 0;
+	 logic ni_in = 0;
+	 logic wm_out;
+	 logic am_out;
+	 logic ni_out;
+	 
+	 logic [15:0] shift_amount; 
+    logic [15:0] shifted_data;
+	 
+	 logic flagN;
+	 logic flagZ;
+	 
+	 logic [3:0] opCode;
+	 
+    logic wbs, wme, mm;
+    logic [1:0] ri;
+    logic wm, am, ni;
     
-    // Instanciar el módulo regfile
+    
     regfile regfile_instance (
         .clk(clk),
         .wre(wre),
@@ -58,7 +76,9 @@ module TopModule;
         .ALUop(ALUop), 
         .srcA(a),
         .srcB(b),
-        .ALUresult(y)
+        .ALUresult(y),
+		  .flagN(flagN),
+		  .flagZ(flagZ)
     );
     
     // Instanciar el módulo signExtend
@@ -120,10 +140,16 @@ module TopModule;
         .wme_in(wme_in),
         .mm_in(mm_in),
         .ALUop_in(ALUop_in),
+		  .wm_in(wm_in),
+		  .am_in(am_in),
+		  .ni_in(ni_in),
         .wbs_out(wbs_out),
         .wme_out(wme_out),
         .mm_out(mm_out),
-        .ALUop_out(ALUop_out)
+        .ALUop_out(ALUop_out),
+		  .wm_out(wm_out),
+		  .am_out(am_out),
+		  .ni_out(ni_out)
     );
 	 
 	 ExecuteMemory_register ExecuteMemory_register_instance (
@@ -133,11 +159,15 @@ module TopModule;
         .mm_in(mm_in),
         .ALUresult_in(ALUresult_in),
         .memData_in(memData_in),
+		  .wm_in(wm_in),
+		  .ni_in(ni_in),
         .wbs_out(wbs_out),
         .wme_out(wme_out),
         .mm_out(mm_out),
         .ALUresult_out(ALUresult_out),
-        .memData_out(memData_out)
+        .memData_out(memData_out),
+		  .wm_out(wm_out),
+		  .ni_out(ni_out)
     );
 	 
 	 MemoryWriteback_register MemoryWriteback_register_instance (
@@ -148,6 +178,27 @@ module TopModule;
         .wbs_out(wbs_out),
         .memData_out(memData_out),
         .ALUresult_out(ALUresult_out)
+    );
+	 
+	 LogicalShiftLeft shift_inst (
+        .data_in(data_in),
+        .shift_amount(shift_amount),
+        .shifted_data(shifted_data)
+    );
+	 
+	 controlUnit control_inst (
+        .opCode(opCode),
+		  .flagN(flagN),
+		  .flagZ(flagZ),
+        .wbs(wbs),
+        .wme(wme),
+        .mm(mm),
+        .ALUop(ALUop),
+        .ri(ri),
+        .wre(wre),
+		  .wm(wm),
+		  .am(am),
+		  .ni(ni)
     );
     
 endmodule

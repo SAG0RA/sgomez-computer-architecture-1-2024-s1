@@ -59,7 +59,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/regfile_tb.sv
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH MemoryWriteback_register_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH controlUnit_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME regfile_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id regfile_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME regfile_tb -section_id regfile_tb
@@ -137,6 +137,23 @@ set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/MemoryWriteback_regis
 set_global_assignment -name EDA_TEST_BENCH_NAME MemoryWriteback_register_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MemoryWriteback_register_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MemoryWriteback_register_tb -section_id MemoryWriteback_register_tb
+set_global_assignment -name SYSTEMVERILOG_FILE controlUnit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE LogicalShiftLeft.sv
+set_global_assignment -name SYSTEMVERILOG_FILE negation.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comparator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/LogicalShiftLeft_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME LogicalShiftLeft_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id LogicalShiftLeft_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME LogicalShiftLeft_tb -section_id LogicalShiftLeft_tb
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/negation_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME negation_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id negation_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME negation_tb -section_id negation_tb
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/comparator_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME comparator_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id comparator_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME comparator_tb -section_id comparator_tb
+set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/controlUnit_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/regfile_tb.sv -section_id regfile_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/adder_tb.sv -section_id adder_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/subtractor_tb.sv -section_id subtractor_tb
@@ -152,8 +169,11 @@ set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/FetchDecode_register
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/DecodeExecute_register_tb.sv -section_id DecodeExecute_register_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/ExecuteMemory_register_tb.sv -section_id ExecuteMemory_register_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/MemoryWriteback_register_tb.sv -section_id MemoryWriteback_register_tb
-set_global_assignment -name SYSTEMVERILOG_FILE controlUnit.sv
-set_global_assignment -name SYSTEMVERILOG_FILE LogicalShiftLeft.sv
-set_global_assignment -name SYSTEMVERILOG_FILE negation.sv
-set_global_assignment -name SYSTEMVERILOG_FILE comparator.sv
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/LogicalShiftLeft_tb.sv -section_id LogicalShiftLeft_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/negation_tb.sv -section_id negation_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/comparator_tb.sv -section_id comparator_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME controlUnit_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id controlUnit_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME controlUnit_tb -section_id controlUnit_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/controlUnit_tb.sv -section_id controlUnit_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

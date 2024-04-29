@@ -2,7 +2,9 @@ module ALU (
     input logic [2:0] ALUop, // Entrada de control para la operación ALU
     input logic [15:0] srcA, // Primer operando
     input logic [15:0] srcB, // Segundo operando
-    output logic [15:0] ALUresult // Resultado de la operación
+    output logic [15:0] ALUresult, // Resultado de la operación
+	 output logic flagN,
+	 output logic flagZ
 );
 
     // Variables para almacenar los resultados de las operaciones
@@ -51,4 +53,7 @@ module ALU (
         endcase
     end
 
+	 // Configuración de las flags flagN y flagZ
+    assign flagN = (ALUresult == 2 );  // Flag de resultado negativo    -----   ALUresult[15] Bandera negativa (bit más significativo)
+    assign flagZ = (ALUresult == 16'h0000);  // Flag de resultado cero
 endmodule

@@ -1,5 +1,5 @@
 Flow report for Processor
-Mon Apr 29 00:29:16 2024
+Mon Apr 29 02:12:45 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Mon Apr 29 00:29:16 2024       ;
+; Flow Status                 ; Successful - Mon Apr 29 02:12:45 2024       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; Processor                                   ;
 ; Top-level Entity Name       ; TopModule                                   ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/29/2024 00:28:55 ;
+; Start date & time ; 04/29/2024 02:12:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Processor           ;
 +-------------------+---------------------+
@@ -74,15 +74,19 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                      ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+--------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 260148119377217.171437213402268            ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 260148119377217.171437834506256            ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; ALU_tb                            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; LogicalShiftLeft_tb               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; regfile_tb                        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; controlUnit_tb                    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; mux_2_tb                          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; FetchDecode_register_tb           ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; adder_tb                          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; zeroExtend_tb                     ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; MemoryWriteback_register_tb       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; comparator_tb                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; negation_tb                       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; ExecuteMemory_register_tb         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; mux_4_tb                          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                         ; --            ; --          ; PCregister_tb                     ;
@@ -94,18 +98,22 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                        ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; MemoryWriteback_register_tb                ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; controlUnit_tb                             ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                          ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)            ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/decoderMemory_tb.sv            ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/ALU_tb.sv                      ; --            ; --          ; ALU_tb                            ;
+; EDA_TEST_BENCH_FILE                  ; Testbenches/LogicalShiftLeft_tb.sv         ; --            ; --          ; LogicalShiftLeft_tb               ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/regfile_tb.sv                  ; --            ; --          ; regfile_tb                        ;
+; EDA_TEST_BENCH_FILE                  ; Testbenches/controlUnit_tb.sv              ; --            ; --          ; controlUnit_tb                    ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/mux_2_tb.sv                    ; --            ; --          ; mux_2_tb                          ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/FetchDecode_register_tb.sv     ; --            ; --          ; FetchDecode_register_tb           ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/adder_tb.sv                    ; --            ; --          ; adder_tb                          ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/zeroExtend_tb.sv               ; --            ; --          ; zeroExtend_tb                     ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/MemoryWriteback_register_tb.sv ; --            ; --          ; MemoryWriteback_register_tb       ;
+; EDA_TEST_BENCH_FILE                  ; Testbenches/comparator_tb.sv               ; --            ; --          ; comparator_tb                     ;
+; EDA_TEST_BENCH_FILE                  ; Testbenches/negation_tb.sv                 ; --            ; --          ; negation_tb                       ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/ExecuteMemory_register_tb.sv   ; --            ; --          ; ExecuteMemory_register_tb         ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/mux_4_tb.sv                    ; --            ; --          ; mux_4_tb                          ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/PCregister_tb.sv               ; --            ; --          ; PCregister_tb                     ;
@@ -115,12 +123,16 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/PCadder_tb.sv                  ; --            ; --          ; PCadder_tb                        ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; decoderMemory_tb                           ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ALU_tb                                     ; --            ; --          ; ALU_tb                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; LogicalShiftLeft_tb                        ; --            ; --          ; LogicalShiftLeft_tb               ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; regfile_tb                                 ; --            ; --          ; regfile_tb                        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; controlUnit_tb                             ; --            ; --          ; controlUnit_tb                    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; mux_2_tb                                   ; --            ; --          ; mux_2_tb                          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; FetchDecode_register_tb                    ; --            ; --          ; FetchDecode_register_tb           ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; adder_tb                                   ; --            ; --          ; adder_tb                          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; zeroExtend_tb                              ; --            ; --          ; zeroExtend_tb                     ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; MemoryWriteback_register_tb                ; --            ; --          ; MemoryWriteback_register_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; comparator_tb                              ; --            ; --          ; comparator_tb                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; negation_tb                                ; --            ; --          ; negation_tb                       ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ExecuteMemory_register_tb                  ; --            ; --          ; ExecuteMemory_register_tb         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; mux_4_tb                                   ; --            ; --          ; mux_4_tb                          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; PCregister_tb                              ; --            ; --          ; PCregister_tb                     ;
@@ -143,6 +155,10 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_NAME                  ; DecodeExecute_register_tb                  ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; ExecuteMemory_register_tb                  ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; MemoryWriteback_register_tb                ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; LogicalShiftLeft_tb                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; negation_tb                                ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; comparator_tb                              ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; controlUnit_tb                             ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                       ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                         ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                          ; --            ; --          ; --                                ;
@@ -161,8 +177,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:22     ; 1.0                     ; 4761 MB             ; 00:00:34                           ;
-; Total                  ; 00:00:22     ; --                      ; --                  ; 00:00:34                           ;
+; Analysis & Elaboration ; 00:00:21     ; 1.0                     ; 4754 MB             ; 00:00:34                           ;
+; Total                  ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

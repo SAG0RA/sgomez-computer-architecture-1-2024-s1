@@ -1,0 +1,76 @@
+module controlUnit_tb;
+
+    // Definición de señales de entrada
+    logic [3:0] opCode;
+	logic flagN, flagZ;
+	
+    // Definición de señales de salida
+    logic wbs, wme, mm;
+    logic [2:0] ALUop;
+    logic [1:0] ri;
+    logic wre, wm, am, ni;
+
+    controlUnit control_inst (
+        .opCode(opCode),
+		  .flagN(flagN),
+		  .flagZ(flagZ),
+        .wbs(wbs),
+        .wme(wme),
+        .mm(mm),
+        .ALUop(ALUop),
+        .ri(ri),
+        .wre(wre),
+		  .wm(wm),
+		  .am(am),
+		  .ni(ni)
+    );
+
+    // Inicializar valores de entrada
+    initial begin
+        // Prueba 1: OpCode 0000 (sub)
+        opCode = 4'b0000;
+		  flagN = 1'b0;
+		  flagZ = 1'b0;
+        #10;  // Esperar un poco
+        $display("OpCode: 0000, wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
+        
+        // Prueba 2: OpCode 0011 (neg)
+        opCode = 4'b0011;
+		  flagN = 1'b0;
+		  flagZ = 1'b0;
+        #10;  // Esperar un poco
+        $display("OpCode: 0011, wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
+        
+        // Prueba 3: OpCode 0100 (beq)
+        opCode = 4'b0100;
+		  flagN = 1'b0;
+		  flagZ = 1'b1;
+        #10;  // Esperar un poco
+        $display("OpCode: 0100, wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
+        
+        // Prueba 4: OpCode 0101 (bgt)
+        opCode = 4'b0101;
+		  flagN = 1'b1;
+		  flagZ = 1'b0;
+        #10;  // Esperar un poco
+        $display("OpCode: 0101, wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
+        
+        // Prueba 5: OpCode 0110 (blt)
+        opCode = 4'b0110;
+		  flagN = 1'b0;
+		  flagZ = 1'b0;
+        #10;  // Esperar un poco
+        $display("OpCode: 0110, wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
+        
+        // Prueba 6: OpCode 0111 (b)
+        opCode = 4'b0111;
+		  flagN = 1'b0;
+		  flagZ = 1'b0;
+        #10;  // Esperar un poco
+        $display("OpCode: 0111, wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
+        
+        // Finalizar la simulación
+        $finish;
+    end
+
+endmodule

@@ -5,32 +5,27 @@ module Fetch_Stage_tb;
 	logic wre;
 	logic ri;
 	
-	logic [15:0] instruction_in = 16'b0000000000000000;          
+	logic [15:0] instruction_in = 16'b0000001010000001; // sub rd=2 rs1=8 rs2=1      
    logic [15:0] instruction_out;
 	
 	logic [15:0] SignExtImmediate;
    logic [15:0] ZeroExtImmediate;
 	
-	logic [15:0] wd3 = 16'b0000000000000000;
+	logic [15:0] wd3 = 16'b0000000000001111; // guardar un 15 en rd
 	logic [15:0] rd1, rd2, rd3;
 	logic [15:0] out_mux4;	
 	
 	logic wbs_decode, wme_decode, mm_decode;
-   logic [1:0] ALUop_decode;
+   logic [2:0] ALUop_decode;
 	logic wm_decode = 0;
 	logic am_decode = 0;
 	logic ni_decode = 0;
 	
 	logic wbs_execute, wme_execute, mm_execute;
-   logic [1:0] ALUop_execute;
+   logic [2:0] ALUop_execute;
 	logic wm_execute;
 	logic am_execute;
 	logic ni_execute;
-	
-	
-	
-   
-	
 	
 	
 
@@ -116,25 +111,63 @@ module Fetch_Stage_tb;
     // Simular cambios en las entradas del registro
     initial begin
         // Ciclo 1:
-        $display("Inicio del ciclo 1");
-        $display("Instrucción en Fetch Stage: instruction_in = %b", instruction_in);
-
+        $display("Inicio");
+        $display("Instruccion que ingresa al registro Fetch: instruction_in = %b", instruction_in);
+		  $display("\n -------------------------------------------------------------------------------------");
+		  $display("Señales de control (salidas de la unidad de control):");
+		  $display("ri (Register or Immediate): %b", ri);
+		  $display("wre (Write Register Enable): %b", wre);
+		  $display("ni (Next Instruction): %b", ni);
+		  $display("ALUop-Decode (Operacion de la ALU): %b", ALUop_decode);
+		  $display("ALUop-Execute (Operacion de la ALU): %b", ALUop_execute);
+		  $display("mm-Decode (Memory or Mov): %b", mm_decode);
+		  $display("mm-Execute (Memory or Mov): %b", mm_execute);
+		  $display("wme-Decode (Write Memory Enable): %b", wme_decode);
+		  $display("wme-Execute (Write Memory Enable): %b", wme_execute);
+		  $display("wbs-Decode (WriteBack Source): %b", wbs_decode);
+		  $display("wbs-Execute (WriteBack Source): %b", wbs_execute);
+		  
+		  $display("Salida del mux de 4 entradas: %b", out_mux4);
+		  
+		  
+		  
+		  
         // Esperar un ciclo de reloj
         #20;
-
+		  $display("\n \n");
         $display("Fin del ciclo 1");
-        $display("Salidas después del ciclo 1:");
-        $display("SignExtImmediate: %b", SignExtImmediate);
-        $display("ZeroExtImmediate: %b", ZeroExtImmediate);
-        $display("wd3: %b", wd3);
-        $display("rd1: %b", rd1);
-        $display("rd2: %b", rd2);
-        $display("rd3: %b", rd3);
-        $display("out_mux4: %b", out_mux4);
-        $display("Control Unit Outputs:");
-        $display("wbs: %b, wme: %b, mm: %b, ALUop: %b, ri: %b, wre: %b, wm: %b, am: %b, ni: %b", wbs, wme, mm, ALUop, ri, wre, wm, am, ni);
-        $display("FlagN: %b, FlagZ: %b", flagN, flagZ);
-
+        $display("Señales de control (salidas de la unidad de control):");
+		  $display("ri (Register or Immediate): %b", ri);
+		  $display("wre (Write Register Enable): %b", wre);
+		  $display("ni (Next Instruction): %b", ni);
+		  $display("ALUop-Decode (Operacion de la ALU): %b", ALUop_decode);
+		  $display("ALUop-Execute (Operacion de la ALU): %b", ALUop_execute);
+		  $display("mm-Decode (Memory or Mov): %b", mm_decode);
+		  $display("mm-Execute (Memory or Mov): %b", mm_execute);
+		  $display("wme-Decode (Write Memory Enable): %b", wme_decode);
+		  $display("wme-Execute (Write Memory Enable): %b", wme_execute);
+		  $display("wbs-Decode (WriteBack Source): %b", wbs_decode);
+		  $display("wbs-Execute (WriteBack Source): %b", wbs_execute);
+		  
+		  $display("Salida del mux de 4 entradas: %b", out_mux4);
+		  
+		  #20;
+		  $display("\n \n");
+        $display("Fin del ciclo 2");
+        $display("Señales de control (salidas de la unidad de control):");
+		  $display("ri (Register or Immediate): %b", ri);
+		  $display("wre (Write Register Enable): %b", wre);
+		  $display("ni (Next Instruction): %b", ni);
+		  $display("ALUop-Decode (Operacion de la ALU): %b", ALUop_decode);
+		  $display("ALUop-Execute (Operacion de la ALU): %b", ALUop_execute);
+		  $display("mm-Decode (Memory or Mov): %b", mm_decode);
+		  $display("mm-Execute (Memory or Mov): %b", mm_execute);
+		  $display("wme-Decode (Write Memory Enable): %b", wme_decode);
+		  $display("wme-Execute (Write Memory Enable): %b", wme_execute);
+		  $display("wbs-Decode (WriteBack Source): %b", wbs_decode);
+		  $display("wbs-Execute (WriteBack Source): %b", wbs_execute);
+		  
+		  $display("Salida del mux de 4 entradas: %b", out_mux4);
         // Finalizar la simulación
         $finish;
     end

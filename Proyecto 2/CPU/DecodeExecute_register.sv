@@ -3,7 +3,7 @@ module DecodeExecute_register (
     input logic wbs_in,
     input logic wme_in,
     input logic mm_in,
-    input logic [1:0] ALUop_in,
+    input logic [2:0] ALUop_in,
 	 input logic wm_in,
 	 input logic am_in,
 	 input logic ni_in,
@@ -11,7 +11,7 @@ module DecodeExecute_register (
     output logic wbs_out,
     output logic wme_out,
     output logic mm_out,
-    output logic [1:0] ALUop_out,
+    output logic [2:0] ALUop_out,
 	 output logic wm_out,
 	 output logic am_out,
 	 output logic ni_out
@@ -20,7 +20,7 @@ module DecodeExecute_register (
     logic wbs;
     logic wme;
     logic mm;
-    logic [1:0] ALUop;
+    logic [2:0] ALUop;
 	 logic wm;
 	 logic am;
 	 logic ni;

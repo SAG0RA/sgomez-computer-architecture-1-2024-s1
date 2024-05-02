@@ -1,14 +1,16 @@
-module vga_controller #(parameter HACTIVE = 10'd250,
-						   HFP = 10'd16,
-						   HSYN = 10'd48,
-						   HBP = 10'd16,
-						   HMAX = HACTIVE + HFP + HSYN + HBP,
-						   VBP = 10'd10,
-						   VACTIVE = 10'd250,
-						   VFP = 10'd10,
-						   VSYN = 10'd2,
-						   VMAX = VACTIVE + VFP + VSYN + VBP)
-
+module vga_controller #(
+							parameter HACTIVE = 10'd256,
+							//parameter HACTIVE = 10'd250,
+							HFP = 10'd192,
+							HSYN = 10'd48,
+							HBP = 10'd192,
+							HMAX = HACTIVE + HFP + HSYN + HBP,
+							VBP = 10'd112,
+							VACTIVE = 10'd256,
+							//VACTIVE = 10'd250,
+							VFP = 10'd112,
+							VSYN = 10'd2,
+							VMAX = VACTIVE + VFP + VSYN + VBP)
 							(input logic vga_clk,
 							output logic h_sync, v_sync, sync_b, blank_b,
 							output logic [9:0] x, y);

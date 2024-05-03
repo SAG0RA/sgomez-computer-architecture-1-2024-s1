@@ -1,3 +1,4 @@
+
 import cv2
 
 # Carga la imagen en escala de grises

@@ -27,6 +27,11 @@ module Decode_Stage_tb;
    logic wm_execute;
    logic am_execute;
    logic ni_execute;
+	
+	logic [15:0] srcA_in;
+	logic [15:0] srcB_in;
+	logic [15:0] srcA_out;
+	logic [15:0] srcB_out;
 
 	 
 	FetchDecode_register FetchDecode_register_instance (
@@ -80,6 +85,8 @@ module Decode_Stage_tb;
       .select(ri),
       .out(out_mux4)
    );
+	assign srcA_in = rd1;
+	assign srcB_in = out_mux4;
 	 
 	DecodeExecute_register DecodeExecute_register_instance (
 		.clk(clk),
@@ -90,13 +97,17 @@ module Decode_Stage_tb;
       .wm_in(wm_decode),
       .am_in(am_decode),
       .ni_in(ni_decode),
+		.srcA_in(srcA_in),
+		.srcB_in(srcB_in),
       .wbs_out(wbs_execute),
       .wme_out(wme_execute),
       .mm_out(mm_execute),
       .ALUop_out(ALUop_execute),
       .wm_out(wm_execute),
       .am_out(am_execute),
-      .ni_out(ni_execute)
+      .ni_out(ni_execute),
+		.srcA_out(srcA_out),
+		.srcB_out(srcB_out)
    );
           
    always #10 clk = ~clk;
@@ -124,6 +135,7 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
+		
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("\n ***** Señales del registro Decode-Execute (entradas) ***** \n");
 		$display("wbs-Decode (WriteBack Source): %b", wbs_decode);
@@ -133,6 +145,8 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
+		$display("Dato srcA_in: %b", srcA_in);
+		$display("Dato srcB_in: %b", srcB_in);
 		$display("\n ***** Señales del registro Decode-Execute (Salidas) ***** \n");
 		$display("wbs-Execute (WriteBack Source): %b", wbs_execute);
 		$display("wme-Execute (Write Memory Enable): %b", wme_execute);
@@ -141,6 +155,8 @@ module Decode_Stage_tb;
 		$display("wm-Execute (Write Memory): %b", wm_execute);
 		$display("am-Execute (      Memory): %b", am_execute);
 		$display("ni-Execute (Next Instruction): %b", ni_execute);
+		$display("Dato srcA_out: %b", srcA_out);
+		$display("Dato srcB_out: %b", srcB_out);
 		$display("\n \n \n");
 		/////////////////////////////////////////////////////////////////////////////////////
 		instruction_fetch = 16'b1000000100000010; // mov rd=1 Imm=2
@@ -174,6 +190,8 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
+		$display("Dato srcA_in: %b", srcA_in);
+		$display("Dato srcB_in: %b", srcB_in);
 		$display("\n ***** Señales del registro Decode-Execute (Salidas) ***** \n");
 		$display("wbs-Execute (WriteBack Source): %b", wbs_execute);
 		$display("wme-Execute (Write Memory Enable): %b", wme_execute);
@@ -182,8 +200,9 @@ module Decode_Stage_tb;
 		$display("wm-Execute (Write Memory): %b", wm_execute);
 		$display("am-Execute (      Memory): %b", am_execute);
 		$display("ni-Execute (Next Instruction): %b", ni_execute);
+		$display("Dato srcA_out: %b", srcA_out);
+		$display("Dato srcB_out: %b", srcB_out);
 		$display("\n \n \n");
-		
 		/////////////////////////////////////////////////////////////////////////////////////
 		
 		instruction_fetch = 16'b0000001010000001; // sub rd=2 rs1=8 rs2=1
@@ -217,6 +236,8 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
+		$display("Dato srcA_in: %b", srcA_in);
+		$display("Dato srcB_in: %b", srcB_in);
 		$display("\n ***** Señales del registro Decode-Execute (Salidas) ***** \n");
 		$display("wbs-Execute (WriteBack Source): %b", wbs_execute);
 		$display("wme-Execute (Write Memory Enable): %b", wme_execute);
@@ -225,6 +246,8 @@ module Decode_Stage_tb;
 		$display("wm-Execute (Write Memory): %b", wm_execute);
 		$display("am-Execute (      Memory): %b", am_execute);
 		$display("ni-Execute (Next Instruction): %b", ni_execute);
+		$display("Dato srcA_out: %b", srcA_out);
+		$display("Dato srcB_out: %b", srcB_out);
 		$display("\n \n \n");
 		$finish;
 	end

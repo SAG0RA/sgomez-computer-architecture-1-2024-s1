@@ -3,11 +3,12 @@ module Decode_Stage_tb;
 	
 	logic [15:0] instruction_fetch;    
    logic [15:0] instruction_decode;
+	
 	logic wbs_decode, wme_decode, mm_decode;
    logic [2:0] ALUop_decode;
-   logic wm_decode = 0;
-   logic am_decode = 0;
-   logic ni_decode = 0;
+   logic wm_decode;
+   logic am_decode;
+   logic ni_decode;
 	
 	logic flagN;
 	logic flagZ;
@@ -18,7 +19,7 @@ module Decode_Stage_tb;
 	
 	logic [15:0] ZeroExtImmediate;
 	
-	logic [15:0] wd3 = 16'b0000000000001111; // guardar un 15 en rd
+	logic [15:0] wd3 = 16'b0000000000000010;//Simulando Valor de prueba que proviene de writeback
 	logic [15:0] rd1, rd2, rd3;
    logic [15:0] out_mux4;
 	
@@ -27,11 +28,8 @@ module Decode_Stage_tb;
    logic wm_execute;
    logic am_execute;
    logic ni_execute;
-	
-	logic [15:0] srcA_in;
-	logic [15:0] srcB_in;
-	logic [15:0] srcA_out;
-	logic [15:0] srcB_out;
+	logic [15:0] srcA_execute;
+	logic [15:0] srcB_execute;
 
 	 
 	FetchDecode_register FetchDecode_register_instance (
@@ -40,7 +38,7 @@ module Decode_Stage_tb;
       .instruction_out(instruction_decode)
    );
     
-	controlUnit control_inst (
+	controlUnit control_unit_instance (
       .opCode(FetchDecode_register_instance.instruction_out[15:12]),
       .flagN(flagN),
       .flagZ(flagZ),
@@ -67,7 +65,7 @@ module Decode_Stage_tb;
      
    regfile regfile_instance (
       .clk(clk),
-      .wre(wre),
+      .wre(control_unit_instance.wre),
       .a1(FetchDecode_register_instance.instruction_out[3:0]),
       .a2(FetchDecode_register_instance.instruction_out[7:4]),
       .a3(FetchDecode_register_instance.instruction_out[11:8]),
@@ -76,18 +74,17 @@ module Decode_Stage_tb;
       .rd2(rd2),
       .rd3(rd3)
    );
+	
 	 
 	mux_4 mux_4_instance (
-      .data0(rd2),
-      .data1(rd3),
-      .data2(SignExtImmediate),
-      .data3(ZeroExtImmediate),
-      .select(ri),
+      .data0(regfile_instance.rd2),
+      .data1(regfile_instance.rd3),
+      .data2(signExtend_instance.SignExtImmediate),
+      .data3(zeroExtend_instance.ZeroExtImmediate),
+      .select(control_unit_instance.ri),
       .out(out_mux4)
    );
-	assign srcA_in = rd1;
-	assign srcB_in = out_mux4;
-	 
+
 	DecodeExecute_register DecodeExecute_register_instance (
 		.clk(clk),
       .wbs_in(wbs_decode),
@@ -97,8 +94,8 @@ module Decode_Stage_tb;
       .wm_in(wm_decode),
       .am_in(am_decode),
       .ni_in(ni_decode),
-		.srcA_in(srcA_in),
-		.srcB_in(srcB_in),
+		.srcA_in(regfile_instance.rd1),
+		.srcB_in(mux_4_instance.out),
       .wbs_out(wbs_execute),
       .wme_out(wme_execute),
       .mm_out(mm_execute),
@@ -106,13 +103,13 @@ module Decode_Stage_tb;
       .wm_out(wm_execute),
       .am_out(am_execute),
       .ni_out(ni_execute),
-		.srcA_out(srcA_out),
-		.srcB_out(srcB_out)
+		.srcA_out(srcA_execute),
+		.srcB_out(srcB_execute)
    );
           
    always #10 clk = ~clk;
 	initial begin
-		instruction_fetch = 16'b1000100000000111; // mov rd=8 Imm=7
+		instruction_fetch = 16'b0001000000010010; // add rd=0, rs1=1, rs2=2 Tipo R
 		#20;
 		// Ciclo 1:
 		$display("Inicio del primer ciclo");
@@ -136,6 +133,20 @@ module Decode_Stage_tb;
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
 		
+		
+		$display("------------------------------------------------------------------------------------- \n");
+		$display("\n ***** Señales del Banco de Registros ***** \n");
+		$display("\n ***** Entradas ***** \n");
+		$display("wre (WriteBack enable): %b", wre);
+		$display("a1: %b", FetchDecode_register_instance.instruction_out[3:0]);
+		$display("a2: %b", FetchDecode_register_instance.instruction_out[7:4]);
+		$display("a3: %b", FetchDecode_register_instance.instruction_out[11:8]);
+		$display("wd3: %b", wd3);
+		$display("\n ***** Salidas ***** \n");
+		$display("rd1: %b", rd1);
+		$display("rd2: %b", rd2);
+		$display("rd3: %b", rd3);
+		
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("\n ***** Señales del registro Decode-Execute (entradas) ***** \n");
 		$display("wbs-Decode (WriteBack Source): %b", wbs_decode);
@@ -145,8 +156,6 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
-		$display("Dato srcA_in: %b", srcA_in);
-		$display("Dato srcB_in: %b", srcB_in);
 		$display("\n ***** Señales del registro Decode-Execute (Salidas) ***** \n");
 		$display("wbs-Execute (WriteBack Source): %b", wbs_execute);
 		$display("wme-Execute (Write Memory Enable): %b", wme_execute);
@@ -155,11 +164,11 @@ module Decode_Stage_tb;
 		$display("wm-Execute (Write Memory): %b", wm_execute);
 		$display("am-Execute (      Memory): %b", am_execute);
 		$display("ni-Execute (Next Instruction): %b", ni_execute);
-		$display("Dato srcA_out: %b", srcA_out);
-		$display("Dato srcB_out: %b", srcB_out);
+		$display("Dato srcA_out: %b", srcA_execute);
+		$display("Dato srcB_out: %b", srcB_execute);
 		$display("\n \n \n");
 		/////////////////////////////////////////////////////////////////////////////////////
-		instruction_fetch = 16'b1000000100000010; // mov rd=1 Imm=2
+		instruction_fetch = 16'b0100000000001000; // beq Address = 0x8 Tipo J
 		// Ciclo 2:
       $display("Inicio del segundo ciclo");
       $display("Instruccion que ingresa al registro Fetch: instruction_fetch = %b", FetchDecode_register_instance.instruction_in);
@@ -182,6 +191,18 @@ module Decode_Stage_tb;
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
 		$display("------------------------------------------------------------------------------------- \n");
+		$display("\n ***** Señales del Banco de Registros ***** \n");
+		$display("\n ***** Entradas ***** \n");
+		$display("wre (WriteBack enable): %b", wre);
+		$display("a1: %b", FetchDecode_register_instance.instruction_out[3:0]);
+		$display("a2: %b", FetchDecode_register_instance.instruction_out[7:4]);
+		$display("a3: %b", FetchDecode_register_instance.instruction_out[11:8]);
+		$display("wd3: %b", wd3);
+		$display("\n ***** Salidas ***** \n");
+		$display("rd1: %b", rd1);
+		$display("rd2: %b", rd2);
+		$display("rd3: %b", rd3);
+		$display("------------------------------------------------------------------------------------- \n");
 		$display("\n ***** Señales del registro Decode-Execute (entradas) ***** \n");
 		$display("wbs-Decode (WriteBack Source): %b", wbs_decode);
 		$display("wme-Decode (Write Memory Enable): %b", wme_decode);
@@ -190,8 +211,6 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
-		$display("Dato srcA_in: %b", srcA_in);
-		$display("Dato srcB_in: %b", srcB_in);
 		$display("\n ***** Señales del registro Decode-Execute (Salidas) ***** \n");
 		$display("wbs-Execute (WriteBack Source): %b", wbs_execute);
 		$display("wme-Execute (Write Memory Enable): %b", wme_execute);
@@ -200,12 +219,12 @@ module Decode_Stage_tb;
 		$display("wm-Execute (Write Memory): %b", wm_execute);
 		$display("am-Execute (      Memory): %b", am_execute);
 		$display("ni-Execute (Next Instruction): %b", ni_execute);
-		$display("Dato srcA_out: %b", srcA_out);
-		$display("Dato srcB_out: %b", srcB_out);
+		$display("Dato srcA_out: %b", srcA_execute);
+		$display("Dato srcB_out: %b", srcB_execute);
 		$display("\n \n \n");
 		/////////////////////////////////////////////////////////////////////////////////////
 		
-		instruction_fetch = 16'b0000001010000001; // sub rd=2 rs1=8 rs2=1
+		instruction_fetch = 16'b10000010000000110010; // mov rd=2, Imma=50
 		// Ciclo 3:
 		$display("Inicio del tercer ciclo");
       $display("Instruccion que ingresa al registro Fetch: instruction_fetch = %b", FetchDecode_register_instance.instruction_in);
@@ -228,6 +247,18 @@ module Decode_Stage_tb;
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
 		$display("------------------------------------------------------------------------------------- \n");
+		$display("\n ***** Señales del Banco de Registros ***** \n");
+		$display("\n ***** Entradas ***** \n");
+		$display("wre (WriteBack enable): %b", wre);
+		$display("a1: %b", FetchDecode_register_instance.instruction_out[3:0]);
+		$display("a2: %b", FetchDecode_register_instance.instruction_out[7:4]);
+		$display("a3: %b", FetchDecode_register_instance.instruction_out[11:8]);
+		$display("wd3: %b", wd3);
+		$display("\n ***** Salidas ***** \n");
+		$display("rd1: %b", rd1);
+		$display("rd2: %b", rd2);
+		$display("rd3: %b", rd3);
+		$display("------------------------------------------------------------------------------------- \n");
 		$display("\n ***** Señales del registro Decode-Execute (entradas) ***** \n");
 		$display("wbs-Decode (WriteBack Source): %b", wbs_decode);
 		$display("wme-Decode (Write Memory Enable): %b", wme_decode);
@@ -236,8 +267,6 @@ module Decode_Stage_tb;
 		$display("wm-Decode (Write Memory): %b", wm_decode);
 		$display("am-Decode (      Memory): %b", am_decode);
 		$display("ni-Decode (Next Instruction): %b", ni_decode);
-		$display("Dato srcA_in: %b", srcA_in);
-		$display("Dato srcB_in: %b", srcB_in);
 		$display("\n ***** Señales del registro Decode-Execute (Salidas) ***** \n");
 		$display("wbs-Execute (WriteBack Source): %b", wbs_execute);
 		$display("wme-Execute (Write Memory Enable): %b", wme_execute);
@@ -246,8 +275,8 @@ module Decode_Stage_tb;
 		$display("wm-Execute (Write Memory): %b", wm_execute);
 		$display("am-Execute (      Memory): %b", am_execute);
 		$display("ni-Execute (Next Instruction): %b", ni_execute);
-		$display("Dato srcA_out: %b", srcA_out);
-		$display("Dato srcB_out: %b", srcB_out);
+		$display("Dato srcA_out: %b", srcA_execute);
+		$display("Dato srcB_out: %b", srcB_execute);
 		$display("\n \n \n");
 		$finish;
 	end

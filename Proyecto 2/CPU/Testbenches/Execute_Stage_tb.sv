@@ -3,12 +3,13 @@ module Execute_Stage_tb;
 	logic wbs_decode = 0; 
 	logic wme_decode = 0;
 	logic mm_decode = 0;
-   logic [2:0] ALUop_decode;
+   logic [2:0] ALUop_decode = 3'b001;
    logic wm_decode = 0;
    logic am_decode = 0;
    logic ni_decode = 0;
-	logic [15:0] srcA_decode;
-	logic [15:0] srcB_decode;
+	logic [15:0] srcA_decode = 16'b000000000000000;
+	logic [15:0] srcB_decode = 16'b000000000000000;
+	
 	logic wbs_execute, wme_execute, mm_execute;
    logic [2:0] ALUop_execute;
    logic wm_execute;
@@ -18,7 +19,6 @@ module Execute_Stage_tb;
 	logic [15:0] srcB_execute;
 	logic [15:0] alu_result_execute;
 	logic [15:0] write_Data_execute;
-	
 	
 	logic wbs_memory, wme_memory, mm_memory;	
 	logic [15:0] alu_result_memory;
@@ -75,10 +75,10 @@ module Execute_Stage_tb;
       .mm_in(DecodeExecute_register_instance.mm_out),
 		
       .ALUresult_in(ALU_instance.ALUresult),
-      .memData_in(write_Data_execute),
+      .memData_in(decoder_instance.data_out_1),
 		
-      .wm_in(DecodeExecute_register_instance.wm_in),
-      .ni_in(DecodeExecute_register_instance.ni_in),
+      .wm_in(DecodeExecute_register_instance.wm_out),
+      .ni_in(DecodeExecute_register_instance.ni_out),
 		
 		
       .wbs_out(wbs_memory),

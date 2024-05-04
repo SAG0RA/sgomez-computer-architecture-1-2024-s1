@@ -9,13 +9,23 @@ def open_file_dialog():
     if file_path:
         with open(file_path, 'r') as file:
             lines = file.readlines()
-            instructions.extend(lines)
+            clear_code = []
+            for line in lines:
+                line = line.strip()
+                if line:
+                    clear_code.append(line)
+            
+            instructions.extend(clear_code)
+            get_labels()
+            print("Etiquetas:")
+            print(labels)
+            print("Instrucciones:")
             print(instructions)
             print("Archivo cargado con éxito.")
             machine_code = ""
             for instruction in instructions:
                 binary_instruction = ""
-                result = parse_instruction(instruction)
+                result = parse_instruction(instruction, labels)
                 if result:
                     opcode, operands = result
                     print(f"Opcode: {opcode}, Operands: {operands}")
@@ -30,7 +40,11 @@ def open_file_dialog():
 
                     if len(operands) == 1:
                         for operand in operands:
-                            binary_instruction += get_operand(operand, '012b')
+                            branch = get_branch(operand)
+                            if branch:
+                                binary_instruction += branch
+                            else:
+                                print("La etiqueta " + operand + " no existe")
                     
                     if len(binary_instruction) < 16:
                         binary_instruction = binary_instruction.ljust(16, '0')
@@ -96,19 +110,28 @@ def get_operand(opcode, filling):
             return "1111"
     return "1111"
 
-def parse_instruction(instruction):
+def get_branch(instruction):
+    for i in labels:
+        if instruction == i[0]:
+            binary_value = format(i[1], '012b')
+            return binary_value
+    return False
+
+def parse_instruction(instruction, labels):
     # Expresión regular para instrucciones en formato general (ADD, SUB, MOV, LDR, STR)
     arithmetic_regex = r'(\b(?:ADD|SUB|LSL)\b)\s+(R\d+),\s*(R\d+),\s*(.*)'
 
     # Expresión regular para instrucciones de salto (BEQ, BGT, BLT, B)
-    branch_regex = r'(\b(?:BEQ|BGT|BLT|B)\b)\s+(0x[0-9A-Fa-f]+)'
+    branch_regex = r'(\b(?:BEQ|BGT|BLT|B)\b)\s+([^\s]+)'
 
     #Expresión regular para las operaciones lógicas
     logic_regex  = r'\b(CMP|NEG)\s+(R\d+|\#\d+),\s+(R\d+|\#\d+)\b'
 
-    # Expresion para datos
-    data_regex = r'(\b(?:MOV|STR|LDR)\b)\s+(R\d+|\#?\w+),\s*(R\d+|\#?\w+)'
-    #data_regex = r'(\b(?:MOV|STR|LDR)\b)\s+(R(?:1[0-5]|[0-9])|\#[0-250]+),\s*(R(?:1[0-5]|[0-9])|\#[0-9]+)'
+    # Expresion para datos en memoria
+    data_regex = r'(\b(?:STR|LDR)\b)\s+(R\d+),\s*(\[R\d+\])'
+    
+    # Expresion para datos en ejecucion
+    mov_regex = r'\b(MOV\b)\s+(R\d+),\s+(R\d+|#\d+)\b'
 
     # Verificar si la instrucción coincide con alguno de los patrones
     match = re.match(arithmetic_regex, instruction)
@@ -133,14 +156,41 @@ def parse_instruction(instruction):
     if match:
         opcode = match.group(1)
         operands = match.groups()[1:]
+        operands_1 = []
+        for op in operands:
+            op = op.replace('[', '').replace(']', '')
+            operands_1.append(op)
+        return opcode, operands_1
+    
+    match = re.match(mov_regex, instruction)
+    if match:
+        opcode = match.group(1)
+        operands = match.groups()[1:]
         return opcode, operands
-
+    
     return False
+    
+def parse_label(instruction):
+    label_regex = r'^[^\s:]+:$'
+    match = re.match(label_regex, instruction)
+    if match:
+        index = instructions.index(instruction)
+        label = [instruction[:len(instruction)-1], index]
+        instructions.remove(instruction)
+        return label
+    return False
+
+def get_labels():
+    for instruction in instructions:
+        label = parse_label(instruction)
+        if label:
+            labels.append(label)
 
 root = tk.Tk()
 root.title("Compilador")
 
 instructions = []
+labels = []
 
 open_button = tk.Button(root, text="Seleccionar Archivo", command=open_file_dialog)
 open_button.pack(padx=10, pady=10)

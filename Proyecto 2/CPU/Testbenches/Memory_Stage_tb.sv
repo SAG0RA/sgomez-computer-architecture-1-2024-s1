@@ -1,13 +1,15 @@
+`timescale 1ps/1ps
+
 module Memory_Stage_tb;
 	 
 	logic clk = 0;
 	logic wbs_execute = 0; 
-	logic wme_execute = 0;
+	logic wme_execute = 1;
 	logic mm_execute = 0;
    logic [2:0] ALUop_execute = 3'b001;
    logic wm_execute = 0;
    logic am_execute = 0;
-   logic ni_execute = 0;	
+   logic ni_execute = 1;	
 	logic [15:0] alu_result_execute  = 16'b0000000000000010;
 	logic [15:0] write_Data_execute  = 16'b0000000000000010;
 	
@@ -16,18 +18,17 @@ module Memory_Stage_tb;
 	logic [15:0] write_Data_memory;
 	logic wm_memory;
 	logic ni_memory;
-	logic wbs_writeback;
-	logic [15:0] memData_writeback;
-	logic [15:0] alu_result_writeback;
-	logic ni_writeback;
-	
 	
 	logic [15:0] data1;
 	logic [15:0] data2;
 	logic [15:0] muxResult;
 	logic [15:0] readData;
-
-
+	
+	logic wbs_writeback;
+	logic [15:0] memData_writeback;
+	logic [15:0] alu_result_writeback;
+	logic ni_writeback;
+	
    ExecuteMemory_register ExecuteMemory_register_instance (
 		.clk(clk),
       .wbs_in(wbs_execute),
@@ -53,7 +54,6 @@ module Memory_Stage_tb;
 	decoderMemory decoderMemory_instance (
 		.data_in(ExecuteMemory_register_instance.ALUresult_out),
       .select(ExecuteMemory_register_instance.mm_out),
-		//Ajustar esta asignacion.
       .data_out_0(data1), 
       .data_out_1(data2)  
    );
@@ -66,21 +66,20 @@ module Memory_Stage_tb;
    );
 	
 	
-	//Ingresar a la memoria de datos
-	//Enable: ExecuteMemory_register_instance.wme_out
-	//Address: decoderMemory_instance.data_out_0
-	//RD: data obtenida del address
-	//WriteData: ExecuteMemory_register_instance.memData_out
-	assign readDAta = decoderMemory_instance.data_out_0;
-	
+	RAM ram_instance(.clock(clk),
+		.data(ExecuteMemory_register_instance.memData_out),
+		.rdaddress(decoderMemory_instance.data_out_0),
+		.wraddress(decoderMemory_instance.data_out_0),
+		.wren(ExecuteMemory_register_instance.wme_out),
+		.q(readDAta)
+	);	
 
    MemoryWriteback_register MemoryWriteback_register_instance (
       .clk(clk),
       .wbs_in(ExecuteMemory_register_instance.wbs_in),
-      .memData_in(readDAta),
+      .memData_in(ram_instance.q),
       .ALUresult_in(mux_2_instance.out),
-      .ni_in(ni_in), 
-		
+      .ni_in(ExecuteMemory_register_instance.ni_out), 
       .wbs_out(wbs_writeback),
       .memData_out(memData_writeback),
       .ALUresult_out(alu_result_writeback),

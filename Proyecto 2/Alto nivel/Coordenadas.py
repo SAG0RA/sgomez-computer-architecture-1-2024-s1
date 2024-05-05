@@ -63,7 +63,7 @@ def generate_mif(text):
 
     for char in text:
         if char == ' ':
-            current_col += 10  # Increase column position for the next letter
+            current_col += 10  # Incrementa en 10 en X para la siguiente letra
             continue
 
         coordinates = generate_coordinates(char)
@@ -73,24 +73,23 @@ def generate_mif(text):
             mif_content += f"{current_address}: {y + current_row};\n"
             current_address += 1
 
-        # Update column position for the next letter
+        # Actualiza +10 en X para la siguiente letra
         current_col += 10
         
-        # Check if we need to move to the next row
-        if current_col >= 250:  # If column position exceeds width
-            current_row += 10    # Move to the next row (increment by 10)
-            current_col = 0      # Reset column position
+        # Revisa si toca salto de fila
+        if current_col >= 250:  # Si la columna excede el ancho
+            current_row += 10    # Mover a la siguiente fila (+10 en Y)
+            current_col = 0      # Resetear X
 
-        # Check if we need to move to the next row due to max 25 letters per row
+        # Revisa si se necesita mover a la siguiente columna, maximo 25 caracteres por fila
         if current_col == 0 and current_row % 20 == 0 and current_row != 0:
-            current_row += 10    # Move to the next row (increment by 10)
-
-    mif_content += f"[{current_address}..8192]: 250;\nEND;"
+            current_row += 10    # Mover a la siguiente fila (+10 en Y)
+    mif_content += "END;"
     return mif_content
 
 def main():
     text = input("Introduce un texto (max 300 caracteres, solo A-Z en mayusculas): ")
-    text = text[:300].upper()  # Limit to 300 characters and convert to uppercase
+    text = text[:300].upper()  
 
     mif_content = generate_mif(text)
     
@@ -99,6 +98,7 @@ def main():
 
     with open(file_path, "w") as f:
         f.write(mif_content)
+
 
 if __name__ == "__main__":
     main()

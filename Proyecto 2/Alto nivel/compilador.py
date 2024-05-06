@@ -17,18 +17,13 @@ def open_file_dialog():
             
             instructions.extend(clear_code)
             get_labels()
-            print("Etiquetas:")
-            print(labels)
-            print("Instrucciones:")
-            print(instructions)
             print("Archivo cargado con éxito.")
             machine_code = ""
             for instruction in instructions:
                 binary_instruction = ""
-                result = parse_instruction(instruction, labels)
+                result = parse_instruction(instruction.upper(), labels)
                 if result:
                     opcode, operands = result
-                    print(f"Opcode: {opcode}, Operands: {operands}")
                     binary_instruction += get_opcode(opcode)
                     if len(operands) == 3:
                         for operand in operands:
@@ -96,9 +91,9 @@ def get_operand(opcode, filling):
             return "1111"
     if opcode.startswith("#"):
         try:
-            immediate = int(opcode[1:])
-            binary_value = format(immediate, filling)
-            return binary_value
+            binary_value = bin(int(opcode[1:]))[2:]
+            ceros = 8 - len(binary_value)
+            return "0" * ceros + binary_value
         except ValueError:
             return "1111"
     if opcode.startswith("0x"):
@@ -113,7 +108,8 @@ def get_operand(opcode, filling):
 def get_branch(instruction):
     for i in labels:
         if instruction == i[0]:
-            binary_value = format(i[1], '012b')
+            print("Salto a: " + str(instruction) + " en la posicion: " + str(i[1]))
+            binary_value = format(i[1] + 1, '012b')
             return binary_value
     return False
 
@@ -125,13 +121,13 @@ def parse_instruction(instruction, labels):
     branch_regex = r'(\b(?:BEQ|BGT|BLT|B)\b)\s+([^\s]+)'
 
     #Expresión regular para las operaciones lógicas
-    logic_regex  = r'\b(CMP|NEG)\s+(R\d+|\#\d+),\s+(R\d+|\#\d+)\b'
+    logic_regex  = r'\b(CMP|NEG)\s+(R\d+),\s+(R\d+)\b'
 
     # Expresion para datos en memoria
     data_regex = r'(\b(?:STR|LDR)\b)\s+(R\d+),\s*(\[R\d+\])'
     
     # Expresion para datos en ejecucion
-    mov_regex = r'\b(MOV\b)\s+(R\d+),\s+(R\d+|#\d+)\b'
+    mov_regex = r'\b(MOV\b)\s+(R\d+),\s+(R\d+|#-?\d+)\b'
 
     # Verificar si la instrucción coincide con alguno de los patrones
     match = re.match(arithmetic_regex, instruction)
@@ -175,7 +171,7 @@ def parse_label(instruction):
     match = re.match(label_regex, instruction)
     if match:
         index = instructions.index(instruction)
-        label = [instruction[:len(instruction)-1], index]
+        label = [instruction[:len(instruction)-1].upper(), index]
         instructions.remove(instruction)
         return label
     return False
@@ -191,6 +187,7 @@ root.title("Compilador")
 
 instructions = []
 labels = []
+stall = "1111111111111111\n"
 
 open_button = tk.Button(root, text="Seleccionar Archivo", command=open_file_dialog)
 open_button.pack(padx=10, pady=10)

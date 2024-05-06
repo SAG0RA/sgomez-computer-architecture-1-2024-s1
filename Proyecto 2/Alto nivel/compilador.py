@@ -27,11 +27,11 @@ def open_file_dialog():
                     binary_instruction += get_opcode(opcode)
                     if len(operands) == 3:
                         for operand in operands:
-                            binary_instruction += get_operand(operand, '04b')
+                            binary_instruction += get_operand(operand, 4)
 
                     if len(operands) == 2:
                         for operand in operands:
-                            binary_instruction += get_operand(operand, '08b')
+                            binary_instruction += get_operand(operand, 8)
 
                     if len(operands) == 1:
                         for operand in operands:
@@ -44,11 +44,13 @@ def open_file_dialog():
                     if len(binary_instruction) < 16:
                         binary_instruction = binary_instruction.ljust(16, '0')
                     binary_instruction += '\n'
-                    machine_code += binary_instruction
+                    machine_code += binary_instruction + 5 * stall
                     
                 else:
                     print("Formato de instrucción no válido:", instruction)
             file.close()
+
+            print(labels)
 
             with open(output, 'w') as out:
                 out.write(machine_code)
@@ -85,22 +87,17 @@ def get_operand(opcode, filling):
     if opcode.startswith("R"):
         try:
             reg_number = int(opcode[1:])
-            binary_value = format(reg_number, '04b')
-            return binary_value
+            return bin(reg_number)[2:].zfill(4)
         except ValueError:
             return "1111"
     if opcode.startswith("#"):
         try:
-            binary_value = bin(int(opcode[1:]))[2:]
-            ceros = 8 - len(binary_value)
-            return "0" * ceros + binary_value
-        except ValueError:
-            return "1111"
-    if opcode.startswith("0x"):
-        try:
-            immediate = int(opcode[2:])
-            binary_value = format(immediate, filling)
-            return binary_value
+            immediate = int(opcode[1:])
+            if immediate < 0:
+                complemento = (immediate + 2**filling) % 2**filling
+                return bin(complemento)[2:].zfill(filling)
+            else:
+                return bin(immediate)[2:].zfill(filling)
         except ValueError:
             return "1111"
     return "1111"
@@ -109,7 +106,7 @@ def get_branch(instruction):
     for i in labels:
         if instruction == i[0]:
             print("Salto a: " + str(instruction) + " en la posicion: " + str(i[1]))
-            binary_value = format(i[1] + 1, '012b')
+            binary_value = format(i[1], '012b')
             return binary_value
     return False
 

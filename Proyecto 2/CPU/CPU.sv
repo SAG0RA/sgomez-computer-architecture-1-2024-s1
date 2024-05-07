@@ -3,7 +3,14 @@ module CPU(input logic clk ,input logic rst);
    logic [15:0] instruction_decode;
 	logic [15:0] alu_pc;
 	logic [15:0] mux_pc;
-   logic [15:0] address_pc = 16'b0000000000000000;
+   logic [15:0] address_pc;
+	
+	// Señales de riesgos y control de flujo
+	logic [3:0] current_opcode;
+   logic [3:0] previous_opcode;
+   logic [3:0] previous_previous_opcode;
+   logic stall_fetch_decode;
+   logic stall_decode_execute;
 	
 	logic flagN;
 	logic flagZ;
@@ -57,6 +64,7 @@ module CPU(input logic clk ,input logic rst);
 	
 	logic [15:0] mux_2_writeback_result;
 	
+	//Etapa Fetch
 	PCregister PCregister_instance(
 		.clk(clk),
 		.reset(reset),
@@ -92,9 +100,9 @@ module CPU(input logic clk ,input logic rst);
       .instruction_out(instruction_decode)
     );
 	 
-	   
+	//Etapa Decode   
 	controlUnit control_unit (
-      .opCode(instruction_decode[15:12]),
+      .opCode(current_opcode),
       .flagN(flagN),
       .flagZ(flagZ),
       .wbs(wbs_decode),
@@ -161,7 +169,17 @@ module CPU(input logic clk ,input logic rst);
 		.srcB_out(srcB_execute)
    );
 	
+	// Unidad de detección de riesgos utilizando opcode
+   HazardDetectionUnit hazard_unit (
+       .current_opcode(current_opcode),
+       .previous_opcode(previous_instruction_opcode),
+       .previous_previous_opcode(previous_previous_opcode),
+		 .stall_current(stall_fetch_decode),
+		 .stall_previous(stall_decode_execute)
+   );
+
 	
+	//Etapa Execute
 	ALU ALU_memory (
       .ALUop(ALUop_execute),       
       .srcA(srcA_execute),
@@ -223,6 +241,8 @@ module CPU(input logic clk ,input logic rst);
 		.wren(wme_memory),
 		.q(readDAta_memory)
 	);	
+	
+	//Etapa Writeback
 
    MemoryWriteback_register MemoryWriteback_register(
       .clk(clk),
@@ -243,6 +263,24 @@ module CPU(input logic clk ,input logic rst);
       .select(wbs_writeback),
       .out(mux_2_writeback_result)
    );
+	
+	always_ff @(posedge clk or posedge rst) begin
+		if (rst) begin
+         previous_opcode <= 4'b0000;
+         previous_previous_opcode <= 4'b0000;
+      end else begin
+         // Etapa Fetch
+         if (!stall_fetch_decode) begin
+            
+         end
 
+         // Etapa Decode
+         if (!stall_decode_execute) begin
+            current_opcode <= instruction_decode[15:12];
+            previous_opcode <= current_opcode;
+            previous_previous_opcode <= previous_opcode;         end
+
+        end
+	end
 
 endmodule

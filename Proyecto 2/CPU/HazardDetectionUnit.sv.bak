@@ -1,0 +1,24 @@
+module HazardDetectionUnit(
+    input logic [1:0] current_instruction_type,
+    input logic [1:0] previous_instruction_type,
+    input logic [1:0] previous_previous_instruction_type,
+    input logic [1:0] current_instruction_dst,
+    input logic [1:0] previous_instruction_src1,
+    input logic [1:0] previous_instruction_src2,
+    input logic [1:0] previous_previous_instruction_dst,
+    output logic stall_current,
+    output logic stall_previous
+);
+
+    // Detecta riesgos de datos (RAW)
+    assign stall_current = (
+        (current_instruction_dst == previous_instruction_src1) ||
+        (current_instruction_dst == previous_instruction_src2)
+    );
+
+    assign stall_previous = (
+        (previous_instruction_dst == previous_previous_instruction_src1) ||
+        (previous_instruction_dst == previous_previous_instruction_src2)
+    );
+
+endmodule

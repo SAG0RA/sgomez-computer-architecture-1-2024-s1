@@ -13,7 +13,7 @@ module TopModule(
 	
 	logic enable = 1'b1;
 	
-	assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
+	//assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
 	
 	pll vga_pll(.clk(clk), .vga_clk(vga_clk));
 	

@@ -1,13 +1,13 @@
 module WriteBack_Stage_tb;
 	logic clk = 0;
-	logic wbs_memory = 0; 
-	logic [15:0] alu_result_memory = 16'b0000000000000010;
-	logic [15:0] write_Data_memory = 16'b0000000000000000;
-	logic ni_memory = 0;
+	logic wbs_memory;
+	logic ni_memory;	
+	logic [15:0] alu_result_memory;
+	logic [15:0] write_Data_memory;
 	logic wbs_writeback;
+	logic ni_writeback;
 	logic [15:0] memData_writeback;
 	logic [15:0] alu_result_writeback;
-	logic ni_writeback;
 	logic [15:0] srcB;
 	
    
@@ -32,64 +32,22 @@ module WriteBack_Stage_tb;
    );
    always #10 clk = ~clk;
 	initial begin
+		$display("--------------------------------INSTRUCCION str rd=14, Imma=3506 Tipo I--------------------------------\n");
 		// Ciclo 1:
       $display("Inicio del primer ciclo");
-      // Asigna valores simulados para las entradas del MemoryWriteback_register
       wbs_memory = 1;
-      alu_result_memory = 16'b1111111100000000;
-      write_Data_memory = 16'b0000000011111111;
+      alu_result_memory = 16'b0000000000001110;
+      write_Data_memory = 16'b0000110110110010;
       ni_memory = 1;
-      
-      // Espera al próximo flanco de bajada del reloj
-      #10;
-        
-      // Mostrar resultados del primer ciclo
+      #20;
       $display("Resultados del primer ciclo:");
       $display("Entradas MemoryWriteback_register:");
       $display("wbs_memory = %b, alu_result_memory = %h, write_Data_memory = %h, ni_memory = %b", wbs_memory, alu_result_memory, write_Data_memory, ni_memory);
       $display("Salidas MemoryWriteback_register:");
       $display("wbs_writeback = %b, memData_writeback = %h, alu_result_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, alu_result_writeback, ni_writeback);
       $display("Valor de srcB = %h", srcB);
-      
-      // Ciclo 2:
       $display("\n \n \n");
-      $display("Inicio del segundo ciclo");
-      // Asigna nuevos valores simulados para las entradas del MemoryWriteback_register
-      wbs_memory = 0;
-      alu_result_memory = 16'b1010101010101010;
-      write_Data_memory = 16'b0101010101010101;
-      ni_memory = 0;
-       
-      // Espera al próximo flanco de bajada del reloj
-      #20;
-      
-      // Mostrar resultados del segundo ciclo
-      $display("Resultados del segundo ciclo:");
-      $display("Entradas MemoryWriteback_register:");
-      $display("wbs_memory = %b, alu_result_memory = %h, write_Data_memory = %h, ni_memory = %b", wbs_memory, alu_result_memory, write_Data_memory, ni_memory);
-      $display("Salidas MemoryWriteback_register:");
-      $display("wbs_writeback = %b, memData_writeback = %h, alu_result_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, alu_result_writeback, ni_writeback);
-      $display("Valor de srcB = %h", srcB);
-      
-      // Ciclo 3:
-      $display("\n \n");
-      $display("Inicio del tercer ciclo");
-      // Asigna nuevos valores simulados para las entradas del MemoryWriteback_register
-      wbs_memory = 1;
-      alu_result_memory = 16'b0101010101010101;
-      write_Data_memory = 16'b1010101010101010;
-      ni_memory = 1;
-       
-      // Espera al próximo flanco de bajada del reloj
-      #20;
-       
-      // Mostrar resultados del tercer ciclo
-      $display("Resultados del tercer ciclo:");
-      $display("Entradas MemoryWriteback_register:");
-      $display("wbs_memory = %b, alu_result_memory = %h, write_Data_memory = %h, ni_memory = %b", wbs_memory, alu_result_memory, write_Data_memory, ni_memory);
-      $display("Salidas MemoryWriteback_register:");
-      $display("wbs_writeback = %b, memData_writeback = %h, alu_result_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, alu_result_writeback, ni_writeback);
-      $display("Valor de srcB = %h", srcB);
+		$display("----------------------------------------------------------------\n");
       $finish;
     end
 endmodule

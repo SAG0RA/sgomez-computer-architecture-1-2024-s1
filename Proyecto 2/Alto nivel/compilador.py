@@ -5,7 +5,7 @@ from tkinter import filedialog
 
 def open_file_dialog():
     file_path = filedialog.askopenfilename(filetypes=[("Assembly files", "*.s")])
-    output = os.path.splitext(os.path.basename(file_path))[0] + '.o'
+    output = os.path.splitext(os.path.basename(file_path))[0] + '.mif'
     if file_path:
         with open(file_path, 'r') as file:
             lines = file.readlines()
@@ -19,6 +19,7 @@ def open_file_dialog():
             get_labels()
             print("Archivo cargado con éxito.")
             machine_code = ""
+            mem_dir = 0
             for instruction in instructions:
                 binary_instruction = ""
                 result = parse_instruction(instruction.upper(), labels)
@@ -43,17 +44,21 @@ def open_file_dialog():
                     
                     if len(binary_instruction) < 16:
                         binary_instruction = binary_instruction.ljust(16, '0')
-                    binary_instruction += '\n'
-                    machine_code += binary_instruction + 5 * stall
-                    
+                    machine_code += str(mem_dir) + ": " + binary_instruction + ";\n"
+                    machine_code += str(mem_dir + 1) + ": " + stall + ";\n"
+                    machine_code += str(mem_dir + 2) + ": " + stall + ";\n"
+                    machine_code += str(mem_dir + 3) + ": " + stall + ";\n"
+                    machine_code += str(mem_dir + 4) + ": " + stall + ";\n"
+                    machine_code += str(mem_dir + 5) + ": " + stall + ";\n"
+                    mem_dir += 5
                 else:
                     print("Formato de instrucción no válido:", instruction)
             file.close()
 
-            print(labels)
-
             with open(output, 'w') as out:
-                out.write(machine_code)
+                out.write("WIDTH=8;\nDEPTH=1023;\n\nADDRESS_RADIX=DEC;\nDATA_RADIX=BIN;\n\nCONTENT BEGIN\n")
+                out.write(machine_code + "[" + str(mem_dir + 1) + "..1023]: " + stall + ";\n")
+                out.write("END;")
 
 def get_opcode(opcode):
     if opcode == "SUB":
@@ -105,7 +110,6 @@ def get_operand(opcode, filling):
 def get_branch(instruction):
     for i in labels:
         if instruction == i[0]:
-            print("Salto a: " + str(instruction) + " en la posicion: " + str(i[1]))
             binary_value = format(i[1], '012b')
             return binary_value
     return False
@@ -184,7 +188,7 @@ root.title("Compilador")
 
 instructions = []
 labels = []
-stall = "1111111111111111\n"
+stall = "1111111111111111"
 
 open_button = tk.Button(root, text="Seleccionar Archivo", command=open_file_dialog)
 open_button.pack(padx=10, pady=10)

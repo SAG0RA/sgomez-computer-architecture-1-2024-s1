@@ -157,17 +157,17 @@ module CPU(input logic clk ,input logic rst);
       .wm_in(wm_decode),
       .am_in(am_decode),
       .ni_in(ni_decode),
-		//.srcA_in(rd1),
-		//.srcB_in(out_mux4),
+		.srcA_in(rd1),
+		.srcB_in(out_mux4),
       .wbs_out(wbs_execute),
       .wme_out(wme_execute),
       .mm_out(mm_execute),
       .ALUop_out(ALUop_execute),
       .wm_out(wm_execute),
       .am_out(am_execute),
-      .ni_out(ni_execute)//S,
-		//.srcA_out(srcA_execute),
-		//.srcB_out(srcB_execute)
+      .ni_out(ni_execute),
+		.srcA_out(srcA_execute),
+		.srcB_out(srcB_execute)
    );
 	
 	

@@ -12,57 +12,57 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Memory/ROM {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:50 on May 07,2024
+# Start time: 16:46:13 on May 08,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v 
 # -- Compiling module ROM
 # 
 # Top level modules:
 # 	ROM
-# End time: 23:24:50 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:14 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:50 on May 07,2024
+# Start time: 16:46:14 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 23:24:51 on May 07,2024, Elapsed time: 0:00:01
+# End time: 16:46:14 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:51 on May 07,2024
+# Start time: 16:46:14 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv 
 # -- Compiling module TopModule
 # 
 # Top level modules:
 # 	TopModule
-# End time: 23:24:51 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:14 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:51 on May 07,2024
+# Start time: 16:46:14 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 23:24:51 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:15 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:51 on May 07,2024
+# Start time: 16:46:15 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv 
 # -- Compiling module subtractor
 # 
 # Top level modules:
 # 	subtractor
-# End time: 23:24:51 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:15 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:51 on May 07,2024
+# Start time: 16:46:15 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv 
 # -- Compiling module ALU
 # ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(46): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
@@ -74,234 +74,230 @@
 # 
 # Top level modules:
 # 	ALU
-# End time: 23:24:52 on May 07,2024, Elapsed time: 0:00:01
+# End time: 16:46:16 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 6
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:52 on May 07,2024
+# Start time: 16:46:16 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv 
 # -- Compiling module signExtend
 # 
 # Top level modules:
 # 	signExtend
-# End time: 23:24:52 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:16 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:52 on May 07,2024
+# Start time: 16:46:16 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv 
 # -- Compiling module zeroExtend
 # 
 # Top level modules:
 # 	zeroExtend
-# End time: 23:24:52 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:16 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:52 on May 07,2024
+# Start time: 16:46:17 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv 
 # -- Compiling module mux_2
 # 
 # Top level modules:
 # 	mux_2
-# End time: 23:24:52 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:17 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:52 on May 07,2024
+# Start time: 16:46:17 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv 
 # -- Compiling module mux_4
 # 
 # Top level modules:
 # 	mux_4
-# End time: 23:24:52 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:17 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:53 on May 07,2024
+# Start time: 16:46:17 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv 
 # -- Compiling module PCadder
 # 
 # Top level modules:
 # 	PCadder
-# End time: 23:24:53 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:18 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:53 on May 07,2024
+# Start time: 16:46:18 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv 
 # -- Compiling module PCregister
 # 
 # Top level modules:
 # 	PCregister
-# End time: 23:24:53 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:18 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:53 on May 07,2024
+# Start time: 16:46:18 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv 
 # -- Compiling module decoderMemory
 # 
 # Top level modules:
 # 	decoderMemory
-# End time: 23:24:53 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:18 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:53 on May 07,2024
+# Start time: 16:46:19 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv 
 # -- Compiling module FetchDecode_register
 # 
 # Top level modules:
 # 	FetchDecode_register
-# End time: 23:24:53 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:19 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:54 on May 07,2024
+# Start time: 16:46:19 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv 
 # -- Compiling module DecodeExecute_register
 # 
 # Top level modules:
 # 	DecodeExecute_register
-# End time: 23:24:54 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:19 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:54 on May 07,2024
+# Start time: 16:46:19 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv 
 # -- Compiling module ExecuteMemory_register
 # 
 # Top level modules:
 # 	ExecuteMemory_register
-# End time: 23:24:54 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:20 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:54 on May 07,2024
+# Start time: 16:46:20 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv 
 # -- Compiling module MemoryWriteback_register
 # 
 # Top level modules:
 # 	MemoryWriteback_register
-# End time: 23:24:54 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:20 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:54 on May 07,2024
+# Start time: 16:46:20 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv 
 # -- Compiling module controlUnit
 # 
 # Top level modules:
 # 	controlUnit
-# End time: 23:24:55 on May 07,2024, Elapsed time: 0:00:01
+# End time: 16:46:21 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:55 on May 07,2024
+# Start time: 16:46:21 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv 
 # -- Compiling module LogicalShiftLeft
 # 
 # Top level modules:
 # 	LogicalShiftLeft
-# End time: 23:24:55 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:21 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:55 on May 07,2024
+# Start time: 16:46:21 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv 
 # -- Compiling module negation
 # 
 # Top level modules:
 # 	negation
-# End time: 23:24:55 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:22 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:55 on May 07,2024
+# Start time: 16:46:22 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv 
 # -- Compiling module comparator
 # 
 # Top level modules:
 # 	comparator
-# End time: 23:24:55 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:22 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:56 on May 07,2024
+# Start time: 16:46:22 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv 
 # -- Compiling module generate_graphic
 # 
 # Top level modules:
 # 	generate_graphic
-# End time: 23:24:56 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:23 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:56 on May 07,2024
+# Start time: 16:46:23 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv 
 # -- Compiling module generate_rectangle
 # 
 # Top level modules:
 # 	generate_rectangle
-# End time: 23:24:56 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:23 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:56 on May 07,2024
+# Start time: 16:46:23 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv 
 # -- Compiling module pll
 # 
 # Top level modules:
 # 	pll
-# End time: 23:24:56 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:24 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:57 on May 07,2024
+# Start time: 16:46:24 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv 
 # -- Compiling module vga_controller
 # 
 # Top level modules:
 # 	vga_controller
-# End time: 23:24:57 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:24 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:57 on May 07,2024
+# Start time: 16:46:24 on May 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv 
 # -- Compiling module CPU
 # 
 # Top level modules:
 # 	CPU
-# End time: 23:24:57 on May 07,2024, Elapsed time: 0:00:00
+# End time: 16:46:25 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Decode_Stage_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:24:57 on May 07,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Decode_Stage_tb.sv 
-# -- Compiling module Decode_Stage_tb
+# Start time: 16:46:25 on May 08,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv 
+# -- Compiling module ROM_testbench
 # 
 # Top level modules:
-# 	Decode_Stage_tb
-# End time: 23:24:57 on May 07,2024, Elapsed time: 0:00:00
+# 	ROM_testbench
+# End time: 16:46:26 on May 08,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Decode_Stage_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Decode_Stage_tb 
-# Start time: 23:24:58 on May 07,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ROM_testbench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ROM_testbench 
+# Start time: 16:46:26 on May 08,2024
 # Loading sv_std.std
-# Loading work.Decode_Stage_tb
-# Loading work.FetchDecode_register
-# Loading work.controlUnit
-# Loading work.signExtend
-# Loading work.zeroExtend
-# Loading work.regfile
-# Loading work.mux_4
-# Loading work.DecodeExecute_register
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (12) for port 'Immediate'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv(2).
-#    Time: 0 ps  Iteration: 0  Instance: /Decode_Stage_tb/zeroExtend_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Decode_Stage_tb.sv Line: 63
+# Loading work.ROM_testbench
+# Loading work.ROM
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # 
 # add wave *
 # view structure
@@ -309,289 +305,31 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# 
-#  *** 1 *** 
-# 
-# mov rd=1 inmediato=7 Tipo I 
-# 
-# Instruccion que viene de la memoria de instrucciones = 1000000100000111
-# ------------------------------------------------------------------------------------- 
-# 
-# Instruccion que sale del registro FETCH-DECODE = xxxxxxxxxxxxxxxx
-# Entradas de la unidad de control ---------------------------------------------------- 
-# 
-# Codigo de operacion = xxxx
-# flagN: x
-# flagZ: x
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas de la unidad de control ----------------------------------------------------- 
-# 
-# wbs: x
-# wme: x
-# mm: x
-# ALUop: xxx
-# ri: xx
-# wre: x
-# wm: x
-# am: x
-# ni: x
-# ------------------------------------------------------------------------------------- 
-# 
-# Otras partes de la instruccion ------------------------------------------------------ 
-# 
-# RS1: xxxx
-# RS2: xxxx
-# RD: xxxx
-# Inmediato del formato I: xxxxxxxx
-# Extension de signo: xxxxxxxxxxxxxxxx
-# Inmediato del formato J: xxxxxxxxxxxx
-# Extension de zero: xxxxxxxxxxxxxxxx
-# ------------------------------------------------------------------------------------- 
-# 
-# Banco de registros ------------------------------------------------------------------ 
-# 
-# WD3: 0000000000000010
-# RD1: xxxxxxxxxxxxxxxx
-# RD2: xxxxxxxxxxxxxxxx
-# RD3: xxxxxxxxxxxxxxxx
-# ------------------------------------------------------------------------------------- 
-# 
-# Salida del mux ---------------------------------------------------------------------- 
-# 
-# out_mux4: xxxxxxxxxxxxxxxx
-# ------------------------------------------------------------------------------------- 
-# 
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)
-# 
-# wbs: x
-# wme: x
-# mm: x
-# ALUop: xxx
-# wm: x
-# am: x
-# ni: x
-# src A: xxxxxxxxxxxxxxxx
-# src B: xxxxxxxxxxxxxxxx
-# 
-#  
-#  
-# 
-# 
-#  *** 2 *** 
-# 
-# mov rd=2 inmediato=9 Tipo I 
-# 
-# Instruccion que viene de la memoria de instrucciones = 1000001000001001
-# ------------------------------------------------------------------------------------- 
-# 
-# Instruccion que sale del registro FETCH-DECODE = 1000000100000111
-# Entradas de la unidad de control ---------------------------------------------------- 
-# 
-# Codigo de operacion = 1000
-# flagN: x
-# flagZ: x
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas de la unidad de control ----------------------------------------------------- 
-# 
-# wbs: 1
-# wme: 0
-# mm: x
-# ALUop: xxx
-# ri: 10
-# wre: 1
-# wm: 1
-# am: 1
-# ni: 0
-# ------------------------------------------------------------------------------------- 
-# 
-# Otras partes de la instruccion ------------------------------------------------------ 
-# 
-# RS1: 0111
-# RS2: 0000
-# RD: 0001
-# Inmediato del formato I: 00000111
-# Extension de signo: 0000000000000111
-# Inmediato del formato J: 000100000111
-# Extension de zero: 0000000000000111
-# ------------------------------------------------------------------------------------- 
-# 
-# Banco de registros ------------------------------------------------------------------ 
-# 
-# WD3: 0000000000000010
-# RD1: 0000000000000000
-# RD2: 0000000000000000
-# RD3: 0000000000000000
-# ------------------------------------------------------------------------------------- 
-# 
-# Salida del mux ---------------------------------------------------------------------- 
-# 
-# out_mux4: 0000000000000111
-# ------------------------------------------------------------------------------------- 
-# 
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)
-# 
-# wbs: 0
-# wme: 0
-# mm: 0
-# ALUop: 000
-# wm: x
-# am: x
-# ni: 0
-# src A: xxxxxxxxxxxxxxxx
-# src B: xxxxxxxxxxxxxxxx
-# 
-#  
-#  
-# 
-# 
-#  *** 3 *** 
-# 
-# add rd=0, rs1=1, rs2=2 Tipo R 
-# 
-# Instruccion que viene de la memoria de instrucciones = 0001000000010010
-# ------------------------------------------------------------------------------------- 
-# 
-# Instruccion que sale del registro FETCH-DECODE = 1000001000001001
-# Entradas de la unidad de control ---------------------------------------------------- 
-# 
-# Codigo de operacion = 1000
-# flagN: x
-# flagZ: x
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas de la unidad de control ----------------------------------------------------- 
-# 
-# wbs: 1
-# wme: 0
-# mm: x
-# ALUop: xxx
-# ri: 10
-# wre: 1
-# wm: 1
-# am: 1
-# ni: 0
-# ------------------------------------------------------------------------------------- 
-# 
-# Otras partes de la instruccion ------------------------------------------------------ 
-# 
-# RS1: 1001
-# RS2: 0000
-# RD: 0010
-# Inmediato del formato I: 00001001
-# Extension de signo: 0000000000001001
-# Inmediato del formato J: 001000001001
-# Extension de zero: 0000000000001001
-# ------------------------------------------------------------------------------------- 
-# 
-# Banco de registros ------------------------------------------------------------------ 
-# 
-# WD3: 0000000000000010
-# RD1: 0000000000000000
-# RD2: 0000000000000000
-# RD3: 0000000000000000
-# ------------------------------------------------------------------------------------- 
-# 
-# Salida del mux ---------------------------------------------------------------------- 
-# 
-# out_mux4: 0000000000001001
-# ------------------------------------------------------------------------------------- 
-# 
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)
-# 
-# wbs: 1
-# wme: 0
-# mm: x
-# ALUop: xxx
-# wm: 1
-# am: 1
-# ni: 0
-# src A: 0000000000000000
-# src B: 0000000000000111
-# 
-#  
-#  
-# 
-# 
-#  *** 4 *** 
-# 
-# bgt address=5 Tipo J 
-# 
-# Instruccion que viene de la memoria de instrucciones = 0101000000000101
-# ------------------------------------------------------------------------------------- 
-# 
-# Instruccion que sale del registro FETCH-DECODE = 0001000000010010
-# Entradas de la unidad de control ---------------------------------------------------- 
-# 
-# Codigo de operacion = 0001
-# flagN: x
-# flagZ: x
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas de la unidad de control ----------------------------------------------------- 
-# 
-# wbs: 1
-# wme: 0
-# mm: 1
-# ALUop: 001
-# ri: 00
-# wre: 1
-# wm: 0
-# am: x
-# ni: 0
-# ------------------------------------------------------------------------------------- 
-# 
-# Otras partes de la instruccion ------------------------------------------------------ 
-# 
-# RS1: 0010
-# RS2: 0001
-# RD: 0000
-# Inmediato del formato I: 00010010
-# Extension de signo: 0000000000010010
-# Inmediato del formato J: 000000010010
-# Extension de zero: 0000000000010010
-# ------------------------------------------------------------------------------------- 
-# 
-# Banco de registros ------------------------------------------------------------------ 
-# 
-# WD3: 0000000000000010
-# RD1: 0000000000000010
-# RD2: 0000000000000010
-# RD3: 0000000000000000
-# ------------------------------------------------------------------------------------- 
-# 
-# Salida del mux ---------------------------------------------------------------------- 
-# 
-# out_mux4: 0000000000000010
-# ------------------------------------------------------------------------------------- 
-# 
-# ------------------------------------------------------------------------------------- 
-# 
-# Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)
-# 
-# wbs: 1
-# wme: 0
-# mm: x
-# ALUop: xxx
-# wm: 1
-# am: 1
-# ni: 0
-# src A: 0000000000000000
-# src B: 0000000000001001
-# 
-#  
-#  
-# 
-# ** Note: $finish    : C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Decode_Stage_tb.sv(352)
-#    Time: 80 ps  Iteration: 0  Instance: /Decode_Stage_tb
+# Dirección: xxxxxxxxxxxxxxxx
+# Valor: xxxxxxxxxxxxxxxx
+# Dirección: 0000000000000000
+# Valor: 0000000000000000
+# Dirección: 1010101010101010
+# Valor: 1010101010101010
+# Dirección: 1010101010101010
+# Valor: 1010101010101010
+# Dirección: 1111111100000000
+# Valor: 1111111100000000
+# Dirección: 1111111100000000
+# Valor: 1111111100000000
+# Dirección: 0000000011111111
+# Valor: 0000000011111111
+# Dirección: 0000000011111111
+# Valor: 0000000011111111
+# Dirección: 0000000000000000
+# Valor: 0000000000000000
+# Dirección: 0000000000000000
+# Valor: 0000000000000000
+# Dirección: 0000000000000000
+# Valor: 0000000000000000
+# ** Note: $finish    : C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv(33)
+#    Time: 110 ps  Iteration: 0  Instance: /ROM_testbench
 # 1
-# Break in Module Decode_Stage_tb at C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Decode_Stage_tb.sv line 352
-# End time: 23:26:26 on May 07,2024, Elapsed time: 0:01:28
-# Errors: 0, Warnings: 1
+# Break in Module ROM_testbench at C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv line 33
+# End time: 16:48:40 on May 08,2024, Elapsed time: 0:02:14
+# Errors: 0, Warnings: 0

@@ -3,6 +3,6 @@ module mux_2 (input logic [15:0] data0, data1,
 				  output logic [15:0] out
 );
 
-	assign out = select ? data0 : data1;
+	assign out = select ? data1 : data0;
 
 endmodule

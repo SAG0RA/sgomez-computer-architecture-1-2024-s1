@@ -1,0 +1,32 @@
+`timescale 1ps/1ps
+
+module ROM_testbench;
+
+	logic clk = 0;
+	logic [15:0] address = 0;
+	logic [15:0] q;
+    
+    
+   ROM ROM_instance (
+        .address(address),
+        .clock(clk),
+        .q(q)
+    );
+    
+    // Generación de estímulo
+    initial begin
+        
+		$display("Dirección: %d, Valor: %d", address, q);
+            
+      // Incrementar la dirección
+      address = address + 1;
+            
+      // Cambiar el reloj
+      #10 clk = ~clk;
+     
+        
+      // Finalizar la simulación
+      $finish;
+    end
+
+endmodule

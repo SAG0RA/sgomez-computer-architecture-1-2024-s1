@@ -7,14 +7,17 @@ module DecodeExecute_register (
 	 input logic wm_in,
 	 input logic am_in,
 	 input logic ni_in,
-	 
+	 input logic [15:0] srcA_in,
+	 input logic [15:0] srcB_in,
     output logic wbs_out,
     output logic wme_out,
     output logic mm_out,
     output logic [2:0] ALUop_out,
 	 output logic wm_out,
 	 output logic am_out,
-	 output logic ni_out
+	 output logic ni_out,
+	 output logic [15:0] srcA_out,
+	 output logic [15:0] srcB_out
 );
 
     logic wbs;
@@ -24,6 +27,8 @@ module DecodeExecute_register (
 	 logic wm;
 	 logic am;
 	 logic ni;
+	 logic [15:0] srcA;
+	 logic [15:0] srcB;
     
     // Proceso de escritura en el registro
     always_ff @(posedge clk) begin
@@ -34,6 +39,8 @@ module DecodeExecute_register (
 		  wm <= wm_in;
 		  am <= am_in;
 		  ni <= ni_in;
+		  srcA <= srcA_in;
+		  srcB <= srcB_in;
     end
 
     // Salidas del registro
@@ -44,5 +51,7 @@ module DecodeExecute_register (
 	 assign wm_out = wm;
 	 assign am_out = am;
 	 assign ni_out = ni;
+	 assign srcA_out = srcA;
+	 assign srcB_out = srcB;
 
 endmodule

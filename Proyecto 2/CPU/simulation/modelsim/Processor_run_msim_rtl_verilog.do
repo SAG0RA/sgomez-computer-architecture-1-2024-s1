@@ -5,6 +5,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Memory/ROM {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v}
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv}
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv}
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv}
@@ -25,10 +26,15 @@ vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-c
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv}
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv}
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv}
 
-vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Fetch_Stage_tb.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Decode_Stage_tb.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Fetch_Stage_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Decode_Stage_tb
 
 add wave *
 view structure

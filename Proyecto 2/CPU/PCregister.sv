@@ -6,7 +6,7 @@ module PCregister (
 );
 
     // Registro de almacenamiento de 16 bits
-    logic [15:0] out;
+    logic [15:0] out = 0;
 
     // Proceso de escritura en el registro
     always_ff @(posedge clk) begin

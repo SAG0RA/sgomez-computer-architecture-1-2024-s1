@@ -180,7 +180,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/comparator_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/controlUnit_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Testbenches/Fetch_Stage_tb.sv
 set_global_assignment -name MIF_FILE Memory/RAM/RAM.mif
-set_global_assignment -name QIP_FILE Memory/RAM/RAM.qip
 set_global_assignment -name SYSTEMVERILOG_FILE VGA/generate_graphic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA/generate_rectangle.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA/pll.sv
@@ -222,5 +221,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/Writeback_Stage_tb.s
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbenches/ROM_testbench.sv -section_id ROM_testbench
 set_global_assignment -name SYSTEMVERILOG_FILE decoderMemory_3outs.sv
 set_global_assignment -name MIF_FILE Memory/RAM_coordenadas/RAM_coordenadas.mif
+set_global_assignment -name QIP_FILE Memory/RAM/RAM.qip
 set_global_assignment -name QIP_FILE Memory/RAM_coordenadas/RAM_coordenadas.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

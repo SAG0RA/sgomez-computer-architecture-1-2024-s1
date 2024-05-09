@@ -27,8 +27,9 @@ module CPU(input logic clk ,input logic rst);
 	logic [1:0] ri;
 	logic wre;
 	
+	logic [7:0] sign_ext_immediate_input; 
+   logic [12:0] zero_ext_immediate_input;
 	logic [15:0] SignExtImmediate;
-	
 	logic [15:0] ZeroExtImmediate;
 	
 	logic [15:0] rd1, rd2, rd3;
@@ -48,6 +49,7 @@ module CPU(input logic clk ,input logic rst);
 	
 	logic wbs_memory, wme_memory, mm_memory;	
 	logic [15:0] alu_result_memory;
+	logic [15:0] alu_result_memory1;
 	logic [15:0] write_Data_memory;
 	logic wm_memory;
 	logic ni_memory;
@@ -64,6 +66,14 @@ module CPU(input logic clk ,input logic rst);
 	
 	logic [15:0] mux_2_writeback_result;
 	
+	// Registros de estado para cada etapa del pipeline
+   logic [2:0] stage; // 000=Fetch, 001=Decode, 010=Execute, 011=Memory, 100=Writeback
+   logic fetch_done;
+   logic decode_done;
+   logic execute_done;
+   logic memory_done;
+   logic writeback_done;
+
 	//Etapa Fetch
 	PCregister PCregister_instance(
 		.clk(clk),
@@ -117,15 +127,15 @@ module CPU(input logic clk ,input logic rst);
    );
      
    signExtend signExtend(
-      .Immediate(instruction_decode[7:0]),
+      .Immediate(sign_ext_immediate_input),
       .SignExtImmediate(SignExtImmediate)
    );
 
    zeroExtend zeroExtend(
-      .Immediate(instruction_decode[12:0]),
+      .Immediate(zero_ext_immediate_input),
       .ZeroExtImmediate(ZeroExtImmediate)
    );
-     
+
    regfile regfile(
       .clk(clk),
       .wre(wre),
@@ -220,7 +230,7 @@ module CPU(input logic clk ,input logic rst);
    );
 		
 	decoderMemory decoderMemory(
-		.data_in(alu_result_memory),
+		.data_in(alu_result_memory1),
       .select(mm_memory),
       .data_out_0(data1_memory), 
       .data_out_1(data2_memory)  
@@ -239,7 +249,7 @@ module CPU(input logic clk ,input logic rst);
 		.rdaddress(data1_memory),
 		.wraddress(data1_memory),
 		.wren(wme_memory),
-		.q(readDAta_memory)
+		.q(readData_memory)
 	);	
 	
 	//Etapa Writeback
@@ -247,7 +257,7 @@ module CPU(input logic clk ,input logic rst);
    MemoryWriteback_register MemoryWriteback_register(
       .clk(clk),
       .wbs_in(wbs_memory),
-      .memData_in(readDAta_memory),
+      .memData_in(readData_memory),
       .ALUresult_in(muxResult_memory),
       .ni_in(ni_memory), 
       .wbs_out(wbs_writeback),
@@ -265,22 +275,59 @@ module CPU(input logic clk ,input logic rst);
    );
 	
 	always_ff @(posedge clk or posedge rst) begin
+		fetch_done <= 1'b0;
+		decode_done <= 1'b0;
+		execute_done <= 1'b0;
+		memory_done <= 1'b0;
+		writeback_done <= 1'b0;
 		if (rst) begin
-         previous_opcode <= 4'b0000;
-         previous_previous_opcode <= 4'b0000;
-      end else begin
-         // Etapa Fetch
-         if (!stall_fetch_decode) begin
-            
-         end
-
-         // Etapa Decode
-         if (!stall_decode_execute) begin
-            current_opcode <= instruction_decode[15:12];
-            previous_opcode <= current_opcode;
-            previous_previous_opcode <= previous_opcode;         end
-
-        end
-	end
-
+			stage <= 3'b00;
+         fetch_done <= 1'b0;
+			decode_done <= 1'b0;
+			execute_done <= 1'b0;
+			memory_done <= 1'b0;
+			writeback_done <= 1'b0;
+		end else begin
+			case (stage)
+				3'b000: begin 
+					// Lógica de Fetch
+               current_opcode <= instruction_decode[15:12];
+               stage <= 2'b001; // Avanzar a Decode
+					fetch_done <= 1'b1;
+				end
+				
+				3'b001: begin 
+					// Lógica de Decode
+					sign_ext_immediate_input <= instruction_decode[7:0]; // Immediate para ALU
+					zero_ext_immediate_input <= instruction_decode[12:0]; // Immediate para MEM
+					srcA_decode <= rd1; //leer fuente A desde regfile
+					srcB_decode <= rd2; //leer fuente B desde regfile
+					stage <= 2'b010; // Avanzar a Execute
+					decode_done <= 1'b1;
+				end
+				3'b010: begin
+					// Lógica de Execute
+					alu_result_execute1 <= srcA_execute + srcB_execute; // Suma de fuentes A y B
+					stage <= 2'b011; // Avanzar a Memory
+					execute_done <= 1'b1;
+				end
+				3'b011: begin 
+					// Lógica de Memory
+					alu_result_memory1 <= alu_result_memory; //Escribir en memoria
+					stage <= 2'b100; // Avanzar a Writeback
+					memory_done <= 1'b1;
+				end
+				3'b100: begin 
+					// Lógica de Writeback
+					readData_memory <= readData_memory; // Dato leído de memoria
+					stage <= 2'b00; // Volver a Fetch para el siguiente ciclo
+					writeback_done <= 1'b1;
+				end
+				default: begin
+					stage <= 2'b00;
+				end
+			endcase
+	  end
+ end
+	
 endmodule

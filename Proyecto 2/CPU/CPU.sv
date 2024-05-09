@@ -243,11 +243,11 @@ module CPU(input logic clk ,input logic rst);
       .clk(clk),
       .wbs_in(wbs_memory),
       .memData_in(readDAta_memory),
-      .ALUresult_in(muxResult_memory),
+      .calcData_in(muxResult_memory),
       .ni_in(ni_memory), 
       .wbs_out(wbs_writeback),
       .memData_out(memData_writeback),
-      .ALUresult_out(alu_result_writeback),
+      .calcData_out(alu_result_writeback),
       .ni_out(ni_writeback)
    );
 	

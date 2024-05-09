@@ -2,7 +2,7 @@ module ExecuteMemory_register (
     input logic clk,
     input logic wbs_in,
     input logic wme_in,
-    input logic mm_in,
+    input logic [1:0] mm_in,
 	 input logic [15:0] ALUresult_in,
     input logic [15:0] memData_in,
 	 input logic wm_in,
@@ -10,7 +10,7 @@ module ExecuteMemory_register (
 	 
     output logic wbs_out,
     output logic wme_out,
-    output logic mm_out,
+    output logic [1:0] mm_out,
 	 output logic [15:0] ALUresult_out,
 	 output logic [15:0] memData_out,
 	 output logic wm_out,
@@ -19,7 +19,7 @@ module ExecuteMemory_register (
 
     logic wbs;
     logic wme;
-    logic mm;
+    logic [1:0] mm;
 	 logic [15:0] ALUresult;
 	 logic [15:0] memData;
 	 logic wm;

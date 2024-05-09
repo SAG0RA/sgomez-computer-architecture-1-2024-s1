@@ -15,12 +15,12 @@ module WriteBack_Stage_tb;
 		.clk(clk),
       .wbs_in(wbs_memory),
       .memData_in(write_Data_memory),
-      .ALUresult_in(alu_result_memory),
+      .calcData_in(alu_result_memory),
       .ni_in(ni_memory), 
 		
       .wbs_out(wbs_writeback),
       .memData_out(memData_writeback),
-      .ALUresult_out(alu_result_writeback),
+      .calcData_out(alu_result_writeback),
       .ni_out(ni_writeback)
    );
 	 

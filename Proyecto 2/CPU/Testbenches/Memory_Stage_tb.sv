@@ -5,20 +5,21 @@ module Memory_Stage_tb;
 	logic clk = 0;
 	logic wbs_execute = 0; 
 	logic wme_execute = 1;
-	logic mm_execute = 0;
-   logic [2:0] ALUop_execute = 3'b001;
+	logic [1:0] mm_execute = 0;
    logic wm_execute = 0;
    logic am_execute = 0;
    logic ni_execute = 1;	
 	logic [15:0] alu_result_execute  = 16'b0000000000000010;
 	logic [15:0] write_Data_execute  = 16'b0000000000000010;
 	
-	logic wbs_memory, wme_memory, mm_memory;	
+	logic wbs_memory, wme_memory; 
+	logic [1:0] mm_memory;	
 	logic [15:0] alu_result_memory;
 	logic [15:0] write_Data_memory;
 	logic wm_memory;
 	logic ni_memory;
 	
+	logic [15:0] data0;
 	logic [15:0] data1;
 	logic [15:0] data2;
 	logic [15:0] muxResult;
@@ -29,60 +30,71 @@ module Memory_Stage_tb;
 	logic [15:0] alu_result_writeback;
 	logic ni_writeback;
 	
+	logic [7:0] readCoordinate;
+	logic [7:0] readPixel;
+	
+	
+	
    ExecuteMemory_register ExecuteMemory_register_instance (
 		.clk(clk),
       .wbs_in(wbs_execute),
       .wme_in(wme_execute),
       .mm_in(mm_execute),
-      .ALUresult_in(ALUop_execute),
+      .ALUresult_in(alu_result_execute),
       .memData_in(write_Data_execute),
       .wm_in(wm_execute),
       .ni_in(ni_execute),
-		
-		
       .wbs_out(wbs_memory),
       .wme_out(wme_memory),
       .mm_out(mm_memory),
-		
       .ALUresult_out(alu_result_memory),
       .memData_out(write_Data_memory),
-		
       .wm_out(wm_memory),
       .ni_out(ni_memory)
    );
 	
-	decoderMemory decoderMemory_instance (
-		.data_in(ExecuteMemory_register_instance.ALUresult_out),
-      .select(ExecuteMemory_register_instance.mm_out),
-      .data_out_0(data1), 
-      .data_out_1(data2)  
+	decoderMemory_3outs decoderMemory_3outs_instance (
+		.data_in(alu_result_memory),
+      .select(mm_memory),
+      .data_out_0(data0), 
+      .data_out_1(data1),
+		.data_out_2(data2)		
    );
 	
 	mux_2 mux_2_instance (
-      .data0(decoderMemory_instance.data_out_0),
-      .data1(ExecuteMemory_register_instance.memData_out), 
-      .select(ExecuteMemory_register_instance.wm_out),
+      .data0(data1),
+      .data1(write_Data_memory), 
+      .select(wm_memory),
       .out(muxResult)
-   );
+   );	
 	
+	RAM_coordenadas ram_coordenadas_instance(
+		.address(data0),
+		.clock(clk),
+		.data(16'b0),
+		.wren(1'b0),
+		.q(readCoordinate)
+	);	
 	
 	RAM ram_instance(.clock(clk),
-		.data(ExecuteMemory_register_instance.memData_out),
-		.rdaddress(decoderMemory_instance.data_out_0),
-		.wraddress(decoderMemory_instance.data_out_0),
-		.wren(ExecuteMemory_register_instance.wme_out),
-		.q(readDAta)
-	);	
+		.address(data2),
+		.clock(clk),
+		.data(16'b0),
+		.wren(1'b0),	/// poner la señal de control 	WCE (write coordinate enable)
+		.q(readPixel)
+	);
+	
+	
 
    MemoryWriteback_register MemoryWriteback_register_instance (
       .clk(clk),
-      .wbs_in(ExecuteMemory_register_instance.wbs_in),
-      .memData_in(ram_instance.q),
-      .ALUresult_in(mux_2_instance.out),
-      .ni_in(ExecuteMemory_register_instance.ni_out), 
+      .wbs_in(wbs_memory),
+      .memData_in(readCoordinate),
+      .calcData_in(muxResult),
+      .ni_in(ni_memory), 
       .wbs_out(wbs_writeback),
       .memData_out(memData_writeback),
-      .ALUresult_out(alu_result_writeback),
+      .calcData_out(alu_result_writeback),
       .ni_out(ni_writeback)
    );
 
@@ -95,7 +107,7 @@ module Memory_Stage_tb;
       wbs_execute = 1;
       wme_execute = 0;
       mm_execute = 1;
-      ALUop_execute = 3'b010;
+      alu_result_execute = 16'b0;
       wm_execute = 1;
       am_execute = 0;
       ni_execute = 1;
@@ -127,7 +139,7 @@ module Memory_Stage_tb;
       wbs_execute = 0;
       wme_execute = 1;
       mm_execute = 0;
-      ALUop_execute = 3'b011;
+      alu_result_execute = 16'b0;
       wm_execute = 0;
       am_execute = 1;
       ni_execute = 0;
@@ -159,7 +171,7 @@ module Memory_Stage_tb;
 		wbs_execute = 1;
       wme_execute = 1;
       mm_execute = 1;
-      ALUop_execute = 3'b101;
+      alu_result_execute = 16'b0;
       wm_execute = 1;
       am_execute = 1;
       ni_execute = 1;
@@ -171,7 +183,7 @@ module Memory_Stage_tb;
       $display("Resultados del tercer ciclo:");
       $display("Entradas ExecuteMemory_register:");
       $display("wbs_execute = %b, wme_execute = %b, mm_execute = %b", wbs_execute, wme_execute, mm_execute);
-      $display("ALUop_execute = %b, wm_execute = %b, am_execute = %b, ni_execute = %b", ALUop_execute, wm_execute, am_execute, ni_execute);
+      $display("alu_result__execute = %b, wm_execute = %b, am_execute = %b, ni_execute = %b", alu_result__execute, wm_execute, am_execute, ni_execute);
       $display("alu_result_execute = %h, write_Data_execute = %h", alu_result_execute, write_Data_execute);
       $display("Salidas ExecuteMemory_register:");
       $display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);

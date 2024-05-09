@@ -4,7 +4,8 @@ module Decode_Stage_tb;
 	logic [15:0] instruction_fetch;    
    logic [15:0] instruction_decode;
 	
-	logic wbs_decode, wme_decode, mm_decode;
+	logic wbs_decode, wme_decode; 
+	logic [1:0] mm_decode;
    logic [2:0] ALUop_decode;
    logic wm_decode;
    logic am_decode;
@@ -23,7 +24,8 @@ module Decode_Stage_tb;
 	logic [15:0] rd1, rd2, rd3;
    logic [15:0] out_mux4;
 	
-	logic wbs_execute, wme_execute, mm_execute;
+	logic wbs_execute, wme_execute; 
+	logic [1:0] mm_execute;
    logic [2:0] ALUop_execute;
    logic wm_execute;
    logic am_execute;

@@ -2,7 +2,7 @@ module Execute_Stage_tb;
 	logic clk = 0;
 	logic wbs_decode = 0; 
 	logic wme_decode = 0;
-	logic mm_decode = 0;
+	logic [1:0] mm_decode = 0;
    logic [2:0] ALUop_decode = 3'b001;
    logic wm_decode = 0;
    logic am_decode = 0;
@@ -10,7 +10,8 @@ module Execute_Stage_tb;
 	logic [15:0] srcA_decode = 16'b000000000000000;
 	logic [15:0] srcB_decode = 16'b000000000000000;
 	
-	logic wbs_execute, wme_execute, mm_execute;
+	logic wbs_execute, wme_execute;
+	logic [1:0] mm_execute;
    logic [2:0] ALUop_execute;
    logic wm_execute;
    logic am_execute;

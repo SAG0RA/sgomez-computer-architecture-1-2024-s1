@@ -1,4 +1,148 @@
-module CPU(input logic clk ,input logic rst);
+module CPU(
+				input logic clk ,
+				input logic reset,
+				input logic vga_clk,
+				input logic VGA_enable,
+				output logic [7:0] pixel
+				
+);
+
+/////////////////////// CABLES, VARIABLES E I/O DE LOS MODULOS /////////////////////////////////////////
+
+logic [15:0] pixelAddress;	// direccion de memoria donde estan los pixeles
+
+logic [15:0] PCaddress_out; // salida del registro PC y entrada al PC adder y la memoria rom
+logic [15:0] mux_out_pc; // salida del mux del PC y que entra al registro pc 
+logic [15:0] PC_plus1; // salida del sumador del PC (PC + 1)
+
+
+logic [15:0] jumpAddress; // entrada al mux del PC, es la direccion de un salto
+
+logic [15:0] instruction_fetch; // salida de la memoria rom y entrada al registro pipeline FETCH-DECODE
+logic [15:0] instruction_decode; // salida del registro pipeline FETCH-DECODE
+
+
+
+
+
+/////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
+
+logic ni; // Next Instruction, es al señal de control del mux del PC 
+
+
+
+
+
+
+
+////// lOGICA PARA LEER LOS PIXELES. SI VGA_enable = 1 (ES UN SWITCH EN LA FPGA) LEE DE LA MEMORIA /////
+
+    always_ff @(posedge vga_clk) begin
+        if (reset || !VGA_enable) begin
+            pixelAddress <= 0;
+        end else if (pixelAddress >= 65535) begin
+            pixelAddress <= 0;
+        end else if (VGA_enable) begin
+            pixelAddress <= pixelAddress + 1;
+        end
+    end
+    
+    always_ff @(posedge vga_clk) begin
+        if (!VGA_enable) begin
+            pixel = 0;
+        end 
+    end
+
+///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
+
+	PCregister PCregister_instance (
+        .clk(clk),
+        .reset(reset),
+        .address_in(mux_out_pc),       
+        .address_out(PCaddress_out)
+   );
+	 
+	PCadder PCadder_instance (
+        .address(PCaddress_out),		//input: salida del registro PC
+        .PC(PC_plus1)					//output: la entrada (input) + 1 que será la siguiente instruccion si no se da un salto
+    ); 
+	 
+	mux_2 mux_2_instance (
+        .data0(PC_plus1),
+        .data1(jumpAddress),
+        .select(ni), 
+        .out(mux_pc)
+    );
+	 
+	ROM ROM_instance(
+		.address(PCaddress_out),
+		.clock(clk),
+		.q(instruction_fetch));
+		
+
+///////////// REGISTRO PIPELINE FETCH-DECODE ////
+    FetchDecode_register FetchDecode_register_instance (
+        .clk(clk),
+        .instruction_in(instruction_fetch),
+        .instruction_out(instruction_decode)
+    );
+	 
+
+
+///////////// ETAPA DECODE ////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////// ETAPA EXECUTE ////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////// ETAPA MEMORY ////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////// ETAPA WRITEBACK ////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////7
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 	logic [15:0] instruction_fetch;
    logic [15:0] instruction_decode;
 	logic [15:0] alu_pc;
@@ -224,7 +368,7 @@ module CPU(input logic clk ,input logic rst);
       .out(muxResult_memory)
    );
 	
-	/*
+
 	RAM RAM(
 		.address(data1_memory),
 		.clock(clk),
@@ -237,7 +381,7 @@ module CPU(input logic clk ,input logic rst);
 		//.wren(wme_memory),
 		//.q(readDAta_memory)
 	);	
-	*/
+	
 
    MemoryWriteback_register MemoryWriteback_register(
       .clk(clk),
@@ -258,6 +402,6 @@ module CPU(input logic clk ,input logic rst);
       .select(wbs_writeback),
       .out(mux_2_writeback_result)
    );
-
+*/
 
 endmodule

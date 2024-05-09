@@ -1,6 +1,7 @@
 module TopModule(
 			  input logic clk,
 			  input logic rst,
+			  input logic VGA_enable,
 			  output logic vga_clk,
 			  output logic h_sync, v_sync,
 			  output logic sync_b, blank_b,
@@ -8,11 +9,10 @@ module TopModule(
 );
 			  
 	logic [9:0] x, y;
-	logic [31:0] pixel;
-	logic reset = 1'b0;
+	logic [7:0] pixel;
 	
-	logic enable = 1'b1;
 	
+	//logic enable = 1'b1;
 	//assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
 	
 	
@@ -20,8 +20,8 @@ module TopModule(
 	
 	vga_controller vgaCont(vga_clk, h_sync, v_sync, sync_b, blank_b, x, y);
 	
-	generate_graphic gen_grid(x, y, pixel[7:0], red, green, blue);
+	generate_graphic gen_grid(x, y, pixel, red, green, blue);
 	
-	CPU CPU(.clk(clk),.rst(rst));
+	CPU CPU(.clk(clk), .vga_clk(vga_clk), .reset(rst), .VGA_enable(VGA_enable), .pixel(pixel));
 	 
 endmodule

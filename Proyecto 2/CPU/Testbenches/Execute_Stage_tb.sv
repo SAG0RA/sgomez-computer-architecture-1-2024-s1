@@ -27,7 +27,11 @@ module Execute_Stage_tb;
 	logic ni_memory;
 	logic flagN;
 	logic flagZ;
-	      
+	
+	logic [15:0] output_mux;
+			
+	logic sel_mux = 1'b0;
+			
    DecodeExecute_register DecodeExecute_register_instance (
 		.clk(clk),
       .wbs_in(wbs_decode),
@@ -62,9 +66,16 @@ module Execute_Stage_tb;
 	decoderMemory decoder_instance (
 		.data_in(srcB_execute),
 		.select(am_execute),
-		.data_out_0(alu_result_execute),
+		.data_out_0(read_addres_or_data),  //cambiar el nombre al dato parametro
 		.data_out_1(write_Data_execute)
    );
+	
+	mux_2 u_mux_2 (
+        .data0(alu_result_execute),
+        .data1(read_addres_or_data),
+        .select(sel_mux),
+        .out(output_mux)
+    );
 	 
    ExecuteMemory_register ExecuteMemory_register_instance (
       .clk(clk),
@@ -72,7 +83,7 @@ module Execute_Stage_tb;
       .wbs_in(wbs_execute),
       .wme_in(wme_execute),
       .mm_in(mm_execute),
-      .ALUresult_in(alu_result_execute),
+      .ALUresult_in(output_mux), //cambiar nombre
       .memData_in(write_Data_execute),
       .wm_in(wm_execute),
       .ni_in(ni_execute),
@@ -90,7 +101,7 @@ module Execute_Stage_tb;
 	
 	initial begin
 		// Ciclo 1:
-      $display("1 Primer ciclo");
+      $display("1 Primer ciclo ----------------------------------------------------------");
       // Asigna valores simulados para las entradas del DecodeExecute_register
       ALUop_decode = 3'b001;
 		wbs_decode = 1; 
@@ -113,7 +124,7 @@ module Execute_Stage_tb;
       $display("srcA_execute = %b, srcB_execute = %b", srcA_execute, srcB_execute);
 		
 		$display("\n Entradas a la ALU:");
-		$display("src A = %h, src B = %b", srcA_execute, srcB_execute);
+		$display("src A = %b, src B = %b", srcA_execute, srcB_execute);
 		
 		$display("\n Salida de la ALU:");
 		$display("alu_result_execute = %b", alu_result_execute);
@@ -124,13 +135,13 @@ module Execute_Stage_tb;
 		
 		
 		$display("\n Salidas del decoder:");
-		$display("Salida 0 = %b", alu_result_execute);
+		$display("Salida 0 = %b", read_addres_or_data);
 		$display("Salida 1 = %b", write_Data_execute);
 		
 		$display("\n Entradas a ExecuteMemori_register:");
 		$display("wbs_execute = %b, wme_execute = %b, mm_execute = %b", wbs_execute, wme_execute, mm_execute);
       $display("wm_execute = %b, ni_execute = %b", wm_execute, ni_execute);
-      $display("memData_in = %b, ALUresult_in = %b", write_Data_execute, alu_result_execute);
+      $display("memData_in = %b, ALUresult_in = %b", write_Data_execute, read_addres_or_data);
 		
 		$display("\n Salidas de ExecuteMemori_register:");
 		$display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);
@@ -142,9 +153,8 @@ module Execute_Stage_tb;
 		#20
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		
-		// Ciclo 1:
-      $display("2 Segundo ciclo");
+		// Ciclo 2:
+      $display("2 Segungo ciclo ----------------------------------------------------------");
       // Asigna valores simulados para las entradas del DecodeExecute_register
       ALUop_decode = 3'b011;
 		wbs_decode = 0; 
@@ -152,9 +162,9 @@ module Execute_Stage_tb;
 		mm_decode = 0;
       wm_decode = 1;
       am_decode = 1;
-      ni_decode = 0;
-      srcA_decode = 16'b0000000000001010;
-      srcB_decode = 16'b0000000000001111;
+      ni_decode = 1;
+      srcA_decode = 16'b0000000001010000;
+      srcB_decode = 16'b0000000000000111;
 		
 		$display("\n Entradas a DecodeExecute_register:");
       $display("wbs_decode = %b, wme_decode = %b, mm_decode = %b", wbs_decode, wme_decode, mm_decode);
@@ -167,7 +177,7 @@ module Execute_Stage_tb;
       $display("srcA_execute = %b, srcB_execute = %b", srcA_execute, srcB_execute);
 		
 		$display("\n Entradas a la ALU:");
-		$display("src A = %h, src B = %b", srcA_execute, srcB_execute);
+		$display("src A = %b, src B = %b", srcA_execute, srcB_execute);
 		
 		$display("\n Salida de la ALU:");
 		$display("alu_result_execute = %b", alu_result_execute);
@@ -178,13 +188,13 @@ module Execute_Stage_tb;
 		
 		
 		$display("\n Salidas del decoder:");
-		$display("Salida 0 = %b", alu_result_execute);
+		$display("Salida 0 = %b", read_addres_or_data);
 		$display("Salida 1 = %b", write_Data_execute);
 		
 		$display("\n Entradas a ExecuteMemori_register:");
 		$display("wbs_execute = %b, wme_execute = %b, mm_execute = %b", wbs_execute, wme_execute, mm_execute);
       $display("wm_execute = %b, ni_execute = %b", wm_execute, ni_execute);
-      $display("memData_in = %b, ALUresult_in = %b", write_Data_execute, alu_result_execute);
+      $display("memData_in = %b, ALUresult_in = %b", write_Data_execute, read_addres_or_data);
 		
 		$display("\n Salidas de ExecuteMemori_register:");
 		$display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);
@@ -196,18 +206,19 @@ module Execute_Stage_tb;
 		#20
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		// Ciclo 1:
-      $display("3 Tercer ciclo");
+		
+		// Ciclo 3:
+      $display("3 tercer ciclo ----------------------------------------------------------");
       // Asigna valores simulados para las entradas del DecodeExecute_register
       ALUop_decode = 3'b100;
 		wbs_decode = 1; 
 		wme_decode = 0;
-		mm_decode = 0;
-      wm_decode = 1;
+		mm_decode = 1;
+      wm_decode = 0;
       am_decode = 0;
-      ni_decode = 1;
-      srcA_decode = 16'b0000000001100000;
-      srcB_decode = 16'b0000000000001000;
+      ni_decode = 0;
+      srcA_decode = 16'b0000000000000001;
+      srcB_decode = 16'b0000000000011111;
 		
 		$display("\n Entradas a DecodeExecute_register:");
       $display("wbs_decode = %b, wme_decode = %b, mm_decode = %b", wbs_decode, wme_decode, mm_decode);
@@ -220,7 +231,7 @@ module Execute_Stage_tb;
       $display("srcA_execute = %b, srcB_execute = %b", srcA_execute, srcB_execute);
 		
 		$display("\n Entradas a la ALU:");
-		$display("src A = %h, src B = %b", srcA_execute, srcB_execute);
+		$display("src A = %b, src B = %b", srcA_execute, srcB_execute);
 		
 		$display("\n Salida de la ALU:");
 		$display("alu_result_execute = %b", alu_result_execute);
@@ -231,13 +242,13 @@ module Execute_Stage_tb;
 		
 		
 		$display("\n Salidas del decoder:");
-		$display("Salida 0 = %b", alu_result_execute);
+		$display("Salida 0 = %b", read_addres_or_data);
 		$display("Salida 1 = %b", write_Data_execute);
 		
 		$display("\n Entradas a ExecuteMemori_register:");
 		$display("wbs_execute = %b, wme_execute = %b, mm_execute = %b", wbs_execute, wme_execute, mm_execute);
       $display("wm_execute = %b, ni_execute = %b", wm_execute, ni_execute);
-      $display("memData_in = %b, ALUresult_in = %b", write_Data_execute, alu_result_execute);
+      $display("memData_in = %b, ALUresult_in = %b", write_Data_execute, read_addres_or_data);
 		
 		$display("\n Salidas de ExecuteMemori_register:");
 		$display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);
@@ -248,7 +259,6 @@ module Execute_Stage_tb;
 		
 		#20
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		
 		
 		
       $finish;

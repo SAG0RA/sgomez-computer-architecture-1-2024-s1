@@ -32,9 +32,9 @@ vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-c
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv}
 vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv}
 
-vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv}
+vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Execute_Stage_tb.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ROM_testbench
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Execute_Stage_tb
 
 add wave *
 view structure

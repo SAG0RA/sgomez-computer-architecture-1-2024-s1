@@ -1,12 +1,12 @@
 module WriteBack_Stage_tb;
 	logic clk = 0;
 	logic wbs_memory = 0; 
-	logic [15:0] alu_result_memory = 16'b0000000000000010;
+	logic [15:0] calcData_memory = 16'b0000000000000010;
 	logic [15:0] write_Data_memory = 16'b0000000000000000;
 	logic ni_memory = 0;
 	logic wbs_writeback;
 	logic [15:0] memData_writeback;
-	logic [15:0] alu_result_writeback;
+	logic [15:0] calcData_writeback;
 	logic ni_writeback;
 	logic [15:0] srcB;
 	
@@ -15,12 +15,12 @@ module WriteBack_Stage_tb;
 		.clk(clk),
       .wbs_in(wbs_memory),
       .memData_in(write_Data_memory),
-      .calcData_in(alu_result_memory),
+      .calcData_in(calcData_memory),
       .ni_in(ni_memory), 
 		
       .wbs_out(wbs_writeback),
       .memData_out(memData_writeback),
-      .calcData_out(alu_result_writeback),
+      .calcData_out(calcData_writeback),
       .ni_out(ni_writeback)
    );
 	 
@@ -36,7 +36,7 @@ module WriteBack_Stage_tb;
       $display("Inicio del primer ciclo");
       // Asigna valores simulados para las entradas del MemoryWriteback_register
       wbs_memory = 1;
-      alu_result_memory = 16'b1111111100000000;
+      calcData_memory = 16'b1111111100000000;
       write_Data_memory = 16'b0000000011111111;
       ni_memory = 1;
       
@@ -48,7 +48,7 @@ module WriteBack_Stage_tb;
       $display("Entradas MemoryWriteback_register:");
       $display("wbs_memory = %b, alu_result_memory = %h, write_Data_memory = %h, ni_memory = %b", wbs_memory, alu_result_memory, write_Data_memory, ni_memory);
       $display("Salidas MemoryWriteback_register:");
-      $display("wbs_writeback = %b, memData_writeback = %h, alu_result_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, alu_result_writeback, ni_writeback);
+      $display("wbs_writeback = %b, memData_writeback = %h, calcData_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, calcData_writeback, ni_writeback);
       $display("Valor de srcB = %h", srcB);
       
       // Ciclo 2:
@@ -56,7 +56,7 @@ module WriteBack_Stage_tb;
       $display("Inicio del segundo ciclo");
       // Asigna nuevos valores simulados para las entradas del MemoryWriteback_register
       wbs_memory = 0;
-      alu_result_memory = 16'b1010101010101010;
+      calcData_memory = 16'b1010101010101010;
       write_Data_memory = 16'b0101010101010101;
       ni_memory = 0;
        
@@ -68,7 +68,7 @@ module WriteBack_Stage_tb;
       $display("Entradas MemoryWriteback_register:");
       $display("wbs_memory = %b, alu_result_memory = %h, write_Data_memory = %h, ni_memory = %b", wbs_memory, alu_result_memory, write_Data_memory, ni_memory);
       $display("Salidas MemoryWriteback_register:");
-      $display("wbs_writeback = %b, memData_writeback = %h, alu_result_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, alu_result_writeback, ni_writeback);
+      $display("wbs_writeback = %b, memData_writeback = %h, calcData_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, calcData_writeback, ni_writeback);
       $display("Valor de srcB = %h", srcB);
       
       // Ciclo 3:
@@ -76,7 +76,7 @@ module WriteBack_Stage_tb;
       $display("Inicio del tercer ciclo");
       // Asigna nuevos valores simulados para las entradas del MemoryWriteback_register
       wbs_memory = 1;
-      alu_result_memory = 16'b0101010101010101;
+      calcData_memory = 16'b0101010101010101;
       write_Data_memory = 16'b1010101010101010;
       ni_memory = 1;
        
@@ -88,7 +88,7 @@ module WriteBack_Stage_tb;
       $display("Entradas MemoryWriteback_register:");
       $display("wbs_memory = %b, alu_result_memory = %h, write_Data_memory = %h, ni_memory = %b", wbs_memory, alu_result_memory, write_Data_memory, ni_memory);
       $display("Salidas MemoryWriteback_register:");
-      $display("wbs_writeback = %b, memData_writeback = %h, alu_result_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, alu_result_writeback, ni_writeback);
+      $display("wbs_writeback = %b, memData_writeback = %h, calcData_writeback = %h, ni_writeback = %b", wbs_writeback, memData_writeback, calcData_writeback, ni_writeback);
       $display("Valor de srcB = %h", srcB);
       $finish;
     end

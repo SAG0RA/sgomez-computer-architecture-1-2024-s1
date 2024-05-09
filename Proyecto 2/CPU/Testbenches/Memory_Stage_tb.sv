@@ -27,12 +27,14 @@ module Memory_Stage_tb;
 	
 	logic wbs_writeback;
 	logic [15:0] memData_writeback;
-	logic [15:0] alu_result_writeback;
+	logic [15:0] calcData_writeback;
 	logic ni_writeback;
 	
 	logic [7:0] readCoordinate;
 	logic [7:0] readPixel;
 	
+	logic [15:0] pixel_address;
+	logic [7:0] neverReaded;
 	
 	
    ExecuteMemory_register ExecuteMemory_register_instance (
@@ -71,20 +73,23 @@ module Memory_Stage_tb;
 	RAM_coordenadas ram_coordenadas_instance(
 		.address(data0),
 		.clock(clk),
-		.data(16'b0),
-		.wren(1'b0),
+		.data(16'b0),	// Nunca se escribe, solo se lee (se coloca un 0 porque no puede quedar vacio)
+		.wren(1'b0),   // Nunca se escribe, solo se lee
 		.q(readCoordinate)
 	);	
 	
 	RAM ram_instance(.clock(clk),
-		.address(data2),
+		.address_a(data2),	// el procesador indica la direccion en donde escribir
+		.address_b(pixel_address),		// direccion para leer el pixel y mostrarlo en pantalla
 		.clock(clk),
-		.data(16'b0),
-		.wren(1'b0),	/// poner la señal de control 	WCE (write coordinate enable)
-		.q(readPixel)
+		.data_a(write_Data_memory),	// el procesador indica el dato a escribir
+		.data_b(16'b0),			// nunca se escribe en este puerto
+		.wren_a(1'b0),		// agregar esta señal de control (en todo el datapath)
+		.wren_b(1'b0), // escritura deshabilitada 
+		.q_a(neverReaded),
+		.q_b(readPixel)
 	);
-	
-	
+
 
    MemoryWriteback_register MemoryWriteback_register_instance (
       .clk(clk),
@@ -94,7 +99,7 @@ module Memory_Stage_tb;
       .ni_in(ni_memory), 
       .wbs_out(wbs_writeback),
       .memData_out(memData_writeback),
-      .calcData_out(alu_result_writeback),
+      .calcData_out(calcData_writeback),
       .ni_out(ni_writeback)
    );
 

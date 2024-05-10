@@ -4,12 +4,16 @@ module Decode_Stage_tb;
 	logic [15:0] instruction_fetch;    
    logic [15:0] instruction_decode;
 	
-	logic wbs_decode, wme_decode; 
+	logic wbs_decode; 
 	logic [1:0] mm_decode;
    logic [2:0] ALUop_decode;
    logic wm_decode;
    logic am_decode;
    logic ni_decode;
+	logic wce_decode;
+	logic wme1_decode;
+	logic wme2_decode;
+
 	
 	logic flagN;
 	logic flagZ;
@@ -24,12 +28,16 @@ module Decode_Stage_tb;
 	logic [15:0] rd1, rd2, rd3;
    logic [15:0] out_mux4;
 	
-	logic wbs_execute, wme_execute; 
+	logic wbs_execute; 
 	logic [1:0] mm_execute;
    logic [2:0] ALUop_execute;
    logic wm_execute;
    logic am_execute;
    logic ni_execute;
+	logic wce_execute;
+	logic wme1_execute;
+	logic wme2_execute;
+
 	logic [15:0] srcA_execute;
 	logic [15:0] srcB_execute;
 
@@ -47,14 +55,17 @@ module Decode_Stage_tb;
       .flagN(flagN),
       .flagZ(flagZ),
       .wbs(wbs_decode),
-      .wme(wme_decode),
       .mm(mm_decode),
       .ALUop(ALUop_decode),
       .ri(ri),
       .wre(wre),
       .wm(wm_decode),
       .am(am_decode),
-      .ni(ni_decode)
+      .ni(ni_decode),
+		.wce(wce_decode),
+      .wme1(wme1_decode),
+      .wme2(wme2_decode),
+     
    );
      
    signExtend signExtend_instance (
@@ -92,21 +103,29 @@ module Decode_Stage_tb;
 	DecodeExecute_register DecodeExecute_register_instance (
 		.clk(clk),
       .wbs_in(wbs_decode),
-      .wme_in(wme_decode),
       .mm_in(mm_decode),
       .ALUop_in(ALUop_decode),
       .wm_in(wm_decode),
       .am_in(am_decode),
       .ni_in(ni_decode),
+		
+		.wce_in(wce_decode),
+		.wme1_in(wme1_decode),
+		.wme2_in(wme2_decode),
+		
 		.srcA_in(rd1),
 		.srcB_in(out_mux4),
       .wbs_out(wbs_execute),
-      .wme_out(wme_execute),
       .mm_out(mm_execute),
       .ALUop_out(ALUop_execute),
       .wm_out(wm_execute),
       .am_out(am_execute),
       .ni_out(ni_execute),
+		
+		.wce_out(wce_execute),
+		.wme1_out(wme1_execute),
+		.wme2_out(wme2_execute),
+		
 		.srcA_out(srcA_execute),
 		.srcB_out(srcB_execute)
    );
@@ -130,7 +149,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas de la unidad de control ----------------------------------------------------- \n");
 		$display("wbs: %b", wbs_decode);
-		$display("wme: %b", wme_decode);
+		
+		$display("wce: %b", wce_decode);
+		$display("wme1: %b", wme1_decode);
+		$display("wme2: %b", wme2_decode);
+		
 		$display("mm: %b", mm_decode);
 		$display("ALUop: %b", ALUop_decode);
 		$display("ri: %b", ri);
@@ -160,7 +183,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)\n");
 		$display("wbs: %b", wbs_execute);
-		$display("wme: %b", wme_execute);
+		
+		$display("wce: %b", wce_execute);
+		$display("wme1: %b", wme1_execute);
+		$display("wme2: %b", wme2_execute);
+		
 		$display("mm: %b", mm_execute);
 		$display("ALUop: %b", ALUop_execute);
 		$display("wm: %b", wm_execute);
@@ -189,7 +216,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas de la unidad de control ----------------------------------------------------- \n");
 		$display("wbs: %b", wbs_decode);
-		$display("wme: %b", wme_decode);
+		
+		$display("wce: %b", wce_decode);
+		$display("wme1: %b", wme1_decode);
+		$display("wme2: %b", wme2_decode);
+		
 		$display("mm: %b", mm_decode);
 		$display("ALUop: %b", ALUop_decode);
 		$display("ri: %b", ri);
@@ -219,7 +250,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)\n");
 		$display("wbs: %b", wbs_execute);
-		$display("wme: %b", wme_execute);
+		
+		$display("wce: %b", wce_execute);
+		$display("wme1: %b", wme1_execute);
+		$display("wme2: %b", wme2_execute);
+		
 		$display("mm: %b", mm_execute);
 		$display("ALUop: %b", ALUop_execute);
 		$display("wm: %b", wm_execute);
@@ -247,7 +282,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas de la unidad de control ----------------------------------------------------- \n");
 		$display("wbs: %b", wbs_decode);
-		$display("wme: %b", wme_decode);
+		
+		$display("wce: %b", wce_decode);
+		$display("wme1: %b", wme1_decode);
+		$display("wme2: %b", wme2_decode);
+		
 		$display("mm: %b", mm_decode);
 		$display("ALUop: %b", ALUop_decode);
 		$display("ri: %b", ri);
@@ -277,7 +316,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)\n");
 		$display("wbs: %b", wbs_execute);
-		$display("wme: %b", wme_execute);
+		
+		$display("wce: %b", wce_execute);
+		$display("wme1: %b", wme1_execute);
+		$display("wme2: %b", wme2_execute);
+		
 		$display("mm: %b", mm_execute);
 		$display("ALUop: %b", ALUop_execute);
 		$display("wm: %b", wm_execute);
@@ -305,7 +348,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas de la unidad de control ----------------------------------------------------- \n");
 		$display("wbs: %b", wbs_decode);
-		$display("wme: %b", wme_decode);
+		
+		$display("wce: %b", wce_decode);
+		$display("wme1: %b", wme1_decode);
+		$display("wme2: %b", wme2_decode);
+		
 		$display("mm: %b", mm_decode);
 		$display("ALUop: %b", ALUop_decode);
 		$display("ri: %b", ri);
@@ -335,7 +382,11 @@ module Decode_Stage_tb;
 		$display("------------------------------------------------------------------------------------- \n");
 		$display("Salidas del registro DECODE-EXECUTE (debe ir 1 ciclo atrasado)\n");
 		$display("wbs: %b", wbs_execute);
-		$display("wme: %b", wme_execute);
+		
+		$display("wce: %b", wce_execute);
+		$display("wme1: %b", wme1_execute);
+		$display("wme2: %b", wme2_execute);
+		
 		$display("mm: %b", mm_execute);
 		$display("ALUop: %b", ALUop_execute);
 		$display("wm: %b", wm_execute);

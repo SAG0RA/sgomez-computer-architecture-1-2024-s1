@@ -28,6 +28,14 @@ logic [15:0] wd3; // dato a escribir en el banco de registros
 logic [15:0] rd1, rd2, rd3; // direcciones en el banco de registros
 logic [15:0] out_mux4; // salida del mux de 4 entradas
 
+logic [15:0] read_addres_or_data; // salida del decoder y entrada al mux en la etapa execute
+logic [15:0] write_Data_execute;	// salida del decoder y entrada al registro pipeline execute-memory
+logic [15:0] alu_result;	// resultado de la ALU
+logic [15:0] output_alu_mux; 	// salida del mux de la ALU 
+
+
+
+
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
 
 logic ni; // Next Instruction, es al señal de control del mux del PC 
@@ -46,6 +54,9 @@ logic wce_decode;
 logic wme1_decode;
 logic wme2_decode;
 
+logic alu_mux_decode;		
+
+
 
 logic wbs_execute;
 logic [1:0] mm_execute;
@@ -59,7 +70,7 @@ logic wme2_execute;
 logic srcA_execute;
 logic srcB_execute;
 		
-		
+logic alu_mux_execute;
 		
 
 
@@ -136,6 +147,7 @@ controlUnit control_unit_instance (
 		.wce(wce_decode),
 		.wme1(wme1_decode),
 		.wme2(wme2_decode),
+		.alu_mux(alu_mux_decode)
    );
      
     signExtend signExtend_instance (
@@ -186,6 +198,7 @@ controlUnit control_unit_instance (
 		.wce_in(wce_decode),
 		.wme1_in(wme1_decode),
 		.wme2_in(wme2_decode),
+		.alu_mux_in(alu_mux_decode),
 		
 		.srcA_in(rd1),
 		.srcB_in(out_mux4),
@@ -199,6 +212,7 @@ controlUnit control_unit_instance (
 		.wce_out(wce_execute),
 		.wme1_out(wme1_execute),
 		.wme2_out(wme2_execute),
+		.alu_mux_out(alu_mux_execute),
 		
 		.srcA_out(srcA_execute),
 		.srcB_out(srcB_execute)
@@ -212,7 +226,62 @@ controlUnit control_unit_instance (
 
 ///////////// ETAPA EXECUTE ////////////////////////////////////////////////////////////////////////////
 
+ALU ALU_instance (
+      .ALUop(ALUop_execute),       
+      .srcA(srcA_execute),
+      .srcB(srcB_execute),
+      .ALUresult(alu_result),
+      .flagN(flagN),
+      .flagZ(flagZ)
+   );
+	
+	decoderMemory decoder_instance (
+		.data_in(srcB_execute),
+		.select(am_execute),
+		.data_out_0(read_addres_or_data),
+		.data_out_1(write_Data_execute)
+   );
+	
+	mux_2 u_mux_2 (
+        .data0(alu_result),
+        .data1(read_addres_or_data),
+        .select(alu_mux_execute),		
+        .out(output_alu_mux)
+    );
 
+	 
+///////////// REGISTRO PIPELINE EXECUTE-Memory ///////////////////////////////////////////////////////////
+ 
+	 ExecuteMemory_register ExecuteMemory_register_instance (
+      .clk(clk),
+		
+      .wbs_in(wbs_execute),
+      //.wme_in(wme_execute),
+      .mm_in(mm_execute),
+      .ALUresult_in(output_alu_mux), 
+      .memData_in(write_Data_execute),
+      .wm_in(wm_execute),
+      .ni_in(ni_execute),
+		
+		.wce_in(wce_decode),
+		.wme1_in(wme1_decode),
+		.wme2_in(wme2_decode),
+		
+      .wbs_out(wbs_memory),
+      //.wme_out(wme_memory),
+      .mm_out(mm_memory),
+      .ALUresult_out(alu_result_memory),
+      .memData_out(write_Data_memory),
+      .wm_out(wm_memory),
+      .ni_out(ni_memory),
+		
+		.wce_out(wce_execute),
+		.wme1_out(wme1_execute),
+		.wme2_out(wme2_execute),
+   );
+	 
+	 
+	 
 
 ///////////// ETAPA MEMORY ////////////////////////////////////////////////////////////////////////////
 

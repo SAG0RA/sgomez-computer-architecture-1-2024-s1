@@ -4,20 +4,29 @@ module Memory_Stage_tb;
 	 
 	logic clk = 0;
 	logic wbs_execute = 0; 
-	logic wme_execute = 1;
+	//logic wme_execute = 1;
 	logic [1:0] mm_execute = 0;
    logic wm_execute = 0;
    logic am_execute = 0;
    logic ni_execute = 1;	
+	
+	logic wce_execute = 1;
+	logic wme1_execute = 1;
+	logic wme2_execute = 1;
+	
 	logic [15:0] alu_result_execute  = 16'b0000000000000010;
 	logic [15:0] write_Data_execute  = 16'b0000000000000010;
 	
-	logic wbs_memory, wme_memory; 
+	logic wbs_memory; // wme_memory; 
 	logic [1:0] mm_memory;	
 	logic [15:0] alu_result_memory;
 	logic [15:0] write_Data_memory;
 	logic wm_memory;
 	logic ni_memory;
+	
+	logic wce_memory; 
+	logic wme1_memory; 
+	logic wme2_memory; 
 	
 	logic [15:0] data0;
 	logic [15:0] data1;
@@ -40,19 +49,28 @@ module Memory_Stage_tb;
    ExecuteMemory_register ExecuteMemory_register_instance (
 		.clk(clk),
       .wbs_in(wbs_execute),
-      .wme_in(wme_execute),
+      //.wme_in(wme_execute),
       .mm_in(mm_execute),
       .ALUresult_in(alu_result_execute),
       .memData_in(write_Data_execute),
       .wm_in(wm_execute),
       .ni_in(ni_execute),
+		
+		.wce_in(wce_execute),
+		.wme1_in(wme1_execute),
+		.wme2_in(wme2_execute),
+		
       .wbs_out(wbs_memory),
-      .wme_out(wme_memory),
+      //.wme_out(wme_memory),
       .mm_out(mm_memory),
       .ALUresult_out(alu_result_memory),
       .memData_out(write_Data_memory),
       .wm_out(wm_memory),
-      .ni_out(ni_memory)
+      .ni_out(ni_memory),
+		
+		.wce_out(wce_memory),
+		.wme1_out(wme1_memory),
+		.wme2_out(wme2_memory)
    );
 	
 	decoderMemory_3outs decoderMemory_3outs_instance (
@@ -110,7 +128,7 @@ module Memory_Stage_tb;
       $display("Inicio del primer ciclo");
       // Asigna valores simulados para las entradas del ExecuteMemory_register
       wbs_execute = 1;
-      wme_execute = 0;
+      //wme_execute = 0;
       mm_execute = 1;
       alu_result_execute = 16'b0;
       wm_execute = 1;
@@ -127,7 +145,7 @@ module Memory_Stage_tb;
       $display("ALUop_execute = %b, wm_execute = %b, am_execute = %b, ni_execute = %b", ALUop_execute, wm_execute, am_execute, ni_execute);
       $display("alu_result_execute = %h, write_Data_execute = %h", alu_result_execute, write_Data_execute);
       $display("Salidas ExecuteMemory_register:");
-      $display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);
+      $display("wbs_memory = %b, mm_memory = %b", wbs_memory, mm_memory);
       $display("alu_result_memory = %h, write_Data_memory = %h", alu_result_memory, write_Data_memory);
       $display("wm_memory = %b, ni_memory = %b", wm_memory, ni_memory);
 		// Mostrar entradas y salidas del MemoryWriteback_register
@@ -142,7 +160,7 @@ module Memory_Stage_tb;
       $display("Inicio del segundo ciclo");
       // Asigna nuevos valores simulados para las entradas del ExecuteMemory_register
       wbs_execute = 0;
-      wme_execute = 1;
+      //wme_execute = 1;
       mm_execute = 0;
       alu_result_execute = 16'b0;
       wm_execute = 0;
@@ -155,11 +173,11 @@ module Memory_Stage_tb;
       // Mostrar resultados del segundo ciclo
       $display("Resultados del segundo ciclo:");
       $display("Entradas ExecuteMemory_register:");
-      $display("wbs_execute = %b, wme_execute = %b, mm_execute = %b", wbs_execute, wme_execute, mm_execute);
+      $display("wbs_execute = %b, mm_execute = %b", wbs_execute, mm_execute);
       $display("ALUop_execute = %b, wm_execute = %b, am_execute = %b, ni_execute = %b", ALUop_execute, wm_execute, am_execute, ni_execute);
       $display("alu_result_execute = %h, write_Data_execute = %h", alu_result_execute, write_Data_execute); 
 		$display("Salidas ExecuteMemory_register:");
-		$display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);
+		$display("wbs_memory = %b, mm_memory = %b", wbs_memory, mm_memory);
 		$display("alu_result_memory = %h, write_Data_memory = %h", alu_result_memory, write_Data_memory);
 		$display("wm_memory = %b, ni_memory = %b", wm_memory, ni_memory);
 		// Mostrar entradas y salidas del MemoryWriteback_register
@@ -174,7 +192,7 @@ module Memory_Stage_tb;
       $display("Inicio del tercer ciclo");
       // Asigna nuevos valores simulados para las entradas del ExecuteMemory_register
 		wbs_execute = 1;
-      wme_execute = 1;
+      //wme_execute = 1;
       mm_execute = 1;
       alu_result_execute = 16'b0;
       wm_execute = 1;
@@ -187,11 +205,11 @@ module Memory_Stage_tb;
       // Mostrar resultados del tercer ciclo
       $display("Resultados del tercer ciclo:");
       $display("Entradas ExecuteMemory_register:");
-      $display("wbs_execute = %b, wme_execute = %b, mm_execute = %b", wbs_execute, wme_execute, mm_execute);
+      $display("wbs_execute = %b, mm_execute = %b", wbs_execute, mm_execute);
       $display("alu_result__execute = %b, wm_execute = %b, am_execute = %b, ni_execute = %b", alu_result__execute, wm_execute, am_execute, ni_execute);
       $display("alu_result_execute = %h, write_Data_execute = %h", alu_result_execute, write_Data_execute);
       $display("Salidas ExecuteMemory_register:");
-      $display("wbs_memory = %b, wme_memory = %b, mm_memory = %b", wbs_memory, wme_memory, mm_memory);
+      $display("wbs_memory = %b, mm_memory = %b", wbs_memory, mm_memory);
       $display("alu_result_memory = %h, write_Data_memory = %h", alu_result_memory, write_Data_memory);
       $display("wm_memory = %b, ni_memory = %b", wm_memory, ni_memory);
       // Mostrar entradas y salidas del MemoryWriteback_register

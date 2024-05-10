@@ -11,6 +11,7 @@ module Execute_Stage_tb;
 	logic wce_decode = 0;
 	logic wme1_decode = 0;
 	logic wme2_decode = 0;
+	logic alu_mux_in_decode = 0;
 	
 	logic [15:0] srcA_decode = 16'b000000000000000;
 	logic [15:0] srcB_decode = 16'b000000000000000;
@@ -25,6 +26,7 @@ module Execute_Stage_tb;
 	logic wce_execute;
 	logic wme1_execute;
 	logic wme2_execute;
+	logic alu_mux_out_execute;
 	
 	logic [15:0] srcA_execute;
 	logic [15:0] srcB_execute;
@@ -60,6 +62,7 @@ module Execute_Stage_tb;
 		.wce_in(wce_decode),
 		.wme1_in(wme1_decode),
 		.wme2_in(wme2_decode),
+		.alu_mux_in(alu_mux_in_decode),
 		
 		.srcA_in(srcA_decode),
 		.srcB_in(srcB_decode),
@@ -73,6 +76,7 @@ module Execute_Stage_tb;
 		.wce_out(wce_execute),
 		.wme1_out(wme1_execute),
 		.wme2_out(wme2_execute),
+		.alu_mux_out(alu_mux_out_execute),
 		
 		.srcA_out(srcA_execute),
 		.srcB_out(srcB_execute)

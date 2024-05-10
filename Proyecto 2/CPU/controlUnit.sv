@@ -12,7 +12,8 @@ module controlUnit (
 	 output logic ni,	// next instruction
 	 output logic wce,	// write coordinates enable
 	 output logic wme1,	// write memory enable 1 (pixels memory) for CPU
-	 output logic wme2	// write memory enable 2 (pixels memory) for VGA
+	 output logic wme2,	// write memory enable 2 (pixels memory) for VGA
+	 output logic alu_mux	// señal para seleccionar 1 de las 2 entradas del mux de la ALU
 );
 
     // Definición de las salidas en función del opCode
@@ -33,6 +34,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
 				// add
@@ -49,6 +51,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
 				// lsl
@@ -65,6 +68,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				// neg
@@ -81,6 +85,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				// beq
@@ -97,6 +102,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
 				// bgt
@@ -113,6 +119,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
 				// blt
@@ -129,6 +136,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				// b
@@ -145,6 +153,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				// mov
@@ -161,6 +170,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
 				// ldr
@@ -177,6 +187,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
 				// str
@@ -193,6 +204,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				// cmp
@@ -209,6 +221,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				////////////////////// NO HA SIDO ASIGNADO //////////////////////
@@ -225,6 +238,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
             4'b1101: begin
@@ -240,6 +254,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
             4'b1110: begin
@@ -255,6 +270,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
 				
 				4'b1111: begin
@@ -270,6 +286,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
+					 alu_mux =1'bx;
             end
             
             default: begin
@@ -285,6 +302,7 @@ module controlUnit (
 					 wce = 1'b0;
 					 wme1 = 1'b0;
 					 wme2 = 1'b0;
+					 alu_mux =1'bx;
             end
         endcase
     end

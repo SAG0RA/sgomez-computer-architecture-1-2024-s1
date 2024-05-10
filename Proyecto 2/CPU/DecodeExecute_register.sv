@@ -11,9 +11,11 @@ module DecodeExecute_register (
 	 input logic wce_in,	
 	 input logic wme1_in,
 	 input logic wme2_in,
+	 input logic alu_mux_in,
 	 
 	 input logic [15:0] srcA_in,
 	 input logic [15:0] srcB_in,
+	 
     output logic wbs_out,
     output logic wme_out,
     output logic [1:0] mm_out,
@@ -25,6 +27,7 @@ module DecodeExecute_register (
 	 output logic wce_out,	
 	 output logic wme1_out,
 	 output logic wme2_out,
+	 output logic alu_mux_out,
 	 
 	 output logic [15:0] srcA_out,
 	 output logic [15:0] srcB_out
@@ -39,6 +42,8 @@ module DecodeExecute_register (
 	 logic wce;
     logic wme1;
     logic wme2;
+	 logic alu_mux;
+	 
 	 logic [15:0] srcA;
 	 logic [15:0] srcB;
     
@@ -54,6 +59,7 @@ module DecodeExecute_register (
 		  wce <= wce_in;
 		  wme1 <= wme1_in;
 		  wme2 <= wme2_in;
+		  alu_mux <= alu_mux_in;
 		  
 		  srcA <= srcA_in;
 		  srcB <= srcB_in;
@@ -70,6 +76,7 @@ module DecodeExecute_register (
 	 assign wce_out = wce;
     assign wme1_out = wme1;
 	 assign wme2_out = wme2;
+	 assign alu_mux_out = alu_mux;
 	 
 	 assign srcA_out = srcA;
 	 assign srcB_out = srcB;

@@ -15,8 +15,6 @@ logic [15:0] PCaddress_out; // salida del registro PC y entrada al PC adder y la
 logic [15:0] mux_out_pc; // salida del mux del PC y que entra al registro pc 
 logic [15:0] PC_plus1; // salida del sumador del PC (PC + 1)
 
-logic [15:0] jumpAddress; // entrada al mux del PC, es la direccion de un salto
-
 logic [15:0] instruction_fetch; // salida de la memoria rom y entrada al registro pipeline FETCH-DECODE
 logic [15:0] instruction_decode; // salida del registro pipeline FETCH-DECODE
 
@@ -33,12 +31,23 @@ logic [15:0] write_Data_execute;	// salida del decoder y entrada al registro pip
 logic [15:0] alu_result;	// resultado de la ALU
 logic [15:0] output_alu_mux; 	// salida del mux de la ALU 
 
+logic [15:0] address_coordinates_memory; 
+logic [15:0] write_register_data;
+logic [15:0] address_pixel_memory;	
+
+logic [15:0] output_memory_mux; 	// salida del mux que está en la etapa de memory
+
+logic [15:0] neverReaded; // salida de la memoria que nunca se lee, se crea porque se debe especificar un parametro
 
 
+logic wbs_writeback;
+logic [15:0] readCoordinate_writeback;
+logic [15:0] calcData_writeback;
+logic ni_writeback;
 
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
 
-logic ni; // Next Instruction, es al señal de control del mux del PC 
+logic ni; // Next Instruction, es al señal de control del mux del PC   ****  OJO  revisar esta señal ***
 
 logic flagN, flagZ; // Banderas de la ALU para resultados negativos y zero
 
@@ -72,6 +81,17 @@ logic srcB_execute;
 		
 logic alu_mux_execute;
 		
+logic wbs_memory;   
+logic mm_memory;
+logic alu_result_memory;
+logic write_Data_memory;
+logic wm_memory;
+logic ni_memory;	
+logic wce_memory; 
+logic wme1_memory; 
+logic wme2_memory; 
+
+
 
 
 
@@ -87,11 +107,13 @@ logic alu_mux_execute;
         end
     end
     
+	 /*
     always_ff @(posedge vga_clk) begin
         if (!VGA_enable) begin
             pixel = 0;
         end 
     end
+	 */
 
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
 
@@ -107,9 +129,9 @@ logic alu_mux_execute;
         .PC(PC_plus1)					//output: la entrada (input) + 1 que será la siguiente instruccion si no se da un salto
     ); 
 	 
-	mux_2 mux_2_instance (
+	mux_2 mux_2_instance_fetch (
         .data0(PC_plus1),
-        .data1(jumpAddress),
+        .data1(srcB_execute),  // direccion de salto para las instrucciones J
         .select(ni), // Next Instruction, direccion de salto ó PC + 1
         .out(mux_out_pc)
     );
@@ -250,7 +272,7 @@ ALU ALU_instance (
     );
 
 	 
-///////////// REGISTRO PIPELINE EXECUTE-Memory ///////////////////////////////////////////////////////////
+///////////// REGISTRO PIPELINE EXECUTE-MEMORY ///////////////////////////////////////////////////////////
  
 	 ExecuteMemory_register ExecuteMemory_register_instance (
       .clk(clk),
@@ -263,9 +285,9 @@ ALU ALU_instance (
       .wm_in(wm_execute),
       .ni_in(ni_execute),
 		
-		.wce_in(wce_decode),
-		.wme1_in(wme1_decode),
-		.wme2_in(wme2_decode),
+		.wce_in(wce_execute),
+		.wme1_in(wme1_execute),
+		.wme2_in(wme2_execute),
 		
       .wbs_out(wbs_memory),
       //.wme_out(wme_memory),
@@ -275,9 +297,9 @@ ALU ALU_instance (
       .wm_out(wm_memory),
       .ni_out(ni_memory),
 		
-		.wce_out(wce_execute),
-		.wme1_out(wme1_execute),
-		.wme2_out(wme2_execute),
+		.wce_out(wce_memory),
+		.wme1_out(wme1_memory),
+		.wme2_out(wme2_memory),
    );
 	 
 	 
@@ -285,11 +307,64 @@ ALU ALU_instance (
 
 ///////////// ETAPA MEMORY ////////////////////////////////////////////////////////////////////////////
 
+decoderMemory_3outs decoderMemory_3outs_instance (
+		.data_in(alu_result_memory),
+      .select(mm_memory),
+      .data_out_0(address_coordinates_memory), 
+      .data_out_1(write_register_data),
+		.data_out_2(address_pixel_memory)		
+   );
+	
+	mux_2 mux_2_instance_memory (
+      .data0(write_register_data),
+      .data1(write_Data_memory), 
+      .select(wm_memory),
+      .out(output_memory_mux)
+   );	
+	
+	RAM_coordenadas ram_coordenadas_instance(
+		.address(address_coordinates_memory),
+		.clock(clk),
+		.data(16'b0),			// Nunca se escribe, solo se lee (se coloca un 0 porque no puede quedar vacio)
+		.wren(wce_memory),   // Nunca se escribe, solo se lee = 1'b0
+		.q(readCoordinate)
+	);	
+	
+	RAM ram_instance(
+		.address_a(address_pixel_memory),	// el procesador indica la direccion en donde escribir
+		.address_b(pixelAddress),		// direccion para leer el pixel y mostrarlo en pantalla
+		.clock(clk),
+		.data_a(write_Data_memory),	// el procesador indica el dato a escribir
+		.data_b(16'b0),					// nunca se escriben datos en este puerto
+		.wren_a(wme1_memory),		
+		.wren_b(wme2_memory), 
+		.q_a(neverReaded),
+		.q_b(pixel)
+	);
 
+///////////// REGISTRO PIPELINE MEMORY-WRITEBACK ///////////////////////////////////////////////////////////
+
+   MemoryWriteback_register MemoryWriteback_register_instance (
+      .clk(clk),
+      .wbs_in(wbs_memory),
+      .memData_in(readCoordinate),
+      .calcData_in(output_memory_mux),
+      .ni_in(ni_memory), 
+      .wbs_out(wbs_writeback),
+      .memData_out(readCoordinate_writeback),
+      .calcData_out(calcData_writeback),
+      .ni_out(ni_writeback)
+   );
+	
 
 ///////////// ETAPA WRITEBACK ////////////////////////////////////////////////////////////////////////////
 
-
+	mux_2 mux_2_instance_writeback (
+      .data0(readCoordinate_writeback),
+      .data1(calcData_writeback), 
+      .select(wbs_writeback),
+      .out(wd3)
+   );
 
 
 

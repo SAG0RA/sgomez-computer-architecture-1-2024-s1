@@ -12,7 +12,7 @@ module TopModule(
 	logic [7:0] pixel;
 	
 	
-	logic enable = 1'b1;
+	logic enable;
 	assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
 	
 	

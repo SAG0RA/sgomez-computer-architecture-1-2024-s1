@@ -11,7 +11,9 @@ module ExecuteMemory_register (
 	 input logic wme1_in,
 	 input logic wme2_in,
 	 input logic reg_dest_in,
-	 input logic reg_dest_data_writeback_in,
+	 input logic [3:0] reg_dest_data_writeback_in,
+	 
+	 input logic wre_in,
 	 
     output logic wbs_out,
     output logic [1:0] mm_out,
@@ -24,7 +26,9 @@ module ExecuteMemory_register (
 	 output logic wme1_out,
 	 output logic wme2_out,
 	 output logic reg_dest_out,
-	 output logic reg_dest_data_writeback_out
+	 output logic [3:0] reg_dest_data_writeback_out,
+	 
+	 output logic wre_out
 );
 
     logic wbs;
@@ -38,7 +42,9 @@ module ExecuteMemory_register (
 	 logic wme1;
 	 logic wme2;
 	 logic reg_dest;
-	 logic reg_dest_data_writeback;
+	 logic [3:0] reg_dest_data_writeback;
+	 
+	 logic wre;
     
 
     // Proceso de escritura en el registro
@@ -56,6 +62,8 @@ module ExecuteMemory_register (
 		  wme2 <= wme2_in;
 		  reg_dest <= reg_dest_in;
 		  reg_dest_data_writeback <= reg_dest_data_writeback_in;
+		  
+		  wre <= wre_in;
     end
 
     // Salidas del registro
@@ -72,4 +80,6 @@ module ExecuteMemory_register (
 	 assign wme2_out = wme2;
 	 assign reg_dest_out = reg_dest;
 	 assign reg_dest_data_writeback_out = reg_dest_data_writeback;
+	 
+	 assign wre_out = wre;
 endmodule

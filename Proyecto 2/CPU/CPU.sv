@@ -46,10 +46,10 @@ logic [15:0] readCoordinate_writeback;
 logic [15:0] calcData_writeback;
 logic ni_writeback;
 
-logic [15:0] reg_dest_data_decode;
+logic [15:0] reg_dest_data_decode;	// no se usa
 logic [15:0] reg_dest_data_execute;
 logic [15:0] reg_dest_data_memory;
-logic [15:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
+logic [3:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
 logic [15:0] reg_dest_mux_out;	// entrada 0 del mux del banco de registros (reg file)
 
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,8 @@ logic wbs_decode;
 logic [1:0] mm_decode;
 logic [2:0] ALUop_decode;
 logic [1:0] ri;
-logic wre;
+//logic wre;								//////////////////////////////////////////
+logic wre_decode;
 logic wm_decode;
 logic am_decode;
 logic ni_decode;
@@ -77,6 +78,7 @@ logic alu_mux_decode;
 logic wbs_execute;
 logic [1:0] mm_execute;
 logic [2:0] ALUop_execute;
+logic wre_execute;		///////////////////////////////////////
 logic wm_execute;
 logic am_execute;
 logic ni_execute;	
@@ -92,6 +94,7 @@ logic wbs_memory;
 logic mm_memory;
 logic alu_result_memory;
 logic write_Data_memory;
+logic wre_memory;					/////////////////////////
 logic wm_memory;
 logic ni_memory;	
 logic wce_memory; 
@@ -103,6 +106,9 @@ logic reg_dest_decode;
 logic reg_dest_execute;
 logic reg_dest_memory;
 logic reg_dest_writeback;
+
+
+logic wre_writeback;
 
 
 
@@ -168,7 +174,7 @@ controlUnit control_unit_instance (
       .mm(mm_decode),
       .ALUop(ALUop_decode),
       .ri(ri),
-      .wre(wre),
+      .wre(wre_decode),
       .wm(wm_decode),
       .am(am_decode),
       .ni(ni_decode),
@@ -190,7 +196,7 @@ controlUnit control_unit_instance (
       .ZeroExtImmediate(ZeroExtImmediate)
    );
 	
-	mux_2 u_mux_2_regfile (
+	mux_2_regfile u_mux_2_regfile (
         .data0(instruction_decode[11:8]),
         .data1(reg_dest_data_writeback),
         .select(reg_dest_writeback),		
@@ -200,7 +206,7 @@ controlUnit control_unit_instance (
      
    regfile regfile_instance (
       .clk(clk),
-      .wre(wre),
+      .wre(wre_writeback),  /// revisar  
       .a1(instruction_decode[3:0]),
       .a2(instruction_decode[7:4]),
       .a3(reg_dest_mux_out),
@@ -241,6 +247,8 @@ controlUnit control_unit_instance (
 		.reg_dest_in(reg_dest_decode),
 		.reg_dest_data_writeback_in(reg_dest_mux_out),
 		
+		.wre_in(wre_decode),
+		
 		.srcA_in(rd1),
 		.srcB_in(out_mux4),
 		
@@ -258,6 +266,8 @@ controlUnit control_unit_instance (
 		
 		.reg_dest_out(reg_dest_execute),
 		.reg_dest_data_writeback_out(reg_dest_data_execute),
+		
+		.wre_out(wre_execute),
 		
 		.srcA_out(srcA_execute),
 		.srcB_out(srcB_execute)
@@ -314,6 +324,8 @@ ALU ALU_instance (
 		.reg_dest_in(reg_dest_execute),
 		.reg_dest_data_writeback_in(reg_dest_data_execute),
 		
+		.wre_in(wre_execute),
+		
       .wbs_out(wbs_memory),
       .mm_out(mm_memory),
       .ALUresult_out(alu_result_memory),
@@ -326,7 +338,9 @@ ALU ALU_instance (
 		.wme2_out(wme2_memory),
 		
 		.reg_dest_out(reg_dest_memory),
-		.reg_dest_data_writeback_out(reg_dest_data_memory)
+		.reg_dest_data_writeback_out(reg_dest_data_memory),
+		
+		.wre_out(wre_memory)
    );
 	 
 	 
@@ -381,13 +395,17 @@ decoderMemory_3outs decoderMemory_3outs_instance (
 		.reg_dest_in(reg_dest_memory),
 		.reg_dest_data_writeback_in(reg_dest_data_memory),
 		
+		.wre_in(wre_memory),
+		
       .wbs_out(wbs_writeback),
       .memData_out(readCoordinate_writeback),
       .calcData_out(calcData_writeback),
       .ni_out(ni_writeback),
 		
 		.reg_dest_out(reg_dest_writeback),
-		.reg_dest_data_writeback_out(reg_dest_data_writeback)
+		.reg_dest_data_writeback_out(reg_dest_data_writeback),
+		
+		.wre_out(wre_writeback)
    );
 	
 

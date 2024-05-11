@@ -1,7 +1,5 @@
 module regfile_tb;
 
-    // Parámetros del testbench
-    parameter CLK_PERIOD = 10; // Periodo del reloj en unidades de tiempo
     
     // Definición de señales
     logic clk = 0;
@@ -24,61 +22,53 @@ module regfile_tb;
     );
     
     // Generar un pulso de reloj cada periodo
-    always #(CLK_PERIOD / 2) clk = ~clk;
+    always #10 clk = ~clk;
     
     // Inicializar las señales de entrada
     initial begin
-        // Esperar un poco antes de comenzar las operaciones
-        #(CLK_PERIOD * 5);
 		  
         wre = 0; // Desactivar la escritura
         // Leer datos de los puertos
-        a1 = 0; // Direccion de lectura del primer puerto
-        a2 = 1; // Direccion de lectura del segundo puerto
-        a3 = 2; // Direccion de lectura del tercer puerto
-        #CLK_PERIOD; // Esperar un ciclo de reloj
+        a1 = 11; // Direccion de lectura del primer puerto
+        a2 = 9; // Direccion de lectura del segundo puerto
+        a3 = 7; // Direccion de lectura del tercer puerto
+		  wd3 = 16'b0000000000001000; // Dato a escribir en el tercer puerto
 		  
 		  // Imprimir datos de los registros al inicio
 		  $display("********* Datos iniciales *********");
         $display("Dato leido del puerto 1: %h", rd1);
         $display("Dato leido del puerto 2: %h", rd2);
         $display("Dato leido del puerto 3: %h", rd3);
-		  
-		  // Escribir datos
-        wre = 1;
-        a3 = 0; // Direccion de escritura
-        wd3 = 16'hABCD; // Dato a escribir
-		  
-        #CLK_PERIOD; // Esperar un ciclo de reloj
-		  
-		  // Escribir datos
-        wre = 1;
-        a3 = 1; // Direccion de escritura
-        wd3 = 16'h29CA; // Dato a escribir
-		  
-		  #CLK_PERIOD; // Esperar un ciclo de reloj
-		  
-		  // Escribir datos
-        wre = 1;
-        a3 = 2; // Direccion de escritura
-        wd3 = 16'hC11F; // Dato a escribir
-		  
-		  #CLK_PERIOD; // Esperar un ciclo de reloj
         
-        wre = 0; // Desactivar la escritura
-        // Leer datos de los puertos
-        a1 = 0; // Direccion de lectura del primer puerto
-        a2 = 1; // Direccion de lectura del segundo puerto
-        a3 = 2; // Direccion de lectura del tercer puerto
-        #CLK_PERIOD; // Esperar un ciclo de reloj
+		  // Esperar un ciclo
+        #20;
 		  
-		  // Imprimir datos guardados en los registros
-		  $display("********* Datos guardados *********");
+		  ///////////////////////////////////////////////////////////////////////////////
+		  
+		  wre = 1; // Activar la escritura
+        // Leer datos de los puertos
+        a1 = 11; // Direccion de lectura del primer puerto
+        a2 = 9; // Direccion de lectura del segundo puerto
+        a3 = 7; // Direccion de lectura del tercer puerto
+		  wd3 = 16'b0000000000001000; // Dato a escribir en el tercer puerto
+		  
+		  // Imprimir datos de los registros al inicio
+		  $display("********* Datos iniciales *********");
         $display("Dato leido del puerto 1: %h", rd1);
         $display("Dato leido del puerto 2: %h", rd2);
         $display("Dato leido del puerto 3: %h", rd3);
         
-        // Terminar la simulación
+		  // Esperar un ciclo
+        #20;
+		  
+		  ///////////////////////////////////////////////////////////////////////////////
+		  
+		  // Imprimir datos de los registros al inicio
+		  $display("********* Datos iniciales *********");
+        $display("Dato leido del puerto 1: %h", rd1);
+        $display("Dato leido del puerto 2: %h", rd2);
+        $display("Dato leido del puerto 3: %h", rd3);
+		 
         $finish;
     end
     

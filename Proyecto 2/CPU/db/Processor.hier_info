@@ -1,7 +1,7 @@
 |TopModule
-clk => clk.IN1
-rst => CPU:CPU.reset
-VGA_enable => CPU:CPU.VGA_enable
+clk => clk.IN2
+rst => rst.IN1
+VGA_enable => VGA_enable.IN1
 vga_clk << vga_clk.DB_MAX_OUTPUT_PORT_TYPE
 h_sync << vga_controller:vgaCont.port1
 v_sync << vga_controller:vgaCont.port2
@@ -2939,51 +2939,15 @@ ZeroExtImmediate[14] <= <GND>
 ZeroExtImmediate[15] <= <GND>
 
 
-|TopModule|CPU:CPU|mux_2:u_mux_2_regfile
+|TopModule|CPU:CPU|mux_2_regfile:u_mux_2_regfile
 data0[0] => out.DATAA
 data0[1] => out.DATAA
 data0[2] => out.DATAA
 data0[3] => out.DATAA
-data0[4] => out.DATAA
-data0[5] => out.DATAA
-data0[6] => out.DATAA
-data0[7] => out.DATAA
-data0[8] => out.DATAA
-data0[9] => out.DATAA
-data0[10] => out.DATAA
-data0[11] => out.DATAA
-data0[12] => out.DATAA
-data0[13] => out.DATAA
-data0[14] => out.DATAA
-data0[15] => out.DATAA
 data1[0] => out.DATAB
 data1[1] => out.DATAB
 data1[2] => out.DATAB
 data1[3] => out.DATAB
-data1[4] => out.DATAB
-data1[5] => out.DATAB
-data1[6] => out.DATAB
-data1[7] => out.DATAB
-data1[8] => out.DATAB
-data1[9] => out.DATAB
-data1[10] => out.DATAB
-data1[11] => out.DATAB
-data1[12] => out.DATAB
-data1[13] => out.DATAB
-data1[14] => out.DATAB
-data1[15] => out.DATAB
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
 select => out.OUTPUTSELECT
 select => out.OUTPUTSELECT
 select => out.OUTPUTSELECT
@@ -2992,18 +2956,6 @@ out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TopModule|CPU:CPU|regfile:regfile_instance
@@ -3977,7 +3929,11 @@ clk => srcA[12].CLK
 clk => srcA[13].CLK
 clk => srcA[14].CLK
 clk => srcA[15].CLK
-clk => reg_dest_data_writeback.CLK
+clk => wre.CLK
+clk => reg_dest_data_writeback[0].CLK
+clk => reg_dest_data_writeback[1].CLK
+clk => reg_dest_data_writeback[2].CLK
+clk => reg_dest_data_writeback[3].CLK
 clk => reg_dest.CLK
 clk => alu_mux.CLK
 clk => wme2.CLK
@@ -4006,7 +3962,11 @@ wme1_in => wme1.DATAIN
 wme2_in => wme2.DATAIN
 alu_mux_in => alu_mux.DATAIN
 reg_dest_in => reg_dest.DATAIN
-reg_dest_data_writeback_in => reg_dest_data_writeback.DATAIN
+reg_dest_data_writeback_in[0] => reg_dest_data_writeback[0].DATAIN
+reg_dest_data_writeback_in[1] => reg_dest_data_writeback[1].DATAIN
+reg_dest_data_writeback_in[2] => reg_dest_data_writeback[2].DATAIN
+reg_dest_data_writeback_in[3] => reg_dest_data_writeback[3].DATAIN
+wre_in => wre.DATAIN
 srcA_in[0] => srcA[0].DATAIN
 srcA_in[1] => srcA[1].DATAIN
 srcA_in[2] => srcA[2].DATAIN
@@ -4054,7 +4014,11 @@ wme1_out <= wme1.DB_MAX_OUTPUT_PORT_TYPE
 wme2_out <= wme2.DB_MAX_OUTPUT_PORT_TYPE
 alu_mux_out <= alu_mux.DB_MAX_OUTPUT_PORT_TYPE
 reg_dest_out <= reg_dest.DB_MAX_OUTPUT_PORT_TYPE
-reg_dest_data_writeback_out <= reg_dest_data_writeback.DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[0] <= reg_dest_data_writeback[0].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[1] <= reg_dest_data_writeback[1].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[2] <= reg_dest_data_writeback[2].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[3] <= reg_dest_data_writeback[3].DB_MAX_OUTPUT_PORT_TYPE
+wre_out <= wre.DB_MAX_OUTPUT_PORT_TYPE
 srcA_out[0] <= srcA[0].DB_MAX_OUTPUT_PORT_TYPE
 srcA_out[1] <= srcA[1].DB_MAX_OUTPUT_PORT_TYPE
 srcA_out[2] <= srcA[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -4613,7 +4577,11 @@ out[15] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TopModule|CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance
-clk => reg_dest_data_writeback.CLK
+clk => wre.CLK
+clk => reg_dest_data_writeback[0].CLK
+clk => reg_dest_data_writeback[1].CLK
+clk => reg_dest_data_writeback[2].CLK
+clk => reg_dest_data_writeback[3].CLK
 clk => reg_dest.CLK
 clk => wme2.CLK
 clk => wme1.CLK
@@ -4696,7 +4664,11 @@ wce_in => wce.DATAIN
 wme1_in => wme1.DATAIN
 wme2_in => wme2.DATAIN
 reg_dest_in => reg_dest.DATAIN
-reg_dest_data_writeback_in => reg_dest_data_writeback.DATAIN
+reg_dest_data_writeback_in[0] => reg_dest_data_writeback[0].DATAIN
+reg_dest_data_writeback_in[1] => reg_dest_data_writeback[1].DATAIN
+reg_dest_data_writeback_in[2] => reg_dest_data_writeback[2].DATAIN
+reg_dest_data_writeback_in[3] => reg_dest_data_writeback[3].DATAIN
+wre_in => wre.DATAIN
 wbs_out <= wbs.DB_MAX_OUTPUT_PORT_TYPE
 mm_out[0] <= mm[0].DB_MAX_OUTPUT_PORT_TYPE
 mm_out[1] <= mm[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -4738,7 +4710,11 @@ wce_out <= wce.DB_MAX_OUTPUT_PORT_TYPE
 wme1_out <= wme1.DB_MAX_OUTPUT_PORT_TYPE
 wme2_out <= wme2.DB_MAX_OUTPUT_PORT_TYPE
 reg_dest_out <= reg_dest.DB_MAX_OUTPUT_PORT_TYPE
-reg_dest_data_writeback_out <= reg_dest_data_writeback.DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[0] <= reg_dest_data_writeback[0].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[1] <= reg_dest_data_writeback[1].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[2] <= reg_dest_data_writeback[2].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[3] <= reg_dest_data_writeback[3].DB_MAX_OUTPUT_PORT_TYPE
+wre_out <= wre.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TopModule|CPU:CPU|decoderMemory_3outs:decoderMemory_3outs_instance
@@ -7850,7 +7826,11 @@ sel[2] => _.IN0
 
 
 |TopModule|CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance
-clk => reg_dest_data_writeback.CLK
+clk => reg_dest_data_writeback[0].CLK
+clk => reg_dest_data_writeback[1].CLK
+clk => reg_dest_data_writeback[2].CLK
+clk => reg_dest_data_writeback[3].CLK
+clk => reg_dest.CLK
 clk => ni.CLK
 clk => calcData[0].CLK
 clk => calcData[1].CLK
@@ -7919,8 +7899,12 @@ calcData_in[13] => calcData[13].DATAIN
 calcData_in[14] => calcData[14].DATAIN
 calcData_in[15] => calcData[15].DATAIN
 ni_in => ni.DATAIN
-reg_dest_in => ~NO_FANOUT~
-reg_dest_data_writeback_in => reg_dest_data_writeback.DATAIN
+reg_dest_in => reg_dest.DATAIN
+reg_dest_data_writeback_in[0] => reg_dest_data_writeback[0].DATAIN
+reg_dest_data_writeback_in[1] => reg_dest_data_writeback[1].DATAIN
+reg_dest_data_writeback_in[2] => reg_dest_data_writeback[2].DATAIN
+reg_dest_data_writeback_in[3] => reg_dest_data_writeback[3].DATAIN
+wre_in => ~NO_FANOUT~
 wbs_out <= wbs.DB_MAX_OUTPUT_PORT_TYPE
 memData_out[0] <= memData[0].DB_MAX_OUTPUT_PORT_TYPE
 memData_out[1] <= memData[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -7955,8 +7939,12 @@ calcData_out[13] <= calcData[13].DB_MAX_OUTPUT_PORT_TYPE
 calcData_out[14] <= calcData[14].DB_MAX_OUTPUT_PORT_TYPE
 calcData_out[15] <= calcData[15].DB_MAX_OUTPUT_PORT_TYPE
 ni_out <= ni.DB_MAX_OUTPUT_PORT_TYPE
-reg_dest_out <= <VCC>
-reg_dest_data_writeback_out <= reg_dest_data_writeback.DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_out <= reg_dest.DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[0] <= reg_dest_data_writeback[0].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[1] <= reg_dest_data_writeback[1].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[2] <= reg_dest_data_writeback[2].DB_MAX_OUTPUT_PORT_TYPE
+reg_dest_data_writeback_out[3] <= reg_dest_data_writeback[3].DB_MAX_OUTPUT_PORT_TYPE
+wre_out <= <VCC>
 
 
 |TopModule|CPU:CPU|mux_2:mux_2_instance_writeback

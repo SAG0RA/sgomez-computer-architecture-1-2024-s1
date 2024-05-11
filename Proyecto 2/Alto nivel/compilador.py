@@ -50,7 +50,7 @@ def open_file_dialog():
                     machine_code += str(mem_dir + 3) + ": " + stall + ";\n"
                     machine_code += str(mem_dir + 4) + ": " + stall + ";\n"
                     machine_code += str(mem_dir + 5) + ": " + stall + ";\n"
-                    mem_dir += 5
+                    mem_dir += 6
                 else:
                     print("Formato de instrucción no válido:", instruction)
             file.close()

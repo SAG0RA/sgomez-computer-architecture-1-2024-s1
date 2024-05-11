@@ -1,2 +1,1 @@
-MOVI R4, #-20
-MOVR R4, R3
+ldr r2, [r3]

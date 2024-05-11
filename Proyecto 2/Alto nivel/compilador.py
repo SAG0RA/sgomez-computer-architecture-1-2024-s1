@@ -130,7 +130,9 @@ def parse_instruction(instruction, labels):
     logic_regex  = r'\b(CMP|NEG)\s+(R\d+),\s+(R\d+)\b'
 
     # Expresion para datos en memoria
-    data_regex = r'(\b(?:STR|LDR)\b)\s+(R\d+),\s*(\[R\d+\])'
+    str_regex = r'(\b(?:STR)\b)\s+(R\d+),\s*(#-?\d+)'
+
+    ldr_regex = r'(\b(?:LDR)\b)\s+(R\d+),\s*(\[R\d+\])'
     
     # Expresion para datos en ejecucion
     movi_regex = r'\b(MOVI\b)\s+(R\d+),\s+(R\d+|#-?\d+)\b'
@@ -157,13 +159,19 @@ def parse_instruction(instruction, labels):
         operands = match.groups()[1:]
         return opcode, operands
 
-    match = re.match(data_regex, instruction)
+    match = re.match(str_regex, instruction)
+    if match:
+        opcode = match.group(1)
+        operands = match.groups()[1:]
+        return opcode, operands
+    
+    match = re.match(ldr_regex, instruction)
     if match:
         opcode = match.group(1)
         operands = match.groups()[1:]
         operands_1 = []
         for op in operands:
-            op = op.replace('[', '').replace(']', '')
+            op = op.replace("[", '').replace("]", '')
             operands_1.append(op)
         return opcode, operands_1
     

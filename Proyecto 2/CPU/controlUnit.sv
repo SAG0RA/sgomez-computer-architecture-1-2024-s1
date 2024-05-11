@@ -193,7 +193,7 @@ module controlUnit (
 				// str
             4'b1010: begin
                 wbs = 1'bx;
-                mm = 2'b00;
+                mm = 2'b10;
                 ALUop = 3'b100;
                 ri = 2'b10;
                 wre = 1'b0;
@@ -201,10 +201,10 @@ module controlUnit (
 					 am = 1'b1;
 					 ni = 1'b0;
 					 
-					 wce = 1'bx;
-					 wme1 = 1'bx;
-					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 wce = 1'b0;
+					 wme1 = 1'b1;
+					 wme2 = 1'b0;
+					 alu_mux =1'b0;
             end
 				
 				// cmp

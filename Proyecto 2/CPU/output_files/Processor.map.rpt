@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Fri May 10 18:39:21 2024
+Fri May 10 19:54:57 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 10 18:39:21 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 10 19:54:57 2024       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processor                                   ;
 ; Top-level Entity Name           ; TopModule                                   ;
@@ -321,10 +321,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------+----------------------------------------+
 ; Register name                                                                                               ; Reason for Removal                     ;
 +-------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|alu_mux                                      ; Stuck at GND due to stuck port data_in ;
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme2                                         ; Stuck at GND due to stuck port data_in ;
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme1                                         ; Stuck at VCC due to stuck port data_in ;
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wce                                          ; Stuck at GND due to stuck port data_in ;
+; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme2                                         ; Stuck at GND due to stuck port data_in ;
+; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme1                                         ; Stuck at VCC due to stuck port data_in ;
+; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wce                                          ; Stuck at GND due to stuck port data_in ;
 ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|calcData[0]                              ; Lost fanout                            ;
 ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|memData[0]                               ; Lost fanout                            ;
 ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|wbs                                      ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wce                                          ; Lost fanout                            ;
 ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wm                                           ; Lost fanout                            ;
 ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|memData[0]                                   ; Lost fanout                            ;
 ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|ALUresult[0]                                 ; Lost fanout                            ;
@@ -332,8 +338,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wbs                                          ; Lost fanout                            ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcB[0]                                      ; Lost fanout                            ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcA[0]                                      ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|alu_mux                                      ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wce                                          ; Lost fanout                            ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|am                                           ; Lost fanout                            ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wm                                           ; Lost fanout                            ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|ALUop[0,1]                                   ; Lost fanout                            ;
@@ -354,10 +358,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[0..15]                                       ; Lost fanout                            ;
 ; CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|address_reg_a[0..2] ; Lost fanout                            ;
 ; CPU:CPU|PCregister:PCregister_instance|out[0..15]                                                           ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme2                                         ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme1                                         ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme2                                         ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme1                                         ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 70                                                                      ;                                        ;
 +-------------------------------------------------------------------------------------------------------------+----------------------------------------+
 
@@ -367,17 +367,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------+
 ; Register name                                                                  ; Reason for Removal        ; Registers Removed due to This Register                                                                    ;
 +--------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------+
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|calcData[0] ; Lost Fanouts              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wm,                                        ;
-;                                                                                ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|memData[0],                                ;
-;                                                                                ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|ALUresult[0],                              ;
-;                                                                                ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|mm[0],                                     ;
-;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcB[0],                                   ;
-;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|alu_mux,                                   ;
-;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|am,                                        ;
-;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wm,                                        ;
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|alu_mux         ; Stuck at GND              ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcB[0],                                   ;
+;                                                                                ; due to stuck port data_in ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|am,                                        ;
 ;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|ALUop[0],                                  ;
 ;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|ALUop[1],                                  ;
-;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|mm[0],                                     ;
 ;                                                                                ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[0],                                        ;
 ;                                                                                ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[4],                                        ;
 ;                                                                                ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[5],                                        ;
@@ -396,17 +389,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                                ;                           ; CPU:CPU|PCregister:PCregister_instance|out[13],                                                           ;
 ;                                                                                ;                           ; CPU:CPU|PCregister:PCregister_instance|out[14],                                                           ;
 ;                                                                                ;                           ; CPU:CPU|PCregister:PCregister_instance|out[15]                                                            ;
+; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|calcData[0] ; Lost Fanouts              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wm,                                        ;
+;                                                                                ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|memData[0],                                ;
+;                                                                                ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|mm[0],                                     ;
+;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wm,                                        ;
+;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|mm[0]                                      ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcA[0]         ; Lost Fanouts              ; CPU:CPU|regfile:regfile_instance|rf[11][0],                                                               ;
 ;                                                                                ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[1],                                        ;
 ;                                                                                ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[2],                                        ;
 ;                                                                                ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[3]                                         ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|memData[0]  ; Lost Fanouts              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wce,                                       ;
-;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wce                                        ;
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wce             ; Stuck at GND              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wce,                                       ;
+;                                                                                ; due to stuck port data_in ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|ALUresult[0]                               ;
 ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|wbs         ; Lost Fanouts              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wbs,                                       ;
 ;                                                                                ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wbs                                        ;
 ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme2            ; Stuck at GND              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme2                                       ;
 ;                                                                                ; due to stuck port data_in ;                                                                                                           ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme1            ; Stuck at GND              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme1                                       ;
+; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme1            ; Stuck at VCC              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme1                                       ;
 ;                                                                                ; due to stuck port data_in ;                                                                                                           ;
 +--------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------+
 
@@ -892,7 +890,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri May 10 18:38:56 2024
+    Info: Processing started: Fri May 10 19:54:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1278,7 +1276,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a127" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2709
 Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 66 registers lost all their fanouts during netlist optimizations.
+Info (17049): 63 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
@@ -1287,9 +1285,9 @@ Info (21057): Implemented 201 device resources after synthesis - the final resou
     Info (21061): Implemented 105 logic cells
     Info (21064): Implemented 64 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 155 warnings
-    Info: Peak virtual memory: 4823 megabytes
-    Info: Processing ended: Fri May 10 18:39:21 2024
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Fri May 10 19:54:57 2024
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:37
 
 

@@ -13,7 +13,8 @@ module controlUnit (
 	 output logic wce,	// write coordinates enable
 	 output logic wme1,	// write memory enable 1 (pixels memory) for CPU
 	 output logic wme2,	// write memory enable 2 (pixels memory) for VGA
-	 output logic alu_mux	// señal para seleccionar 1 de las 2 entradas del mux de la ALU
+	 output logic alu_mux,	// señal para seleccionar 1 de las 2 entradas del mux de la ALU
+	 output logic reg_dest	// señal de control para el registro destino (rd) en la etapa writeback
 );
 
     // Definición de las salidas en función del opCode
@@ -31,10 +32,11 @@ module controlUnit (
 					 am = 1'bx;
 					 ni = 1'b0;
 					 
-					 wce = 1'bx;
-					 wme1 = 1'bx;
-					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 wce = 1'b0;
+					 wme1 = 1'b0;
+					 wme2 = 1'b0;
+					 alu_mux =1'b0;
+					 reg_dest = 1'b0;
             end
             
 				// add
@@ -48,10 +50,11 @@ module controlUnit (
 					 am = 1'bx;
 					 ni = 1'b0;
 					 
-					 wce = 1'bx;
-					 wme1 = 1'bx;
-					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 wce = 1'b0;
+					 wme1 = 1'b0;
+					 wme2 = 1'b0;
+					 alu_mux =1'b0;
+					 reg_dest = 1'b0;
             end
             
 				// lsl
@@ -69,6 +72,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
 				
 				// neg
@@ -86,6 +90,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
 				
 				// beq
@@ -103,6 +108,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
 				// bgt
@@ -120,6 +126,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
 				// blt
@@ -137,6 +144,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
 				
 				// b
@@ -154,16 +162,17 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
 				
-				// mov
+				// movi
 				4'b1000: begin
                 wbs = 1'b1;
                 mm = 2'bxx;
                 ALUop = 3'bxxx;
                 ri = 2'b10;
                 wre = 1'b1;
-					 wm = 1'b1;			/////////////
+					 wm = 1'b1;			
 					 am = 1'b1;
 					 ni = 1'b0;
 					 
@@ -171,6 +180,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
 				// ldr
@@ -188,6 +198,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
 				// str
@@ -205,6 +216,7 @@ module controlUnit (
 					 wme1 = 1'b1;
 					 wme2 = 1'b0;
 					 alu_mux =1'b0;
+					 reg_dest = 1'b0;
             end
 				
 				// cmp
@@ -222,9 +234,10 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
 				
-				////////////////////// NO HA SIDO ASIGNADO //////////////////////
+				// movr
 				4'b1100: begin
                 wbs = 1'b0;
                 mm = 2'b00;
@@ -239,8 +252,11 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
+				////////////////////// NO HA SIDO ASIGNADO //////////////////////
+				
             4'b1101: begin
                 wbs = 1'b0;
                 mm = 2'b00;
@@ -255,6 +271,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
             4'b1110: begin
@@ -271,6 +288,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
 				
 				4'b1111: begin
@@ -287,6 +305,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
             
             default: begin
@@ -303,6 +322,7 @@ module controlUnit (
 					 wme1 = 1'b0;
 					 wme2 = 1'b0;
 					 alu_mux =1'bx;
+					 reg_dest = 1'b0;
             end
         endcase
     end

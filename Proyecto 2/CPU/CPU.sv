@@ -46,6 +46,12 @@ logic [15:0] readCoordinate_writeback;
 logic [15:0] calcData_writeback;
 logic ni_writeback;
 
+logic [15:0] reg_dest_data_decode;
+logic [15:0] reg_dest_data_execute;
+logic [15:0] reg_dest_data_memory;
+logic [15:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
+logic [15:0] reg_dest_mux_out;	// entrada 0 del mux del banco de registros (reg file)
+
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
 
 logic ni; // Next Instruction, es al señal de control del mux del PC   ****  OJO  revisar esta señal ***
@@ -93,22 +99,16 @@ logic wme1_memory;
 logic wme2_memory; 
 
 
+logic reg_dest_decode;
+logic reg_dest_execute;
+logic reg_dest_memory;
+logic reg_dest_writeback;
+
 
 
 
 ////// lOGICA PARA LEER LOS PIXELES. SI VGA_enable = 1 (ES UN SWITCH EN LA FPGA) LEE DE LA MEMORIA /////
 
-	 /*
-    always_ff @(posedge vga_clk) begin
-        if (reset || !VGA_enable) begin
-            pixelAddress <= 0;
-        end else if (pixelAddress >= 65535) begin
-            pixelAddress <= 0;
-        end else if (VGA_enable && enable) begin
-            pixelAddress <= pixelAddress + 1;
-        end
-    end
-	 */
 	 
 	 always_ff @(posedge vga_clk) begin
 		if (reset || !VGA_enable) begin
@@ -121,14 +121,6 @@ logic wme2_memory;
 			end
 		end
 	end
-    
-	 /*
-    always_ff @(posedge vga_clk) begin
-        if (!VGA_enable) begin
-            pixel = 0;
-        end 
-    end
-	 */
 
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
 
@@ -184,7 +176,8 @@ controlUnit control_unit_instance (
 		.wce(wce_decode),
 		.wme1(wme1_decode),
 		.wme2(wme2_decode),
-		.alu_mux(alu_mux_decode)
+		.alu_mux(alu_mux_decode),
+		.reg_dest(reg_dest_decode)
    );
      
     signExtend signExtend_instance (
@@ -196,13 +189,21 @@ controlUnit control_unit_instance (
       .Immediate(instruction_decode[11:0]),
       .ZeroExtImmediate(ZeroExtImmediate)
    );
+	
+	mux_2 u_mux_2_regfile (
+        .data0(instruction_decode[11:8]),
+        .data1(reg_dest_data_writeback),
+        .select(reg_dest_writeback),		
+        .out(reg_dest_mux_out)		/////////////////////////////////////////////
+    );
+
      
    regfile regfile_instance (
       .clk(clk),
       .wre(wre),
       .a1(instruction_decode[3:0]),
       .a2(instruction_decode[7:4]),
-      .a3(instruction_decode[11:8]),
+      .a3(reg_dest_mux_out),
       .wd3(wd3),
       .rd1(rd1),
       .rd2(rd2),
@@ -237,8 +238,12 @@ controlUnit control_unit_instance (
 		.wme2_in(wme2_decode),
 		.alu_mux_in(alu_mux_decode),
 		
+		.reg_dest_in(reg_dest_decode),
+		.reg_dest_data_writeback_in(reg_dest_mux_out),
+		
 		.srcA_in(rd1),
 		.srcB_in(out_mux4),
+		
       .wbs_out(wbs_execute),
       .mm_out(mm_execute),
       .ALUop_out(ALUop_execute),
@@ -250,6 +255,9 @@ controlUnit control_unit_instance (
 		.wme1_out(wme1_execute),
 		.wme2_out(wme2_execute),
 		.alu_mux_out(alu_mux_execute),
+		
+		.reg_dest_out(reg_dest_execute),
+		.reg_dest_data_writeback_out(reg_dest_data_execute),
 		
 		.srcA_out(srcA_execute),
 		.srcB_out(srcB_execute)
@@ -293,7 +301,6 @@ ALU ALU_instance (
       .clk(clk),
 		
       .wbs_in(wbs_execute),
-      //.wme_in(wme_execute),
       .mm_in(mm_execute),
       .ALUresult_in(output_alu_mux), 
       .memData_in(write_Data_execute),
@@ -304,8 +311,10 @@ ALU ALU_instance (
 		.wme1_in(wme1_execute),
 		.wme2_in(wme2_execute),
 		
+		.reg_dest_in(reg_dest_execute),
+		.reg_dest_data_writeback_in(reg_dest_data_execute),
+		
       .wbs_out(wbs_memory),
-      //.wme_out(wme_memory),
       .mm_out(mm_memory),
       .ALUresult_out(alu_result_memory),
       .memData_out(write_Data_memory),
@@ -315,6 +324,9 @@ ALU ALU_instance (
 		.wce_out(wce_memory),
 		.wme1_out(wme1_memory),
 		.wme2_out(wme2_memory),
+		
+		.reg_dest_out(reg_dest_memory),
+		.reg_dest_data_writeback_out(reg_dest_data_memory)
    );
 	 
 	 
@@ -365,10 +377,17 @@ decoderMemory_3outs decoderMemory_3outs_instance (
       .memData_in(readCoordinate),
       .calcData_in(output_memory_mux),
       .ni_in(ni_memory), 
+		
+		.reg_dest_in(reg_dest_memory),
+		.reg_dest_data_writeback_in(reg_dest_data_memory),
+		
       .wbs_out(wbs_writeback),
       .memData_out(readCoordinate_writeback),
       .calcData_out(calcData_writeback),
-      .ni_out(ni_writeback)
+      .ni_out(ni_writeback),
+		
+		.reg_dest_out(reg_dest_writeback),
+		.reg_dest_data_writeback_out(reg_dest_data_writeback)
    );
 	
 

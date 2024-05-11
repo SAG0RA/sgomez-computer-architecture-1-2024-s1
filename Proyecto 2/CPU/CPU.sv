@@ -3,6 +3,7 @@ module CPU(
 				input logic reset,
 				input logic vga_clk,
 				input logic VGA_enable,
+				input logic enable,
 				output logic [7:0] pixel
 				
 );
@@ -97,15 +98,29 @@ logic wme2_memory;
 
 ////// lOGICA PARA LEER LOS PIXELES. SI VGA_enable = 1 (ES UN SWITCH EN LA FPGA) LEE DE LA MEMORIA /////
 
+	 /*
     always_ff @(posedge vga_clk) begin
         if (reset || !VGA_enable) begin
             pixelAddress <= 0;
         end else if (pixelAddress >= 65535) begin
             pixelAddress <= 0;
-        end else if (VGA_enable) begin
+        end else if (VGA_enable && enable) begin
             pixelAddress <= pixelAddress + 1;
         end
     end
+	 */
+	 
+	 always_ff @(posedge vga_clk) begin
+		if (reset || !VGA_enable) begin
+			pixelAddress <= 0;
+		end else if (pixelAddress >= 65536) begin
+			pixelAddress <= 0;
+		end else if (VGA_enable && enable) begin
+			if (pixelAddress < 65536) begin
+				pixelAddress <= pixelAddress + 1;
+			end
+		end
+	end
     
 	 /*
     always_ff @(posedge vga_clk) begin
@@ -334,7 +349,7 @@ decoderMemory_3outs decoderMemory_3outs_instance (
 		.address_a(address_pixel_memory),	// el procesador indica la direccion en donde escribir
 		.address_b(pixelAddress),		// direccion para leer el pixel y mostrarlo en pantalla
 		.clock(clk),
-		.data_a(write_Data_memory),	// el procesador indica el dato a escribir
+		.data_a(16'b0),	//write_Data_memory el procesador indica el dato a escribir
 		.data_b(16'b0),					// nunca se escriben datos en este puerto
 		.wren_a(wme1_memory),		
 		.wren_b(wme2_memory), 

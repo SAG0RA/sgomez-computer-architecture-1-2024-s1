@@ -1,7 +1,7 @@
 |TopModule
-clk => clk.IN2
-rst => rst.IN1
-VGA_enable => VGA_enable.IN1
+clk => clk.IN1
+rst => CPU:CPU.reset
+VGA_enable => CPU:CPU.VGA_enable
 vga_clk << vga_clk.DB_MAX_OUTPUT_PORT_TYPE
 h_sync << vga_controller:vgaCont.port1
 v_sync << vga_controller:vgaCont.port2
@@ -259,23 +259,9 @@ vga_clk => pixelAddress[12].CLK
 vga_clk => pixelAddress[13].CLK
 vga_clk => pixelAddress[14].CLK
 vga_clk => pixelAddress[15].CLK
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
-VGA_enable => pixelAddress.OUTPUTSELECT
 VGA_enable => always0.IN0
+VGA_enable => always0.IN0
+enable => always0.IN1
 pixel[0] <= RAM:ram_instance.q_b
 pixel[1] <= RAM:ram_instance.q_b
 pixel[2] <= RAM:ram_instance.q_b

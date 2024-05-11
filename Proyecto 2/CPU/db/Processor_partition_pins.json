@@ -122,6 +122,14 @@
 				{
 					"name" : "clk",
 					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_enable",
+					"strict" : false
 				}
 			]
 		}

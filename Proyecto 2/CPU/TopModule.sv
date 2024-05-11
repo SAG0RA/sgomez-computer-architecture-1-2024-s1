@@ -12,8 +12,8 @@ module TopModule(
 	logic [7:0] pixel;
 	
 	
-	//logic enable = 1'b1;
-	//assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
+	logic enable = 1'b1;
+	assign enable = (x < 256 & x >= 0) & (y < 256 & y >= 0);
 	
 	
 	pll vga_pll(.clk(clk), .vga_clk(vga_clk));
@@ -22,6 +22,8 @@ module TopModule(
 	
 	generate_graphic gen_grid(x, y, pixel, red, green, blue);
 	
-	CPU CPU(.clk(clk), .vga_clk(vga_clk), .reset(rst), .VGA_enable(VGA_enable), .pixel(pixel));
+	CPU CPU(.clk(clk), .vga_clk(vga_clk), .reset(rst), .VGA_enable(VGA_enable), .enable(enable), .pixel(pixel));
 	 
 endmodule
+
+

@@ -1,0 +1,33 @@
+`timescale 1ns / 1ps
+
+module CPU_tb;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+always #10 clk = ~clk;
+
+    
+    initial begin
+        
+		  
+		  
+		  
+		  
+		  
+        $finish;
+	 end
+
+
+endmodule
+

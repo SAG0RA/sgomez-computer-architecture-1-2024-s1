@@ -1,5 +1,5 @@
 Flow report for Processor
-Sat May 11 16:19:10 2024
+Sat May 11 17:55:32 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -38,29 +38,24 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat May 11 16:19:10 2024       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; Processor                                   ;
-; Top-level Entity Name           ; TopModule                                   ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 73 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 70                                          ;
-; Total pins                      ; 32 / 457 ( 7 % )                            ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 720,896 / 4,065,280 ( 18 % )                ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Flow Summary                                                              ;
++-----------------------------+---------------------------------------------+
+; Flow Status                 ; Successful - Sat May 11 17:55:32 2024       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; Processor                                   ;
+; Top-level Entity Name       ; TopModule                                   ;
+; Family                      ; Cyclone V                                   ;
+; Device                      ; 5CSEMA5F31C6                                ;
+; Timing Models               ; Final                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/11/2024 16:14:41 ;
+; Start date & time ; 05/11/2024 17:55:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Processor           ;
 +-------------------+---------------------+
@@ -79,10 +74,11 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                       ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+---------------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 260148119377217.171546568010364             ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 260148119377217.171547170912224             ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; ALU_tb                            ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; LogicalShiftLeft_tb               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; CPU_tb                            ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; Writeback_Stage_tb                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; regfile_tb                        ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                          ; --            ; --          ; ROM_testbench                     ;
@@ -109,13 +105,14 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                         ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; regfile_tb                                  ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; CPU_tb                                      ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                           ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)             ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                             ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/decoderMemory_tb.sv             ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/ALU_tb.sv                       ; --            ; --          ; ALU_tb                            ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/LogicalShiftLeft_tb.sv          ; --            ; --          ; LogicalShiftLeft_tb               ;
+; EDA_TEST_BENCH_FILE                  ; Testbenches/CPU_tb.sv                       ; --            ; --          ; CPU_tb                            ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/Writeback_Stage_tb.sv           ; --            ; --          ; Writeback_Stage_tb                ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/regfile_tb.sv                   ; --            ; --          ; regfile_tb                        ;
 ; EDA_TEST_BENCH_FILE                  ; Testbenches/ROM_testbench.sv                ; --            ; --          ; ROM_testbench                     ;
@@ -141,6 +138,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_MODULE_NAME           ; decoderMemory_tb                            ; --            ; --          ; decoderMemory_tb                  ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ALU_tb                                      ; --            ; --          ; ALU_tb                            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; LogicalShiftLeft_tb                         ; --            ; --          ; LogicalShiftLeft_tb               ;
+; EDA_TEST_BENCH_MODULE_NAME           ; CPU_tb                                      ; --            ; --          ; CPU_tb                            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; Writeback_Stage_tb                          ; --            ; --          ; Writeback_Stage_tb                ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; regfile_tb                                  ; --            ; --          ; regfile_tb                        ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ROM_testbench                               ; --            ; --          ; ROM_testbench                     ;
@@ -188,6 +186,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_NAME                  ; Memory_Stage_tb                             ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; Writeback_Stage_tb                          ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; ROM_testbench                               ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; CPU_tb                                      ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                        ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                          ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                           ; --            ; --          ; --                                ;
@@ -204,41 +203,29 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------------------------------+---------------+-------------+-----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 4818 MB             ; 00:00:38                           ;
-; Fitter               ; 00:03:19     ; 1.0                     ; 6209 MB             ; 00:03:49                           ;
-; Assembler            ; 00:00:16     ; 1.0                     ; 4868 MB             ; 00:00:15                           ;
-; Timing Analyzer      ; 00:00:16     ; 1.3                     ; 5147 MB             ; 00:00:18                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4726 MB             ; 00:00:03                           ;
-; Total                ; 00:04:21     ; --                      ; --                  ; 00:05:03                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:24     ; 1.0                     ; 4791 MB             ; 00:00:35                           ;
+; Total                  ; 00:00:24     ; --                      ; --                  ; 00:00:35                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-7MM51NU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-7MM51NU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-7MM51NU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-7MM51NU  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-7MM51NU  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; DESKTOP-7MM51NU  ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
-quartus_fit --read_settings_files=off --write_settings_files=off Processor -c Processor
-quartus_asm --read_settings_files=off --write_settings_files=off Processor -c Processor
-quartus_sta Processor -c Processor
-quartus_eda --read_settings_files=off --write_settings_files=off Processor -c Processor
+quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor --analysis_and_elaboration
 
 
 

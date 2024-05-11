@@ -1,5 +1,5 @@
-Analysis & Synthesis report for Processor
-Sat May 11 16:15:08 2024
+Analysis & Elaboration report for Processor
+Sat May 11 17:55:32 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -7,44 +7,34 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated
- 15. Source assignments for CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated
- 16. Source assignments for CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated
- 17. Parameter Settings for User Entity Instance: vga_controller:vgaCont
- 18. Parameter Settings for User Entity Instance: CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component
- 19. Parameter Settings for User Entity Instance: CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component
- 20. Parameter Settings for User Entity Instance: CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component
- 21. altsyncram Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance"
- 23. Port Connectivity Checks: "CPU:CPU|RAM:ram_instance"
- 24. Port Connectivity Checks: "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance"
- 25. Port Connectivity Checks: "CPU:CPU|mux_2:mux_2_instance_memory"
- 26. Port Connectivity Checks: "CPU:CPU|decoderMemory_3outs:decoderMemory_3outs_instance"
- 27. Port Connectivity Checks: "CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance"
- 28. Port Connectivity Checks: "CPU:CPU|decoderMemory:decoder_instance"
- 29. Port Connectivity Checks: "CPU:CPU|ALU:ALU_instance|comparator:comparator_inst"
- 30. Port Connectivity Checks: "CPU:CPU|ALU:ALU_instance"
- 31. Port Connectivity Checks: "CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance"
- 32. Port Connectivity Checks: "CPU:CPU|regfile:regfile_instance"
- 33. Port Connectivity Checks: "CPU:CPU|mux_2_regfile:u_mux_2_regfile"
- 34. Port Connectivity Checks: "CPU:CPU|zeroExtend:zeroExtend_instance"
- 35. Port Connectivity Checks: "CPU:CPU|mux_2:mux_2_instance_fetch"
- 36. Port Connectivity Checks: "generate_graphic:gen_grid|generate_rectangle:rectImage"
- 37. Post-Synthesis Netlist Statistics for Top Partition
- 38. Elapsed Time Per Partition
- 39. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration IP Cores Summary
+  5. Source assignments for CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated
+  6. Source assignments for CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated
+  7. Source assignments for CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated
+  8. Parameter Settings for User Entity Instance: vga_controller:vgaCont
+  9. Parameter Settings for User Entity Instance: CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component
+ 10. Parameter Settings for User Entity Instance: CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component
+ 11. Parameter Settings for User Entity Instance: CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component
+ 12. altsyncram Parameter Settings by Entity Instance
+ 13. Analysis & Elaboration Settings
+ 14. Port Connectivity Checks: "CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance"
+ 15. Port Connectivity Checks: "CPU:CPU|RAM:ram_instance"
+ 16. Port Connectivity Checks: "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance"
+ 17. Port Connectivity Checks: "CPU:CPU|mux_2:mux_2_instance_memory"
+ 18. Port Connectivity Checks: "CPU:CPU|decoderMemory_3outs:decoderMemory_3outs_instance"
+ 19. Port Connectivity Checks: "CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance"
+ 20. Port Connectivity Checks: "CPU:CPU|decoderMemory:decoder_instance"
+ 21. Port Connectivity Checks: "CPU:CPU|ALU:ALU_instance|comparator:comparator_inst"
+ 22. Port Connectivity Checks: "CPU:CPU|ALU:ALU_instance"
+ 23. Port Connectivity Checks: "CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance"
+ 24. Port Connectivity Checks: "CPU:CPU|regfile:regfile_instance"
+ 25. Port Connectivity Checks: "CPU:CPU|mux_2_regfile:u_mux_2_regfile"
+ 26. Port Connectivity Checks: "CPU:CPU|zeroExtend:zeroExtend_instance"
+ 27. Port Connectivity Checks: "CPU:CPU|mux_2:mux_2_instance_fetch"
+ 28. Port Connectivity Checks: "generate_graphic:gen_grid|generate_rectangle:rectImage"
+ 29. Analysis & Elaboration Messages
 
 
 
@@ -68,114 +58,22 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 11 16:15:08 2024       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; Processor                                   ;
-; Top-level Entity Name           ; TopModule                                   ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 64                                          ;
-; Total pins                      ; 32                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 720,896                                     ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                          ; Setting            ; Default Value      ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; TopModule          ; Processor          ;
-; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
-; Enable compact report table                                                     ; Off                ; Off                ;
-; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
-; Preserve fewer node names                                                       ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto               ; Auto               ;
-; Safe State Machine                                                              ; Off                ; Off                ;
-; Extract Verilog State Machines                                                  ; On                 ; On                 ;
-; Extract VHDL State Machines                                                     ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
-; Parallel Synthesis                                                              ; On                 ; On                 ;
-; DSP Block Balancing                                                             ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                 ; On                 ;
-; Power-Up Don't Care                                                             ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
-; Remove Duplicate Registers                                                      ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
-; Optimization Technique                                                          ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                              ; 70                 ; 70                 ;
-; Auto Carry Chains                                                               ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
-; Auto ROM Replacement                                                            ; On                 ; On                 ;
-; Auto RAM Replacement                                                            ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
-; Strict RAM Replacement                                                          ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                           ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
-; Report Parameter Settings                                                       ; On                 ; On                 ;
-; Report Source Assignments                                                       ; On                 ; On                 ;
-; Report Connectivity Checks                                                      ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
-; HDL message level                                                               ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
-; Clock MUX Protection                                                            ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
-; Block Design Naming                                                             ; Auto               ; Auto               ;
-; SDC constraint protection                                                       ; Off                ; Off                ;
-; Synthesis Effort                                                                ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sat May 11 17:55:32 2024       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; Processor                                   ;
+; Top-level Entity Name         ; TopModule                                   ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
 
 
 +------------------------------------------+
@@ -187,141 +85,15 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                        ;
-+--------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path           ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                                ; Library ;
-+--------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; regfile.sv                                 ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv                                 ;         ;
-; TopModule.sv                               ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv                               ;         ;
-; adder.sv                                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv                                   ;         ;
-; subtractor.sv                              ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv                              ;         ;
-; ALU.sv                                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv                                     ;         ;
-; signExtend.sv                              ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv                              ;         ;
-; zeroExtend.sv                              ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv                              ;         ;
-; mux_2.sv                                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv                                   ;         ;
-; mux_4.sv                                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv                                   ;         ;
-; PCadder.sv                                 ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv                                 ;         ;
-; PCregister.sv                              ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv                              ;         ;
-; decoderMemory.sv                           ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv                           ;         ;
-; FetchDecode_register.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv                    ;         ;
-; DecodeExecute_register.sv                  ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv                  ;         ;
-; ExecuteMemory_register.sv                  ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv                  ;         ;
-; MemoryWriteback_register.sv                ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv                ;         ;
-; controlUnit.sv                             ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv                             ;         ;
-; LogicalShiftLeft.sv                        ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv                        ;         ;
-; negation.sv                                ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv                                ;         ;
-; comparator.sv                              ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv                              ;         ;
-; Memory/RAM/RAM.mif                         ; yes             ; User Memory Initialization File        ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.mif                         ;         ;
-; VGA/generate_graphic.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv                    ;         ;
-; VGA/generate_rectangle.sv                  ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv                  ;         ;
-; VGA/pll.sv                                 ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv                                 ;         ;
-; VGA/vga_controller.sv                      ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv                      ;         ;
-; CPU.sv                                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv                                     ;         ;
-; Memory/ROM/ROM.v                           ; yes             ; User Wizard-Generated File             ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v                           ;         ;
-; decoderMemory_3outs.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv                     ;         ;
-; Memory/RAM_coordenadas/RAM_coordenadas.mif ; yes             ; User Memory Initialization File        ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.mif ;         ;
-; Memory/RAM/RAM.v                           ; yes             ; User Wizard-Generated File             ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v                           ;         ;
-; Memory/RAM_coordenadas/RAM_coordenadas.v   ; yes             ; User Wizard-Generated File             ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v   ;         ;
-; mux_2_regfile.sv                           ; yes             ; User SystemVerilog HDL File            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv                           ;         ;
-; altsyncram.tdf                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                       ;         ;
-; stratix_ram_block.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                ;         ;
-; lpm_mux.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                          ;         ;
-; lpm_decode.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                       ;         ;
-; aglobal201.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                                       ;         ;
-; a_rdenreg.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                        ;         ;
-; altrom.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                                           ;         ;
-; altram.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                                           ;         ;
-; altdpram.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                                         ;         ;
-; db/altsyncram_q4g1.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf                     ;         ;
-; rom.mif                                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/rom.mif                                    ;         ;
-; db/decode_61a.tdf                          ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/decode_61a.tdf                          ;         ;
-; db/mux_chb.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/mux_chb.tdf                             ;         ;
-; db/altsyncram_gpr1.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf                     ;         ;
-; db/altsyncram_uoq2.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_uoq2.tdf                     ;         ;
-; db/decode_dla.tdf                          ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/decode_dla.tdf                          ;         ;
-; db/mux_tfb.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/mux_tfb.tdf                             ;         ;
-+--------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 72        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 116       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 27        ;
-;     -- 5 input functions                    ; 12        ;
-;     -- 4 input functions                    ; 1         ;
-;     -- <=3 input functions                  ; 76        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 64        ;
-;                                             ;           ;
-; I/O pins                                    ; 32        ;
-; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 720896    ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 116       ;
-; Total fan-out                               ; 2050      ;
-; Average fan-out                             ; 6.17      ;
-+---------------------------------------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                           ;
-+----------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; Compilation Hierarchy Node                                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name            ; Library Name ;
-+----------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |TopModule                                                     ; 116 (1)             ; 64 (0)                    ; 720896            ; 0          ; 32   ; 0            ; |TopModule                                                                                                                  ; TopModule              ; work         ;
-;    |CPU:CPU|                                                   ; 60 (18)             ; 43 (16)                   ; 720896            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU                                                                                                          ; CPU                    ; work         ;
-;       |DecodeExecute_register:DecodeExecute_register_instance| ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance                                                   ; DecodeExecute_register ; work         ;
-;       |ExecuteMemory_register:ExecuteMemory_register_instance| ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance                                                   ; ExecuteMemory_register ; work         ;
-;       |FetchDecode_register:FetchDecode_register_instance|     ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|FetchDecode_register:FetchDecode_register_instance                                                       ; FetchDecode_register   ; work         ;
-;       |PCadder:PCadder_instance|                               ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|PCadder:PCadder_instance                                                                                 ; PCadder                ; work         ;
-;       |PCregister:PCregister_instance|                         ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|PCregister:PCregister_instance                                                                           ; PCregister             ; work         ;
-;       |RAM:ram_instance|                                       ; 8 (0)               ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|RAM:ram_instance                                                                                         ; RAM                    ; work         ;
-;          |altsyncram:altsyncram_component|                     ; 8 (0)               ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component                                                         ; altsyncram             ; work         ;
-;             |altsyncram_uoq2:auto_generated|                   ; 8 (0)               ; 3 (3)                     ; 524288            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated                          ; altsyncram_uoq2        ; work         ;
-;                |decode_61a:rden_decode_b|                      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|decode_61a:rden_decode_b ; decode_61a             ; work         ;
-;       |ROM:ROM_instance|                                       ; 17 (0)              ; 3 (0)                     ; 196608            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|ROM:ROM_instance                                                                                         ; ROM                    ; work         ;
-;          |altsyncram:altsyncram_component|                     ; 17 (0)              ; 3 (0)                     ; 196608            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component                                                         ; altsyncram             ; work         ;
-;             |altsyncram_q4g1:auto_generated|                   ; 17 (0)              ; 3 (3)                     ; 196608            ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated                          ; altsyncram_q4g1        ; work         ;
-;                |decode_61a:rden_decode|                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|decode_61a:rden_decode   ; decode_61a             ; work         ;
-;                |mux_chb:mux2|                                  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|mux_chb:mux2             ; mux_chb                ; work         ;
-;       |controlUnit:control_unit_instance|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|CPU:CPU|controlUnit:control_unit_instance                                                                        ; controlUnit            ; work         ;
-;    |generate_graphic:gen_grid|                                 ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|generate_graphic:gen_grid                                                                                        ; generate_graphic       ; work         ;
-;    |pll:vga_pll|                                               ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopModule|pll:vga_pll                                                                                                      ; pll                    ; work         ;
-;    |vga_controller:vgaCont|                                    ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |TopModule|vga_controller:vgaCont                                                                                           ; vga_controller         ; work         ;
-+----------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                        ;
-+----------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+----------------------+
-; Name                                                                                               ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                  ;
-+----------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+----------------------+
-; CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 65536        ; 8            ; 65536        ; 8            ; 524288  ; ./Memory/RAM/RAM.mif ;
-; CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; 65536        ; 16           ; --           ; --           ; 1048576 ; ./ROM.mif            ;
-+----------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+----------------------+
-
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                  ;
+; Analysis & Elaboration IP Cores Summary                                                                                                                                ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------+------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                             ; IP Include File                          ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------+------------------------------------------+
@@ -329,143 +101,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |TopModule|CPU:CPU|RAM_coordenadas:ram_coordenadas_instance ; Memory/RAM_coordenadas/RAM_coordenadas.v ;
 ; Altera ; RAM: 2-PORT  ; 20.1    ; N/A          ; N/A          ; |TopModule|CPU:CPU|RAM:ram_instance                         ; Memory/RAM/RAM.v                         ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------+------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                     ;
-+-----------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                 ; Reason for Removal                     ;
-+-----------------------------------------------------------------------------------------------+----------------------------------------+
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest                       ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|alu_mux                        ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme2                           ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wce                            ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest                       ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme2                           ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wce                            ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest                   ; Stuck at GND due to stuck port data_in ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[3] ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[3]     ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[3]     ; Lost fanout                            ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[2] ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[2]     ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[2]     ; Lost fanout                            ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[1] ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[1]     ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[1]     ; Lost fanout                            ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[0] ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[0]     ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[0]     ; Lost fanout                            ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|calcData[0]                ; Lost fanout                            ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|memData[0]                 ; Lost fanout                            ;
-; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|wbs                        ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wm                             ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|memData[0]                     ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|ALUresult[0]                   ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|mm[0]                          ; Lost fanout                            ;
-; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wbs                            ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcB[0]                        ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcA[0]                        ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|am                             ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wm                             ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|ALUop[0,1]                     ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|mm[0]                          ; Lost fanout                            ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wbs                            ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[0][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[1][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[2][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[3][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[4][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[5][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[6][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[7][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[8][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[9][0]                                                     ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[10][0]                                                    ; Lost fanout                            ;
-; CPU:CPU|regfile:regfile_instance|rf[11][0]                                                    ; Lost fanout                            ;
-; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[0..12]                         ; Lost fanout                            ;
-; Total Number of Removed Registers = 61                                                        ;                                        ;
-+-----------------------------------------------------------------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                          ;
-+-------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------+
-; Register name                                                           ; Reason for Removal        ; Registers Removed due to This Register                                                         ;
-+-------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------+
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest ; Stuck at GND              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest,                       ;
-;                                                                         ; due to stuck port data_in ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest,                   ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[3], ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[3],     ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[3],     ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[2], ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[2],     ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[2],     ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[1], ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[1],     ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[1],     ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|reg_dest_data_writeback[0], ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|reg_dest_data_writeback[0],     ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|reg_dest_data_writeback[0],     ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|calcData[0],                ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|memData[0],                 ;
-;                                                                         ;                           ; CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance|wbs,                        ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wm,                             ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|memData[0],                     ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|mm[0],                          ;
-;                                                                         ;                           ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wbs,                            ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wm,                             ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|mm[0],                          ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wbs,                            ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[0],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[6],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[7],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[8],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[9],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[10],                            ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[11]                             ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|alu_mux  ; Stuck at GND              ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcB[0],                        ;
-;                                                                         ; due to stuck port data_in ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|am,                             ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|ALUop[0],                       ;
-;                                                                         ;                           ; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|ALUop[1],                       ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[4],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[5],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[12]                             ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|srcA[0]  ; Lost Fanouts              ; CPU:CPU|regfile:regfile_instance|rf[11][0],                                                    ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[1],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[2],                             ;
-;                                                                         ;                           ; CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[3]                              ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wce      ; Stuck at GND              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wce,                            ;
-;                                                                         ; due to stuck port data_in ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|ALUresult[0]                    ;
-; CPU:CPU|DecodeExecute_register:DecodeExecute_register_instance|wme2     ; Stuck at GND              ; CPU:CPU|ExecuteMemory_register:ExecuteMemory_register_instance|wme2                            ;
-;                                                                         ; due to stuck port data_in ;                                                                                                ;
-+-------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 64    ;
-; Number of registers using Synchronous Clear  ; 52    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 26    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |TopModule|CPU:CPU|pixelAddress[5]                                            ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; Yes        ; |TopModule|CPU:CPU|FetchDecode_register:FetchDecode_register_instance|out[13] ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |TopModule|generate_graphic:gen_grid|red[2]                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -739,6 +374,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; TopModule          ; Processor          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "CPU:CPU|MemoryWriteback_register:MemoryWriteback_register_instance"                                                                                                                                      ;
 +----------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -904,51 +626,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 64                          ;
-;     ENA SCLR          ; 26                          ;
-;     SCLR              ; 26                          ;
-;     plain             ; 12                          ;
-; arriav_lcell_comb     ; 118                         ;
-;     arith             ; 52                          ;
-;         1 data inputs ; 52                          ;
-;     normal            ; 66                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 12                          ;
-;         6 data inputs ; 27                          ;
-; boundary_port         ; 32                          ;
-; stratixv_ram_block    ; 88                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 2.07                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat May 11 16:14:40 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
+    Info: Processing started: Sat May 11 17:55:08 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/writeback_stage_tb.sv
@@ -1068,9 +753,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file memory/
     Info (12023): Found entity 1: RAM_coordenadas File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file mux_2_regfile.sv
     Info (12023): Found entity 1: mux_2_regfile File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/cpu_tb.sv
+    Info (12023): Found entity 1: CPU_tb File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 3
 Warning (10236): Verilog HDL Implicit Net warning at Execute_Stage_tb.sv(97): created implicit net for "read_addres_or_data" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Execute_Stage_tb.sv Line: 97
 Warning (10236): Verilog HDL Implicit Net warning at Execute_Stage_tb.sv(112): created implicit net for "wme_execute" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/Execute_Stage_tb.sv Line: 112
 Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(371): created implicit net for "readCoordinate" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv Line: 371
+Warning (10236): Verilog HDL Implicit Net warning at CPU_tb.sv(375): created implicit net for "readCoordinate" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 375
 Info (12127): Elaborating entity "TopModule" for the top level hierarchy
 Info (12128): Elaborating entity "pll" for hierarchy "pll:vga_pll" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 19
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vgaCont" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv Line: 21
@@ -1231,138 +919,11 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "CPU:CPU|reg_dest_mux_out[6]" is missing source, defaulting to GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv Line: 53
     Warning (12110): Net "CPU:CPU|reg_dest_mux_out[5]" is missing source, defaulting to GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv Line: 53
     Warning (12110): Net "CPU:CPU|reg_dest_mux_out[4]" is missing source, defaulting to GND File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv Line: 53
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[1]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 61
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[2]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 85
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[3]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 109
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[4]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 133
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[5]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 157
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[6]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 181
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[7]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 205
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated|q_a[0]" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_gpr1.tdf Line: 37
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a0" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 42
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a1" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 63
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a2" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 84
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a3" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 105
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a4" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 126
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a5" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 147
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a6" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 168
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a7" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 189
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a8" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 210
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a9" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 231
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a10" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 252
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a11" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 273
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a16" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 378
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a17" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 399
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a18" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 420
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a19" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 441
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a20" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 462
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a21" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 483
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a22" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 504
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a23" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 525
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a24" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 546
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a25" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 567
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a26" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 588
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a27" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 609
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a32" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 714
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a33" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 735
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a34" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 756
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a35" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 777
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a36" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 798
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a37" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 819
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a38" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 840
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a39" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 861
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a40" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 882
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a41" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 903
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a42" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 924
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a43" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 945
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a48" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1050
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a49" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1071
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a50" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1092
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a51" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1113
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a52" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1134
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a53" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1155
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a54" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1176
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a55" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1197
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a56" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1218
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a57" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1239
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a58" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1260
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a59" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1281
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a64" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1386
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a65" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1407
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a66" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1428
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a67" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1449
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a68" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1470
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a69" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1491
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a70" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1512
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a71" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1533
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a72" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1554
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a73" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1575
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a74" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1596
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a75" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1617
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a80" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1722
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a81" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1743
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a82" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1764
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a83" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1785
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a84" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1806
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a85" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1827
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a86" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1848
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a87" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1869
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a88" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1890
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a89" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1911
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a90" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1932
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a91" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1953
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a96" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2058
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a97" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2079
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a98" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2100
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a99" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2121
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a100" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2142
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a101" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2163
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a102" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2184
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a103" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2205
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a104" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2226
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a105" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2247
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a106" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2268
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a107" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2289
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a112" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2394
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a113" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2415
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a114" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2436
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a115" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2457
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a116" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2478
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a117" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2499
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a118" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2520
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a119" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2541
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a120" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2562
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a121" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2583
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a122" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2604
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a123" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2625
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a12" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 294
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a28" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 630
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a44" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 966
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a60" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1302
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a76" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1638
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a92" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 1974
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a108" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2310
-        Warning (14320): Synthesized away node "CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|ram_block1a124" File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/db/altsyncram_q4g1.tdf Line: 2646
 Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 53 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 263 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 143 logic cells
-    Info (21064): Implemented 88 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 170 warnings
-    Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Sat May 11 16:15:08 2024
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Sat May 11 17:55:32 2024
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:35
 
 

@@ -59,6 +59,9 @@ def open_file_dialog():
                 out.write("WIDTH=8;\nDEPTH=1023;\n\nADDRESS_RADIX=DEC;\nDATA_RADIX=BIN;\n\nCONTENT BEGIN\n")
                 out.write(machine_code + "[" + str(mem_dir + 1) + "..1023]: " + stall + ";\n")
                 out.write("END;")
+                out.close()
+                machine_code = ""
+           
 
 def get_opcode(opcode):
     if opcode == "SUB":
@@ -77,7 +80,7 @@ def get_opcode(opcode):
         return "0110"
     if opcode == "B":
         return "0111"
-    if opcode == "MOV":
+    if opcode == "MOVI":
         return "1000"
     if opcode == "LDR":
         return "1001"
@@ -85,6 +88,8 @@ def get_opcode(opcode):
         return "1010"
     if opcode == "CMP":
         return "1011"
+    if opcode == "MOVR":
+        return "1100"
     else:
         return "1111"
 
@@ -128,7 +133,10 @@ def parse_instruction(instruction, labels):
     data_regex = r'(\b(?:STR|LDR)\b)\s+(R\d+),\s*(\[R\d+\])'
     
     # Expresion para datos en ejecucion
-    mov_regex = r'\b(MOV\b)\s+(R\d+),\s+(R\d+|#-?\d+)\b'
+    movi_regex = r'\b(MOVI\b)\s+(R\d+),\s+(R\d+|#-?\d+)\b'
+
+    # Expresion para datos en registros
+    movr_regex = r'\b(MOVR\b)\s+(R\d+),\s+(R\d+|#-?\d+)\b'
 
     # Verificar si la instrucción coincide con alguno de los patrones
     match = re.match(arithmetic_regex, instruction)
@@ -159,7 +167,13 @@ def parse_instruction(instruction, labels):
             operands_1.append(op)
         return opcode, operands_1
     
-    match = re.match(mov_regex, instruction)
+    match = re.match(movi_regex, instruction)
+    if match:
+        opcode = match.group(1)
+        operands = match.groups()[1:]
+        return opcode, operands
+    
+    match = re.match(movr_regex, instruction)
     if match:
         opcode = match.group(1)
         operands = match.groups()[1:]

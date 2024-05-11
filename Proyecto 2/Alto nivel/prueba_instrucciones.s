@@ -1,2 +1,2 @@
-MOV R4, #-20
-MOV R4, #13
+MOVI R4, #-20
+MOVR R4, R3

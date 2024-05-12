@@ -114,24 +114,26 @@ logic reg_dest_writeback;
 
 logic wre_writeback;
 
-
-
-
 ////// lOGICA PARA LEER LOS PIXELES. SI VGA_enable = 1 (ES UN SWITCH EN LA FPGA) LEE DE LA MEMORIA /////
 
-	 
-	 always_ff @(posedge vga_clk) begin
-		if (reset || !VGA_enable) begin
-			pixelAddress <= 0;
-		end else if (pixelAddress >= 65536) begin
-			pixelAddress <= 0;
-		end else if (VGA_enable && enable) begin
-			if (pixelAddress < 65536) begin
-				pixelAddress <= pixelAddress + 1;
-			end
+ 
+ always_ff @(posedge vga_clk) begin
+	if (reset || !VGA_enable) begin
+		pixelAddress <= 0;
+	end else if (pixelAddress >= 65536) begin
+		pixelAddress <= 0;
+	end else if (VGA_enable && enable) begin
+		if (pixelAddress < 65536) begin
+			pixelAddress <= pixelAddress + 1;
 		end
 	end
-
+end
+ always_ff @(negedge clk) begin
+	ni_decode <= 0;
+end
+	
+	
+		
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
 
 	PCregister PCregister_instance (
@@ -141,7 +143,7 @@ logic wre_writeback;
         .address_out(PCaddress_out)
    );
 	 
-	PCadder PCadder_instance (
+		PCadder PCadder_instance (
         .address(PCaddress_out),		//input: salida del registro PC
         .PC(PC_plus1)					//output: la entrada (input) + 1 que será la siguiente instruccion si no se da un salto
     ); 
@@ -423,114 +425,26 @@ decoderMemory_3outs decoderMemory_3outs_instance (
    );
 
 
+	  
+  always #10 clk = ~clk;
 
-
-
-
-
-
-
-
-
-/*
-always begin
-	#10 clk = ~clk;				// ciclo del clk = 20
-	#20 vga_clk = ~vga_clk;   // ciclo del vga_clk = 40
-end
-*/   
- 
     initial begin
-		logic reset = 0;
-		logic VGA_enable = 0;
-		logic enable = 0;
-				  
-		$display("0 No se ha ejecutado ningun ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
-		
-		clk = 1;	//primer semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//segundo semiciclo de 1 a 0
-		vga_clk = 1; //primer semiciclo del vga de 0 a 1
-		#10
-		  
-		$display("1 Primer ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
+        // Número total de ciclos a simular
 
-		clk = 1;	//tercer semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//cuarto semiciclo de 1 a 0
-		vga_clk = 0; //segundo semiciclo del vga de 1 a 0
-		#10
-		
-		$display("2 Segundo ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
+        // Bucle para simular múltiples ciclos
+        for (integer i = 0; i < 50; i = i + 1) begin
+            // Mostrar información en cada ciclo
+            $display("\n --------------------------------------------------------------------");
+            $display("Ciclo de reloj clk = %b, i = %b", clk, i); 
+				$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+            // Esperar al próximo flanco de bajada del reloj
+            #30;
+        end
 
-		clk = 1;	//quinto semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//sexto semiciclo de 1 a 0
-		vga_clk = 1; //tercer semiciclo del vga de 0 a 1
-		#10
-		
-		$display("3 Tercer ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk);
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
+        // Finalizar la simulación
+        $finish;
+    end
 
-		clk = 1;	//septimo semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//octavo semiciclo de 1 a 0
-		vga_clk = 0; //cuarto semiciclo del vga de 1 a 0
-		#10
-		  
-		$display("4 Cuarto ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
-
-		clk = 1;	//noveno semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//decimo semiciclo de 1 a 0
-		vga_clk = 1; //quinto semiciclo del vga de 0 a 1
-		#10
-		
-		$display("5 Quinto ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
-
-		clk = 1;	//undecimo semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//duodecimo semiciclo de 1 a 0
-		vga_clk = 0; //sexto semiciclo del vga de 1 a 0
-		#10
-		 
-		$display("6 Sexto ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
-
-		clk = 1;	//13 semiciclo de 0 a 1
-		#10
-		  
-		clk = 0;	//14 semiciclo de 1 a 0
-		vga_clk = 1; //7 semiciclo del vga de 0 a 1
-		#10
-		  
-		$display("7 Septimo ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
-		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
-		$display("-------------------------------------------------------------------\n");
-
-		#20
-		  
-		  
-		  
-      $finish;
-	 end
 
 
 endmodule

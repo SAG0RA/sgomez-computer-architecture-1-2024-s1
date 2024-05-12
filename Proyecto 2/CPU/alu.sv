@@ -43,12 +43,12 @@ module ALU (
     // Selección de la operación basada en ALUop
     always_comb begin
         case (ALUop)
-            2'b000: ALUresult = sub_result; 					// Resta
-            2'b001: ALUresult = add_result; 					// Suma
-				2'b010: ALUresult = lsl_result; 					// Desplazamiento hacia la izquierda
-				2'b011: ALUresult = neg_result; 					// Negacion
-				2'b100: ALUresult = srcA; 		  					// Buffer para la direccion de memoria en donde guardar un dato (str)
-				2'b101: ALUresult = compare_result; 		   // srcA=srcB result=0 	|		srcA>srcB result=1 	|		srcA<srcB result=2
+            3'b000: ALUresult = sub_result; 					// Resta
+            3'b001: ALUresult = add_result; 					// Suma
+				3'b010: ALUresult = lsl_result; 					// Desplazamiento hacia la izquierda
+				3'b011: ALUresult = neg_result; 					// Negacion
+				3'b100: ALUresult = srcA; 		  					// Buffer para la direccion de memoria en donde guardar un dato (str)
+				3'b101: ALUresult = compare_result; 		   // srcA=srcB result=0 	|		srcA>srcB result=1 	|		srcA<srcB result=2
             default: ALUresult = 16'hXXXX;  // Manejo de caso inválido
         endcase
     end

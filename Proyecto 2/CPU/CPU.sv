@@ -124,10 +124,13 @@ logic wre_writeback;
 			end
 		end
 	end
+	 always_ff @(posedge clk) begin
+		ni_decode <= 1;
+	end
 	 always_ff @(negedge clk) begin
 		ni_decode <= 0;
 	end
-	
+		
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
 
 	PCregister PCregister_instance (

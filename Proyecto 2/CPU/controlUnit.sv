@@ -31,10 +31,10 @@ module controlUnit (
 					 wm = 1'b0;
 					 am = 1'bx;
 					 ni = 1'b1;
-					 
-					 wce = 1'b0;
-					 wme1 = 1'b0;
-					 wme2 = 1'b0;
+
+					 wce = 1'bx;
+					 wme1 = 1'bx;
+					 wme2 = 1'bx;
 					 alu_mux =1'b0;
 					 reg_dest = 1'b0;
             end
@@ -50,9 +50,9 @@ module controlUnit (
 					 am = 1'bx;
 					 ni = 1'b1;
 					 
-					 wce = 1'b0;
-					 wme1 = 1'b0;
-					 wme2 = 1'b0;
+					 wce = 1'bx;
+					 wme1 = 1'bx;
+					 wme2 = 1'bx;
 					 alu_mux =1'b0;
 					 reg_dest = 1'b0;
             end
@@ -71,7 +71,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 alu_mux =1'b0;
 					 reg_dest = 1'b0;
             end
 				
@@ -80,7 +80,7 @@ module controlUnit (
                 wbs = 1'b1;
                 mm = 2'b01;
                 ALUop = 3'b011;
-                ri = 2'bxx;
+                ri = 2'b00;
                 wre = 1'b1;
 					 wm = 1'b0;
 					 am = 1'bx;
@@ -89,7 +89,7 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 alu_mux =1'b0;
 					 reg_dest = 1'b0;
             end
 				
@@ -102,13 +102,13 @@ module controlUnit (
                 wre = 1'b0;
 					 wm = 1'bx;
 					 am = 1'bx;
-					 ni = (flagZ == 1) ? 1'b1 : 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
+					 reg_dest = 1'bx;
             end
             
 				// bgt
@@ -120,13 +120,13 @@ module controlUnit (
                 wre = 1'b0;
 					 wm = 1'bx;
 					 am = 1'bx;
-					 ni = (flagN == 0) ? 1'b1 : 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
+					 reg_dest = 1'bx;
             end
             
 				// blt
@@ -138,13 +138,13 @@ module controlUnit (
                 wre = 1'b0;
 					 wm = 1'bx;
 					 am = 1'bx;
-					 ni = (flagN == 1) ? 1'b1 : 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
+					 reg_dest = 1'bx;
             end
 				
 				// b
@@ -162,42 +162,42 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
+					 reg_dest = 1'bx;
             end
 				
 				// movi
 				4'b1000: begin
                 wbs = 1'b1;
-                mm = 2'bxx;
+                mm = 2'b01;
                 ALUop = 3'bxxx;
                 ri = 2'b10;
                 wre = 1'b1;
-					 wm = 1'b1;			
+					 wm = 1'b0;			
 					 am = 1'b1;
 					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
-					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
+					 alu_mux =1'b1;
+					 reg_dest = 1'b1;
             end
             
 				// ldr
             4'b1001: begin
                 wbs = 1'b0;
                 mm = 2'b00;
-                ALUop = 3'bxxx;
+                ALUop = 3'b100;
                 ri = 2'b10;
                 wre = 1'b1;
-					 wm = 1'bx;
+					 wm = 1'b1;
 					 am = 1'b0;
 					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 alu_mux =1'b0;
 					 reg_dest = 1'b0;
             end
             
@@ -207,7 +207,7 @@ module controlUnit (
                 mm = 2'b10;
                 ALUop = 3'b100;
                 ri = 2'b10;
-                wre = 1'b0;
+                wre = 1'b1;
 					 wm = 1'bx;
 					 am = 1'b1;
 					 ni = 1'b1;
@@ -215,7 +215,7 @@ module controlUnit (
 					 wce = 1'b0;
 					 wme1 = 1'b1;
 					 wme2 = 1'b0;
-					 alu_mux =1'b0;
+					 alu_mux =1'b1;
 					 reg_dest = 1'b0;
             end
 				
@@ -233,12 +233,31 @@ module controlUnit (
 					 wce = 1'bx;
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
-					 alu_mux =1'bx;
+					 alu_mux =1'b0;
 					 reg_dest = 1'b0;
             end
 				
 				// movr
 				4'b1100: begin
+                wbs = 1'b1;
+                mm = 2'b01;
+                ALUop = 3'b011;
+                ri = 2'b00;
+                wre = 1'b1;
+					 wm = 1'b0;
+					 am = 1'bx;
+					 ni = 1'b1;
+					 
+					 wce = 1'bx;
+					 wme1 = 1'bx;
+					 wme2 = 1'bx;
+					 alu_mux =1'b0;
+					 reg_dest = 1'b0;
+            end
+            
+				////////////////////// NO HA SIDO ASIGNADO //////////////////////
+				
+            4'b1101: begin
                 wbs = 1'b0;
                 mm = 2'b00;
                 ALUop = 3'b000;
@@ -255,25 +274,6 @@ module controlUnit (
 					 reg_dest = 1'b0;
             end
             
-				////////////////////// NO HA SIDO ASIGNADO //////////////////////
-				
-            4'b1101: begin
-                wbs = 1'b0;
-                mm = 2'b00;
-                ALUop = 3'b000;
-                ri = 2'b00;
-                wre = 1'b0;
-					 wm = 1'bx;
-					 am = 1'bx;
-					 ni = 1'b0;
-					 
-					 wce = 1'bx;
-					 wme1 = 1'bx;
-					 wme2 = 1'bx;
-					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
-            end
-            
             4'b1110: begin
                 wbs = 1'b0;
                 mm = 2'b00;
@@ -282,7 +282,7 @@ module controlUnit (
                 wre = 1'b0;
 					 wm = 1'bx;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
@@ -292,11 +292,11 @@ module controlUnit (
             end
 				
 				4'b1111: begin
-                wbs = 1'b0;
-                mm = 2'b00;
-                ALUop = 3'b000;
-                ri = 2'b00;
-                wre = 1'b0;
+                wbs = 1'bx;
+                mm = 2'bxx;
+                ALUop = 3'bxxx;
+                ri = 2'bxx;
+                wre = 1'bx;
 					 wm = 1'bx;
 					 am = 1'bx;
 					 ni = 1'b0;
@@ -305,7 +305,7 @@ module controlUnit (
 					 wme1 = 1'bx;
 					 wme2 = 1'bx;
 					 alu_mux =1'bx;
-					 reg_dest = 1'b0;
+					 reg_dest = 1'bx;
             end
             
             default: begin

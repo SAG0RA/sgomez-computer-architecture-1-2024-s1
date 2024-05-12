@@ -2,8 +2,8 @@
 
 module ROM_testbench;
 
-    logic clk = 0;
-    logic [15:0] address = 0;
+    logic clk;
+    logic [15:0] address;
     logic [15:0] q;
     
     
@@ -15,18 +15,23 @@ module ROM_testbench;
     
     // Generación de estímulo
     initial begin
-        
+        clk = 0;
+		  address = 0;
         // Simulación de 11 ciclos
-        repeat (11) begin
+        repeat (20) begin
             // Mostrar dirección y valor
-            $display("Dirección: %b", q);
+            $display("Dirección: %d", address);
 				$display("Valor: %b",  q);
             
             // Cambiar la dirección en cada ciclo
             address = address + 1;
             
             // Cambiar el reloj
-            #10 clk = ~clk;
+            #10; 
+				
+				clk = ~clk;
+				
+				#10;
         end
         
         // Finalizar la simulación

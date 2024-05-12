@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "05/11/2024 16:19:10"
+// DATE "05/11/2024 21:20:23"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -3519,9 +3519,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a16 .port_a_address_clear = "none";
@@ -3697,9 +3697,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a8 .port_a_address_clear = "none";
@@ -4793,7 +4793,7 @@ defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a15 .ra
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a15 .mem_init3 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a15 .mem_init2 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a15 .mem_init1 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a15 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000015";
+defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a15 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000841";
 // synopsys translate_on
 
 // Location: LABCELL_X12_Y74_N57
@@ -5913,7 +5913,7 @@ defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a14 .ra
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a14 .mem_init3 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a14 .mem_init2 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a14 .mem_init1 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a14 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a14 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 // Location: LABCELL_X13_Y74_N6
@@ -6115,7 +6115,7 @@ defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a13 .ra
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a13 .mem_init3 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a13 .mem_init2 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a13 .mem_init1 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a13 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000015";
+defparam \CPU|ROM_instance|altsyncram_component|auto_generated|ram_block1a13 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000801";
 // synopsys translate_on
 
 // Location: M10K_X14_Y78_N0
@@ -6731,9 +6731,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_clear = "none";
@@ -6828,9 +6828,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a24 .port_a_address_clear = "none";
@@ -6953,9 +6953,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a40 .port_a_address_clear = "none";
@@ -7050,9 +7050,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a56 .port_a_address_clear = "none";
@@ -7147,9 +7147,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a32 .port_a_address_clear = "none";
@@ -7244,9 +7244,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a48 .port_a_address_clear = "none";
@@ -7377,9 +7377,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a17 .port_a_address_clear = "none";
@@ -7450,9 +7450,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a25 .port_a_address_clear = "none";
@@ -7523,9 +7523,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a9 .port_a_address_clear = "none";
@@ -7615,9 +7615,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a1 .port_a_address_clear = "none";
@@ -7716,9 +7716,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a57 .port_a_address_clear = "none";
@@ -7789,9 +7789,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a49 .port_a_address_clear = "none";
@@ -7862,9 +7862,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a33 .port_a_address_clear = "none";
@@ -7935,9 +7935,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a41 .port_a_address_clear = "none";
@@ -8072,9 +8072,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a34 .port_a_address_clear = "none";
@@ -8145,9 +8145,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a42 .port_a_address_clear = "none";
@@ -8218,9 +8218,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a58 .port_a_address_clear = "none";
@@ -8291,9 +8291,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a50 .port_a_address_clear = "none";
@@ -8395,9 +8395,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a18 .port_a_address_clear = "none";
@@ -8468,9 +8468,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a26 .port_a_address_clear = "none";
@@ -8541,9 +8541,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a2 .port_a_address_clear = "none";
@@ -8614,9 +8614,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a10 .port_a_address_clear = "none";
@@ -8744,9 +8744,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a19 .port_a_address_clear = "none";
@@ -8817,9 +8817,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a43 .port_a_address_clear = "none";
@@ -8890,9 +8890,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a35 .port_a_address_clear = "none";
@@ -8963,9 +8963,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a51 .port_a_address_clear = "none";
@@ -9036,9 +9036,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a59 .port_a_address_clear = "none";
@@ -9144,9 +9144,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a3 .port_a_address_clear = "none";
@@ -9217,9 +9217,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a11 .port_a_address_clear = "none";
@@ -9290,9 +9290,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a27 .port_a_address_clear = "none";
@@ -9418,9 +9418,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a52 .port_a_address_clear = "none";
@@ -9491,9 +9491,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a36 .port_a_address_clear = "none";
@@ -9564,9 +9564,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a60 .port_a_address_clear = "none";
@@ -9637,9 +9637,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a44 .port_a_address_clear = "none";
@@ -9745,9 +9745,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a20 .port_a_address_clear = "none";
@@ -9818,9 +9818,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a28 .port_a_address_clear = "none";
@@ -9891,9 +9891,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a4 .port_a_address_clear = "none";
@@ -9964,9 +9964,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a12 .port_a_address_clear = "none";
@@ -10092,9 +10092,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a13 .port_a_address_clear = "none";
@@ -10165,9 +10165,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a29 .port_a_address_clear = "none";
@@ -10238,9 +10238,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a5 .port_a_address_clear = "none";
@@ -10342,9 +10342,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a21 .port_a_address_clear = "none";
@@ -10415,9 +10415,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a53 .port_a_address_clear = "none";
@@ -10488,9 +10488,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a45 .port_a_address_clear = "none";
@@ -10561,9 +10561,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a61 .port_a_address_clear = "none";
@@ -10634,9 +10634,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a37 .port_a_address_clear = "none";
@@ -10765,9 +10765,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a54 .port_a_address_clear = "none";
@@ -10838,9 +10838,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a62 .port_a_address_clear = "none";
@@ -10911,9 +10911,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a46 .port_a_address_clear = "none";
@@ -10984,9 +10984,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a38 .port_a_address_clear = "none";
@@ -11092,9 +11092,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a22 .port_a_address_clear = "none";
@@ -11165,9 +11165,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a6 .port_a_address_clear = "none";
@@ -11238,9 +11238,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a14 .port_a_address_clear = "none";
@@ -11311,9 +11311,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a30 .port_a_address_clear = "none";
@@ -11440,9 +11440,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a31 .port_a_address_clear = "none";
@@ -11513,9 +11513,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .clk
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a7 .port_a_address_clear = "none";
@@ -11586,9 +11586,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a15 .port_a_address_clear = "none";
@@ -11687,9 +11687,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a23 .port_a_address_clear = "none";
@@ -11760,9 +11760,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a63 .port_a_address_clear = "none";
@@ -11833,9 +11833,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a55 .port_a_address_clear = "none";
@@ -11906,9 +11906,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a39 .port_a_address_clear = "none";
@@ -11979,9 +11979,9 @@ defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .cl
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .clk1_core_clock_enable = "ena1";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .data_interleave_offset_in_bits = 1;
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .data_interleave_width_in_bits = 1;
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .init_file = "./Memory/RAM/RAM.mif";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .init_file = "./RAM.mif";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .init_file_layout = "port_a";
-defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|ALTSYNCRAM";
+defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .logical_ram_name = "CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|ALTSYNCRAM";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .mixed_port_feed_through_mode = "dont_care";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .operation_mode = "bidir_dual_port";
 defparam \CPU|ram_instance|altsyncram_component|auto_generated|ram_block1a47 .port_a_address_clear = "none";

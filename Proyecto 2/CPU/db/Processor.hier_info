@@ -499,26 +499,26 @@ data_a[13] => ~NO_FANOUT~
 data_a[14] => ~NO_FANOUT~
 data_a[15] => ~NO_FANOUT~
 data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_q4g1:auto_generated.address_a[0]
-address_a[1] => altsyncram_q4g1:auto_generated.address_a[1]
-address_a[2] => altsyncram_q4g1:auto_generated.address_a[2]
-address_a[3] => altsyncram_q4g1:auto_generated.address_a[3]
-address_a[4] => altsyncram_q4g1:auto_generated.address_a[4]
-address_a[5] => altsyncram_q4g1:auto_generated.address_a[5]
-address_a[6] => altsyncram_q4g1:auto_generated.address_a[6]
-address_a[7] => altsyncram_q4g1:auto_generated.address_a[7]
-address_a[8] => altsyncram_q4g1:auto_generated.address_a[8]
-address_a[9] => altsyncram_q4g1:auto_generated.address_a[9]
-address_a[10] => altsyncram_q4g1:auto_generated.address_a[10]
-address_a[11] => altsyncram_q4g1:auto_generated.address_a[11]
-address_a[12] => altsyncram_q4g1:auto_generated.address_a[12]
-address_a[13] => altsyncram_q4g1:auto_generated.address_a[13]
-address_a[14] => altsyncram_q4g1:auto_generated.address_a[14]
-address_a[15] => altsyncram_q4g1:auto_generated.address_a[15]
+address_a[0] => altsyncram_d8h1:auto_generated.address_a[0]
+address_a[1] => altsyncram_d8h1:auto_generated.address_a[1]
+address_a[2] => altsyncram_d8h1:auto_generated.address_a[2]
+address_a[3] => altsyncram_d8h1:auto_generated.address_a[3]
+address_a[4] => altsyncram_d8h1:auto_generated.address_a[4]
+address_a[5] => altsyncram_d8h1:auto_generated.address_a[5]
+address_a[6] => altsyncram_d8h1:auto_generated.address_a[6]
+address_a[7] => altsyncram_d8h1:auto_generated.address_a[7]
+address_a[8] => altsyncram_d8h1:auto_generated.address_a[8]
+address_a[9] => altsyncram_d8h1:auto_generated.address_a[9]
+address_a[10] => altsyncram_d8h1:auto_generated.address_a[10]
+address_a[11] => altsyncram_d8h1:auto_generated.address_a[11]
+address_a[12] => altsyncram_d8h1:auto_generated.address_a[12]
+address_a[13] => altsyncram_d8h1:auto_generated.address_a[13]
+address_a[14] => altsyncram_d8h1:auto_generated.address_a[14]
+address_a[15] => altsyncram_d8h1:auto_generated.address_a[15]
 address_b[0] => ~NO_FANOUT~
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_q4g1:auto_generated.clock0
+clock0 => altsyncram_d8h1:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
@@ -528,29 +528,29 @@ aclr0 => ~NO_FANOUT~
 aclr1 => ~NO_FANOUT~
 byteena_a[0] => ~NO_FANOUT~
 byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_q4g1:auto_generated.q_a[0]
-q_a[1] <= altsyncram_q4g1:auto_generated.q_a[1]
-q_a[2] <= altsyncram_q4g1:auto_generated.q_a[2]
-q_a[3] <= altsyncram_q4g1:auto_generated.q_a[3]
-q_a[4] <= altsyncram_q4g1:auto_generated.q_a[4]
-q_a[5] <= altsyncram_q4g1:auto_generated.q_a[5]
-q_a[6] <= altsyncram_q4g1:auto_generated.q_a[6]
-q_a[7] <= altsyncram_q4g1:auto_generated.q_a[7]
-q_a[8] <= altsyncram_q4g1:auto_generated.q_a[8]
-q_a[9] <= altsyncram_q4g1:auto_generated.q_a[9]
-q_a[10] <= altsyncram_q4g1:auto_generated.q_a[10]
-q_a[11] <= altsyncram_q4g1:auto_generated.q_a[11]
-q_a[12] <= altsyncram_q4g1:auto_generated.q_a[12]
-q_a[13] <= altsyncram_q4g1:auto_generated.q_a[13]
-q_a[14] <= altsyncram_q4g1:auto_generated.q_a[14]
-q_a[15] <= altsyncram_q4g1:auto_generated.q_a[15]
+q_a[0] <= altsyncram_d8h1:auto_generated.q_a[0]
+q_a[1] <= altsyncram_d8h1:auto_generated.q_a[1]
+q_a[2] <= altsyncram_d8h1:auto_generated.q_a[2]
+q_a[3] <= altsyncram_d8h1:auto_generated.q_a[3]
+q_a[4] <= altsyncram_d8h1:auto_generated.q_a[4]
+q_a[5] <= altsyncram_d8h1:auto_generated.q_a[5]
+q_a[6] <= altsyncram_d8h1:auto_generated.q_a[6]
+q_a[7] <= altsyncram_d8h1:auto_generated.q_a[7]
+q_a[8] <= altsyncram_d8h1:auto_generated.q_a[8]
+q_a[9] <= altsyncram_d8h1:auto_generated.q_a[9]
+q_a[10] <= altsyncram_d8h1:auto_generated.q_a[10]
+q_a[11] <= altsyncram_d8h1:auto_generated.q_a[11]
+q_a[12] <= altsyncram_d8h1:auto_generated.q_a[12]
+q_a[13] <= altsyncram_d8h1:auto_generated.q_a[13]
+q_a[14] <= altsyncram_d8h1:auto_generated.q_a[14]
+q_a[15] <= altsyncram_d8h1:auto_generated.q_a[15]
 q_b[0] <= <GND>
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated
+|TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_d8h1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -2370,7 +2370,7 @@ q_a[14] <= mux_chb:mux2.result[14]
 q_a[15] <= mux_chb:mux2.result[15]
 
 
-|TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|decode_61a:rden_decode
+|TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_d8h1:auto_generated|decode_61a:rden_decode
 data[0] => w_anode431w[1].IN0
 data[0] => w_anode449w[1].IN1
 data[0] => w_anode460w[1].IN0
@@ -2405,7 +2405,7 @@ eq[6] <= w_anode504w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode515w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_q4g1:auto_generated|mux_chb:mux2
+|TopModule|CPU:CPU|ROM:ROM_instance|altsyncram:altsyncram_component|altsyncram_d8h1:auto_generated|mux_chb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -4982,36 +4982,36 @@ q[7] <= altsyncram:altsyncram_component.q_a
 
 
 |TopModule|CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component
-wren_a => altsyncram_gpr1:auto_generated.wren_a
+wren_a => altsyncram_ngp1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
 rden_b => ~NO_FANOUT~
-data_a[0] => altsyncram_gpr1:auto_generated.data_a[0]
-data_a[1] => altsyncram_gpr1:auto_generated.data_a[1]
-data_a[2] => altsyncram_gpr1:auto_generated.data_a[2]
-data_a[3] => altsyncram_gpr1:auto_generated.data_a[3]
-data_a[4] => altsyncram_gpr1:auto_generated.data_a[4]
-data_a[5] => altsyncram_gpr1:auto_generated.data_a[5]
-data_a[6] => altsyncram_gpr1:auto_generated.data_a[6]
-data_a[7] => altsyncram_gpr1:auto_generated.data_a[7]
+data_a[0] => altsyncram_ngp1:auto_generated.data_a[0]
+data_a[1] => altsyncram_ngp1:auto_generated.data_a[1]
+data_a[2] => altsyncram_ngp1:auto_generated.data_a[2]
+data_a[3] => altsyncram_ngp1:auto_generated.data_a[3]
+data_a[4] => altsyncram_ngp1:auto_generated.data_a[4]
+data_a[5] => altsyncram_ngp1:auto_generated.data_a[5]
+data_a[6] => altsyncram_ngp1:auto_generated.data_a[6]
+data_a[7] => altsyncram_ngp1:auto_generated.data_a[7]
 data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_gpr1:auto_generated.address_a[0]
-address_a[1] => altsyncram_gpr1:auto_generated.address_a[1]
-address_a[2] => altsyncram_gpr1:auto_generated.address_a[2]
-address_a[3] => altsyncram_gpr1:auto_generated.address_a[3]
-address_a[4] => altsyncram_gpr1:auto_generated.address_a[4]
-address_a[5] => altsyncram_gpr1:auto_generated.address_a[5]
-address_a[6] => altsyncram_gpr1:auto_generated.address_a[6]
-address_a[7] => altsyncram_gpr1:auto_generated.address_a[7]
-address_a[8] => altsyncram_gpr1:auto_generated.address_a[8]
-address_a[9] => altsyncram_gpr1:auto_generated.address_a[9]
-address_a[10] => altsyncram_gpr1:auto_generated.address_a[10]
-address_a[11] => altsyncram_gpr1:auto_generated.address_a[11]
-address_a[12] => altsyncram_gpr1:auto_generated.address_a[12]
+address_a[0] => altsyncram_ngp1:auto_generated.address_a[0]
+address_a[1] => altsyncram_ngp1:auto_generated.address_a[1]
+address_a[2] => altsyncram_ngp1:auto_generated.address_a[2]
+address_a[3] => altsyncram_ngp1:auto_generated.address_a[3]
+address_a[4] => altsyncram_ngp1:auto_generated.address_a[4]
+address_a[5] => altsyncram_ngp1:auto_generated.address_a[5]
+address_a[6] => altsyncram_ngp1:auto_generated.address_a[6]
+address_a[7] => altsyncram_ngp1:auto_generated.address_a[7]
+address_a[8] => altsyncram_ngp1:auto_generated.address_a[8]
+address_a[9] => altsyncram_ngp1:auto_generated.address_a[9]
+address_a[10] => altsyncram_ngp1:auto_generated.address_a[10]
+address_a[11] => altsyncram_ngp1:auto_generated.address_a[11]
+address_a[12] => altsyncram_ngp1:auto_generated.address_a[12]
 address_b[0] => ~NO_FANOUT~
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_gpr1:auto_generated.clock0
+clock0 => altsyncram_ngp1:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
@@ -5021,21 +5021,21 @@ aclr0 => ~NO_FANOUT~
 aclr1 => ~NO_FANOUT~
 byteena_a[0] => ~NO_FANOUT~
 byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_gpr1:auto_generated.q_a[0]
-q_a[1] <= altsyncram_gpr1:auto_generated.q_a[1]
-q_a[2] <= altsyncram_gpr1:auto_generated.q_a[2]
-q_a[3] <= altsyncram_gpr1:auto_generated.q_a[3]
-q_a[4] <= altsyncram_gpr1:auto_generated.q_a[4]
-q_a[5] <= altsyncram_gpr1:auto_generated.q_a[5]
-q_a[6] <= altsyncram_gpr1:auto_generated.q_a[6]
-q_a[7] <= altsyncram_gpr1:auto_generated.q_a[7]
+q_a[0] <= altsyncram_ngp1:auto_generated.q_a[0]
+q_a[1] <= altsyncram_ngp1:auto_generated.q_a[1]
+q_a[2] <= altsyncram_ngp1:auto_generated.q_a[2]
+q_a[3] <= altsyncram_ngp1:auto_generated.q_a[3]
+q_a[4] <= altsyncram_ngp1:auto_generated.q_a[4]
+q_a[5] <= altsyncram_ngp1:auto_generated.q_a[5]
+q_a[6] <= altsyncram_ngp1:auto_generated.q_a[6]
+q_a[7] <= altsyncram_ngp1:auto_generated.q_a[7]
 q_b[0] <= <GND>
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|TopModule|CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_gpr1:auto_generated
+|TopModule|CPU:CPU|RAM_coordenadas:ram_coordenadas_instance|altsyncram:altsyncram_component|altsyncram_ngp1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -5245,61 +5245,61 @@ q_b[7] <= altsyncram:altsyncram_component.q_b
 
 
 |TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component
-wren_a => altsyncram_uoq2:auto_generated.wren_a
+wren_a => altsyncram_7np2:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
-wren_b => altsyncram_uoq2:auto_generated.wren_b
+wren_b => altsyncram_7np2:auto_generated.wren_b
 rden_b => ~NO_FANOUT~
-data_a[0] => altsyncram_uoq2:auto_generated.data_a[0]
-data_a[1] => altsyncram_uoq2:auto_generated.data_a[1]
-data_a[2] => altsyncram_uoq2:auto_generated.data_a[2]
-data_a[3] => altsyncram_uoq2:auto_generated.data_a[3]
-data_a[4] => altsyncram_uoq2:auto_generated.data_a[4]
-data_a[5] => altsyncram_uoq2:auto_generated.data_a[5]
-data_a[6] => altsyncram_uoq2:auto_generated.data_a[6]
-data_a[7] => altsyncram_uoq2:auto_generated.data_a[7]
-data_b[0] => altsyncram_uoq2:auto_generated.data_b[0]
-data_b[1] => altsyncram_uoq2:auto_generated.data_b[1]
-data_b[2] => altsyncram_uoq2:auto_generated.data_b[2]
-data_b[3] => altsyncram_uoq2:auto_generated.data_b[3]
-data_b[4] => altsyncram_uoq2:auto_generated.data_b[4]
-data_b[5] => altsyncram_uoq2:auto_generated.data_b[5]
-data_b[6] => altsyncram_uoq2:auto_generated.data_b[6]
-data_b[7] => altsyncram_uoq2:auto_generated.data_b[7]
-address_a[0] => altsyncram_uoq2:auto_generated.address_a[0]
-address_a[1] => altsyncram_uoq2:auto_generated.address_a[1]
-address_a[2] => altsyncram_uoq2:auto_generated.address_a[2]
-address_a[3] => altsyncram_uoq2:auto_generated.address_a[3]
-address_a[4] => altsyncram_uoq2:auto_generated.address_a[4]
-address_a[5] => altsyncram_uoq2:auto_generated.address_a[5]
-address_a[6] => altsyncram_uoq2:auto_generated.address_a[6]
-address_a[7] => altsyncram_uoq2:auto_generated.address_a[7]
-address_a[8] => altsyncram_uoq2:auto_generated.address_a[8]
-address_a[9] => altsyncram_uoq2:auto_generated.address_a[9]
-address_a[10] => altsyncram_uoq2:auto_generated.address_a[10]
-address_a[11] => altsyncram_uoq2:auto_generated.address_a[11]
-address_a[12] => altsyncram_uoq2:auto_generated.address_a[12]
-address_a[13] => altsyncram_uoq2:auto_generated.address_a[13]
-address_a[14] => altsyncram_uoq2:auto_generated.address_a[14]
-address_a[15] => altsyncram_uoq2:auto_generated.address_a[15]
-address_b[0] => altsyncram_uoq2:auto_generated.address_b[0]
-address_b[1] => altsyncram_uoq2:auto_generated.address_b[1]
-address_b[2] => altsyncram_uoq2:auto_generated.address_b[2]
-address_b[3] => altsyncram_uoq2:auto_generated.address_b[3]
-address_b[4] => altsyncram_uoq2:auto_generated.address_b[4]
-address_b[5] => altsyncram_uoq2:auto_generated.address_b[5]
-address_b[6] => altsyncram_uoq2:auto_generated.address_b[6]
-address_b[7] => altsyncram_uoq2:auto_generated.address_b[7]
-address_b[8] => altsyncram_uoq2:auto_generated.address_b[8]
-address_b[9] => altsyncram_uoq2:auto_generated.address_b[9]
-address_b[10] => altsyncram_uoq2:auto_generated.address_b[10]
-address_b[11] => altsyncram_uoq2:auto_generated.address_b[11]
-address_b[12] => altsyncram_uoq2:auto_generated.address_b[12]
-address_b[13] => altsyncram_uoq2:auto_generated.address_b[13]
-address_b[14] => altsyncram_uoq2:auto_generated.address_b[14]
-address_b[15] => altsyncram_uoq2:auto_generated.address_b[15]
+data_a[0] => altsyncram_7np2:auto_generated.data_a[0]
+data_a[1] => altsyncram_7np2:auto_generated.data_a[1]
+data_a[2] => altsyncram_7np2:auto_generated.data_a[2]
+data_a[3] => altsyncram_7np2:auto_generated.data_a[3]
+data_a[4] => altsyncram_7np2:auto_generated.data_a[4]
+data_a[5] => altsyncram_7np2:auto_generated.data_a[5]
+data_a[6] => altsyncram_7np2:auto_generated.data_a[6]
+data_a[7] => altsyncram_7np2:auto_generated.data_a[7]
+data_b[0] => altsyncram_7np2:auto_generated.data_b[0]
+data_b[1] => altsyncram_7np2:auto_generated.data_b[1]
+data_b[2] => altsyncram_7np2:auto_generated.data_b[2]
+data_b[3] => altsyncram_7np2:auto_generated.data_b[3]
+data_b[4] => altsyncram_7np2:auto_generated.data_b[4]
+data_b[5] => altsyncram_7np2:auto_generated.data_b[5]
+data_b[6] => altsyncram_7np2:auto_generated.data_b[6]
+data_b[7] => altsyncram_7np2:auto_generated.data_b[7]
+address_a[0] => altsyncram_7np2:auto_generated.address_a[0]
+address_a[1] => altsyncram_7np2:auto_generated.address_a[1]
+address_a[2] => altsyncram_7np2:auto_generated.address_a[2]
+address_a[3] => altsyncram_7np2:auto_generated.address_a[3]
+address_a[4] => altsyncram_7np2:auto_generated.address_a[4]
+address_a[5] => altsyncram_7np2:auto_generated.address_a[5]
+address_a[6] => altsyncram_7np2:auto_generated.address_a[6]
+address_a[7] => altsyncram_7np2:auto_generated.address_a[7]
+address_a[8] => altsyncram_7np2:auto_generated.address_a[8]
+address_a[9] => altsyncram_7np2:auto_generated.address_a[9]
+address_a[10] => altsyncram_7np2:auto_generated.address_a[10]
+address_a[11] => altsyncram_7np2:auto_generated.address_a[11]
+address_a[12] => altsyncram_7np2:auto_generated.address_a[12]
+address_a[13] => altsyncram_7np2:auto_generated.address_a[13]
+address_a[14] => altsyncram_7np2:auto_generated.address_a[14]
+address_a[15] => altsyncram_7np2:auto_generated.address_a[15]
+address_b[0] => altsyncram_7np2:auto_generated.address_b[0]
+address_b[1] => altsyncram_7np2:auto_generated.address_b[1]
+address_b[2] => altsyncram_7np2:auto_generated.address_b[2]
+address_b[3] => altsyncram_7np2:auto_generated.address_b[3]
+address_b[4] => altsyncram_7np2:auto_generated.address_b[4]
+address_b[5] => altsyncram_7np2:auto_generated.address_b[5]
+address_b[6] => altsyncram_7np2:auto_generated.address_b[6]
+address_b[7] => altsyncram_7np2:auto_generated.address_b[7]
+address_b[8] => altsyncram_7np2:auto_generated.address_b[8]
+address_b[9] => altsyncram_7np2:auto_generated.address_b[9]
+address_b[10] => altsyncram_7np2:auto_generated.address_b[10]
+address_b[11] => altsyncram_7np2:auto_generated.address_b[11]
+address_b[12] => altsyncram_7np2:auto_generated.address_b[12]
+address_b[13] => altsyncram_7np2:auto_generated.address_b[13]
+address_b[14] => altsyncram_7np2:auto_generated.address_b[14]
+address_b[15] => altsyncram_7np2:auto_generated.address_b[15]
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_uoq2:auto_generated.clock0
+clock0 => altsyncram_7np2:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
@@ -5309,28 +5309,28 @@ aclr0 => ~NO_FANOUT~
 aclr1 => ~NO_FANOUT~
 byteena_a[0] => ~NO_FANOUT~
 byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_uoq2:auto_generated.q_a[0]
-q_a[1] <= altsyncram_uoq2:auto_generated.q_a[1]
-q_a[2] <= altsyncram_uoq2:auto_generated.q_a[2]
-q_a[3] <= altsyncram_uoq2:auto_generated.q_a[3]
-q_a[4] <= altsyncram_uoq2:auto_generated.q_a[4]
-q_a[5] <= altsyncram_uoq2:auto_generated.q_a[5]
-q_a[6] <= altsyncram_uoq2:auto_generated.q_a[6]
-q_a[7] <= altsyncram_uoq2:auto_generated.q_a[7]
-q_b[0] <= altsyncram_uoq2:auto_generated.q_b[0]
-q_b[1] <= altsyncram_uoq2:auto_generated.q_b[1]
-q_b[2] <= altsyncram_uoq2:auto_generated.q_b[2]
-q_b[3] <= altsyncram_uoq2:auto_generated.q_b[3]
-q_b[4] <= altsyncram_uoq2:auto_generated.q_b[4]
-q_b[5] <= altsyncram_uoq2:auto_generated.q_b[5]
-q_b[6] <= altsyncram_uoq2:auto_generated.q_b[6]
-q_b[7] <= altsyncram_uoq2:auto_generated.q_b[7]
+q_a[0] <= altsyncram_7np2:auto_generated.q_a[0]
+q_a[1] <= altsyncram_7np2:auto_generated.q_a[1]
+q_a[2] <= altsyncram_7np2:auto_generated.q_a[2]
+q_a[3] <= altsyncram_7np2:auto_generated.q_a[3]
+q_a[4] <= altsyncram_7np2:auto_generated.q_a[4]
+q_a[5] <= altsyncram_7np2:auto_generated.q_a[5]
+q_a[6] <= altsyncram_7np2:auto_generated.q_a[6]
+q_a[7] <= altsyncram_7np2:auto_generated.q_a[7]
+q_b[0] <= altsyncram_7np2:auto_generated.q_b[0]
+q_b[1] <= altsyncram_7np2:auto_generated.q_b[1]
+q_b[2] <= altsyncram_7np2:auto_generated.q_b[2]
+q_b[3] <= altsyncram_7np2:auto_generated.q_b[3]
+q_b[4] <= altsyncram_7np2:auto_generated.q_b[4]
+q_b[5] <= altsyncram_7np2:auto_generated.q_b[5]
+q_b[6] <= altsyncram_7np2:auto_generated.q_b[6]
+q_b[7] <= altsyncram_7np2:auto_generated.q_b[7]
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -7295,7 +7295,7 @@ wren_a => decode_dla:decode2.enable
 wren_b => decode_dla:decode3.enable
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|decode_dla:decode2
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|decode_dla:decode2
 data[0] => w_anode543w[1].IN0
 data[0] => w_anode560w[1].IN1
 data[0] => w_anode570w[1].IN0
@@ -7338,7 +7338,7 @@ eq[6] <= w_anode610w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode620w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|decode_dla:decode3
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|decode_dla:decode3
 data[0] => w_anode543w[1].IN0
 data[0] => w_anode560w[1].IN1
 data[0] => w_anode570w[1].IN0
@@ -7381,7 +7381,7 @@ eq[6] <= w_anode610w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode620w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|decode_61a:rden_decode_a
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|decode_61a:rden_decode_a
 data[0] => w_anode431w[1].IN0
 data[0] => w_anode449w[1].IN1
 data[0] => w_anode460w[1].IN0
@@ -7416,7 +7416,7 @@ eq[6] <= w_anode504w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode515w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|decode_61a:rden_decode_b
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|decode_61a:rden_decode_b
 data[0] => w_anode431w[1].IN0
 data[0] => w_anode449w[1].IN1
 data[0] => w_anode460w[1].IN0
@@ -7451,7 +7451,7 @@ eq[6] <= w_anode504w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode515w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|mux_tfb:mux4
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|mux_tfb:mux4
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -7638,7 +7638,7 @@ sel[2] => l3_w7_n0_mux_dataout.IN0
 sel[2] => _.IN0
 
 
-|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_uoq2:auto_generated|mux_tfb:mux5
+|TopModule|CPU:CPU|RAM:ram_instance|altsyncram:altsyncram_component|altsyncram_7np2:auto_generated|mux_tfb:mux5
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1

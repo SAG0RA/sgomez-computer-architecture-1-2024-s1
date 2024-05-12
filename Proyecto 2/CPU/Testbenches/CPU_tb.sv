@@ -6,10 +6,10 @@ module CPU_tb;
 
 logic clk = 0;
 logic reset = 0;
-logic vga_clk;
-logic VGA_enable;
-logic enable;
-logic [7:0] pixel;
+logic vga_clk = 0;
+logic VGA_enable = 0;
+logic enable = 0;
+logic [7:0] pixel;  // unica salida del modulo
 
 
 /////////////////////// CABLES, I/O DE LOS MODULOS Y VARIABLES //////////////////////////////////////////
@@ -149,7 +149,7 @@ logic wre_writeback;
 	mux_2 mux_2_instance_fetch (
         .data0(PC_plus1),
         .data1(srcB_execute),  // direccion de salto para las instrucciones J
-        .select(ni), // Next Instruction, direccion de salto ó PC + 1
+        .select(ni_decode), // Next Instruction, direccion de salto ó PC + 1						*** REVISAR 
         .out(mux_out_pc)
     );
 	 
@@ -432,18 +432,104 @@ decoderMemory_3outs decoderMemory_3outs_instance (
 
 
 
-
-always #10 clk = ~clk;
-
-    
+/*
+always begin
+	#10 clk = ~clk;				// ciclo del clk = 20
+	#20 vga_clk = ~vga_clk;   // ciclo del vga_clk = 40
+end
+*/   
+ 
     initial begin
-        
+		logic reset = 0;
+		logic VGA_enable = 0;
+		logic enable = 0;
+				  
+		$display("0 No se ha ejecutado ningun ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+		
+		clk = 1;	//primer semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//segundo semiciclo de 1 a 0
+		vga_clk = 1; //primer semiciclo del vga de 0 a 1
+		#10
+		  
+		$display("1 Primer ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		clk = 1;	//tercer semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//cuarto semiciclo de 1 a 0
+		vga_clk = 0; //segundo semiciclo del vga de 1 a 0
+		#10
+		
+		$display("2 Segundo ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		clk = 1;	//quinto semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//sexto semiciclo de 1 a 0
+		vga_clk = 1; //tercer semiciclo del vga de 0 a 1
+		#10
+		
+		$display("3 Tercer ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk);
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		clk = 1;	//septimo semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//octavo semiciclo de 1 a 0
+		vga_clk = 0; //cuarto semiciclo del vga de 1 a 0
+		#10
+		  
+		$display("4 Cuarto ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		clk = 1;	//noveno semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//decimo semiciclo de 1 a 0
+		vga_clk = 1; //quinto semiciclo del vga de 0 a 1
+		#10
+		
+		$display("5 Quinto ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		clk = 1;	//undecimo semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//duodecimo semiciclo de 1 a 0
+		vga_clk = 0; //sexto semiciclo del vga de 1 a 0
+		#10
+		 
+		$display("6 Sexto ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		clk = 1;	//13 semiciclo de 0 a 1
+		#10
+		  
+		clk = 0;	//14 semiciclo de 1 a 0
+		vga_clk = 1; //7 semiciclo del vga de 0 a 1
+		#10
+		  
+		$display("7 Septimo ciclo de reloj clk = %b, vga_clk = %b", clk, vga_clk); 
+		$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
+		$display("-------------------------------------------------------------------\n");
+
+		#20
 		  
 		  
 		  
-		  
-		  
-        $finish;
+      $finish;
 	 end
 
 

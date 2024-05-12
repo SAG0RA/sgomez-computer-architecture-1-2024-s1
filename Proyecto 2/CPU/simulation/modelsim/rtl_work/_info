@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/simulation/modelsim
 vadder
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1715462971
+Z2 !s110 1715486329
 !i10b 1
 !s100 9P38b4ok8>WNK?GgSaK;o0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1715462971.000000
+Z8 !s108 1715486329.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv|
 !i113 1
@@ -37,7 +37,7 @@ Z10 !s92 -sv -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgom
 Z11 tCvgOpt 0
 vALU
 R1
-Z12 !s110 1715462972
+!s110 1715486330
 !i10b 1
 !s100 N`B?cAa0YD[I@UELVBLkA2
 R3
@@ -54,7 +54,7 @@ R7
 r1
 !s85 0
 31
-Z13 !s108 1715462972.000000
+R8
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv|
 !i113 1
@@ -64,7 +64,7 @@ R11
 n@a@l@u
 vcomparator
 R1
-Z14 !s110 1715462976
+Z12 !s110 1715486335
 !i10b 1
 !s100 3?2m5Z>Ugo?EYfbHcP`kE3
 R3
@@ -81,7 +81,7 @@ R7
 r1
 !s85 0
 31
-Z15 !s108 1715462976.000000
+Z13 !s108 1715486334.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv|
 !i113 1
@@ -90,7 +90,7 @@ R10
 R11
 vcontrolUnit
 R1
-Z16 !s110 1715462975
+Z14 !s110 1715486334
 !i10b 1
 !s100 FB<7LFN4g89loZ5GS:ZUL3
 R3
@@ -107,7 +107,7 @@ R7
 r1
 !s85 0
 31
-Z17 !s108 1715462975.000000
+Z15 !s108 1715486333.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv|
 !i113 1
@@ -117,24 +117,24 @@ R11
 ncontrol@unit
 vCPU
 R1
-Z18 !s110 1715462978
+Z16 !s110 1715486336
 !i10b 1
-!s100 L:76fPkZe[=_V9N5De<GF3
+!s100 ;jkK0DBE5mMRWm6GkJ;Uj3
 R3
-IL[=n3Y6G]iJnL31BILT<43
+IbKfl5b2YDnjX45H36=Ceg1
 R4
 S1
 R0
-w1715458570
+w1715476019
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv
 !i122 27
-L0 1 440
+L0 1 423
 R7
 r1
 !s85 0
 31
-Z19 !s108 1715462978.000000
+Z17 !s108 1715486336.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv|
 !i113 1
@@ -144,7 +144,7 @@ R11
 n@c@p@u
 vDecodeExecute_register
 R1
-Z20 !s110 1715462974
+Z18 !s110 1715486333
 !i10b 1
 !s100 Lk2dOL?Diez>o0MVl3iMA0
 R3
@@ -161,7 +161,7 @@ R7
 r1
 !s85 0
 31
-Z21 !s108 1715462974.000000
+Z19 !s108 1715486332.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv|
 !i113 1
@@ -171,7 +171,7 @@ R11
 n@decode@execute_register
 vdecoderMemory
 R1
-Z22 !s110 1715462973
+Z20 !s110 1715486332
 !i10b 1
 !s100 zloaPGab0@jkfDiWmG3_Z0
 R3
@@ -183,12 +183,12 @@ R5
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv
 !i122 14
-Z23 L0 1 11
+Z21 L0 1 11
 R7
 r1
 !s85 0
 31
-Z24 !s108 1715462973.000000
+R19
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv|
 !i113 1
@@ -198,7 +198,7 @@ R11
 ndecoder@memory
 vdecoderMemory_3outs
 R1
-R18
+Z22 !s110 1715486337
 !i10b 1
 !s100 Y8eF6kfXH`30Bg;cFXXem3
 R3
@@ -215,7 +215,7 @@ R7
 r1
 !s85 0
 31
-R19
+R17
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv|
 !i113 1
@@ -225,7 +225,7 @@ R11
 ndecoder@memory_3outs
 vExecuteMemory_register
 R1
-R20
+R18
 !i10b 1
 !s100 6dnM@2DRN^nbKAhDU]Y@?3
 R3
@@ -242,7 +242,7 @@ R7
 r1
 !s85 0
 31
-R21
+R15
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv|
 !i113 1
@@ -269,7 +269,7 @@ R7
 r1
 !s85 0
 31
-R21
+R19
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv|
 !i113 1
@@ -279,7 +279,7 @@ R11
 n@fetch@decode_register
 vgenerate_graphic
 R1
-R14
+R12
 !i10b 1
 !s100 [KWDzcWRab64QBniJVc5d2
 R3
@@ -296,16 +296,16 @@ R7
 r1
 !s85 0
 31
-R15
+Z23 !s108 1715486335.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv|
 !i113 1
 R9
-Z25 !s92 -sv -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA}
+Z24 !s92 -sv -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA}
 R11
 vgenerate_rectangle
 R1
-Z26 !s110 1715462977
+R12
 !i10b 1
 !s100 :g_zFPOhd;0iQWhnUbMh52
 R3
@@ -322,16 +322,16 @@ R7
 r1
 !s85 0
 31
-Z27 !s108 1715462977.000000
+R23
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv|
 !i113 1
 R9
-R25
+R24
 R11
 vLogicalShiftLeft
 R1
-R16
+R14
 !i10b 1
 !s100 d2@lHehjg2H6H4l3NQTlG3
 R3
@@ -343,12 +343,12 @@ R5
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv
 !i122 20
-R23
+R21
 R7
 r1
 !s85 0
 31
-R17
+R13
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv|
 !i113 1
@@ -358,24 +358,24 @@ R11
 n@logical@shift@left
 vMemoryWriteback_register
 R1
-R16
+R18
 !i10b 1
-!s100 bUGg^4Hl>1JBnMm<aO`=`1
+!s100 0=65jgOKT_AO8d@_FXBSB1
 R3
-Ic;2DG]KR^do3j3?aSN6`Z1
+IKc7UEdahLGzJEZc^jkUc92
 R4
 S1
 R0
-w1715458553
+w1715465674
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv
 !i122 18
-L0 1 53
+L0 1 65
 R7
 r1
 !s85 0
 31
-R21
+R15
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv|
 !i113 1
@@ -385,7 +385,7 @@ R11
 n@memory@writeback_register
 vmux_2
 R1
-R12
+Z25 !s110 1715486331
 !i10b 1
 !s100 MKW?kUSo0T3i_oJh5DN_30
 R3
@@ -397,12 +397,12 @@ w1715134407
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv
 !i122 10
-Z28 L0 1 8
+Z26 L0 1 8
 R7
 r1
 !s85 0
 31
-R13
+Z27 !s108 1715486331.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv|
 !i113 1
@@ -411,7 +411,7 @@ R10
 R11
 vmux_2_regfile
 R1
-Z29 !s110 1715462979
+R22
 !i10b 1
 !s100 UBn0lScZnR?A>IA=g]N9l0
 R3
@@ -423,12 +423,12 @@ w1715458359
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv
 !i122 29
-R28
+R26
 R7
 r1
 !s85 0
 31
-R19
+Z28 !s108 1715486337.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv|
 !i113 1
@@ -437,7 +437,7 @@ R10
 R11
 vmux_4
 R1
-R22
+R25
 !i10b 1
 !s100 b[9FD_J:Cf_fCY7iXY7fb3
 R3
@@ -454,7 +454,7 @@ R7
 r1
 !s85 0
 31
-R24
+R27
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv|
 !i113 1
@@ -475,12 +475,12 @@ R5
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv
 !i122 21
-R28
+R26
 R7
 r1
 !s85 0
 31
-R15
+R13
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv|
 !i113 1
@@ -489,7 +489,7 @@ R10
 R11
 vPCadder
 R1
-R22
+R20
 !i10b 1
 !s100 BcIPJcSJl^TNfMKGI41Dg2
 R3
@@ -506,7 +506,7 @@ R7
 r1
 !s85 0
 31
-R24
+R27
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv|
 !i113 1
@@ -516,7 +516,7 @@ R11
 n@p@cadder
 vPCregister
 R1
-R22
+R20
 !i10b 1
 !s100 hMLa7O[YnMR2VIh5Vf;842
 R3
@@ -533,7 +533,7 @@ R7
 r1
 !s85 0
 31
-R24
+R19
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv|
 !i113 1
@@ -543,7 +543,7 @@ R11
 n@p@cregister
 vpll
 R1
-R26
+R16
 !i10b 1
 !s100 f@h_>2BiLX_ioJ>PC=B[@3
 R3
@@ -560,60 +560,60 @@ R7
 r1
 !s85 0
 31
-R27
+R23
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv|
 !i113 1
 R9
-R25
+R24
 R11
 vRAM
-Z30 !s110 1715462970
+Z29 !s110 1715486328
 !i10b 1
-!s100 cZBN>FC][:Mj@`ReY0SKn3
+!s100 8I3Ebg?Ih`f`GVkF:aK4=3
 R3
-IS3=>@CEYmW6<O@@XK^Pee2
+IifYgT2m63QN<JJ3aja@nP0
 R4
 R0
-w1715283273
+w1715475380
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v
-!i122 1
-L0 40 90
+!i122 0
+L0 40 91
 R7
 r1
 !s85 0
 31
-Z31 !s108 1715462970.000000
+!s108 1715486327.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v|
 !i113 1
-Z32 o-vlog01compat -work work
+Z30 o-vlog01compat -work work
 !s92 -vlog01compat -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM}
 R11
 n@r@a@m
 vRAM_coordenadas
-R30
+R29
 !i10b 1
-!s100 PQ8HCFlRD3^G@NEJKH3Q@3
+!s100 S42`UjDMof7bK:W0BMMdK2
 R3
-IE1Kd9DESGz[:]aVTlLR;>2
+Io5@@ED]BezR1VS1Wc>HZj3
 R4
 R0
-w1715283395
+w1715475415
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v
-!i122 2
-L0 40 66
+!i122 1
+L0 40 67
 R7
 r1
 !s85 0
 31
-R31
+Z31 !s108 1715486328.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v|
 !i113 1
-R32
+R30
 !s92 -vlog01compat -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas}
 R11
 n@r@a@m_coordenadas
@@ -636,52 +636,26 @@ R7
 r1
 !s85 0
 31
-R8
+R31
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv|
 !i113 1
 R9
 R10
 R11
-vregfile_tb
-R1
+vROM
 R29
 !i10b 1
-!s100 mXMCcJ=;dH`MmJ4G[QNa80
+!s100 BbQE[Cge1zXMA=lojmRO=0
 R3
-IUgcMS90?HCzYK9nMKN0B;2
-R4
-S1
-R0
-w1715462904
-8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/regfile_tb.sv
-FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/regfile_tb.sv
-!i122 30
-L0 1 75
-R7
-r1
-!s85 0
-31
-!s108 1715462979.000000
-!s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/regfile_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/regfile_tb.sv|
-!i113 1
-R9
-!s92 -sv -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches}
-R11
-vROM
-R30
-!i10b 1
-!s100 [=[PbNTOYk<iT8iI6[_Ab1
-R3
-I;C9IJY`m0iRGjIV_Ed:M72
+I1=Bh4znFheVG14CAH4eT^3
 R4
 R0
-w1715208255
+w1715486064
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v
-!i122 0
-L0 40 61
+!i122 2
+L0 40 62
 R7
 r1
 !s85 0
@@ -690,13 +664,40 @@ R31
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v|
 !i113 1
-R32
+R30
 !s92 -vlog01compat -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM}
 R11
 n@r@o@m
+vROM_testbench
+R1
+R22
+!i10b 1
+!s100 K=@lQ4I^0J2=6POPa?8Nl0
+R3
+ISV]RXoK]5eY5IK4eOjlDe1
+R4
+S1
+R0
+w1715484648
+8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv
+FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv
+!i122 30
+L0 3 39
+R7
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv|
+!i113 1
+R9
+!s92 -sv -work work {+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches}
+R11
+n@r@o@m_testbench
 vsignExtend
 R1
-R12
+R25
 !i10b 1
 !s100 WhOH1Ldk:3kl7fg:Q`aEJ2
 R3
@@ -708,12 +709,12 @@ R5
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv
 !i122 8
-Z33 L0 1 6
+Z32 L0 1 6
 R7
 r1
 !s85 0
 31
-R13
+!s108 1715486330.000000
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv|
 !i113 1
@@ -776,7 +777,7 @@ R11
 n@top@module
 vvga_controller
 R1
-R18
+R16
 !i10b 1
 !s100 ThhAfChPj<LW=oQKY:eHo1
 R3
@@ -793,16 +794,16 @@ R7
 r1
 !s85 0
 31
-R27
+R17
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv|
 !i113 1
 R9
-R25
+R24
 R11
 vzeroExtend
 R1
-R12
+R25
 !i10b 1
 !s100 b71??hMj_c=gc;FoTAhLO3
 R3
@@ -814,12 +815,12 @@ R5
 8C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv
 FC:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv
 !i122 9
-R33
+R32
 R7
 r1
 !s85 0
 31
-R13
+R27
 !s107 C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU|C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv|
 !i113 1

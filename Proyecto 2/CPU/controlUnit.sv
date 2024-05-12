@@ -30,7 +30,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'b0;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'b0;
 					 wme1 = 1'b0;
@@ -48,7 +48,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'b0;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'b0;
 					 wme1 = 1'b0;
@@ -66,7 +66,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'b0;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
@@ -84,7 +84,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'b0;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
@@ -174,7 +174,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'b1;			
 					 am = 1'b1;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
@@ -192,7 +192,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'bx;
 					 am = 1'b0;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
@@ -210,7 +210,7 @@ module controlUnit (
                 wre = 1'b0;
 					 wm = 1'bx;
 					 am = 1'b1;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'b0;
 					 wme1 = 1'b1;
@@ -228,7 +228,7 @@ module controlUnit (
                 wre = 1'b1;
 					 wm = 1'b0;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;
@@ -246,7 +246,7 @@ module controlUnit (
                 wre = 1'b0;
 					 wm = 1'bx;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;

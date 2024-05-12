@@ -110,9 +110,6 @@ logic reg_dest_writeback;
 
 logic wre_writeback;
 
-
-
-
 ////// lOGICA PARA LEER LOS PIXELES. SI VGA_enable = 1 (ES UN SWITCH EN LA FPGA) LEE DE LA MEMORIA /////
 
 	 
@@ -127,7 +124,10 @@ logic wre_writeback;
 			end
 		end
 	end
-
+	 always_ff @(negedge clk) begin
+		ni_decode <= 0;
+	end
+	
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
 
 	PCregister PCregister_instance (
@@ -145,7 +145,7 @@ logic wre_writeback;
 	mux_2 mux_2_instance_fetch (
         .data0(PC_plus1),
         .data1(srcB_execute),  // direccion de salto para las instrucciones J
-        .select(ni), // Next Instruction, direccion de salto ó PC + 1
+        .select(ni_decode), // Next Instruction, direccion de salto ó PC + 1
         .out(mux_out_pc)
     );
 	 

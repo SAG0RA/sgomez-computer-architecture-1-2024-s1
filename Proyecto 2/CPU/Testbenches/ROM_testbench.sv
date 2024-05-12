@@ -1,37 +1,28 @@
 `timescale 1ps/1ps
-
 module ROM_testbench;
 
+    // Definición de señales
     logic clk;
     logic [15:0] address;
     logic [15:0] q;
     
-    
+    // Instancia de la ROM
     ROM ROM_instance (
         .address(address),
         .clock(clk),
         .q(q)
     );
-    
-    // Generación de estímulo
+    always #10 clk = ~clk;
+
     initial begin
         clk = 0;
-		  address = 0;
-        // Simulación de 11 ciclos
+        address = 0;        
         repeat (20) begin
-            // Mostrar dirección y valor
+				#10
             $display("Dirección: %d", address);
-				$display("Valor: %b",  q);
-            
-            // Cambiar la dirección en cada ciclo
             address = address + 1;
-            
-            // Cambiar el reloj
-            #10; 
-				
-				clk = ~clk;
-				
-				#10;
+				#30
+            $display("Valor en %d: %b", address, q);
         end
         
         // Finalizar la simulación

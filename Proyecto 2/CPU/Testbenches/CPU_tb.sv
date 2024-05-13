@@ -57,6 +57,9 @@ logic [15:0] reg_dest_data_memory;
 logic [15:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
 logic [15:0] reg_dest_mux_out;	// entrada 0 del mux del banco de registros (reg file)
 
+
+logic [3:0] rs1_source;
+
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
 
 logic ni; // Next Instruction, es al señal de control del mux del PC   ****  OJO  revisar esta señal ***
@@ -130,12 +133,7 @@ logic wre_writeback;
 	end
 end
 
- always_ff @(posedge clk) begin
-	ni_decode <= 1;
-end
- always_ff @(negedge clk) begin
-	ni_decode <= 0;
-end
+ 
 	
 		
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
@@ -173,7 +171,6 @@ end
     );
 	 
 
-
 ///////////// ETAPA DECODE ////////////////////////////////////////////////////////////////////////////
 
 controlUnit control_unit_instance (
@@ -206,20 +203,31 @@ controlUnit control_unit_instance (
       .ZeroExtImmediate(ZeroExtImmediate)
    );
 	
+	always_comb  begin
+		if(ALUop_decode == 3'b100) begin
+			rs1_source = instruction_decode[11:8];
+		end else begin
+			rs1_source = instruction_decode[3:0];
+		end
+	end
+	
+	
+	
 	mux_2_regfile u_mux_2_regfile (
         .data0(instruction_decode[11:8]),
         .data1(reg_dest_data_writeback),
-        .select(reg_dest_writeback),		
+        .select(reg_dest_decode),		
         .out(reg_dest_mux_out)		/////////////////////////////////////////////
     );
-	assign a1 = instruction_decode[3:0];
+	assign a1 = rs1_source; //instruction_decode[3:0];
 	assign a2 = instruction_decode[7:4];
 	assign a3 = instruction_decode[11:8];
-     
+    
+	 
    regfile regfile_instance (
       .clk(clk),
       .wre(wre_writeback),  
-      .a1(instruction_decode[3:0]),
+      .a1(a1),
       .a2(instruction_decode[7:4]),
       .a3(reg_dest_mux_out),
       .wd3(wd3),
@@ -260,7 +268,7 @@ controlUnit control_unit_instance (
 		
 		.wre_in(wre_decode),
 		
-		.srcA_in(rd1),
+		.srcA_in(rd1), 
 		.srcB_in(out_mux4),
 		
       .wbs_out(wbs_execute),
@@ -287,15 +295,12 @@ controlUnit control_unit_instance (
 
 
 
-
-
-
 ///////////// ETAPA EXECUTE ////////////////////////////////////////////////////////////////////////////
 
 ALU ALU_instance (
       .ALUop(ALUop_execute),       
-      .srcA(srcA_execute),
-      .srcB(srcB_execute),
+      .srcA(srcA_execute), //srcA_execute
+      .srcB(srcB_execute), //srcB_execute
       .ALUresult(alu_result),
       .flagN(flagN),
       .flagZ(flagZ)

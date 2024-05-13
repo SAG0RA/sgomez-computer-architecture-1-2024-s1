@@ -54,6 +54,6 @@ module ALU (
     end
 
 	 // Configuración de las flags flagN y flagZ
-    assign flagN = (ALUresult == 2 );  // Flag de resultado negativo    -----   ALUresult[15] Bandera negativa (bit más significativo)
+    assign flagN = (ALUresult[15] == 1);  // Flag de resultado negativo    -----   ALUresult[15] Bandera negativa (bit más significativo)
     assign flagZ = (ALUresult == 16'h0000);  // Flag de resultado cero
 endmodule

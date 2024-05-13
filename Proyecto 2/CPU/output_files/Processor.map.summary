@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Sat May 11 21:57:58 2024
+Analysis & Elaboration Status : Successful - Mon May 13 12:33:59 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Processor
-Top-level Entity Name : TopModule
+Top-level Entity Name : CPU
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

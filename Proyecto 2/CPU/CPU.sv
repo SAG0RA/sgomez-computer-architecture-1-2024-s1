@@ -52,6 +52,10 @@ logic [15:0] reg_dest_data_memory;
 logic [3:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
 logic [15:0] reg_dest_mux_out;	// entrada 0 del mux del banco de registros (reg file)
 
+
+logic alu_or_address;
+logic [15:0] output_execute;
+
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
 
 logic ni; // Next Instruction, es al señal de control del mux del PC   ****  OJO  revisar esta señal ***
@@ -124,12 +128,14 @@ logic wre_writeback;
 			end
 		end
 	end
+	/*
 	 always_ff @(posedge clk) begin
 		ni_decode <= 1;
 	end
 	 always_ff @(negedge clk) begin
 		ni_decode <= 0;
 	end
+	*/
 		
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
 
@@ -165,7 +171,15 @@ logic wre_writeback;
         .instruction_out(instruction_decode)
     );
 	 
-
+	always_comb  begin
+		if(ALUop_decode == 3'b100) begin
+			rs1_source = instruction_decode[11:8];
+			alu_or_address = 1'b0;
+		end else begin
+			rs1_source = instruction_decode[3:0];
+			alu_or_address = 1'b1;
+		end
+	end
 
 ///////////// ETAPA DECODE ////////////////////////////////////////////////////////////////////////////
 
@@ -210,7 +224,7 @@ controlUnit control_unit_instance (
    regfile regfile_instance (
       .clk(clk),
       .wre(wre_writeback),  /// revisar  
-      .a1(instruction_decode[3:0]),
+      .a1(rs1_source), // instruction_decode[3:0]
       .a2(instruction_decode[7:4]),
       .a3(reg_dest_mux_out),
       .wd3(wd3),
@@ -284,7 +298,14 @@ controlUnit control_unit_instance (
 
 ///////////// ETAPA EXECUTE ////////////////////////////////////////////////////////////////////////////
 
-ALU ALU_instance (
+	mux_2 mux_2_instance_alu_or_address (
+      .data0(srcA_execute),
+      .data1(output_alu_mux), 
+      .select(alu_or_address),
+      .out(output_execute)
+   );
+
+	ALU ALU_instance (
       .ALUop(ALUop_execute),       
       .srcA(srcA_execute),
       .srcB(srcB_execute),
@@ -315,7 +336,7 @@ ALU ALU_instance (
 		
       .wbs_in(wbs_execute),
       .mm_in(mm_execute),
-      .ALUresult_in(output_alu_mux), 
+      .ALUresult_in(output_execute), 
       .memData_in(write_Data_execute),
       .wm_in(wm_execute),
       .ni_in(ni_execute),

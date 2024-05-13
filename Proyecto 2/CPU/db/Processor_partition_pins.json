@@ -4,119 +4,35 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "vga_clk",
+					"name" : "pixel[0]",
 					"strict" : false
 				},
 				{
-					"name" : "h_sync",
+					"name" : "pixel[1]",
 					"strict" : false
 				},
 				{
-					"name" : "v_sync",
+					"name" : "pixel[2]",
 					"strict" : false
 				},
 				{
-					"name" : "sync_b",
+					"name" : "pixel[3]",
 					"strict" : false
 				},
 				{
-					"name" : "blank_b",
+					"name" : "pixel[4]",
 					"strict" : false
 				},
 				{
-					"name" : "red[0]",
+					"name" : "pixel[5]",
 					"strict" : false
 				},
 				{
-					"name" : "red[1]",
+					"name" : "pixel[6]",
 					"strict" : false
 				},
 				{
-					"name" : "red[2]",
-					"strict" : false
-				},
-				{
-					"name" : "red[3]",
-					"strict" : false
-				},
-				{
-					"name" : "red[4]",
-					"strict" : false
-				},
-				{
-					"name" : "red[5]",
-					"strict" : false
-				},
-				{
-					"name" : "red[6]",
-					"strict" : false
-				},
-				{
-					"name" : "red[7]",
-					"strict" : false
-				},
-				{
-					"name" : "green[0]",
-					"strict" : false
-				},
-				{
-					"name" : "green[1]",
-					"strict" : false
-				},
-				{
-					"name" : "green[2]",
-					"strict" : false
-				},
-				{
-					"name" : "green[3]",
-					"strict" : false
-				},
-				{
-					"name" : "green[4]",
-					"strict" : false
-				},
-				{
-					"name" : "green[5]",
-					"strict" : false
-				},
-				{
-					"name" : "green[6]",
-					"strict" : false
-				},
-				{
-					"name" : "green[7]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[0]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[1]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[2]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[3]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[4]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[5]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[6]",
-					"strict" : false
-				},
-				{
-					"name" : "blue[7]",
+					"name" : "pixel[7]",
 					"strict" : false
 				},
 				{
@@ -124,11 +40,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "vga_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
 					"strict" : false
 				},
 				{
 					"name" : "VGA_enable",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
 					"strict" : false
 				}
 			]

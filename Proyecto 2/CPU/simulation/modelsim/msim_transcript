@@ -12,332 +12,364 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Memory/RAM {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:47 on May 11,2024
+# Start time: 12:12:38 on May 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 21:58:48 on May 11,2024, Elapsed time: 0:00:01
+# End time: 12:12:39 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Memory/RAM_coordenadas {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:48 on May 11,2024
+# Start time: 12:12:39 on May 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v 
 # -- Compiling module RAM_coordenadas
 # 
 # Top level modules:
 # 	RAM_coordenadas
-# End time: 21:58:48 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:39 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Memory/ROM {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:48 on May 11,2024
+# Start time: 12:12:39 on May 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/ROM/ROM.v 
 # -- Compiling module ROM
 # 
 # Top level modules:
 # 	ROM
-# End time: 21:58:48 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:39 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:48 on May 11,2024
+# Start time: 12:12:39 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 21:58:49 on May 11,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:49 on May 11,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/TopModule.sv 
-# -- Compiling module TopModule
-# 
-# Top level modules:
-# 	TopModule
-# End time: 21:58:49 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:40 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:49 on May 11,2024
+# Start time: 12:12:40 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/adder.sv 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 21:58:49 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:40 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:49 on May 11,2024
+# Start time: 12:12:40 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/subtractor.sv 
 # -- Compiling module subtractor
 # 
 # Top level modules:
 # 	subtractor
-# End time: 21:58:49 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:40 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:49 on May 11,2024
+# Start time: 12:12:40 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv 
 # -- Compiling module ALU
-# ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(46): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(47): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(49): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(50): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# ** Warning: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(51): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
 # 	ALU
-# End time: 21:58:50 on May 11,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 6
+# End time: 12:12:40 on May 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:50 on May 11,2024
+# Start time: 12:12:40 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/signExtend.sv 
 # -- Compiling module signExtend
 # 
 # Top level modules:
 # 	signExtend
-# End time: 21:58:51 on May 11,2024, Elapsed time: 0:00:01
+# End time: 12:12:41 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:51 on May 11,2024
+# Start time: 12:12:41 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv 
 # -- Compiling module zeroExtend
 # 
 # Top level modules:
 # 	zeroExtend
-# End time: 21:58:51 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:41 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:51 on May 11,2024
+# Start time: 12:12:41 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv 
 # -- Compiling module mux_2
 # 
 # Top level modules:
 # 	mux_2
-# End time: 21:58:51 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:41 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:51 on May 11,2024
+# Start time: 12:12:41 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_4.sv 
 # -- Compiling module mux_4
 # 
 # Top level modules:
 # 	mux_4
-# End time: 21:58:51 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:41 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:51 on May 11,2024
+# Start time: 12:12:42 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCadder.sv 
 # -- Compiling module PCadder
 # 
 # Top level modules:
 # 	PCadder
-# End time: 21:58:52 on May 11,2024, Elapsed time: 0:00:01
+# End time: 12:12:42 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:52 on May 11,2024
+# Start time: 12:12:42 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/PCregister.sv 
 # -- Compiling module PCregister
 # 
 # Top level modules:
 # 	PCregister
-# End time: 21:58:52 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:42 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:52 on May 11,2024
+# Start time: 12:12:42 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv 
 # -- Compiling module decoderMemory
 # 
 # Top level modules:
 # 	decoderMemory
-# End time: 21:58:52 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:42 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:52 on May 11,2024
+# Start time: 12:12:42 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/FetchDecode_register.sv 
 # -- Compiling module FetchDecode_register
 # 
 # Top level modules:
 # 	FetchDecode_register
-# End time: 21:58:52 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:43 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:52 on May 11,2024
+# Start time: 12:12:43 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv 
 # -- Compiling module DecodeExecute_register
 # 
 # Top level modules:
 # 	DecodeExecute_register
-# End time: 21:58:53 on May 11,2024, Elapsed time: 0:00:01
+# End time: 12:12:43 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:53 on May 11,2024
+# Start time: 12:12:43 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv 
 # -- Compiling module ExecuteMemory_register
 # 
 # Top level modules:
 # 	ExecuteMemory_register
-# End time: 21:58:53 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:44 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:53 on May 11,2024
+# Start time: 12:12:44 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv 
 # -- Compiling module MemoryWriteback_register
 # 
 # Top level modules:
 # 	MemoryWriteback_register
-# End time: 21:58:53 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:44 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:53 on May 11,2024
+# Start time: 12:12:44 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/controlUnit.sv 
 # -- Compiling module controlUnit
 # 
 # Top level modules:
 # 	controlUnit
-# End time: 21:58:54 on May 11,2024, Elapsed time: 0:00:01
+# End time: 12:12:44 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:54 on May 11,2024
+# Start time: 12:12:44 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/LogicalShiftLeft.sv 
 # -- Compiling module LogicalShiftLeft
 # 
 # Top level modules:
 # 	LogicalShiftLeft
-# End time: 21:58:54 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:45 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:54 on May 11,2024
+# Start time: 12:12:45 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/negation.sv 
 # -- Compiling module negation
 # 
 # Top level modules:
 # 	negation
-# End time: 21:58:54 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:45 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:54 on May 11,2024
+# Start time: 12:12:45 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/comparator.sv 
 # -- Compiling module comparator
 # 
 # Top level modules:
 # 	comparator
-# End time: 21:58:55 on May 11,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:55 on May 11,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_graphic.sv 
-# -- Compiling module generate_graphic
-# 
-# Top level modules:
-# 	generate_graphic
-# End time: 21:58:55 on May 11,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:55 on May 11,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/generate_rectangle.sv 
-# -- Compiling module generate_rectangle
-# 
-# Top level modules:
-# 	generate_rectangle
-# End time: 21:58:55 on May 11,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:55 on May 11,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/pll.sv 
-# -- Compiling module pll
-# 
-# Top level modules:
-# 	pll
-# End time: 21:58:56 on May 11,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/VGA {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:56 on May 11,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/VGA/vga_controller.sv 
-# -- Compiling module vga_controller
-# 
-# Top level modules:
-# 	vga_controller
-# End time: 21:58:56 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:45 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:56 on May 11,2024
+# Start time: 12:12:45 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/CPU.sv 
 # -- Compiling module CPU
 # 
 # Top level modules:
 # 	CPU
-# End time: 21:58:56 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:46 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:56 on May 11,2024
+# Start time: 12:12:46 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv 
 # -- Compiling module decoderMemory_3outs
 # 
 # Top level modules:
 # 	decoderMemory_3outs
-# End time: 21:58:57 on May 11,2024, Elapsed time: 0:00:01
+# End time: 12:12:46 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:57 on May 11,2024
+# Start time: 12:12:46 on May 13,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv 
 # -- Compiling module mux_2_regfile
 # 
 # Top level modules:
 # 	mux_2_regfile
-# End time: 21:58:57 on May 11,2024, Elapsed time: 0:00:00
+# End time: 12:12:46 on May 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv}
+# vlog -sv -work work +incdir+C:/Users/Manuel/Documents/TEC/Arqui\ 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto\ 2/CPU/Testbenches {C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:58:57 on May 11,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv 
-# -- Compiling module ROM_testbench
+# Start time: 12:12:46 on May 13,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches" C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv 
+# -- Compiling module CPU_tb
 # 
 # Top level modules:
-# 	ROM_testbench
-# End time: 21:58:57 on May 11,2024, Elapsed time: 0:00:00
+# 	CPU_tb
+# End time: 12:12:47 on May 13,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ROM_testbench
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ROM_testbench 
-# Start time: 21:58:57 on May 11,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  CPU_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" CPU_tb 
+# Start time: 12:12:47 on May 13,2024
 # Loading sv_std.std
-# Loading work.ROM_testbench
+# Loading work.CPU_tb
+# Loading work.PCregister
+# Loading work.PCadder
+# Loading work.mux_2
 # Loading work.ROM
 # Loading altera_mf_ver.altsyncram
+# Loading work.FetchDecode_register
+# Loading work.controlUnit
+# Loading work.signExtend
+# Loading work.zeroExtend
+# Loading work.mux_2_regfile
+# Loading work.regfile
+# Loading work.mux_4
+# Loading work.DecodeExecute_register
+# Loading work.ALU
+# Loading work.adder
+# Loading work.subtractor
+# Loading work.LogicalShiftLeft
+# Loading work.negation
+# Loading work.comparator
+# Loading work.decoderMemory
+# Loading work.ExecuteMemory_register
+# Loading work.decoderMemory_3outs
+# Loading work.RAM_coordenadas
+# Loading work.RAM
+# Loading work.MemoryWriteback_register
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'data1'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/mux_2_instance_fetch File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 153
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (12) for port 'Immediate'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/zeroExtend.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/zeroExtend_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 201
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'data1'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/u_mux_2_regfile File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 216
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2_regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/u_mux_2_regfile File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 216
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'a1'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/regfile_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 227
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'a3'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/regfile.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/regfile_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 227
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DecodeExecute_register_instance'.  Expected 32, found 31.
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/DecodeExecute_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 252
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'reg_dest_data_writeback_in'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/DecodeExecute_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 252
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'reg_dest_data_writeback_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv(35).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/DecodeExecute_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 252
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'srcA_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv(39).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/DecodeExecute_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 252
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'srcB_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/DecodeExecute_register.sv(40).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/DecodeExecute_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 252
+# ** Warning: (vsim-3722) C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv(252): [TFMPC] - Missing connection for port 'wme_out'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (32) for port 'ALUop'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ALU_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'srcA'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ALU_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'srcB'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ALU.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ALU_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 300
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'data_in'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/decoder_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 309
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'reg_dest_data_writeback_in'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv(14).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ExecuteMemory_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 326
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'mm_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv(19).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ExecuteMemory_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 326
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'ALUresult_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ExecuteMemory_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 326
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'memData_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv(21).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ExecuteMemory_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 326
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'reg_dest_data_writeback_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/ExecuteMemory_register.sv(29).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ExecuteMemory_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 326
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'data_in'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/decoderMemory_3outs_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 367
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'select'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/decoderMemory_3outs.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/decoderMemory_3outs_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 367
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'data1'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/mux_2.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/mux_2_instance_memory File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 375
+# ** Warning: (vsim-3015) [PCDPC] - Port size (13) does not match connection size (16) for port 'address'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ram_coordenadas_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 382
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'data'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ram_coordenadas_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 382
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'q'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM_coordenadas/RAM_coordenadas.v(45).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ram_coordenadas_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 382
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'data_a'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ram_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 390
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'data_b'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v(45).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ram_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 390
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'q_a'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Memory/RAM/RAM.v(48).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/ram_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 390
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'memData_in'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/MemoryWriteback_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 404
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'reg_dest_data_writeback_in'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/MemoryWriteback_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 404
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (16) for port 'reg_dest_data_writeback_out'. The port definition is at: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/MemoryWriteback_register.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/MemoryWriteback_register_instance File: C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv Line: 404
 # 
 # add wave *
 # view structure
@@ -345,56 +377,409 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "../Memory/ROM/ROM.mif" for reading.
-# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
-#    Time: 0 ps  Iteration: 0  Instance: /ROM_testbench/ROM_instance/altsyncram_component/m_default/altsyncram_inst
-# ERROR: cannot read ../Memory/ROM/ROM.mif.
-# ** Warning: (vsim-7) Failed to open readmem file "../Memory/ROM/ROM.ver" in read mode.
-# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(48977)
-#    Time: 0 ps  Iteration: 0  Instance: /ROM_testbench/ROM_instance/altsyncram_component/m_default/altsyncram_inst
-# Dirección:     0
-# Valor: xxxxxxxxxxxxxxxx
-# Dirección:     1
-# Valor: 0000000000000000
-# Dirección:     2
-# Valor: 0000000000000000
-# Dirección:     3
-# Valor: 0000000000000000
-# Dirección:     4
-# Valor: 0000000000000000
-# Dirección:     5
-# Valor: 0000000000000000
-# Dirección:     6
-# Valor: 0000000000000000
-# Dirección:     7
-# Valor: 0000000000000000
-# Dirección:     8
-# Valor: 0000000000000000
-# Dirección:     9
-# Valor: 0000000000000000
-# Dirección:    10
-# Valor: 0000000000000000
-# Dirección:    11
-# Valor: 0000000000000000
-# Dirección:    12
-# Valor: 0000000000000000
-# Dirección:    13
-# Valor: 0000000000000000
-# Dirección:    14
-# Valor: 0000000000000000
-# Dirección:    15
-# Valor: 0000000000000000
-# Dirección:    16
-# Valor: 0000000000000000
-# Dirección:    17
-# Valor: 0000000000000000
-# Dirección:    18
-# Valor: 0000000000000000
-# Dirección:    19
-# Valor: 0000000000000000
-# ** Note: $finish    : C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv(38)
-#    Time: 400 ps  Iteration: 0  Instance: /ROM_testbench
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000000000
+# Instruccion que sale de la ROM	:	xxxxxxxxxxxxxxxx
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000000001
+# Instruccion que sale de la ROM	:	1010000100000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000000010
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000000011
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000000100
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000000101
+# Instruccion que sale de la ROM	:	0000000001011010
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000000110
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000000111
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000001000
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000001001
+# Instruccion que sale de la ROM	:	0010111110101011
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000001010
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000001011
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000001100
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000001101
+# Instruccion que sale de la ROM	:	0011001100011000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000001110
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000001111
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000010000
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000010001
+# Instruccion que sale de la ROM	:	1011111011000111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000010010
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000010011
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000010100
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000010101
+# Instruccion que sale de la ROM	:	0100000000001000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000010110
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000010111
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000011000
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000011001
+# Instruccion que sale de la ROM	:	0101100000001000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000011010
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000011011
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000011100
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000011101
+# Instruccion que sale de la ROM	:	0110100000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000011110
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000011111
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000100000
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000100001
+# Instruccion que sale de la ROM	:	0111000000110000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000100010
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000100011
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000100100
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000100101
+# Instruccion que sale de la ROM	:	1000001000110010
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000100110
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000100111
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000101000
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000101001
+# Instruccion que sale de la ROM	:	1001010000110010
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000101010
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000101011
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000101100
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000101101
+# Instruccion que sale de la ROM	:	1010111010110010
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000101110
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000101111
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000110000
+# Instruccion que sale de la ROM	:	1111111111111111
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000110001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000110010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000110011
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000110100
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000110101
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000110110
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000110111
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000111000
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000111001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000111010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000111011
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000111100
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000111101
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000000111110
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000000111111
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001000000
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001000001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001000010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001000011
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001000100
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001000101
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001000110
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001000111
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001001000
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001001001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001001010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001001011
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001001100
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001001101
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001001110
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001001111
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001010000
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001010001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001010010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001010011
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001010100
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001010101
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001010110
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001010111
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001011000
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001011001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001011010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001011011
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001011100
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001011101
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001011110
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001011111
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001100000
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001100001
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 1, i = 00000000000000000000000001100010
+# Instruccion que sale de la ROM	:	0000000000000000
+# 
+#  --------------------------------------------------------------------
+# Ciclo de reloj clk = 0, i = 00000000000000000000000001100011
+# Instruccion que sale de la ROM	:	0000000000000000
+# ** Note: $finish    : C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv(456)
+#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
 # 1
-# Break in Module ROM_testbench at C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/ROM_testbench.sv line 38
-# End time: 22:06:49 on May 11,2024, Elapsed time: 0:07:52
-# Errors: 0, Warnings: 2
+# Break in Module CPU_tb at C:/Users/Manuel/Documents/TEC/Arqui 1/saul/sgomez-computer-architecture-1-2024-s1/Proyecto 2/CPU/Testbenches/CPU_tb.sv line 456
+# End time: 12:33:43 on May 13,2024, Elapsed time: 0:20:56
+# Errors: 0, Warnings: 33

@@ -29,6 +29,7 @@ logic [15:0] ZeroExtImmediate;
 
 logic [15:0] wd3; // dato a escribir en el banco de registros
 logic [15:0] rd1, rd2, rd3; // direcciones en el banco de registros
+logic [15:0] a1, a2, a3; // direcciones en el banco de registros
 logic [15:0] out_mux4; // salida del mux de 4 entradas
 
 logic [15:0] read_addres_or_data; // salida del decoder y entrada al mux en la etapa execute
@@ -53,7 +54,7 @@ logic ni_writeback;
 logic [15:0] reg_dest_data_decode;	// no se usa
 logic [15:0] reg_dest_data_execute;
 logic [15:0] reg_dest_data_memory;
-logic [3:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
+logic [15:0] reg_dest_data_writeback;	// entrada 1 del mux del banco de registros (reg file)
 logic [15:0] reg_dest_mux_out;	// entrada 0 del mux del banco de registros (reg file)
 
 /////////// SEÑALES DE CONTROL /////////////////////////////////////////////////////////////////////////
@@ -128,10 +129,13 @@ logic wre_writeback;
 		end
 	end
 end
+
+ always_ff @(posedge clk) begin
+	ni_decode <= 1;
+end
  always_ff @(negedge clk) begin
 	ni_decode <= 0;
 end
-	
 	
 		
 ///////////// ETAPA FETCH ////////////////////////////////////////////////////////////////////////////
@@ -208,11 +212,13 @@ controlUnit control_unit_instance (
         .select(reg_dest_writeback),		
         .out(reg_dest_mux_out)		/////////////////////////////////////////////
     );
-
+	assign a1 = instruction_decode[3:0];
+	assign a2 = instruction_decode[7:4];
+	assign a3 = instruction_decode[11:8];
      
    regfile regfile_instance (
       .clk(clk),
-      .wre(wre_writeback),  /// revisar  
+      .wre(wre_writeback),  
       .a1(instruction_decode[3:0]),
       .a2(instruction_decode[7:4]),
       .a3(reg_dest_mux_out),
@@ -221,8 +227,7 @@ controlUnit control_unit_instance (
       .rd2(rd2),
       .rd3(rd3)
    );
-	
-	 
+
 	mux_4 mux_4_instance (
       .data0(rd2),
       .data1(rd3),
@@ -425,20 +430,21 @@ decoderMemory_3outs decoderMemory_3outs_instance (
    );
 
 
+
 	  
-  always #10 clk = ~clk;
+  always #1 clk = ~clk;
 
     initial begin
         // Número total de ciclos a simular
 
         // Bucle para simular múltiples ciclos
-        for (integer i = 0; i < 50; i = i + 1) begin
+        for (integer i = 0; i < 100; i = i + 1) begin
             // Mostrar información en cada ciclo
             $display("\n --------------------------------------------------------------------");
             $display("Ciclo de reloj clk = %b, i = %b", clk, i); 
 				$display("Instruccion que sale de la ROM	:	%b", instruction_fetch); 
             // Esperar al próximo flanco de bajada del reloj
-            #30;
+            #3;
         end
 
         // Finalizar la simulación
@@ -448,4 +454,3 @@ decoderMemory_3outs decoderMemory_3outs_instance (
 
 
 endmodule
-

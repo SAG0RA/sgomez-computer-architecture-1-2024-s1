@@ -299,7 +299,7 @@ module controlUnit (
                 wre = 1'bx;
 					 wm = 1'bx;
 					 am = 1'bx;
-					 ni = 1'b0;
+					 ni = 1'b1;
 					 
 					 wce = 1'bx;
 					 wme1 = 1'bx;

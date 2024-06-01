@@ -1,4 +1,5 @@
 import random
+import os
 
 def generate_mcf_input(filename, num_nodes, num_connections):
     if num_connections > num_nodes * (num_nodes - 1) // 2:
@@ -21,5 +22,6 @@ def generate_mcf_input(filename, num_nodes, num_connections):
                     connections.add(ordered_pair)
                     file.write(f"{ordered_pair[0]} {ordered_pair[1]} {capacity} {cost} {attribute}\n")
 
-# Ejemplo de uso
-generate_mcf_input('mcf_input.txt', 500, 1000)
+
+ruta_completa = os.path.join("/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/ARM/429.mcf/data", "inp.in")
+generate_mcf_input(ruta_completa, 300, 600)

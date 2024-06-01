@@ -9,7 +9,7 @@ export ARGUMENT="1 $INPUT_FILE $OUTPUT_FILE"
 
 # Ejecuta el benchmark utilizando GEM5
 time $GEM5_DIR/build/ARM/gem5.opt \
--d ~/m5out \
+-d /home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto\ 3/RISCV/stats \
 $GEM5_DIR/configs/deprecated/example/se.py \
 -c $BENCHMARK \
 -o "$ARGUMENT" \

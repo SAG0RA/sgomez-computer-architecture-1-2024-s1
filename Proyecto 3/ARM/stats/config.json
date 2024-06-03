@@ -547,7 +547,7 @@
                             "leaders": [],
                             "possible_states": []
                         },
-                        "replacement_policy": "system.cpu.dcache.replacement_policy",
+                        "replacement_policy": null,
                         "sequential_access": false,
                         "size": 131072,
                         "system": "system",
@@ -653,7 +653,7 @@
                             "leaders": [],
                             "possible_states": []
                         },
-                        "replacement_policy": "system.cpu.icache.replacement_policy",
+                        "replacement_policy": null,
                         "sequential_access": false,
                         "size": 131072,
                         "system": "system",

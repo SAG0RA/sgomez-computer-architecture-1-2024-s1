@@ -1,11 +1,12 @@
-#!/bin/bash
-
 # Define las variables de entorno
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
 export BENCHMARK=./src/benchmark
 export INPUT_FILE=./data/test.txt
 export OUTPUT_FILE=./data/output.txt
 export ARGUMENT="1 $INPUT_FILE $OUTPUT_FILE"
+
+# Define la política de reemplazo de caché L2
+export L2_REPLACEMENT_POLICY=LRURP  # Cambia esto por la política que desees, por ejemplo: FIFORP, RandomRP, etc.
 
 # Ejecuta el benchmark utilizando GEM5
 time $GEM5_DIR/build/RISCV/gem5.opt \
@@ -23,6 +24,7 @@ $GEM5_DIR/configs/deprecated/example/se.py \
 --l1d_assoc=2 \
 --l1i_assoc=2 \
 --l2_assoc=1 \
---cacheline_size=64
+--cacheline_size=64 \
+--rp=$L2_REPLACEMENT_POLICY
 
 

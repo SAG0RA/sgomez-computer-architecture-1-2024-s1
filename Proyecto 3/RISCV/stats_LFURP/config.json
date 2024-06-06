@@ -40,7 +40,7 @@
                 "app_path": "/proc",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats/fs/proc"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats_LFURP/fs/proc"
                 ]
             },
             {
@@ -51,7 +51,7 @@
                 "app_path": "/sys",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats/fs/sys"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats_LFURP/fs/sys"
                 ]
             },
             {
@@ -62,7 +62,7 @@
                 "app_path": "/tmp",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats/fs/tmp"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats_LFURP/fs/tmp"
                 ]
             }
         ],
@@ -371,7 +371,7 @@
                     },
                     "response_latency": 2,
                     "sequential_access": false,
-                    "size": 131072,
+                    "size": 16384,
                     "system": "system",
                     "tag_latency": 2,
                     "tags": {
@@ -392,7 +392,7 @@
                             "assoc": 2,
                             "entry_size": 64,
                             "eventq_index": 0,
-                            "size": 131072
+                            "size": 16384
                         },
                         "power_model": [],
                         "power_state": {
@@ -410,7 +410,7 @@
                         },
                         "replacement_policy": "system.cpu.dcache.replacement_policy",
                         "sequential_access": false,
-                        "size": 131072,
+                        "size": 16384,
                         "system": "system",
                         "tag_latency": 2,
                         "warmup_percentage": 0
@@ -583,7 +583,7 @@
                     },
                     "response_latency": 2,
                     "sequential_access": false,
-                    "size": 131072,
+                    "size": 16384,
                     "system": "system",
                     "tag_latency": 2,
                     "tags": {
@@ -604,7 +604,7 @@
                             "assoc": 2,
                             "entry_size": 64,
                             "eventq_index": 0,
-                            "size": 131072
+                            "size": 16384
                         },
                         "power_model": [],
                         "power_state": {
@@ -622,7 +622,7 @@
                         },
                         "replacement_policy": "system.cpu.icache.replacement_policy",
                         "sequential_access": false,
-                        "size": 131072,
+                        "size": 16384,
                         "system": "system",
                         "tag_latency": 2,
                         "warmup_percentage": 0
@@ -803,7 +803,7 @@
             "addr_ranges": [
                 "0:18446744073709551615"
             ],
-            "assoc": 1,
+            "assoc": 8,
             "clk_domain": "system.cpu_clk_domain",
             "clusivity": "mostly_incl",
             "compressor": null,
@@ -833,15 +833,15 @@
             "prefetcher": null,
             "replace_expansions": true,
             "replacement_policy": {
-                "type": "DuelingRP",
-                "cxx_class": "gem5::replacement_policy::Dueling",
+                "type": "LFURP",
+                "cxx_class": "gem5::replacement_policy::LFU",
                 "name": "replacement_policy",
                 "path": "system.l2.replacement_policy",
                 "eventq_index": 0
             },
             "response_latency": 20,
             "sequential_access": false,
-            "size": 131072,
+            "size": 32768,
             "system": "system",
             "tag_latency": 20,
             "tags": {
@@ -849,7 +849,7 @@
                 "cxx_class": "gem5::BaseSetAssoc",
                 "name": "tags",
                 "path": "system.l2.tags",
-                "assoc": 1,
+                "assoc": 8,
                 "block_size": 64,
                 "clk_domain": "system.cpu_clk_domain",
                 "entry_size": 64,
@@ -859,10 +859,10 @@
                     "cxx_class": "gem5::SetAssociative",
                     "name": "indexing_policy",
                     "path": "system.l2.tags.indexing_policy",
-                    "assoc": 1,
+                    "assoc": 8,
                     "entry_size": 64,
                     "eventq_index": 0,
-                    "size": 131072
+                    "size": 32768
                 },
                 "power_model": [],
                 "power_state": {
@@ -880,7 +880,7 @@
                 },
                 "replacement_policy": "system.l2.replacement_policy",
                 "sequential_access": false,
-                "size": 131072,
+                "size": 32768,
                 "system": "system",
                 "tag_latency": 20,
                 "warmup_percentage": 0

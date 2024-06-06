@@ -40,7 +40,7 @@
                 "app_path": "/proc",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats/fs/proc"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/MinorCPU/RISCV/SPEC/CacheBM/fs/proc"
                 ]
             },
             {
@@ -51,7 +51,7 @@
                 "app_path": "/sys",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats/fs/sys"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/MinorCPU/RISCV/SPEC/CacheBM/fs/sys"
                 ]
             },
             {
@@ -62,7 +62,7 @@
                 "app_path": "/tmp",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/RISCV/stats/fs/tmp"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/MinorCPU/RISCV/SPEC/CacheBM/fs/tmp"
                 ]
             }
         ],
@@ -369,7 +369,7 @@
                     },
                     "response_latency": 2,
                     "sequential_access": false,
-                    "size": 131072,
+                    "size": 524288,
                     "system": "system",
                     "tag_latency": 2,
                     "tags": {
@@ -390,7 +390,7 @@
                             "assoc": 2,
                             "entry_size": 64,
                             "eventq_index": 0,
-                            "size": 131072
+                            "size": 524288
                         },
                         "power_model": [],
                         "power_state": {
@@ -408,7 +408,7 @@
                         },
                         "replacement_policy": "system.cpu.dcache.replacement_policy",
                         "sequential_access": false,
-                        "size": 131072,
+                        "size": 524288,
                         "system": "system",
                         "tag_latency": 2,
                         "warmup_percentage": 0
@@ -581,7 +581,7 @@
                     },
                     "response_latency": 2,
                     "sequential_access": false,
-                    "size": 131072,
+                    "size": 524288,
                     "system": "system",
                     "tag_latency": 2,
                     "tags": {
@@ -602,7 +602,7 @@
                             "assoc": 2,
                             "entry_size": 64,
                             "eventq_index": 0,
-                            "size": 131072
+                            "size": 524288
                         },
                         "power_model": [],
                         "power_state": {
@@ -620,7 +620,7 @@
                         },
                         "replacement_policy": "system.cpu.icache.replacement_policy",
                         "sequential_access": false,
-                        "size": 131072,
+                        "size": 524288,
                         "system": "system",
                         "tag_latency": 2,
                         "warmup_percentage": 0

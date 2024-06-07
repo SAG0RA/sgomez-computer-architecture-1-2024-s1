@@ -27,7 +27,7 @@ export CACHE_STATS=/CPUs/MinorCPU/RISCV/SPEC/CacheStats
 export BENCHMARK=./src/benchmark
 export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for CACHE_SIZE in 32kB 64kB 128kB 256kB 512kB; do
+for CACHE_SIZE in 4kB 16kB 64kB 256kB 1MB; do
     echo "Ejecutando simulación con política de reemplazo: $CACHE_SIZE"
     
     # Ejecuta el benchmark utilizando GEM5

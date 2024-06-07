@@ -1,6 +1,7 @@
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
-export RP_DIR=/CPUs/MinorCPU/RISCV/PARSEC/Benchmarks/RPBM
-export RP_STATS=/CPUs/MinorCPU/RISCV/PARSEC/RPStats
+export RP_DIR=/CPUs/MinorCPU/ARM/PARSEC/Benchmarks/RPBM
+export RP_STATS=/CPUs/MinorCPU/ARM/PARSEC/RPStats
+
 export BENCHMARK=./src/benchmark
 export INPUT_FILE=./data/test.txt
 export OUTPUT_FILE=./data/output.txt
@@ -11,7 +12,7 @@ for RP in LRURP LFURP FIFORP MRURP RandomRP; do
     echo "Ejecutando simulación con política de reemplazo: $RP"
     
     # Ejecuta el benchmark utilizando GEM5
-    time $GEM5_DIR/build/RISCV/gem5.opt \
+    time $GEM5_DIR/build/ARM/gem5.opt \
     -d /home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto\ 3/$RP_DIR \
     $GEM5_DIR/configs/deprecated/example/se.py \
     -c $BENCHMARK \

@@ -1,18 +1,11 @@
-
 # Define las variables de entorno
-
-export CACHE_DIR=/CPUs/MinorCPU/RISCV/PARSEC/Benchmarks/CacheBM
-export CACHE_STATS=/CPUs/MinorCPU/RISCV/PARSEC/CacheStats
-
-
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
+export CACHE_DIR=/CPUs/TraceCPU/RISCV/SPEC/Benchmarks/CacheBM
+export CACHE_STATS=/CPUs/TraceCPU/RISCV/SPEC/CacheStats
 export BENCHMARK=./src/benchmark
-export INPUT_FILE=./data/test.txt
-export OUTPUT_FILE=./data/output.txt
-export ARGUMENT="1 $INPUT_FILE $OUTPUT_FILE"
-
+export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for CACHE_SIZE in 4kB 16kB 64kB 256kB 1MB; do
+for CACHE_SIZE in 32kB 64kB 128kB 256kB 512kB; do
     echo "Ejecutando simulación con tamano de CACHE: $CACHE_SIZE"
     
     # Ejecuta el benchmark utilizando GEM5
@@ -22,7 +15,7 @@ for CACHE_SIZE in 4kB 16kB 64kB 256kB 1MB; do
     -c $BENCHMARK \
     -o "$ARGUMENT" \
     -I 300000000 \
-    --cpu-type=MinorCPU \
+    --cpu-type=O3CPU \
     --caches \
     --l2cache \
     --l1d_size=$CACHE_SIZE \

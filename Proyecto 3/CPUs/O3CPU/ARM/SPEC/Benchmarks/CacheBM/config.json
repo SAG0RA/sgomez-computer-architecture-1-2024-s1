@@ -40,7 +40,7 @@
                 "app_path": "/proc",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/O3CPU/ARM/PARSEC/Benchmarks/CacheBM/fs/proc"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/O3CPU/ARM/SPEC/Benchmarks/CacheBM/fs/proc"
                 ]
             },
             {
@@ -51,7 +51,7 @@
                 "app_path": "/sys",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/O3CPU/ARM/PARSEC/Benchmarks/CacheBM/fs/sys"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/O3CPU/ARM/SPEC/Benchmarks/CacheBM/fs/sys"
                 ]
             },
             {
@@ -62,7 +62,7 @@
                 "app_path": "/tmp",
                 "eventq_index": 0,
                 "host_paths": [
-                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/O3CPU/ARM/PARSEC/Benchmarks/CacheBM/fs/tmp"
+                    "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3//CPUs/O3CPU/ARM/SPEC/Benchmarks/CacheBM/fs/tmp"
                 ]
             }
         ],
@@ -1129,11 +1129,9 @@
                         "path": "system.cpu.workload",
                         "cmd": [
                             "./src/benchmark",
-                            "1",
-                            "./data/testO3.txt",
-                            "./data/output.txt"
+                            "./data/inp.in"
                         ],
-                        "cwd": "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/ARM/blackscholes",
+                        "cwd": "/home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto 3/ARM/429.mcf",
                         "drivers": [],
                         "egid": 100,
                         "env": [],

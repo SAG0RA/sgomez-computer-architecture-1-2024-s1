@@ -1,11 +1,8 @@
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
-export RP_DIR=/CPUs/O3CPU/ARM/PARSEC/Benchmarks/RPBM
-export RP_STATS=/CPUs/O3CPU/ARM/PARSEC/RPStats
-
+export RP_DIR=/CPUs/O3CPU/ARM/SPEC/Benchmarks/RPBM
+export RP_STATS=/CPUs/O3CPU/ARM/SPEC/RPStats
 export BENCHMARK=./src/benchmark
-export INPUT_FILE=./data/testO3.txt
-export OUTPUT_FILE=./data/output.txt
-export ARGUMENT="1 $INPUT_FILE $OUTPUT_FILE"
+export ARGUMENT=./data/inp.in
 
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
 for RP in LRURP LFURP FIFORP MRURP RandomRP; do

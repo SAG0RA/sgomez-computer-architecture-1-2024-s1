@@ -1,16 +1,9 @@
-
 # Define las variables de entorno
-
-export CACHE_DIR=/CPUs/O3CPU/ARM/PARSEC/Benchmarks/CacheBM
-export CACHE_STATS=/CPUs/O3CPU/ARM/PARSEC/CacheStats
-
-
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
+export CACHE_DIR=/CPUs/O3CPU/ARM/SPEC/Benchmarks/CacheBM
+export CACHE_STATS=/CPUs/O3CPU/ARM/SPEC/CacheStats
 export BENCHMARK=./src/benchmark
-export INPUT_FILE=./data/testO3.txt
-export OUTPUT_FILE=./data/output.txt
-export ARGUMENT="1 $INPUT_FILE $OUTPUT_FILE"
-
+export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
 for CACHE_SIZE in 4kB 16kB 64kB 256kB 1MB; do
     echo "Ejecutando simulación con tamano de CACHE: $CACHE_SIZE"

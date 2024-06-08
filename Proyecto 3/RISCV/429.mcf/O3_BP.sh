@@ -4,7 +4,7 @@ export BP_STATS=/CPUs/O3CPU/RISCV/SPEC/BPStats
 export BENCHMARK=./src/benchmark
 export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for BP in TournamentBP BiModeBP LocalBP LTAGE TAGE; do
+for BP in LTAGE TAGE; do
     echo "Ejecutando simulación con Branch Predictor: $BP"
     
     # Ejecuta el benchmark utilizando GEM5

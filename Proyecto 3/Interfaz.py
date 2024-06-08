@@ -1,7 +1,10 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import matplotlib.pyplot as plt
+import matplotlib
 import os
+
+matplotlib.use('TkAgg')
 
 class CPUConfigLogic:
     def __init__(self):

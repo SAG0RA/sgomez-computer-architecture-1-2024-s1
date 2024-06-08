@@ -1,11 +1,11 @@
 # Define las variables de entorno
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
-export CACHE_DIR=/CPUs/TraceCPU/RISCV/SPEC/Benchmarks/CacheBM
-export CACHE_STATS=/CPUs/TraceCPU/RISCV/SPEC/CacheStats
+export CACHE_DIR=/CPUs/O3CPU/RISCV/SPEC/Benchmarks/CacheBM
+export CACHE_STATS=/CPUs/O3CPU/RISCV/SPEC/CacheStats
 export BENCHMARK=./src/benchmark
 export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for CACHE_SIZE in 32kB 64kB 128kB 256kB 512kB; do
+for CACHE_SIZE in 4kB 16kB 64kB 256kB 1MB; do
     echo "Ejecutando simulación con tamano de CACHE: $CACHE_SIZE"
     
     # Ejecuta el benchmark utilizando GEM5

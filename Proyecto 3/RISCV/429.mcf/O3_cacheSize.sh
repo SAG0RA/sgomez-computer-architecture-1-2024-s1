@@ -5,7 +5,7 @@ export CACHE_STATS=/CPUs/O3CPU/RISCV/SPEC/CacheStats
 export BENCHMARK=./src/benchmark
 export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for CACHE_SIZE in 4kB 16kB 64kB 256kB 1MB; do
+for CACHE_SIZE in 64kB 256kB 1MB; do
     echo "Ejecutando simulación con tamano de CACHE: $CACHE_SIZE"
     
     # Ejecuta el benchmark utilizando GEM5

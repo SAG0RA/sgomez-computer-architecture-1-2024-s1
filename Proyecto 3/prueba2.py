@@ -7,7 +7,7 @@ def read_stats_file(file_path):
     try:
         with open(file_path, 'r') as file:
             for line in file:
-                if 'lookups' in line or 'condPredicted' in line or 'condIncorrect' in line or 'BTBLookups' in line or 'BTBUpdates' in line or 'BTBHits' in line:
+                if 'overallMisses' in line or 'overallHits' in line or 'replacements' in line:
                     parts = line.split()
                     if len(parts) >= 2:
                         stat_name = parts[0]
@@ -31,17 +31,9 @@ def show_graph():
         return
     
     metrics = [
-        # 'system.l2.overallHits::total', 
-        # 'system.l2.overallMisses::total', 
-        # 'system.l2.replacements', 
-        # 'system.l2.overallMissRate::total'
-       'system.cpu.branchPred.lookups',
-       'system.cpu.branchPred.condPredicted',
-       'system.cpu.branchPred.condIncorrect',
-       'system.cpu.branchPred.BTBLookups',
-       'system.cpu.branchPred.BTBUpdates',
-       'system.cpu.branchPred.BTBHits'
-        
+        'system.l2.overallHits::total', 
+        'system.l2.overallMisses::total', 
+        'system.l2.replacements'
     ]
     
     values1 = [stats1.get(metric, 0) for metric in metrics]

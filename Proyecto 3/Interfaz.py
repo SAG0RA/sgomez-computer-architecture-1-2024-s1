@@ -1,6 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
-import matplotlib.pyplot as plt
+from tkinter import ttk
 import os
 
 class CPUConfigLogic:
@@ -29,45 +28,6 @@ class CPUConfigLogic:
             "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_TAGE.txt"
         ]
 
-    def read_stats_file(self, file_path):
-        stats = {}
-        try:
-            with open(file_path, 'r') as file:
-                for line in file:
-                    if any(keyword in line for keyword in [
-                        'overallMisses', 'overallHits', 'replacements', 
-                        'branchPred.lookups', 'branchPred.condPredicted', 
-                        'branchPred.condIncorrect', 'branchPred.BTBLookups', 
-                        'branchPred.BTBUpdates', 'branchPred.BTBHits',
-                        'dcache.overallMisses', 'icache.overallMisses',
-                        'dcache.overallHits', 'icache.overallHits',
-                        'cpu.cpi', 'cpu.ipc'
-                    ]):
-                        parts = line.split()
-                        if len(parts) >= 2:
-                            stat_name = parts[0]
-                            stat_value = float(parts[1])
-                            stats[stat_name] = stat_value
-        except Exception as e:
-            messagebox.showerror("Error", f"Error reading file: {e}")
-        return stats
-
-    def plot_stats(self, stats_list, labels, metrics, title):
-        values = [[stats.get(metric, 0) for metric in metrics] for stats in stats_list]
-        
-        x = range(len(metrics))
-        
-        plt.figure(figsize=(10, 6))
-        for i, val in enumerate(values):
-            plt.bar([p + i * 0.2 for p in x], val, width=0.2, label=labels[i])
-        
-        plt.xticks([p + 0.2 for p in x], metrics, rotation='vertical')
-        plt.ylabel('Value')
-        plt.title(title)
-        plt.legend()
-        plt.tight_layout()
-        plt.show()
-
     def on_play_button_click(self, checkboxes, label, arch_var):
         selected_arch = arch_var.get()
         selected_paths = []
@@ -76,45 +36,11 @@ class CPUConfigLogic:
             if var.get() and os.path.exists(modified_path):
                 selected_paths.append(modified_path)
         if selected_paths:
-            stats_list = []
+            print(f"Seleccionado en {label.cget('text')}:")
             for path in selected_paths:
-                stats = self.read_stats_file(path)
-                if stats:
-                    stats_list.append(stats)
-            if stats_list:
-                section = label.cget('text')
-                if section == "Replacement Policy:":
-                    metrics = [
-                        'system.l2.overallHits::total',
-                        'system.l2.overallMisses::total',
-                        'system.l2.replacements'
-                    ]
-                    self.plot_stats(stats_list, selected_paths, metrics, 'Comparison of Replacement Policy Stats')
-                elif section == "Branch Predictor:":
-                    metrics = [
-                        'system.cpu.branchPred.lookups',
-                        'system.cpu.branchPred.condPredicted',
-                        'system.cpu.branchPred.condIncorrect',
-                        'system.cpu.branchPred.BTBLookups',
-                        'system.cpu.branchPred.BTBUpdates',
-                        'system.cpu.branchPred.BTBHits'
-                    ]
-                    self.plot_stats(stats_list, selected_paths, metrics, 'Comparison of Branch Predictor Stats')
-                elif section == "Cache Size:":
-                    metrics1 = [
-                        'system.cpu.dcache.overallHits::total',
-                        'system.cpu.icache.overallHits::total'
-                    ]
-                    metrics2 = [
-                        'system.cpu.cpi',
-                        'system.cpu.ipc'
-                    ]
-                    self.plot_stats(stats_list, selected_paths, metrics1, 'Comparison of Cache Misses and Hits Stats')
-                    self.plot_stats(stats_list, selected_paths, metrics2, 'Comparison of CPU Performance Stats')
-            else:
-                messagebox.showerror("Error", f"Failed to read stats from the selected files in {label.cget('text')}.")
+                print(path)
         else:
-            messagebox.showerror("Error", f"No valid files selected in {label.cget('text')}.")
+            print(f"No hay archivos seleccionados o existentes en {label.cget('text')}.")
 
 class CPUConfigGUI:
     def __init__(self, root, logic):

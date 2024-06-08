@@ -4,7 +4,7 @@ export RP_STATS=/CPUs/MinorCPU/ARM/SPEC/RPStats
 export BENCHMARK=./src/benchmark
 export ARGUMENT=./data/inp.in
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for RP in RandomRP; do
+for RP in MRURP; do
     echo "Ejecutando simulación con política de reemplazo: $RP"
     
     # Ejecuta el benchmark utilizando GEM5

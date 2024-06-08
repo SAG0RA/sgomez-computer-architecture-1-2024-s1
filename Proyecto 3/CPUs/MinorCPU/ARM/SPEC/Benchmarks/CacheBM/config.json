@@ -1534,7 +1534,7 @@
                     },
                     "response_latency": 2,
                     "sequential_access": false,
-                    "size": 524288,
+                    "size": 1048576,
                     "system": "system",
                     "tag_latency": 2,
                     "tags": {
@@ -1555,7 +1555,7 @@
                             "assoc": 2,
                             "entry_size": 64,
                             "eventq_index": 0,
-                            "size": 524288
+                            "size": 1048576
                         },
                         "power_model": [],
                         "power_state": {
@@ -1573,7 +1573,7 @@
                         },
                         "replacement_policy": "system.cpu.dcache.replacement_policy",
                         "sequential_access": false,
-                        "size": 524288,
+                        "size": 1048576,
                         "system": "system",
                         "tag_latency": 2,
                         "warmup_percentage": 0
@@ -1640,7 +1640,7 @@
                     },
                     "response_latency": 2,
                     "sequential_access": false,
-                    "size": 524288,
+                    "size": 1048576,
                     "system": "system",
                     "tag_latency": 2,
                     "tags": {
@@ -1661,7 +1661,7 @@
                             "assoc": 2,
                             "entry_size": 64,
                             "eventq_index": 0,
-                            "size": 524288
+                            "size": 1048576
                         },
                         "power_model": [],
                         "power_state": {
@@ -1679,7 +1679,7 @@
                         },
                         "replacement_policy": "system.cpu.icache.replacement_policy",
                         "sequential_access": false,
-                        "size": 524288,
+                        "size": 1048576,
                         "system": "system",
                         "tag_latency": 2,
                         "warmup_percentage": 0
@@ -1792,7 +1792,7 @@
             },
             "response_latency": 20,
             "sequential_access": false,
-            "size": 524288,
+            "size": 1048576,
             "system": "system",
             "tag_latency": 20,
             "tags": {
@@ -1813,7 +1813,7 @@
                     "assoc": 1,
                     "entry_size": 64,
                     "eventq_index": 0,
-                    "size": 524288
+                    "size": 1048576
                 },
                 "power_model": [],
                 "power_state": {
@@ -1831,7 +1831,7 @@
                 },
                 "replacement_policy": "system.l2.replacement_policy",
                 "sequential_access": false,
-                "size": 524288,
+                "size": 1048576,
                 "system": "system",
                 "tag_latency": 20,
                 "warmup_percentage": 0

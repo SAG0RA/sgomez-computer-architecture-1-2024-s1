@@ -1,10 +1,6 @@
-# Define las variables de entorno
 export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
-
-export GEM5_DIR=/home/saul/Desktop/Sims/GEM5/gem5/
-export RP_DIR=/CPUs/MinorCPU/ARM/PARSEC/Benchmarks/RPBM
-export RP_STATS=/CPUs/MinorCPU/ARM/PARSEC/RPStats
-
+export RP_DIR=/CPUs/O3CPU/RISCV/PARSEC/Benchmarks/RPBM
+export RP_STATS=/CPUs/O3CPU/RISCV/PARSEC/RPStats
 export BENCHMARK=./src/benchmark
 export INPUT_FILE=./data/test.txt
 export OUTPUT_FILE=./data/output.txt
@@ -15,18 +11,18 @@ for RP in LRURP LFURP FIFORP MRURP RandomRP; do
     echo "Ejecutando simulación con política de reemplazo: $RP"
     
     # Ejecuta el benchmark utilizando GEM5
-    time $GEM5_DIR/build/ARM/gem5.opt \
-    -d /home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto\ 3/ARM/stats_$RP_DIR \
+    time $GEM5_DIR/build/RISCV/gem5.opt \
+    -d /home/saul/Desktop/Proyectos/sgomez-computer-architecture-1-2024-s1/Proyecto\ 3/$RP_DIR \
     $GEM5_DIR/configs/deprecated/example/se.py \
     -c $BENCHMARK \
     -o "$ARGUMENT" \
     -I 300000000 \
-    --cpu-type=TimingSimpleCPU \
+    --cpu-type=O3CPU \
     --caches \
     --l2cache \
-    --l1d_size=16kB \
-    --l1i_size=16kB \
-    --l2_size=32kB \
+    --l1d_size=4kB \
+    --l1i_size=4kB \
+    --l2_size=16kB \
     --cacheline_size=64 \
     --l2_rp=$RP
     

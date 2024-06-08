@@ -7,7 +7,7 @@ def read_stats_file(file_path):
     try:
         with open(file_path, 'r') as file:
             for line in file:
-                if 'lookups' in line or 'condPredicted' in line or 'condIncorrect' in line or 'BTBLookups' in line or 'BTBUpdates' in line or 'BTBHits' in line:
+                if 'CacheSize' in line or 'system.cpu.cpi' in line or 'system.cpu.ipc' in line or 'system.cpu.dcache.overallMisses' in line or 'system.cpu.icache.overallMisses' in line or 'system.cpu.dcache.overallHits' in line or 'system.cpu.icache.overallHits' in line:
                     parts = line.split()
                     if len(parts) >= 2:
                         stat_name = parts[0]
@@ -30,18 +30,13 @@ def show_graph():
         messagebox.showerror("Error", "Failed to read one or both stats files")
         return
     
-    metrics = [
-        # 'system.l2.overallHits::total', 
-        # 'system.l2.overallMisses::total', 
-        # 'system.l2.replacements', 
-        # 'system.l2.overallMissRate::total'
-       'system.cpu.branchPred.lookups',
-       'system.cpu.branchPred.condPredicted',
-       'system.cpu.branchPred.condIncorrect',
-       'system.cpu.branchPred.BTBLookups',
-       'system.cpu.branchPred.BTBUpdates',
-       'system.cpu.branchPred.BTBHits'
-        
+    metrics = [ 
+        'system.cpu.cpi', 
+        'system.cpu.ipc'
+        # 'system.cpu.dcache.overallMisses::total',
+        # 'system.cpu.icache.overallMisses::total',
+        # 'system.cpu.dcache.overallHits::total',
+        # 'system.cpu.icache.overallHits::total'
     ]
     
     values1 = [stats1.get(metric, 0) for metric in metrics]

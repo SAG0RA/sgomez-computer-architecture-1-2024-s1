@@ -8,29 +8,58 @@ matplotlib.use('TkAgg')
 
 class CPUConfigLogic:
     def __init__(self):
-        self.cache_paths_minorcpu = [
-            "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_4kB.txt",
-            "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_16kB.txt",
-            "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_64kB.txt",
-            "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_256kB.txt",
-            "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_1MB.txt"
-        ]
+        self.cpu_type = "MinorCPU"
+        
+        self.cache_paths = {
+            "MinorCPU": [
+                "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_4kB.txt",
+                "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_16kB.txt",
+                "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_64kB.txt",
+                "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_256kB.txt",
+                "CPUs/MinorCPU/ARM/SPEC/CacheStats/stats_1MB.txt"
+            ],
+            "O3CPU": [
+                "CPUs/O3CPU/ARM/SPEC/CacheStats/stats_4kB.txt",
+                "CPUs/O3CPU/ARM/SPEC/CacheStats/stats_16kB.txt",
+                "CPUs/O3CPU/ARM/SPEC/CacheStats/stats_64kB.txt",
+                "CPUs/O3CPU/ARM/SPEC/CacheStats/stats_256kB.txt",
+                "CPUs/O3CPU/ARM/SPEC/CacheStats/stats_1MB.txt"
+            ]
+        }
 
-        self.replacement_paths_minorcpu = [
-            "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_LRURP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_LFURP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_FIFORP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_MRURP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_RandomRP.txt"
-        ]
+        self.replacement_paths = {
+            "MinorCPU": [
+                "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_LRURP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_LFURP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_FIFORP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_MRURP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/RPStats/stats_RandomRP.txt"
+            ],
+            "O3CPU": [
+                "CPUs/O3CPU/ARM/SPEC/RPStats/stats_LRURP.txt",
+                "CPUs/O3CPU/ARM/SPEC/RPStats/stats_LFURP.txt",
+                "CPUs/O3CPU/ARM/SPEC/RPStats/stats_FIFORP.txt",
+                "CPUs/O3CPU/ARM/SPEC/RPStats/stats_MRURP.txt",
+                "CPUs/O3CPU/ARM/SPEC/RPStats/stats_RandomRP.txt"
+            ]
+        }
 
-        self.branch_paths_minorcpu = [
-            "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_TournamentBP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_BiModeBP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_LocalBP.txt",
-            "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_LTAGE.txt",
-            "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_TAGE.txt"
-        ]
+        self.branch_paths = {
+            "MinorCPU": [
+                "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_TournamentBP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_BiModeBP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_LocalBP.txt",
+                "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_LTAGE.txt",
+                "CPUs/MinorCPU/ARM/SPEC/BPStats/stats_TAGE.txt"
+            ],
+            "O3CPU": [
+                "CPUs/O3CPU/ARM/SPEC/BPStats/stats_TournamentBP.txt",
+                "CPUs/O3CPU/ARM/SPEC/BPStats/stats_BiModeBP.txt",
+                "CPUs/O3CPU/ARM/SPEC/BPStats/stats_LocalBP.txt",
+                "CPUs/O3CPU/ARM/SPEC/BPStats/stats_LTAGE.txt",
+                "CPUs/O3CPU/ARM/SPEC/BPStats/stats_TAGE.txt"
+            ]
+        }
 
     def read_stats_file(self, file_path):
         stats = {}
@@ -119,6 +148,9 @@ class CPUConfigLogic:
         else:
             messagebox.showerror("Error", f"No valid files selected in {label.cget('text')}.")
 
+    def update_paths(self, cpu_type):
+        self.cpu_type = cpu_type
+
 class CPUConfigGUI:
     def __init__(self, root, logic):
         self.root = root
@@ -132,21 +164,28 @@ class CPUConfigGUI:
 
         # Crear los frames para cada pestaña
         self.frame_minorcpu = ttk.Frame(self.notebook, width=600, height=400)
-        self.frame_03cpu = ttk.Frame(self.notebook, width=600, height=400)
+        self.frame_o3cpu = ttk.Frame(self.notebook, width=600, height=400)
 
         self.frame_minorcpu.pack(fill='both', expand=True)
-        self.frame_03cpu.pack(fill='both', expand=True)
+        self.frame_o3cpu.pack(fill='both', expand=True)
 
         self.notebook.add(self.frame_minorcpu, text='MinorCPU')
-        self.notebook.add(self.frame_03cpu, text='03CPU')
+        self.notebook.add(self.frame_o3cpu, text='O3CPU')
 
         # Añadir el dropdown (ARM o RISCV) a cada frame
         self.arch_minorcpu = self.add_dropdown(self.frame_minorcpu)
-        self.arch_03cpu = self.add_dropdown(self.frame_03cpu)
+        self.arch_o3cpu = self.add_dropdown(self.frame_o3cpu)
 
         # Añadir secciones SPEC y PARSEC a cada frame
         self.add_spec_and_parsec_sections(self.frame_minorcpu, "MinorCPU", self.arch_minorcpu)
-        self.add_spec_and_parsec_sections(self.frame_03cpu, "03CPU", self.arch_03cpu)
+        self.add_spec_and_parsec_sections(self.frame_o3cpu, "O3CPU", self.arch_o3cpu)
+
+        # Evento para cambiar de pestaña
+        self.notebook.bind("<<NotebookTabChanged>>", self.on_tab_change)
+
+    def on_tab_change(self, event):
+        selected_tab = event.widget.tab(event.widget.index("current"))["text"]
+        self.logic.update_paths(selected_tab)
 
     def add_dropdown(self, master):
         label = ttk.Label(master, text="Seleccionar arquitectura:", font=('Helvetica', 10, 'bold'))
@@ -198,19 +237,19 @@ class CPUConfigGUI:
 
         cache_frame, cache_checkboxes = self.create_checkbox_frame(
             master, "Cache Size:", ["4kB", "16kB", "64kB", "256kB", "1MB"], 
-            [path.replace("MinorCPU", cpu_type) for path in logic.cache_paths_minorcpu], arch_var
+            [path.replace("MinorCPU", cpu_type) for path in logic.cache_paths[cpu_type]], arch_var
         )
         cache_frame.pack(pady=5)
 
         replacement_frame, replacement_checkboxes = self.create_checkbox_frame(
             master, "Replacement Policy:", ["LRURP", "LFURP", "FIFORP", "MRURP", "RandomRP"], 
-            [path.replace("MinorCPU", cpu_type) for path in logic.replacement_paths_minorcpu], arch_var
+            [path.replace("MinorCPU", cpu_type) for path in logic.replacement_paths[cpu_type]], arch_var
         )
         replacement_frame.pack(pady=5)
 
         branch_frame, branch_checkboxes = self.create_checkbox_frame(
             master, "Branch Predictor:", ["TournamentBP", "BiModeBP", "LocalBP", "LTAGE", "TAGE"], 
-            [path.replace("MinorCPU", cpu_type) for path in logic.branch_paths_minorcpu], arch_var
+            [path.replace("MinorCPU", cpu_type) for path in logic.branch_paths[cpu_type]], arch_var
         )
         branch_frame.pack(pady=5)
 
@@ -219,19 +258,19 @@ class CPUConfigGUI:
 
         cache_parsec_frame, cache_parsec_checkboxes = self.create_checkbox_frame(
             master, "Cache Size:", ["4kB", "16kB", "64kB", "256kB", "1MB"], 
-            [path.replace("SPEC", "PARSEC").replace("MinorCPU", cpu_type) for path in logic.cache_paths_minorcpu], arch_var
+            [path.replace("SPEC", "PARSEC").replace("MinorCPU", cpu_type) for path in logic.cache_paths[cpu_type]], arch_var
         )
         cache_parsec_frame.pack(pady=5)
 
         replacement_parsec_frame, replacement_parsec_checkboxes = self.create_checkbox_frame(
             master, "Replacement Policy:", ["LRURP", "LFURP", "FIFORP", "MRURP", "RandomRP"], 
-            [path.replace("SPEC", "PARSEC").replace("MinorCPU", cpu_type) for path in logic.replacement_paths_minorcpu], arch_var
+            [path.replace("SPEC", "PARSEC").replace("MinorCPU", cpu_type) for path in logic.replacement_paths[cpu_type]], arch_var
         )
         replacement_parsec_frame.pack(pady=5)
 
         branch_parsec_frame, branch_parsec_checkboxes = self.create_checkbox_frame(
             master, "Branch Predictor:", ["TournamentBP", "BiModeBP", "LocalBP", "LTAGE", "TAGE"], 
-            [path.replace("SPEC", "PARSEC").replace("MinorCPU", cpu_type) for path in logic.branch_paths_minorcpu], arch_var
+            [path.replace("SPEC", "PARSEC").replace("MinorCPU", cpu_type) for path in logic.branch_paths[cpu_type]], arch_var
         )
         branch_parsec_frame.pack(pady=5)
 

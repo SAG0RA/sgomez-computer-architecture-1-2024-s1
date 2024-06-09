@@ -5,7 +5,7 @@ export BENCHMARK=./src/benchmark
 export ARGUMENT=./data/inp.in
 
 # Define y ejecuta para diferentes políticas de reemplazo de caché L2
-for RP in LRURP LFURP FIFORP MRURP RandomRP; do
+for RP in RandomRP; do
     echo "Ejecutando simulación con política de reemplazo: $RP"
     
     # Ejecuta el benchmark utilizando GEM5

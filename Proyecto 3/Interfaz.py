@@ -224,9 +224,9 @@ class CPUConfigGUI:
         menubutton["menu"] = menu
         menubutton.grid(row=0, column=1, sticky='w')
 
-        play_button = ttk.Button(frame, text="Play", command=lambda: self.logic.on_play_button_click(checkboxes, label, arch_var))
+        play_button = ttk.Button(frame, text="\u25B6", command=lambda: self.logic.on_play_button_click(checkboxes, label, arch_var))
         play_button.grid(row=0, column=2, padx=10)
-
+        
         return frame, checkboxes
 
     def add_spec_and_parsec_sections(self, master, cpu_type, arch_var):
